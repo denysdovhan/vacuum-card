@@ -199,8 +199,16 @@ export default css`
     flex-direction: column;
     width: 44px;
     height: 44px;
-    margin: 5px;
+    margin: 5px 0;
     padding: 10px;
+  }
+
+  .toolbar paper-icon-button:first-child {
+    margin-left: 5px;
+  }
+
+  .toolbar paper-icon-button:last-child {
+    margin-right: 5px;
   }
 
   .toolbar paper-button {
