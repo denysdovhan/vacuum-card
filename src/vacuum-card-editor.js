@@ -6,11 +6,11 @@ export class VacuumCardEditor extends LitElement {
     return {
       hass: Object,
       _config: Object,
-      _toggle: Boolean
-    }
+      _toggle: Boolean,
+    };
   }
 
-  setConfig(config) {    
+  setConfig(config) {
     this._config = config;
 
     if (!this._config.entity) {
@@ -45,7 +45,7 @@ export class VacuumCardEditor extends LitElement {
 
   getEntitiesByType(type) {
     return Object.keys(this.hass.states).filter(
-      eid => eid.substr(0, eid.indexOf('.')) === type
+      (eid) => eid.substr(0, eid.indexOf('.')) === type
     );
   }
 
@@ -64,11 +64,12 @@ export class VacuumCardEditor extends LitElement {
           @value-changed=${this._valueChanged}
           .configValue=${'entity'}
         >
-          <paper-listbox slot="dropdown-content" .selected=${vacuumEntities.indexOf(this._entity)}>
-            ${vacuumEntities.map(entity => {
-              return html`
-                <paper-item>${entity}</paper-item>
-              `;
+          <paper-listbox
+            slot="dropdown-content"
+            .selected=${vacuumEntities.indexOf(this._entity)}
+          >
+            ${vacuumEntities.map((entity) => {
+              return html` <paper-item>${entity}</paper-item> `;
             })}
           </paper-listbox>
         </paper-dropdown-menu>
@@ -78,11 +79,12 @@ export class VacuumCardEditor extends LitElement {
           @value-changed=${this._valueChanged}
           .configValue=${'map'}
         >
-          <paper-listbox slot="dropdown-content" .selected=${cameraEntities.indexOf(this._map)}>
-            ${cameraEntities.map(entity => {
-              return html`
-                <paper-item>${entity}</paper-item>
-              `;
+          <paper-listbox
+            slot="dropdown-content"
+            .selected=${cameraEntities.indexOf(this._map)}
+          >
+            ${cameraEntities.map((entity) => {
+              return html` <paper-item>${entity}</paper-item> `;
             })}
           </paper-listbox>
         </paper-dropdown-menu>
@@ -94,7 +96,9 @@ export class VacuumCardEditor extends LitElement {
           @value-changed=${this._valueChanged}
         ></paper-input>
 
-        <p>Note: Setting actions are available exclusively using Code Editor.</p>
+        <p>
+          Note: Setting actions are available exclusively using Code Editor.
+        </p>
       </div>
     `;
   }
@@ -113,7 +117,8 @@ export class VacuumCardEditor extends LitElement {
       } else {
         this._config = {
           ...this._config,
-          [target.configValue]: target.checked !== undefined ? target.checked : target.value,
+          [target.configValue]:
+            target.checked !== undefined ? target.checked : target.value,
         };
       }
     }

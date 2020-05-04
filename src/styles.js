@@ -1,4 +1,4 @@
-import {css} from 'lit-element';
+import { css } from 'lit-element';
 
 export default css`
   :host {
@@ -163,7 +163,7 @@ export default css`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    color: var(--text-primary-color)
+    color: var(--text-primary-color);
   }
 
   .stats-block {
@@ -223,7 +223,8 @@ export default css`
     margin-right: 0px;
   }
 
-  .toolbar paper-icon-button:active, .toolbar paper-button:active {
+  .toolbar paper-icon-button:active,
+  .toolbar paper-button:active {
     opacity: 0.4;
     background: rgba(0, 0, 0, 0.1);
   }
@@ -255,4 +256,4 @@ export default css`
   .toolbar-split {
     padding-right: 15px;
   }
-`
+`;

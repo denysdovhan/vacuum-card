@@ -1,3 +1,4 @@
+/*  eslint-env node */
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
@@ -21,7 +22,7 @@ export default {
   input: 'src/vacuum-card.js',
   output: {
     dir: 'dist',
-    format: 'es'
+    format: 'es',
   },
   plugins: [
     nodeResolve(),
@@ -32,5 +33,5 @@ export default {
     image(),
     IS_DEV && serve(serverOptions),
     !IS_DEV && terser(),
-  ]
-}
+  ],
+};
