@@ -11,9 +11,17 @@
     "format": "prettier --write .",
     "build": "npm run lint && npm run compile"
   },
-  "keywords": [],
+  "keywords": [
+    "home-assistant",
+    "homeassistant",
+    "hass",
+    "automation",
+    "lovelace",
+    "custom-cards",
+    "vacuum"
+  ],
   "author": "Denys Dovhan <denysdovhan@gmail.com> (http://denysdovhan.com/)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "custom-card-helpers": "^1.6.4",
     "lit-element": "^2.3.1"
