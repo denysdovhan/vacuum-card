@@ -22,8 +22,15 @@ class VacuumCard extends LitElement {
     return document.createElement('vacuum-card-editor');
   }
 
-  static getStubConfig() {
-    return {};
+  static getStubConfig(hass, entities) {
+    const [vacuumEntity] = entities.filter(
+      eid => eid.substr(0, eid.indexOf('.')) === 'vacuum'
+    );
+   
+    return {
+      entity: vacuumEntity,
+      image: 'default'
+    };
   }
 
   get entity() {
@@ -35,11 +42,19 @@ class VacuumCard extends LitElement {
   }
 
   get image() {
+    if (this.config.image === 'default') {
+      return defaultImage;
+    }
+
     return this.config.image || defaultImage;
   }
   
 
   setConfig(config) {
+    if (!config.entity) {
+      throw new Error('Specifying entity is required!');
+    }
+
     this.config = config;
   }
 
@@ -67,7 +82,12 @@ class VacuumCard extends LitElement {
   }
 
   handleMore() {
-    fireEvent(this, 'hass-more-info', {config: this.config})
+    fireEvent(this, 'hass-more-info', {
+      entityId: this.entity.entity_id
+    }, { 
+      bubbles: true,
+      composed: true
+    });
   }
 
   handleSpeed(e) {
@@ -323,5 +343,6 @@ window.customCards = window.customCards || [];
 window.customCards.push({
   type: "vacuum-card",
   name: "Vacuum Card",
-  description: "A card for displaying robot vacuum."
+  preview: true,
+  description: "Vacuum card allows you to control your robot vacuum."
 });
