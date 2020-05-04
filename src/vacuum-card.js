@@ -203,45 +203,45 @@ class VacuumCard extends LitElement {
       case 'cleaning': {
         return html`
           <div class="toolbar">
-            <paper-button @click='${(e) => this.callService('pause')}'>
+            <paper-button @click='${() => this.callService('pause')}'>
               <ha-icon icon="hass:pause" ></ha-icon>
               Pause
             </paper-button>
-            <paper-button @click='${(e) => this.callService('stop')}'>
+            <paper-button @click='${() => this.callService('stop')}'>
               <ha-icon icon="hass:stop" ></ha-icon>
               Stop
             </paper-button>
-            <paper-button @click='${(e) => this.callService('return_to_base')}'>
+            <paper-button @click='${() => this.callService('return_to_base')}'>
               <ha-icon icon="hass:home-map-marker" ></ha-icon>
               Dock
             </paper-button>
           </div>
         `;
-      };
+      }
 
       case 'paused': {
         return html`
           <div class="toolbar">
-            <paper-button @click='${(e) => this.callService('start')}'>
+            <paper-button @click='${() => this.callService('start')}'>
               <ha-icon icon="hass:play" ></ha-icon>
               Continue
             </paper-button>
-            <paper-button @click='${(e) => this.callService('return_to_base')}'>
+            <paper-button @click='${() => this.callService('return_to_base')}'>
               <ha-icon icon="hass:home-map-marker" ></ha-icon>
               Dock
             </paper-button>
           </div>
         `;
-      };
+      }
 
       case 'returning': {
         return html`
           <div class="toolbar">
-            <paper-button @click='${(e) => this.callService('start')}'>
+            <paper-button @click='${() => this.callService('start')}'>
               <ha-icon icon="hass:play" ></ha-icon>
               Continue
             </paper-button>
-            <paper-button @click='${(e) => this.callService('pause')}'>
+            <paper-button @click='${() => this.callService('pause')}'>
               <ha-icon icon="hass:pause" ></ha-icon>
               Pause
             </paper-button>
@@ -266,7 +266,7 @@ class VacuumCard extends LitElement {
             icon="hass:home-map-marker" 
             title="Dock"
             class="toolbar-icon"
-            @click='${(e) => this.callService('return_to_base')}'
+            @click='${() => this.callService('return_to_base')}'
           >
           </paper-icon-button>
         `;
@@ -277,7 +277,7 @@ class VacuumCard extends LitElement {
               icon="hass:play" 
               title="Clean"
               class="toolbar-icon"
-              @click='${(e) => this.callService('start')}'
+              @click='${() => this.callService('start')}'
             >
             </paper-icon-button>
             
@@ -285,7 +285,7 @@ class VacuumCard extends LitElement {
               icon="mdi:crosshairs-gps" 
               title="Locate vacuum"
               class="toolbar-split"
-              @click='${(e) => this.callService('locate')}'
+              @click='${() => this.callService('locate')}'
             >
             </paper-icon-button>
             
@@ -294,7 +294,7 @@ class VacuumCard extends LitElement {
             ${buttons}
           </div>
         `;
-      };
+      }
     }
   }
 
@@ -310,7 +310,7 @@ class VacuumCard extends LitElement {
 
     return html`
       <ha-card>
-        <div class="preview" @click='${(e) => this.handleMore()}' ?more-info=true>
+        <div class="preview" @click='${() => this.handleMore()}' ?more-info=true>
           <div class="header">
             <div class="status">
               <span class="status-text" alt=${status}>${status}</span>
