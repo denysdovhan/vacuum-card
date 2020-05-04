@@ -1,37 +1,29 @@
 {
-  "name": "roborock-vacuum-card",
-  "version": "1.0.0",
+  "name": "vacuum-card",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "rollup -c --watch",
     "compile": "rollup -c",
     "lint": "eslint src/*.ts",
-    "build": "npm run lint && npm run compile",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run lint && npm run compile"
   },
   "keywords": [],
   "author": "Denys Dovhan <denysdovhan@gmail.com> (http://denysdovhan.com/)",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-transform-react-jsx": "^7.9.4",
     "custom-card-helpers": "^1.6.4",
-    "lit-element": "^2.3.1",
-    "lit-html": "^1.2.1",
-    "preact": "^10.4.1",
-    "preact-custom-element": "^3.0.0",
-    "react": "^16.13.1",
-    "rollup": "^2.7.6",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-terser": "^5.3.0"
+    "lit-element": "^2.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-image": "^2.0.4",
-    "@rollup/plugin-node-resolve": "^7.1.3"
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "rollup": "^2.7.6",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-terser": "^5.3.0"
   }
 }
