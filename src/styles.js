@@ -219,10 +219,6 @@ export default css`
     cursor: pointer;
   }
 
-  .toolbar paper-icon-button:last-child {
-    margin-right: 0px;
-  }
-
   .toolbar paper-icon-button:active,
   .toolbar paper-button:active {
     opacity: 0.4;
