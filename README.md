@@ -3,6 +3,7 @@
 [![npm version][npm-image]][npm-url]
 [![hacs][hacs-image]][hacs-url]
 [![Patreon][patreon-image]][patreon-url]
+[![Twitter][twitter-image]][twitter-url]
 
 > Vacuum cleaner card for [Home Assistant][home-assistant] Lovelace UI
 
@@ -119,6 +120,8 @@ MIT © [Denys Dovhan][denysdovhan]
 [hacs-image]: https://img.shields.io/badge/hacs-default-orange.svg?style=flat-square
 [patreon-url]: https://patreon.com/denysdovhan
 [patreon-image]: https://img.shields.io/badge/support-patreon-F96854.svg?style=flat-square
+[twitter-url]: https://twitter.com/SpaceshipZSH
+[twitter-image]: https://img.shields.io/badge/twitter-%40denysdovhan-00ACEE.svg?style=flat-square
 
 <!-- References -->
 
