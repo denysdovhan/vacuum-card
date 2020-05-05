@@ -28,7 +28,7 @@ class VacuumCard extends LitElement {
     );
 
     return {
-      entity: vacuumEntity,
+      entity: vacuumEntity || '',
       image: 'default',
     };
   }
