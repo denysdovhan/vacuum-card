@@ -96,7 +96,7 @@ Here is what every option means:
 
 I've added some animations for this card to make it alive. Animations are applied only for `image` property. Here's how they look like:
 
-|              Celaning               |                Docking                |
+|              Cleaning               |                Docking                |
 | :---------------------------------: | :-----------------------------------: |
 | ![Cleaning anumation][cleaning-gif] | ![Returning anumation][returning-gif] |
 
