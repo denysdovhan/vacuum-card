@@ -19,6 +19,12 @@ By default, Home Assistant does not provide any card for controlling vacuum clea
   <img alt="Become a patron" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px">
 </a>
 
+or just buy me a cup of ☕️ or 🥤:
+
+<a href="https://www.buymeacoffee.com/denysdovhan" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" width="150px">
+</a>
+
 ### HACS
 
 [_Not available yet._](https://github.com/hacs/default/pull/399)
