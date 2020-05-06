@@ -99,6 +99,15 @@ I've added some animations for this card to make it alive. Animations are applie
 | :---------------------------------: | :-----------------------------------: |
 | ![Cleaning anumation][cleaning-gif] | ![Returning anumation][returning-gif] |
 
+## Supported models
+
+This card relies on basic vacuum services, like `pause`, `start`, `stop`, `return_to_base`, etc. It should work with any robot vacuum, however I can physically test it only with my own robot vacuum.
+
+If this card works with your vacuum cleaner, please open a PR and your model to the list.
+
+- Roborock S5 Max
+- [_Your vacuum?_][edit-readme]
+
 ## Development
 
 Want to contribute to the project?
