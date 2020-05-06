@@ -21,7 +21,7 @@ By default, Home Assistant does not provide any card for controlling vacuum clea
 
 ### HACS
 
-_Not available yet._
+[_Not available yet._](https://github.com/hacs/default/pull/399)
 
 ### Manual
 
