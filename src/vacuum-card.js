@@ -113,10 +113,48 @@ class VacuumCard extends LitElement {
     this.requestUpdate();
   }
 
-  renderSource() {
+  getAttributes(entity) {
     const {
-      attributes: { fan_speed: source, fan_speed_list: sources },
-    } = this.entity;
+      status,
+      fan_speed,
+      fan_speed_list,
+      battery_level,
+      battery_icon,
+
+      cleaned_area,
+      cleaning_time,
+      main_brush_left,
+      side_brush_left,
+      filter_left,
+      sensor_dirty_left,
+
+      cleanArea,
+      cleanTime,
+      mainBrush,
+      sideBrush,
+      filter,
+      sensor,
+    } = entity.attributes;
+
+    return {
+      status,
+      fan_speed,
+      fan_speed_list,
+      battery_level,
+      battery_icon,
+      cleaned_area: cleaned_area || cleanArea,
+      cleaning_time: cleaning_time || cleanTime,
+      main_brush_left: main_brush_left || mainBrush,
+      side_brush_left: side_brush_left || sideBrush,
+      filter_left: filter_left || filter,
+      sensor_dirty_left: sensor_dirty_left || sensor,
+    };
+  }
+
+  renderSource() {
+    const { fan_speed: source, fan_speed_list: sources } = this.getAttributes(
+      this.entity
+    );
 
     const selected = sources.indexOf(source);
 
@@ -160,15 +198,13 @@ class VacuumCard extends LitElement {
 
   renderStats(state) {
     const {
-      attributes: {
-        cleaned_area,
-        cleaning_time,
-        main_brush_left,
-        side_brush_left,
-        filter_left,
-        sensor_dirty_left,
-      },
-    } = this.entity;
+      cleaned_area,
+      cleaning_time,
+      main_brush_left,
+      side_brush_left,
+      filter_left,
+      sensor_dirty_left,
+    } = this.getAttributes(this.entity);
 
     switch (state) {
       case 'cleaning': {
@@ -314,10 +350,10 @@ class VacuumCard extends LitElement {
   }
 
   render() {
-    const {
-      state,
-      attributes: { status, battery_level, battery_icon },
-    } = this.entity;
+    const { state } = this.entity;
+    const { status, battery_level, battery_icon } = this.getAttributes(
+      this.entity
+    );
 
     return html`
       <ha-card>
