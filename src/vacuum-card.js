@@ -159,6 +159,10 @@ class VacuumCard extends LitElement {
       this.entity
     );
 
+    if (!sources) {
+      return html``;
+    }
+
     const selected = sources.indexOf(source);
 
     return html` <paper-menu-button
