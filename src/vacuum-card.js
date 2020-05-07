@@ -128,22 +128,25 @@ class VacuumCard extends LitElement {
       filter_left,
       sensor_dirty_left,
 
+      currentCleanTime,
+      currentCleanArea,
       cleanArea,
       cleanTime,
       mainBrush,
       sideBrush,
       filter,
       sensor,
+      valetudo_state,
     } = entity.attributes;
 
     return {
-      status,
+      status: status || valetudo_state['name'],
       fan_speed,
       fan_speed_list,
       battery_level,
       battery_icon,
-      cleaned_area: cleaned_area || cleanArea,
-      cleaning_time: cleaning_time || cleanTime,
+      cleaned_area: cleaned_area || currentCleanArea || cleanArea,
+      cleaning_time: cleaning_time || currentCleanTime || cleanTime,
       main_brush_left: main_brush_left || mainBrush,
       side_brush_left: side_brush_left || sideBrush,
       filter_left: filter_left || filter,
