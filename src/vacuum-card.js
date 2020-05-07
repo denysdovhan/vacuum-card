@@ -136,10 +136,11 @@ class VacuumCard extends LitElement {
       sideBrush,
       filter,
       sensor,
+      valetudo_state,
     } = entity.attributes;
 
     return {
-      status,
+      status: status || valetudo_state['name'],
       fan_speed,
       fan_speed_list,
       battery_level,
