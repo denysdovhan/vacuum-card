@@ -11,6 +11,7 @@ class VacuumCard extends LitElement {
       config: Object,
       mapUrl: String,
       requestInProgress: Boolean,
+      type: String,
     };
   }
 
@@ -104,6 +105,31 @@ class VacuumCard extends LitElement {
     this.callService('set_fan_speed', { fan_speed });
   }
 
+  getStatusValues() {
+    this.type =
+      typeof this.entity.attributes.valetudo_state === 'undefined'
+        ? 'r5_max'
+        : 'valetudo';
+    switch (this.type) {
+      case 'valetudo': {
+        return {
+          attributes: {
+            cleaned_area: this.entity.attributes.cleanArea,
+            cleaning_time: this.entity.attributes.cleanTime,
+            main_brush_left: this.entity.attributes.mainBrush,
+            side_brush_left: this.entity.attributes.sideBrush,
+            filter_left: this.entity.attributes.filter,
+            sensor_dirty_left: this.entity.attributes.sensor,
+          },
+        };
+      }
+      case 'r5_max':
+      default: {
+        return this.entity;
+      }
+    }
+  }
+
   callService(service, options = {}) {
     this.hass.callService('vacuum', service, {
       entity_id: this.config.entity,
@@ -168,7 +194,7 @@ class VacuumCard extends LitElement {
         filter_left,
         sensor_dirty_left,
       },
-    } = this.entity;
+    } = this.getStatusValues();
 
     switch (state) {
       case 'cleaning': {
