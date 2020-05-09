@@ -28,7 +28,9 @@ or just buy me a cup of ☕️ or 🥤:
 
 ### HACS
 
-[_Not available yet._](https://github.com/hacs/default/pull/399)
+This card is available in [HACS][hacs] (Home Assistant Community Store).
+
+Just search for `Vacuum Card` in plugins tab.
 
 ### Manual
 
@@ -145,6 +147,7 @@ MIT © [Denys Dovhan][denysdovhan]
 <!-- References -->
 
 [home-assistant]: https://www.home-assistant.io/
+[hacs]: https://hacs.xyz
 [preview-image]: https://user-images.githubusercontent.com/3459374/81113159-71448080-8f28-11ea-8b66-ebc2d26164a7.png
 [cleaning-gif]: https://user-images.githubusercontent.com/3459374/81119202-fa60b500-8f32-11ea-9b23-325efa93d7ab.gif
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
