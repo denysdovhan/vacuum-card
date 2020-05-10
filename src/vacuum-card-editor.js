@@ -43,6 +43,14 @@ export class VacuumCardEditor extends LitElement {
     return '';
   }
 
+  get _show_name() {
+    if (this._config) {
+      return this._config.show_name || '';
+    }
+
+    return '';
+  }
+
   getEntitiesByType(type) {
     return Object.keys(this.hass.states).filter(
       (eid) => eid.substr(0, eid.indexOf('.')) === type
@@ -96,8 +104,20 @@ export class VacuumCardEditor extends LitElement {
           @value-changed=${this._valueChanged}
         ></paper-input>
 
+        <ha-switch
+          aria-label=${`Toggle display name ${this._show_name ? 'off' : 'on'}`}
+          .checked=${this._show_name !== false}
+          .configValue=${'show_name'}
+          @change=${this._valueChanged}
+        >
+          Show Name?
+        </ha-switch>
+
         <p>
-          Note: Setting actions are available exclusively using Code Editor.
+          <strong
+            >Note: Setting actions are available exclusively using Code
+            Editor.</strong
+          >
         </p>
       </div>
     `;

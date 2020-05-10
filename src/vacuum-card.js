@@ -49,11 +49,18 @@ class VacuumCard extends LitElement {
     return this.config.image || defaultImage;
   }
 
+  get showName() {
+    if (this.config.show_name === undefined) {
+      return true;
+    }
+
+    return this.config.show_name;
+  }
+
   setConfig(config) {
     if (!config.entity) {
       throw new Error('Specifying entity is required!');
     }
-
     this.config = config;
   }
 
@@ -120,6 +127,7 @@ class VacuumCard extends LitElement {
       fan_speed_list,
       battery_level,
       battery_icon,
+      friendly_name,
 
       cleaned_area,
       cleaning_time,
@@ -147,6 +155,7 @@ class VacuumCard extends LitElement {
       fan_speed_list,
       battery_level,
       battery_icon,
+      friendly_name,
       cleaned_area: cleaned_area || currentCleanArea || cleanArea,
       cleaning_time: cleaning_time || currentCleanTime || cleanTime,
       main_brush_left: main_brush_left || mainBrush,
@@ -252,6 +261,20 @@ class VacuumCard extends LitElement {
         `;
       }
     }
+  }
+
+  renderName() {
+    const { friendly_name } = this.getAttributes(this.entity);
+
+    if (!this.showName) {
+      return html``;
+    }
+
+    return html`
+      <div class="vacuum-name">
+        ${friendly_name}
+      </div>
+    `;
   }
 
   renderToolbar(state) {
@@ -384,7 +407,7 @@ class VacuumCard extends LitElement {
             </div>
           </div>
 
-          ${this.renderMapOrImage(state)}
+          ${this.renderMapOrImage(state)} ${this.renderName()}
 
           <div class="stats">
             ${this.renderStats(state)}

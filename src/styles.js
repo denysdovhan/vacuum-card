@@ -158,6 +158,14 @@ export default css`
     margin-left: 9px;
   }
 
+  .vacuum-name {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px auto;
+    color: var(--text-primary-color);
+    font-size: 16px;
+  }
+
   .stats {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
