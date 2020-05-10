@@ -344,10 +344,10 @@ class VacuumCard extends LitElement {
       default: {
         const { actions = [] } = this.config;
 
-        const buttons = actions.map(({ name, service, icon }) => {
+        const buttons = actions.map(({ name, service, icon, service_data }) => {
           const execute = () => {
-            const args = service.split('.');
-            this.hass.callService(args[0], args[1]);
+            const [domain, name] = service.split('.');
+            this.hass.callService(domain, name, service_data);
           };
           return html`<paper-icon-button
             icon="${icon}"

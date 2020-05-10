@@ -90,11 +90,12 @@ Here is what every option means:
 
 ### `actions` object
 
-| Name      |   Type   | Default  | Description                                        |
-| --------- | :------: | -------- | -------------------------------------------------- |
-| `name`    | `string` | Optional | Friendly name of the action, i.e. `Clean bedroom`. |
-| `service` | `string` | Optional | A service to call, i.e. `script.clean_bedroom`.    |
-| `icon`    | `string` | Optional | Any icon for action button.                        |
+| Name           |   Type   | Default                           | Description                                        |
+| -------------- | :------: | --------------------------------- | -------------------------------------------------- |
+| `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`. |
+| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
+| `icon`         | `string` | Optional                          | Any icon for action button.                        |
+| `service_data` | `object` | `service_data` for `service` call |
 
 ## Animations
 
