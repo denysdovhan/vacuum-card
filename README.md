@@ -111,6 +111,7 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
 - Roborock S6
+- Roborock S5
 - Roborock S5 Max
 - Xiaomi Mi Robot Vacuum (STYJ02YM)
 - Roomba 675
