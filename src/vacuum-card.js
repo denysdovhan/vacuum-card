@@ -57,6 +57,14 @@ class VacuumCard extends LitElement {
     return this.config.show_name;
   }
 
+  get showToolbar() {
+    if (this.config.show_toolbar === undefined) {
+      return true;
+    }
+
+    return this.config.show_toolbar;
+  }
+
   setConfig(config) {
     if (!config.entity) {
       throw new Error('Specifying entity is required!');
@@ -278,6 +286,10 @@ class VacuumCard extends LitElement {
   }
 
   renderToolbar(state) {
+    if (!this.showToolbar) {
+      return html``;
+    }
+
     switch (state) {
       case 'cleaning': {
         return html`

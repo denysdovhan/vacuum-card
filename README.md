@@ -78,14 +78,15 @@ actions:
 
 Here is what every option means:
 
-| Name        |   Type    | Default      | Description                                                             |
-| ----------- | :-------: | ------------ | ----------------------------------------------------------------------- |
-| `type`      | `string`  | **Required** | `custom:vacuum-card`                                                    |
-| `entity`    | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
-| `map`       | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
-| `image`     | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
-| `show_name` | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
-| `actions`   | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
+| Name           |   Type    | Default      | Description                                                             |
+| -------------- | :-------: | ------------ | ----------------------------------------------------------------------- |
+| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                    |
+| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
+| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
+| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
+| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
+| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
+| `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
 
 ### `actions` object
 
