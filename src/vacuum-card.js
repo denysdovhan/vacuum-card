@@ -224,8 +224,8 @@ class VacuumCard extends LitElement {
 
   renderStats(state) {
     const {
-      cleaned_area,
-      cleaning_time,
+      cleaned_area = 0,
+      cleaning_time = 0,
       main_brush_left,
       side_brush_left,
       filter_left,
