@@ -43,6 +43,22 @@ export class VacuumCardEditor extends LitElement {
     return '';
   }
 
+  get _show_name() {
+    if (this._config) {
+      return this._config.show_name || '';
+    }
+
+    return '';
+  }
+
+  get _show_toolbar() {
+    if (this._config) {
+      return this._config.show_toolbar || '';
+    }
+
+    return '';
+  }
+
   getEntitiesByType(type) {
     return Object.keys(this.hass.states).filter(
       (eid) => eid.substr(0, eid.indexOf('.')) === type
@@ -96,9 +112,31 @@ export class VacuumCardEditor extends LitElement {
           @value-changed=${this._valueChanged}
         ></paper-input>
 
-        <p>
+        <ha-switch
+          style="margin: 10px auto;"
+          aria-label=${`Toggle display name ${this._show_name ? 'off' : 'on'}`}
+          .checked=${this._show_name !== false}
+          .configValue=${'show_name'}
+          @change=${this._valueChanged}
+        >
+          Show Name?
+        </ha-switch>
+
+        <ha-switch
+          style="margin: 10px auto;"
+          aria-label=${`Toggle display toolbar ${
+            this._show_toolbar ? 'off' : 'on'
+          }`}
+          .checked=${this._show_toolbar !== false}
+          .configValue=${'show_toolbar'}
+          @change=${this._valueChanged}
+        >
+          Show Toolbar?
+        </ha-switch>
+
+        <strong>
           Note: Setting actions are available exclusively using Code Editor.
-        </p>
+        </strong>
       </div>
     `;
   }

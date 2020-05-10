@@ -78,13 +78,15 @@ actions:
 
 Here is what every option means:
 
-| Name      |   Type   | Default      | Description                                                             |
-| --------- | :------: | ------------ | ----------------------------------------------------------------------- |
-| `type`    | `string` | **Required** | `custom:vacuum-card`                                                    |
-| `entity`  | `string` | **Required** | An entity_id within the `vacuum` domain.                                |
-| `map`     | `string` | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
-| `image`   | `string` | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
-| `actions` | `object` | Optional     | Custom actions for your vacuum cleaner.                                 |
+| Name           |   Type    | Default      | Description                                                             |
+| -------------- | :-------: | ------------ | ----------------------------------------------------------------------- |
+| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                    |
+| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
+| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
+| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
+| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
+| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
+| `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
 
 ### `actions` object
 
@@ -108,10 +110,12 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
+- Roborock S6
 - Roborock S5 Max
 - Xiaomi Mi Robot Vacuum (STYJ02YM)
 - Roomba 675
-- Dyson 360 eye
+- Dyson 360 Eye (brush and filter hours are not supported)
+- Neato D7
 - [_Your vacuum?_][edit-readme]
 
 ## Development
