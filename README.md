@@ -113,6 +113,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roborock S5 Max
 - Xiaomi Mi Robot Vacuum (STYJ02YM)
 - Roomba 675
+- Neato D7
 - [_Your vacuum?_][edit-readme]
 
 ## Development
