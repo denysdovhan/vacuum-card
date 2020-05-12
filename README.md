@@ -107,7 +107,7 @@ Here is what every option means:
 | `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
 | `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
 | `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
-| `stats`        | `object`  | Optional     | Custom per state stats for your bacuum cleaner                          |
+| `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
 | `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
 
 ### `stats` object
@@ -116,7 +116,7 @@ Here is what every option means:
 | ----------- | :------: | -------- | ----------------------------------------------- |
 | `attribute` | `string` | Optional | Attribute name of the stat, i.e. `filter_left`. |
 | `unit`      | `string` | Optional | Unit of measure, i.e. `hours`.                  |
-| `subtitle`  | `string` | Optional | Firendly name of the stat, i.e. `Filter`.       |
+| `subtitle`  | `string` | Optional | Friendly name of the stat, i.e. `Filter`.       |
 
 ### `actions` object
 
