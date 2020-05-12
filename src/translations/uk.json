@@ -1,0 +1,27 @@
+{
+  "common": {
+    "name": "Пилосос",
+    "description": "Картка \"пилосос\" дозволяє керувати роботом-пилососом.",
+    "start": "Clean",
+    "continue": "Продовжити",
+    "pause": "Пауза",
+    "stop": "Стоп",
+    "return_to_base": "На базу",
+    "locate": "Знайти"
+  },
+  "error": {
+    "missing_entity": "Об’єкт є обов’язковим полем!"
+  },
+  "editor": {
+    "entity": "Об’єкт (Required)",
+    "map": "Камера для карти (Додатково)",
+    "image": "Зображення (Додатково)",
+    "show_name": "Показати ім’я?",
+    "show_name_aria_label_on": "Показати ім’я",
+    "show_name_aria_label_off": "Приховати ім’я",
+    "show_toolbar": "Показати панель дій?",
+    "show_toolbar_aria_label_on": "Показати панель дій",
+    "show_toolbar_aria_label_off": "Приховати панель дій",
+    "code_only_note": "Увага: Опції actions та stats доступні виключно через редактор коду."
+  }
+}
