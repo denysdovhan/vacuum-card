@@ -354,7 +354,9 @@ class VacuumCard extends LitElement {
         >
           <div class="header">
             <div class="status">
-              <span class="status-text" alt=${status}>${status}</span>
+              <span class="status-text" alt=${localize(`status.${status}`)}>
+                ${localize(`status.${status}`)}
+              </span>
               <paper-spinner ?active=${this.requestInProgress}></paper-spinner>
             </div>
             <div class="source">

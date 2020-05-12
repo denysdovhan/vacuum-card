@@ -1,4 +1,11 @@
 {
+  "status": {
+    "Cleaning": "Cleaning",
+    "Paused": "Paused",
+    "Idle": "Idle",
+    "Charging": "Charging",
+    "Returning home": "Returning home"
+  },
   "common": {
     "name": "Vacuum Card",
     "description": "Vacuum card allows you to control your robot vacuum.",
