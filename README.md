@@ -57,7 +57,7 @@ This card can be configured using Lovelace UI editor.
 5. Choose `entity`.
 6. Now you should see the preview of the card!
 
-_Sorry, no support for `actions` in visual config yet._
+_Sorry, no support for `actions` and `stats` in visual config yet._
 
 Typical example of using this card in YAML config would look like this:
 
@@ -135,6 +135,14 @@ I've added some animations for this card to make it alive. Animations are applie
 | :---------------------------------: | :-----------------------------------: |
 | ![Cleaning anumation][cleaning-gif] | ![Returning anumation][returning-gif] |
 
+## Supported languages
+
+This card supports translations. Please, help to add more translations and improve existing ones. Here's a list of supported languages:
+
+- English
+- Українська (Ukrainian)
+- [_Your language?_][add-translation]
+
 ## Supported models
 
 This card relies on basic vacuum services, like `pause`, `start`, `stop`, `return_to_base`, etc. It should work with any robot vacuum, however I can physically test it only with my own robot vacuum.
@@ -145,11 +153,11 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roborock S5
 - Roborock S5 Max
 - Roborock S4
-- Xiaomi Mi Robot Vacuum (STYJ02YM)
+- Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
 - Roomba 675
-- Roomba 960 (brush and filter hours are not supported)
-- Dyson 360 Eye (brush and filter hours are not supported)
+- Roomba 960
+- Dyson 360 Eye
 - Neato D7
 - [_Your vacuum?_][edit-readme]
 
@@ -194,6 +202,7 @@ MIT © [Denys Dovhan][denysdovhan]
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest
 [edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/master/README.md
+[add-translation]: https://github.com/denysdovhan/vacuum-card/tree/master/src/translations
 [macbury-smart-house]: https://macbury.github.io/SmartHouse/HomeAssistant/Vacuum/
 [bbbenji-card]: https://gist.github.com/bbbenji/24372e423f8669b2e6713638d8f8ceb2
 [denysdovhan]: https://denysdovhan.com
