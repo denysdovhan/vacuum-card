@@ -161,7 +161,7 @@ export default css`
   .vacuum-name {
     text-align: center;
     font-weight: bold;
-    margin: 20px auto;
+    margin: 10px auto 20px;
     color: var(--text-primary-color);
     font-size: 16px;
   }

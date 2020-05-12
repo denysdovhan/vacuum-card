@@ -66,6 +66,14 @@ class VacuumCard extends LitElement {
     return this.config.show_toolbar;
   }
 
+  get compactView() {
+    if (this.config.compact_view === undefined) {
+      return false;
+    }
+
+    return this.config.compact_view;
+  }
+
   setConfig(config) {
     if (!config.entity) {
       throw new Error(localize('error.missing_entity'));
@@ -190,6 +198,10 @@ class VacuumCard extends LitElement {
   }
 
   renderMapOrImage(state) {
+    if (this.compactView) {
+      return html``;
+    }
+
     if (this.map) {
       return html` <img class="map" src="${this.mapUrl}" /> `;
     }

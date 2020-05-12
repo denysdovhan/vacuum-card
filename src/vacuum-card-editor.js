@@ -46,7 +46,7 @@ export class VacuumCardEditor extends LitElement {
 
   get _show_name() {
     if (this._config) {
-      return this._config.show_name || '';
+      return this._config.show_name || true;
     }
 
     return '';
@@ -54,10 +54,18 @@ export class VacuumCardEditor extends LitElement {
 
   get _show_toolbar() {
     if (this._config) {
-      return this._config.show_toolbar || '';
+      return this._config.show_toolbar || true;
     }
 
-    return '';
+    return true;
+  }
+
+  get _compact_view() {
+    if (this._config) {
+      return this._config.compact_view || false;
+    }
+
+    return false;
   }
 
   getEntitiesByType(type) {
@@ -112,6 +120,20 @@ export class VacuumCardEditor extends LitElement {
           .configValue=${'image'}
           @value-changed=${this._valueChanged}
         ></paper-input>
+
+        <ha-switch
+          style="margin: 10px auto;"
+          aria-label=${localize(
+            this._compact_view
+              ? 'editor.compact_view_aria_label_off'
+              : 'editor.compact_view_aria_label_on'
+          )}
+          .checked=${this._compact_view !== false}
+          .configValue=${'compact_view'}
+          @change=${this._valueChanged}
+        >
+          ${localize('editor.compact_view')}
+        </ha-switch>
 
         <ha-switch
           style="margin: 10px auto;"
