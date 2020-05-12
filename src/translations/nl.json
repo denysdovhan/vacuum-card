@@ -1,0 +1,34 @@
+{
+  "status": {
+    "Cleaning": "Aan het schoonmaken",
+    "Paused": "Gepauzeerd",
+    "Idle": "Inactief",
+    "Charging": "Aan het opladen",
+    "Returning home": "Keert terug naar dock"
+  },
+  "common": {
+    "name": "Stofzuiger kaart",
+    "description": "Stofzuiger kaart maakt het makkelijk om je robotstofzuiger te bedienen.",
+    "start": "Start",
+    "continue": "Doorgaan",
+    "pause": "Pauze",
+    "stop": "Stop",
+    "return_to_base": "Terugkeren",
+    "locate": "Zoek stofzuiger"
+  },
+  "error": {
+    "missing_entity": "Het specificeren van een entiteit is verplicht!"
+  },
+  "editor": {
+    "entity": "Entiteit (Verplicht)",
+    "map": "Kaart Camera (Optioneel)",
+    "image": "Afbeelding (Optioneel)",
+    "show_name": "Naam laten zien?",
+    "show_name_aria_label_on": "Zet weergavenaam aan",
+    "show_name_aria_label_off": "Zet weergavenaam uit",
+    "show_toolbar": "Werkbalk laten zien?",
+    "show_toolbar_aria_label_on": "Zet werkbalk aan",
+    "show_toolbar_aria_label_off": "Zet werkbalk uit",
+    "code_only_note": "Notitie: Instel acties en status opties zijn alleen beschikbaar in de Code Editor"
+  }
+}
