@@ -31,7 +31,7 @@ export default function localize(string, search, replace) {
   }
 
   if (tranlated === undefined) {
-    tranlated = string;
+    return;
   }
 
   if (search !== '' && replace !== '') {

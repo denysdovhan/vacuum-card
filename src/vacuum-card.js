@@ -344,6 +344,7 @@ class VacuumCard extends LitElement {
     const { status, battery_level, battery_icon } = this.getAttributes(
       this.entity
     );
+    const localizedStatus = localize(`status.${status}`) || status;
 
     return html`
       <ha-card>
@@ -354,8 +355,8 @@ class VacuumCard extends LitElement {
         >
           <div class="header">
             <div class="status">
-              <span class="status-text" alt=${localize(`status.${status}`)}>
-                ${localize(`status.${status}`)}
+              <span class="status-text" alt=${localizedStatus}>
+                ${localizedStatus}
               </span>
               <paper-spinner ?active=${this.requestInProgress}></paper-spinner>
             </div>
