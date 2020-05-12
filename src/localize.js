@@ -1,0 +1,42 @@
+// Borrowed from:
+// https://github.com/custom-cards/boilerplate-card/blob/master/src/localize/localize.ts
+
+import * as en from './translations/en.json';
+import * as uk from './translations/uk.json';
+
+var languages = {
+  en,
+  uk,
+};
+
+const DEFAULT_LANG = 'en';
+
+export default function localize(string, search, replace) {
+  const [section, key] = string.split('.');
+
+  const lang = (localStorage.getItem('selectedLanguage') || DEFAULT_LANG)
+    .replace(/['"]+/g, '')
+    .replace('-', '_');
+
+  let tranlated;
+
+  try {
+    tranlated = languages[lang][section][key];
+  } catch (e) {
+    tranlated = languages[DEFAULT_LANG][section][key];
+  }
+
+  if (tranlated === undefined) {
+    tranlated = languages[DEFAULT_LANG][section][key];
+  }
+
+  if (tranlated === undefined) {
+    tranlated = string;
+  }
+
+  if (search !== '' && replace !== '') {
+    tranlated = tranlated.replace(search, replace);
+  }
+
+  return tranlated;
+}

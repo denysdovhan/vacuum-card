@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { fireEvent } from 'custom-card-helpers';
+import localize from './localize';
 
 export class VacuumCardEditor extends LitElement {
   static get properties() {
@@ -76,7 +77,7 @@ export class VacuumCardEditor extends LitElement {
     return html`
       <div class="card-config">
         <paper-dropdown-menu
-          label="Entity (Required)"
+          label="${localize('editor.entity')}"
           @value-changed=${this._valueChanged}
           .configValue=${'entity'}
         >
@@ -91,7 +92,7 @@ export class VacuumCardEditor extends LitElement {
         </paper-dropdown-menu>
 
         <paper-dropdown-menu
-          label="Map Camera (Optional)"
+          label="${localize('editor.entity')}"
           @value-changed=${this._valueChanged}
           .configValue=${'map'}
         >
@@ -106,7 +107,7 @@ export class VacuumCardEditor extends LitElement {
         </paper-dropdown-menu>
 
         <paper-input
-          label="Image (Optional)"
+          label="${localize('editor.image')}"
           .value=${this._image}
           .configValue=${'image'}
           @value-changed=${this._valueChanged}
@@ -114,28 +115,34 @@ export class VacuumCardEditor extends LitElement {
 
         <ha-switch
           style="margin: 10px auto;"
-          aria-label=${`Toggle display name ${this._show_name ? 'off' : 'on'}`}
+          aria-label=${localize(
+            this._show_name
+              ? 'editor.show_name_aria_label_off'
+              : 'editor.show_name_aria_label_on'
+          )}
           .checked=${this._show_name !== false}
           .configValue=${'show_name'}
           @change=${this._valueChanged}
         >
-          Show Name?
+          ${localize('editor.show_name')}
         </ha-switch>
 
         <ha-switch
           style="margin: 10px auto;"
-          aria-label=${`Toggle display toolbar ${
-            this._show_toolbar ? 'off' : 'on'
-          }`}
+          aria-label=${localize(
+            this._show_name
+              ? 'editor.show_toolbar_aria_label_off'
+              : 'editor.show_toolbar_aria_label_on'
+          )}
           .checked=${this._show_toolbar !== false}
           .configValue=${'show_toolbar'}
           @change=${this._valueChanged}
         >
-          Show Toolbar?
+          ${localize('editor.show_toolbar')}
         </ha-switch>
 
         <strong>
-          Note: Setting actions are available exclusively using Code Editor.
+          ${localize('editor.code_only_note')}
         </strong>
       </div>
     `;

@@ -1,0 +1,27 @@
+{
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card allows you to control your robot vacuum.",
+    "start": "Clean",
+    "continue": "Continue",
+    "pause": "Pause",
+    "stop": "Stop",
+    "return_to_base": "Dock",
+    "locate": "Locate vacuum"
+  },
+  "error": {
+    "missing_entity": "Specifying entity is required!"
+  },
+  "editor": {
+    "entity": "Entity (Required)",
+    "map": "Map Camera (Optional)",
+    "image": "Image (Optional)",
+    "show_name": "Show Name?",
+    "show_name_aria_label_on": "Toggle display name on",
+    "show_name_aria_label_off": "Toggle display name off",
+    "show_toolbar": "Show Toolbar?",
+    "show_toolbar_aria_label_on": "Toggle display toolbar on",
+    "show_toolbar_aria_label_off": "Toggle display toolbar off",
+    "code_only_note": "Note: Setting actions and stats options are available exclusively using Code Editor."
+  }
+}

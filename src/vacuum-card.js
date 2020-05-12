@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit-element';
 import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
 import './vacuum-card-editor';
+import localize from './localize';
 import styles from './styles';
 import defaultImage from './vacuum.png';
 
@@ -67,7 +68,7 @@ class VacuumCard extends LitElement {
 
   setConfig(config) {
     if (!config.entity) {
-      throw new Error('Specifying entity is required!');
+      throw new Error(localize('error.missing_entity'));
     }
     this.config = config;
   }
@@ -136,22 +137,6 @@ class VacuumCard extends LitElement {
       battery_level,
       battery_icon,
       friendly_name,
-
-      cleaned_area,
-      cleaning_time,
-      main_brush_left,
-      side_brush_left,
-      filter_left,
-      sensor_dirty_left,
-
-      currentCleanTime,
-      currentCleanArea,
-      cleanArea,
-      cleanTime,
-      mainBrush,
-      sideBrush,
-      filter,
-      sensor,
       valetudo_state,
     } = entity.attributes;
 
@@ -164,12 +149,6 @@ class VacuumCard extends LitElement {
       battery_level,
       battery_icon,
       friendly_name,
-      cleaned_area: cleaned_area || currentCleanArea || cleanArea,
-      cleaning_time: cleaning_time || currentCleanTime || cleanTime,
-      main_brush_left: main_brush_left || mainBrush,
-      side_brush_left: side_brush_left || sideBrush,
-      filter_left: filter_left || filter,
-      sensor_dirty_left: sensor_dirty_left || sensor,
     };
   }
 
@@ -263,15 +242,15 @@ class VacuumCard extends LitElement {
           <div class="toolbar">
             <paper-button @click="${() => this.callService('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
-              Pause
+              ${localize('common.pause')}
             </paper-button>
             <paper-button @click="${() => this.callService('stop')}">
               <ha-icon icon="hass:stop"></ha-icon>
-              Stop
+              ${localize('common.stop')}
             </paper-button>
             <paper-button @click="${() => this.callService('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
-              Dock
+              ${localize('common.return_to_base')}
             </paper-button>
           </div>
         `;
@@ -282,11 +261,11 @@ class VacuumCard extends LitElement {
           <div class="toolbar">
             <paper-button @click="${() => this.callService('start')}">
               <ha-icon icon="hass:play"></ha-icon>
-              Continue
+              ${localize('common.continue')}
             </paper-button>
             <paper-button @click="${() => this.callService('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
-              Dock
+              ${localize('common.return_to_base')}
             </paper-button>
           </div>
         `;
@@ -297,11 +276,11 @@ class VacuumCard extends LitElement {
           <div class="toolbar">
             <paper-button @click="${() => this.callService('start')}">
               <ha-icon icon="hass:play"></ha-icon>
-              Continue
+              ${localize('common.continue')}
             </paper-button>
             <paper-button @click="${() => this.callService('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
-              Pause
+              ${localize('common.pause')}
             </paper-button>
           </div>
         `;
@@ -326,7 +305,7 @@ class VacuumCard extends LitElement {
         const dockButton = html`
           <paper-icon-button
             icon="hass:home-map-marker"
-            title="Dock"
+            title="${localize('common.return_to_base')}"
             class="toolbar-icon"
             @click="${() => this.callService('return_to_base')}"
           >
@@ -337,7 +316,7 @@ class VacuumCard extends LitElement {
           <div class="toolbar">
             <paper-icon-button
               icon="hass:play"
-              title="Clean"
+              title="${localize('common.start')}"
               class="toolbar-icon"
               @click="${() => this.callService('start')}"
             >
@@ -345,7 +324,7 @@ class VacuumCard extends LitElement {
 
             <paper-icon-button
               icon="mdi:crosshairs-gps"
-              title="Locate vacuum"
+              title="${localize('common.locate')}"
               class="toolbar-split"
               @click="${() => this.callService('locate')}"
             >
@@ -403,8 +382,8 @@ customElements.define('vacuum-card', VacuumCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: 'vacuum-card',
-  name: 'Vacuum Card',
   preview: true,
-  description: 'Vacuum card allows you to control your robot vacuum.',
+  type: 'vacuum-card',
+  name: localize('common.name'),
+  description: localize('common.description'),
 });
