@@ -228,11 +228,13 @@ class VacuumCard extends LitElement {
     const statsList = stats[state] || stats.default || [];
 
     return statsList.map(({ attribute, unit, subtitle }) => {
-      return html` <div class="stats-block">
-        <span class="stats-hours">${this.entity.attributes[attribute]}</span>
-        ${unit}
-        <div class="stats-subtitle">${subtitle}</div>
-      </div>`;
+      return html`
+        <div class="stats-block">
+          <span class="stats-hours">${this.entity.attributes[attribute]}</span>
+          ${unit}
+          <div class="stats-subtitle">${subtitle}</div>
+        </div>
+      `;
     });
   }
 
