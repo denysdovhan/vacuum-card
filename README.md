@@ -64,6 +64,27 @@ Typical example of using this card in YAML config would look like this:
 ```yaml
 type: 'custom:vacuum-card'
 entity: vacuum.vacuum_cleaner
+stats:
+  default:
+    - attribute: filter_left
+      unit: hours
+      subtitle: Filter
+    - attribute: side_brush_left
+      unit: hours
+      subtitle: Side brush
+    - attribute: main_brush_left
+      unit: hours
+      subtitle: Main brush
+    - attribute: sensor_dirty_left
+      unit: hours
+      subtitle: Sensors
+  cleaning:
+    - attribute: cleaned_area
+      unit: m2
+      subtitle: Cleaning area
+    - attribute: cleaning_time
+      unit: minutes
+      subtitle: Cleaning time
 actions:
   - name: Clean living room
     service: script.clean_living_room
@@ -86,7 +107,16 @@ Here is what every option means:
 | `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
 | `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
 | `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
+| `stats`        | `object`  | Optional     | Custom per state stats for your bacuum cleaner                          |
 | `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
+
+### `stats` object
+
+| Name        |   Type   | Default  | Description                                     |
+| ----------- | :------: | -------- | ----------------------------------------------- |
+| `attribute` | `string` | Optional | Attribute name of the stat, i.e. `filter_left`. |
+| `unit`      | `string` | Optional | Unit of measure, i.e. `hours`.                  |
+| `subtitle`  | `string` | Optional | Firendly name of the stat, i.e. `Filter`.       |
 
 ### `actions` object
 

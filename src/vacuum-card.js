@@ -223,52 +223,19 @@ class VacuumCard extends LitElement {
   }
 
   renderStats(state) {
-    const {
-      cleaned_area = 0,
-      cleaning_time = 0,
-      main_brush_left,
-      side_brush_left,
-      filter_left,
-      sensor_dirty_left,
-    } = this.getAttributes(this.entity);
+    const { stats = {} } = this.config;
 
-    switch (state) {
-      case 'cleaning': {
-        return html`
-          <div class="stats-block">
-            <span class="stats-hours">${cleaned_area}</span> m<sup>2</sup>
-            <div class="stats-subtitle">Cleaning area</div>
-          </div>
-          <div class="stats-block">
-            <span class="stats-hours">${cleaning_time}</span> minutes
-            <div class="stats-subtitle">Cleaning time</div>
-          </div>
-        `;
-      }
+    const statsList = stats[state] || stats.default || [];
 
-      case 'docked':
-      default: {
-        return html`
-          <div class="stats-block">
-            <span class="stats-hours">${filter_left}</span> <sup>hours</sup>
-            <div class="stats-subtitle">Filter</div>
-          </div>
-          <div class="stats-block">
-            <span class="stats-hours">${side_brush_left}</span> <sup>hours</sup>
-            <div class="stats-subtitle">Side brush</div>
-          </div>
-          <div class="stats-block">
-            <span class="stats-hours">${main_brush_left}</span> <sup>hours</sup>
-            <div class="stats-subtitle">Main brush</div>
-          </div>
-          <div class="stats-block">
-            <span class="stats-hours">${sensor_dirty_left}</span>
-            <sup>hours</sup>
-            <div class="stats-subtitle">Sensors</div>
-          </div>
-        `;
-      }
-    }
+    return statsList.map(({ attribute, unit, subtitle }) => {
+      return html`
+        <div class="stats-block">
+          <span class="stats-hours">${this.entity.attributes[attribute]}</span>
+          ${unit}
+          <div class="stats-subtitle">${subtitle}</div>
+        </div>
+      `;
+    });
   }
 
   renderName() {
