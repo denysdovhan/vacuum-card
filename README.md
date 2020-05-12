@@ -83,8 +83,8 @@ stats:
       unit: m2
       subtitle: Cleaning area
     - attribute: cleaning_time
-      unit: hours
-      subtitle: minutes
+      unit: minutes
+      subtitle: Cleaning time
 actions:
   - name: Clean living room
     service: script.clean_living_room
