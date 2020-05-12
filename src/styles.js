@@ -17,7 +17,7 @@ export default css`
   }
 
   .preview {
-    background: var(--primary-color);
+    background: var(--paper-card-background-color);
     cursor: pointer;
     overflow: hidden;
     position: relative;
@@ -203,7 +203,7 @@ export default css`
   }
 
   .toolbar paper-icon-button {
-    color: var(--primary-color);
+    color: var(--paper-item-icon-color);
     flex-direction: column;
     width: 44px;
     height: 44px;
@@ -220,7 +220,7 @@ export default css`
   }
 
   .toolbar paper-button {
-    color: var(--primary-color);
+    color: var(--paper-item-icon-color);
     flex-direction: column;
     margin-right: 10px;
     padding: 15px 10px;
@@ -234,12 +234,12 @@ export default css`
   }
 
   .toolbar paper-button {
-    color: var(--primary-color);
+    color: var(--paper-item-icon-color);
     flex-direction: row;
   }
 
   .toolbar ha-icon {
-    color: var(--primary-color);
+    color: var(--paper-item-icon-color);
     padding-right: 15px;
   }
 
