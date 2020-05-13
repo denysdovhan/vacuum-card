@@ -21,7 +21,7 @@
   },
   "editor": {
     "entity": "Entité (Requis)",
-    "map": "Map Camera (Optional)",
+    "map": "Map Camera (Optionel)",
     "image": "Image (Optionelle)",
     "compact_view": "Vue compacte",
     "compact_view_aria_label_on": "Activer la vue compacte",
@@ -29,7 +29,7 @@
     "show_name": "Afficher le nom",
     "show_name_aria_label_on": "Activer l'affichage du nom",
     "show_name_aria_label_off": "Désactiver l'affichage du nom",
-    "show_toolbar": "Affichier la barre d'outils",
+    "show_toolbar": "Afficher la barre d'outils",
     "show_toolbar_aria_label_on": "Activer l'affichage de la barre d'outils",
     "show_toolbar_aria_label_off": "Désactiver l'affichage de la barre d'outils",
     "code_only_note": "Note: La configuration des actions et statistiques n'est disponible qu'avec l'editeur de code exclusivement."
