@@ -5,12 +5,14 @@ import * as en from './translations/en.json';
 import * as uk from './translations/uk.json';
 import * as nl from './translations/nl.json';
 import * as de from './translations/de.json';
+import * as fr from './translations/fr.json';
 
 var languages = {
   en,
   uk,
   nl,
   de,
+  fr
 };
 
 const DEFAULT_LANG = 'en';
