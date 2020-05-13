@@ -4,11 +4,13 @@
 import * as en from './translations/en.json';
 import * as uk from './translations/uk.json';
 import * as nl from './translations/nl.json';
+import * as de from './translations/de.json';
 
 var languages = {
   en,
   uk,
   nl,
+  de,
 };
 
 const DEFAULT_LANG = 'en';
