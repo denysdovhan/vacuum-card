@@ -1,0 +1,37 @@
+{
+  "status": {
+    "Cleaning": "Reinigen",
+    "Paused": "Pausiert",
+    "Idle": "Untätig",
+    "Charging": "Aufladen",
+    "Returning home": "Rückkehr zu Dockingstation"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card ermöglicht es Ihnen, Ihr Staubsaugerroboter zu steuern.",
+    "start": "Reinigen",
+    "continue": "Weiter",
+    "pause": "Pause",
+    "stop": "Stop",
+    "return_to_base": "Dock",
+    "locate": "Staubsauger lokalisieren"
+  },
+  "error": {
+    "missing_entity": "Angabe der Entität ist erforderlich!"
+  },
+  "editor": {
+    "entity": "Entität (Erforderlich)",
+    "map": "Map Camera (Optional)",
+    "image": "Bild (Optional)",
+    "compact_view": "kompakte Ansicht",
+    "compact_view_aria_label_on": "Schalte kompakte Ansicht ein",
+    "compact_view_aria_label_off": "Schalte kompakte Ansicht aus",
+    "show_name": "Zeige Namen",
+    "show_name_aria_label_on": "Schalte 'Zeige Namen' ein",
+    "show_name_aria_label_off": "Schalte 'Zeige Namen' aus",
+    "show_toolbar": "Zeige Toolbar",
+    "show_toolbar_aria_label_on": "Schalte 'Zeige Toolbar' ein",
+    "show_toolbar_aria_label_off": "Schalte 'Zeige Toolbar' aus",
+    "code_only_note": "Hinweis: Das Festlegen von Aktionen und Statistikoptionen ist ausschließlich mit dem Code-Editor möglich."
+  }
+}
