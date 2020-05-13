@@ -2,6 +2,16 @@
 
 If you plan to contribute back to this repo, please fork & open a PR.
 
+## How to add translation
+
+Only native speaker can translate to specific language.
+
+1. Copy `src/translations/en.json` file and name it with appropriate language code.
+2. Translate only keys in this file, not values.
+3. Import your translation in `src/localize.js` file.
+4. Open a PR.
+5. Find someone to check and approve your PR.
+
 ## How to run locally
 
 1. Clone this repo to wherever you want:
