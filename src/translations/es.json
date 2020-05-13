@@ -1,0 +1,37 @@
+{
+  "estado": {
+    "Limpiando": "Limpiando",
+    "Pausado": "Pausado",
+    "Desocupado": "Desocupado",
+    "Cargando": "Cargando",
+    "Regresando a casa": "Regresando a casa"
+  },
+  "común": {
+    "nombre": "Tarjeta de Aspiradora",
+    "descripción": "Tarjeta de Aspiradora te permite controlar tu aspiradora robot.",
+    "comenzar": "Limpiar",
+    "continuar": "Continuar",
+    "pausar": "Pausar",
+    "parar": "Parar",
+    "regresar_a_base": "Acoplar",
+    "localizar": "Localizar aspiradora"
+  },
+  "error": {
+    "entidad_ausente": "Es requerido especificar una identidad!"
+  },
+  "editor": {
+    "entidad": "Entidad (Requerido)",
+    "mapa": "Cámara de mapa (Opcional)",
+    "imagen": "Imagen (Opcional)",
+    "vista_compacta": "Vista Compacta",
+    "vista_compacta_etiqueta_aria_encendido": "Activar Vista Compacta",
+    "vista_compacta_etiqueta_aria_apagado": "Desactivar Vista Compacta",
+    "mostrar_nombre": "Mostrar Nombre",
+    "mostrar_nombre_etiqueta_aria_encendido": "Activar visualización del nombre",
+    "mostrar_nombre_etiqueta_aria_apagado": "Descativar visualización del nombre",
+    "mostrar_barra_de_herramientas": "Mostrar Barrar de Herramientas",
+    "mostrar_barra_de_herramientas_etiqueta_aria_encendido": "Activar visualización de la barra de herramientas",
+    "mostrar_barra_de_herramientas_etiqueta_aria_apagado": "Desactivar visualización de la barra de herramientas",
+    "código_solo_nota": "Nota: Opciones de ajustes de acciones y estados están disponibles exclusivamente usando el Editador de Código."
+  }
+}
