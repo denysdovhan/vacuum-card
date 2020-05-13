@@ -3,10 +3,12 @@
 
 import * as en from './translations/en.json';
 import * as uk from './translations/uk.json';
+import * as nl from './translations/nl.json';
 
 var languages = {
   en,
   uk,
+  nl,
 };
 
 const DEFAULT_LANG = 'en';
