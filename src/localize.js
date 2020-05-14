@@ -6,13 +6,15 @@ import * as uk from './translations/uk.json';
 import * as nl from './translations/nl.json';
 import * as de from './translations/de.json';
 import * as fr from './translations/fr.json';
+import * as it from './translations/it.json';
 
 var languages = {
   en,
   uk,
   nl,
   de,
-  fr
+  fr,
+  it
 };
 
 const DEFAULT_LANG = 'en';
