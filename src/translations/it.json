@@ -1,37 +1,37 @@
 {
   "status": {
-    "Cleaning": "Cleaning",
-    "Paused": "Paused",
-    "Idle": "Idle",
-    "Charging": "Charging",
-    "Returning home": "Returning home"
+    "Cleaning": "In pulizia",
+    "Paused": "In pausa",
+    "Idle": "Inattivo",
+    "Charging": "In carica",
+    "Returning home": "In rientro alla base"
   },
   "common": {
     "name": "Vacuum Card",
-    "description": "Vacuum card allows you to control your robot vacuum.",
-    "start": "Clean",
-    "continue": "Continue",
-    "pause": "Pause",
+    "description": "Vacuum card consente di controllare il tuo aspirapolvere.",
+    "start": "Pulisci",
+    "continue": "Continua",
+    "pause": "Pausa",
     "stop": "Stop",
-    "return_to_base": "Dock",
-    "locate": "Locate vacuum"
+    "return_to_base": "Base",
+    "locate": "Trova aspirapolvere"
   },
   "error": {
-    "missing_entity": "Specifying entity is required!"
+    "missing_entity": "È necessario specificare l'entità!"
   },
   "editor": {
-    "entity": "Entity (Required)",
-    "map": "Map Camera (Optional)",
-    "image": "Image (Optional)",
-    "compact_view": "Compact View",
-    "compact_view_aria_label_on": "Toggle compact view on",
-    "compact_view_aria_label_off": "Toggle compact view off",
-    "show_name": "Show Name",
-    "show_name_aria_label_on": "Toggle display name on",
-    "show_name_aria_label_off": "Toggle display name off",
-    "show_toolbar": "Show Toolbar",
-    "show_toolbar_aria_label_on": "Toggle display toolbar on",
-    "show_toolbar_aria_label_off": "Toggle display toolbar off",
-    "code_only_note": "Note: Setting actions and stats options are available exclusively using Code Editor."
+    "entity": "Entità (Richiesto)",
+    "map": "Mappa (Opzionale)",
+    "image": "Immagine (Opzionale)",
+    "compact_view": "Vista compatta",
+    "compact_view_aria_label_on": "Attiva vista compatta",
+    "compact_view_aria_label_off": "Disattiva vista compatta",
+    "show_name": "Mostra Nome",
+    "show_name_aria_label_on": "Attiva nome",
+    "show_name_aria_label_off": "Disattiva nome",
+    "show_toolbar": "Mostra barra degli strumenti",
+    "show_toolbar_aria_label_on": "Attiva barra degli strumenti",
+    "show_toolbar_aria_label_off": "Disattiva barra degli strumenti",
+    "code_only_note": "NB: La configurazione di azioni e statistiche sono disponibili soltanto nell'editor di codice."
   }
 }
