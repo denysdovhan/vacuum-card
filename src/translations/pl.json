@@ -1,0 +1,37 @@
+{
+  "status": {
+    "Cleaning": "Sprzątanie",
+    "Paused": "Zapauzowany",
+    "Idle": "Bezczynny",
+    "Charging": "Ładowanie",
+    "Returning home": "Powrót do bazy"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card pozwala zdalnie kontrolować odkurzacz.",
+    "start": "Sprzątaj",
+    "continue": "Kontyntynuj",
+    "pause": "Pauza",
+    "stop": "Zatrzymaj",
+    "return_to_base": "Powrót",
+    "locate": "Zlokalizuj odkurzacz"
+  },
+  "error": {
+    "missing_entity": "Ustawienie encji jest wymagane!"
+  },
+  "editor": {
+    "entity": "Encja (Wymagane)",
+    "map": "Kamera (Opcjonalne)",
+    "image": "Obrazek (Opcjonalne)",
+    "compact_view": "Widok kompaktowy",
+    "compact_view_aria_label_on": "Włącz widok kompaktowy",
+    "compact_view_aria_label_off": "Wyłącz widok kompaktowy",
+    "show_name": "Pokaż nazwę",
+    "show_name_aria_label_on": "Włącz widok nazwy",
+    "show_name_aria_label_off": "Wyłącz widok nazwy",
+    "show_toolbar": "Pasek narzędzi",
+    "show_toolbar_aria_label_on": "Włącz pasek narzędzi",
+    "show_toolbar_aria_label_off": "Wyłącz pasek narzędzi",
+    "code_only_note": "Note: Ustawianie opcji i informacji statystyk jest dostępne tylko poprzez edytor kodu YAML."
+  }
+}
