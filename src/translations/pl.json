@@ -1,7 +1,7 @@
 {
   "status": {
     "Cleaning": "Sprzątanie",
-    "Paused": "Zapauzowany",
+    "Paused": "Wstrzymany",
     "Idle": "Bezczynny",
     "Charging": "Ładowanie",
     "Returning home": "Powrót do bazy"
@@ -11,7 +11,7 @@
     "description": "Vacuum card pozwala zdalnie kontrolować odkurzacz.",
     "start": "Sprzątaj",
     "continue": "Kontyntynuj",
-    "pause": "Pauza",
+    "pause": "Wstrzymaj",
     "stop": "Zatrzymaj",
     "return_to_base": "Powrót",
     "locate": "Zlokalizuj odkurzacz"
@@ -20,9 +20,9 @@
     "missing_entity": "Ustawienie encji jest wymagane!"
   },
   "editor": {
-    "entity": "Encja (Wymagane)",
-    "map": "Kamera (Opcjonalne)",
-    "image": "Obrazek (Opcjonalne)",
+    "entity": "Encja (wymagane)",
+    "map": "Kamera (opcjonalne)",
+    "image": "Obrazek (opcjonalne)",
     "compact_view": "Widok kompaktowy",
     "compact_view_aria_label_on": "Włącz widok kompaktowy",
     "compact_view_aria_label_off": "Wyłącz widok kompaktowy",
