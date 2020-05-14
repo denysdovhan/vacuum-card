@@ -6,6 +6,7 @@ import * as uk from './translations/uk.json';
 import * as nl from './translations/nl.json';
 import * as de from './translations/de.json';
 import * as fr from './translations/fr.json';
+import * as pl from './translations/pl.json';
 import * as it from './translations/it.json';
 
 var languages = {
@@ -14,6 +15,7 @@ var languages = {
   nl,
   de,
   fr,
+  pl,
   it
 };
 
