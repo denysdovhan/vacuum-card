@@ -153,6 +153,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roborock S5
 - Roborock S5 Max
 - Roborock S4
+- Roborock E25
 - Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
 - Roomba 675
