@@ -7,6 +7,7 @@ import * as nl from './translations/nl.json';
 import * as de from './translations/de.json';
 import * as fr from './translations/fr.json';
 import * as pl from './translations/pl.json';
+import * as ru from './translations/ru.json';
 
 var languages = {
   en,
@@ -14,7 +15,8 @@ var languages = {
   nl,
   de,
   fr,
-  pl
+  pl,
+  ru
 };
 
 const DEFAULT_LANG = 'en';
