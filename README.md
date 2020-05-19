@@ -120,6 +120,8 @@ Here is what every option means:
 
 ### `actions` object
 
+You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `actions` option.
+
 | Name           |   Type   | Default                           | Description                                        |
 | -------------- | :------: | --------------------------------- | -------------------------------------------------- |
 | `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`. |
@@ -209,6 +211,7 @@ MIT © [Denys Dovhan][denysdovhan]
 [cleaning-gif]: https://user-images.githubusercontent.com/3459374/81119202-fa60b500-8f32-11ea-9b23-325efa93d7ab.gif
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest
+[ha-scripts]: https://www.home-assistant.io/docs/scripts/
 [edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/master/README.md
 [add-translation]: https://github.com/denysdovhan/vacuum-card/tree/master/src/translations
 [macbury-smart-house]: https://macbury.github.io/SmartHouse/HomeAssistant/Vacuum/
