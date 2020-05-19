@@ -1,0 +1,37 @@
+{
+  "status": {
+    "Cleaning": "In pulizia",
+    "Paused": "In pausa",
+    "Idle": "Inattivo",
+    "Charging": "In carica",
+    "Returning home": "In rientro alla base"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card consente di controllare il tuo aspirapolvere.",
+    "start": "Pulisci",
+    "continue": "Continua",
+    "pause": "Pausa",
+    "stop": "Stop",
+    "return_to_base": "Base",
+    "locate": "Trova aspirapolvere"
+  },
+  "error": {
+    "missing_entity": "È necessario specificare l'entità!"
+  },
+  "editor": {
+    "entity": "Entità (Richiesto)",
+    "map": "Mappa (Opzionale)",
+    "image": "Immagine (Opzionale)",
+    "compact_view": "Vista compatta",
+    "compact_view_aria_label_on": "Attiva vista compatta",
+    "compact_view_aria_label_off": "Disattiva vista compatta",
+    "show_name": "Mostra Nome",
+    "show_name_aria_label_on": "Attiva nome",
+    "show_name_aria_label_off": "Disattiva nome",
+    "show_toolbar": "Mostra barra degli strumenti",
+    "show_toolbar_aria_label_on": "Attiva barra degli strumenti",
+    "show_toolbar_aria_label_off": "Disattiva barra degli strumenti",
+    "code_only_note": "NB: La configurazione di azioni e statistiche sono disponibili soltanto nell'editor di codice."
+  }
+}
