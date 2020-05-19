@@ -171,30 +171,32 @@ class VacuumCard extends LitElement {
 
     const selected = sources.indexOf(source);
 
-    return html` <paper-menu-button
-      slot="dropdown-trigger"
-      .horizontalAlign=${'right'}
-      .verticalAlign=${'top'}
-      .verticalOffset=${40}
-      .noAnimations=${true}
-      @click="${(e) => e.stopPropagation()}"
-    >
-      <paper-button class="source-menu__button" slot="dropdown-trigger">
-        <span class="source-menu__source" show=${true}>
-          ${source}
-        </span>
-        <ha-icon icon="mdi:fan"></ha-icon>
-      </paper-button>
-      <paper-listbox
-        slot="dropdown-content"
-        selected=${selected}
-        @click="${(e) => this.handleSpeed(e)}"
+    return html`
+      <paper-menu-button
+        slot="dropdown-trigger"
+        .horizontalAlign=${'right'}
+        .verticalAlign=${'top'}
+        .verticalOffset=${40}
+        .noAnimations=${true}
+        @click="${(e) => e.stopPropagation()}"
       >
-        ${sources.map(
-          (item) => html`<paper-item value=${item}>${item}</paper-item>`
-        )}
-      </paper-listbox>
-    </paper-menu-button>`;
+        <paper-button class="source-menu__button" slot="dropdown-trigger">
+          <span class="source-menu__source" show=${true}>
+            ${source}
+          </span>
+          <ha-icon icon="mdi:fan"></ha-icon>
+        </paper-button>
+        <paper-listbox
+          slot="dropdown-content"
+          selected=${selected}
+          @click="${(e) => this.handleSpeed(e)}"
+        >
+          ${sources.map(
+            (item) => html`<paper-item value=${item}>${item}</paper-item>`
+          )}
+        </paper-listbox>
+      </paper-menu-button>
+    `;
   }
 
   renderMapOrImage(state) {
