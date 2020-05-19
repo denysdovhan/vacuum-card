@@ -141,6 +141,12 @@ This card supports translations. Please, help to add more translations and impro
 
 - English
 - Українська (Ukrainian)
+- Deutsche (German)
+- Français (French)
+- Italiano (Italian)
+- Nederlandse (Dutch)
+- Polski (Polish)
+- Русский (Russian)
 - [_Your language?_][add-translation]
 
 ## Supported models
