@@ -32,6 +32,6 @@
     "show_toolbar": "Pasek narzędzi",
     "show_toolbar_aria_label_on": "Włącz pasek narzędzi",
     "show_toolbar_aria_label_off": "Wyłącz pasek narzędzi",
-    "code_only_note": "Note: Ustawianie opcji i informacji statystyk jest dostępne tylko poprzez edytor kodu YAML."
+    "code_only_note": "Uwaga: Ustawianie opcji i informacji statystyk jest dostępne tylko poprzez edytor kodu YAML."
   }
 }
