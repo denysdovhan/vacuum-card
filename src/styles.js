@@ -207,6 +207,7 @@ export default css`
     flex-direction: column;
     width: 44px;
     height: 44px;
+    --mdc-icon-button-size: 44px;
     margin: 5px 0;
   }
 
