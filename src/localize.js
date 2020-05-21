@@ -26,7 +26,7 @@ const DEFAULT_LANG = 'en';
 export default function localize(string, search, replace) {
   const [section, key] = string.split('.');
 
-  const lang = (localStorage.getItem('selectedLanguage') || DEFAULT_LANG)
+  const lang = (localStorage.getItem('selectedLanguage') || navigator.language.split('-')[0] || DEFAULT_LANG)
     .replace(/['"]+/g, '')
     .replace('-', '_');
 
