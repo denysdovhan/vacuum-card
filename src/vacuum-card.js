@@ -189,7 +189,7 @@ class VacuumCard extends LitElement {
       >
         <paper-button class="source-menu__button" slot="dropdown-trigger">
           <span class="source-menu__source" show=${true}>
-            ${source}
+            ${localize(`source.${source}`) || source}
           </span>
           <ha-icon icon="mdi:fan"></ha-icon>
         </paper-button>
@@ -199,7 +199,7 @@ class VacuumCard extends LitElement {
           @click="${(e) => this.handleSpeed(e)}"
         >
           ${sources.map(
-            (item) => html`<paper-item value=${item}>${item}</paper-item>`
+            (item) => html`<paper-item value=${item}>${localize(`source.${item}`) || item}</paper-item>`
           )}
         </paper-listbox>
       </paper-menu-button>
