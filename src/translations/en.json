@@ -6,6 +6,13 @@
     "Charging": "Charging",
     "Returning home": "Returning home"
   },
+  "source": {
+    "Gentle": "Gentle",
+    "Silent": "Silent",
+    "Standard": "Standard",
+    "Medium": "Medium",
+    "Turbo": "Turbo"
+  },
   "common": {
     "name": "Vacuum Card",
     "description": "Vacuum card allows you to control your robot vacuum.",
