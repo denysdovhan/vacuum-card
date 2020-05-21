@@ -202,20 +202,19 @@ export default css`
     justify-content: space-evenly;
   }
 
-  .toolbar paper-icon-button {
+  .toolbar ha-icon-button {
     color: var(--primary-color);
     flex-direction: column;
     width: 44px;
     height: 44px;
     margin: 5px 0;
-    padding: 10px;
   }
 
-  .toolbar paper-icon-button:first-child {
+  .toolbar ha-icon-button:first-child {
     margin-left: 5px;
   }
 
-  .toolbar paper-icon-button:last-child {
+  .toolbar ha-icon-button:last-child {
     margin-right: 5px;
   }
 
@@ -227,7 +226,7 @@ export default css`
     cursor: pointer;
   }
 
-  .toolbar paper-icon-button:active,
+  .toolbar ha-icon-button:active,
   .toolbar paper-button:active {
     opacity: 0.4;
     background: rgba(0, 0, 0, 0.1);
