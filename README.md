@@ -149,6 +149,7 @@ This card supports translations. Please, help to add more translations and impro
 - Nederlandse (Dutch)
 - Polski (Polish)
 - Русский (Russian)
+- Español (Spanish)
 - [_Your language?_][add-translation]
 
 ## Supported models
