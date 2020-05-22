@@ -146,7 +146,7 @@ This card supports translations. Please, help to add more translations and impro
 - Deutsche (German)
 - Français (French)
 - Italiano (Italian)
-- Nederlandse (Dutch)
+- Nederlands (Dutch)
 - Polski (Polish)
 - Русский (Russian)
 - [_Your language?_][add-translation]
