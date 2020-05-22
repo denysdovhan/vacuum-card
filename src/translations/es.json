@@ -6,6 +6,13 @@
     "Charging": "Cargando",
     "Returning home": "Volviendo a la base"
   },
+  "source": {
+    "Gentle": "Delicado",
+    "Silent": "Silencioso",
+    "Standard": "Standard",
+    "Medium": "Medio",
+    "Turbo": "Turbo"
+  },
   "common": {
     "name": "Vacuum Card",
     "description": "Vacuum card te permite controlar tu robot aspirador.",
