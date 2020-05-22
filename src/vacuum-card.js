@@ -8,7 +8,7 @@ import defaultImage from './vacuum.png';
 if (!customElements.get('ha-icon-button')) {
   customElements.define(
     'ha-icon-button',
-    class extends customElements.get('paper-icon-button') {},
+    class extends customElements.get('paper-icon-button') {}
   );
 }
 
@@ -132,16 +132,19 @@ class VacuumCard extends LitElement {
 
   handleSpeed(e) {
     const fan_speed = e.target.getAttribute('value');
-    this.callService('set_fan_speed', { fan_speed });
+    this.callService('set_fan_speed', false, { fan_speed });
   }
 
-  callService(service, options = {}) {
+  callService(service, isRequest = false, options = {}) {
     this.hass.callService('vacuum', service, {
       entity_id: this.config.entity,
       ...options,
     });
-    this.requestInProgress = true;
-    this.requestUpdate();
+
+    if (isRequest) {
+      this.requestInProgress = true;
+      this.requestUpdate();
+    }
   }
 
   getAttributes(entity) {
@@ -199,7 +202,10 @@ class VacuumCard extends LitElement {
           @click="${(e) => this.handleSpeed(e)}"
         >
           ${sources.map(
-            (item) => html`<paper-item value=${item}>${localize(`source.${item}`) || item}</paper-item>`
+            (item) =>
+              html`<paper-item value=${item}
+                >${localize(`source.${item}`) || item}</paper-item
+              >`
           )}
         </paper-listbox>
       </paper-menu-button>
@@ -347,7 +353,7 @@ class VacuumCard extends LitElement {
               icon="mdi:crosshairs-gps"
               title="${localize('common.locate')}"
               class="toolbar-split"
-              @click="${() => this.callService('locate')}"
+              @click="${() => this.callService('locate', false)}"
             >
             </ha-icon-button>
 
