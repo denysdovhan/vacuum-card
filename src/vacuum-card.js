@@ -3,7 +3,7 @@ import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
 import './vacuum-card-editor';
 import localize from './localize';
 import styles from './styles';
-import defaultImage from './vacuum.png';
+import defaultImage from './vacuum.svg';
 
 if (!customElements.get('ha-icon-button')) {
   customElements.define(
