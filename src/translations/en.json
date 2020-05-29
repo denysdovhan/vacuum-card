@@ -21,7 +21,8 @@
     "pause": "Pause",
     "stop": "Stop",
     "return_to_base": "Dock",
-    "locate": "Locate vacuum"
+    "locate": "Locate vacuum",
+    "not_available": "Vacuum is not available"
   },
   "error": {
     "missing_entity": "Specifying entity is required!"

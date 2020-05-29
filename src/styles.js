@@ -23,6 +23,10 @@ export default css`
     position: relative;
   }
 
+  .preview.not-available {
+    filter: grayscale(1);
+  }
+
   .map {
     display: block;
     max-width: 90%;
@@ -169,6 +173,12 @@ export default css`
   .vacuum-name {
     text-align: center;
     font-weight: bold;
+    color: var(--text-primary-color);
+    font-size: 16px;
+  }
+
+  .not-available {
+    text-align: center;
     color: var(--text-primary-color);
     font-size: 16px;
   }

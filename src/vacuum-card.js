@@ -393,6 +393,20 @@ class VacuumCard extends LitElement {
   }
 
   render() {
+    if (!this.entity) {
+      return html`
+        <ha-card>
+          <div class="preview not-available">
+            <div class="metadata">
+              <div class="not-available">
+                ${localize('common.not_available')}
+              </div>
+            <div>
+          </div>
+        </ha-card>
+      `;
+    }
+
     const { state } = this.entity;
     const { battery_level, battery_icon } = this.getAttributes(this.entity);
 

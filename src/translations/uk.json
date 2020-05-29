@@ -21,7 +21,8 @@
     "pause": "Пауза",
     "stop": "Стоп",
     "return_to_base": "На базу",
-    "locate": "Знайти"
+    "locate": "Знайти",
+    "not_available": "Пилосос недоступний"
   },
   "error": {
     "missing_entity": "Об’єкт є обов’язковим полем!"
