@@ -65,6 +65,14 @@ class VacuumCard extends LitElement {
     return this.config.show_name;
   }
 
+  get showStatus() {
+    if (this.config.show_status === undefined) {
+      return true;
+    }
+
+    return this.config.show_status;
+  }
+
   get showToolbar() {
     if (this.config.show_toolbar === undefined) {
       return true;
@@ -135,7 +143,7 @@ class VacuumCard extends LitElement {
     this.callService('set_fan_speed', false, { fan_speed });
   }
 
-  callService(service, isRequest = false, options = {}) {
+  callService(service, isRequest = true, options = {}) {
     this.hass.callService('vacuum', service, {
       entity_id: this.config.entity,
       ...options,
@@ -258,6 +266,24 @@ class VacuumCard extends LitElement {
     `;
   }
 
+  renderStatus() {
+    const { status } = this.getAttributes(this.entity);
+    const localizedStatus = localize(`status.${status}`) || status;
+
+    if (!this.showStatus) {
+      return html``;
+    }
+
+    return html`
+      <div class="status">
+        <span class="status-text" alt=${localizedStatus}>
+          ${localizedStatus}
+        </span>
+        <paper-spinner ?active=${this.requestInProgress}></paper-spinner>
+      </div>
+    `;
+  }
+
   renderToolbar(state) {
     if (!this.showToolbar) {
       return html``;
@@ -368,10 +394,7 @@ class VacuumCard extends LitElement {
 
   render() {
     const { state } = this.entity;
-    const { status, battery_level, battery_icon } = this.getAttributes(
-      this.entity
-    );
-    const localizedStatus = localize(`status.${status}`) || status;
+    const { battery_level, battery_icon } = this.getAttributes(this.entity);
 
     return html`
       <ha-card>
@@ -389,14 +412,11 @@ class VacuumCard extends LitElement {
             </div>
           </div>
 
-          ${this.renderMapOrImage(state)} ${this.renderName()}
+          ${this.renderMapOrImage(state)}
 
-          <!-- <div class="status">
-            <span class="status-text" alt=${localizedStatus}>
-              ${localizedStatus}
-            </span>
-            <paper-spinner ?active=${this.requestInProgress}></paper-spinner>
-          </div> -->
+          <div class="metadata">
+            ${this.renderName()} ${this.renderStatus()}
+          </div>
 
           <div class="stats">
             ${this.renderStats(state)}

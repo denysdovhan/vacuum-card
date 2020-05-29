@@ -146,18 +146,17 @@ export default css`
   }
 
   .status {
-    height: 40px;
     display: flex;
     align-items: center;
-    font-weight: bold;
-    padding: 9px 20px;
-    text-align: left;
+    justify-content: center;
   }
 
   .status-text {
+    color: var(--text-primary-color);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-left: calc(20px + 9px); /* size + margin of spinner */
   }
 
   .status paper-spinner {
@@ -170,9 +169,12 @@ export default css`
   .vacuum-name {
     text-align: center;
     font-weight: bold;
-    margin: 10px auto 20px;
     color: var(--text-primary-color);
     font-size: 16px;
+  }
+
+  .metadata {
+    margin: 10px auto;
   }
 
   .stats {

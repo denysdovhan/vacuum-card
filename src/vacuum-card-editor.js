@@ -52,6 +52,14 @@ export class VacuumCardEditor extends LitElement {
     return '';
   }
 
+  get _show_status() {
+    if (this._config) {
+      return this._config.show_status || true;
+    }
+
+    return '';
+  }
+
   get _show_toolbar() {
     if (this._config) {
       return this._config.show_toolbar || true;
@@ -147,6 +155,20 @@ export class VacuumCardEditor extends LitElement {
           @change=${this._valueChanged}
         >
           ${localize('editor.show_name')}
+        </ha-switch>
+
+        <ha-switch
+          style="margin: 10px auto;"
+          aria-label=${localize(
+            this._show_status
+              ? 'editor.show_status_aria_label_off'
+              : 'editor.show_status_aria_label_on'
+          )}
+          .checked=${this._show_status !== false}
+          .configValue=${'show_status'}
+          @change=${this._valueChanged}
+        >
+          ${localize('editor.show_status')}
         </ha-switch>
 
         <ha-switch

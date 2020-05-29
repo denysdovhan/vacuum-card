@@ -106,6 +106,7 @@ Here is what every option means:
 | `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
 | `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
 | `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
+| `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                              |
 | `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
 | `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
 | `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
