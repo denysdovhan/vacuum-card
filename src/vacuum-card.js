@@ -190,11 +190,11 @@ class VacuumCard extends LitElement {
         .noAnimations=${true}
         @click="${(e) => e.stopPropagation()}"
       >
-        <paper-button class="source-menu__button" slot="dropdown-trigger">
-          <span class="source-menu__source" show=${true}>
+        <paper-button slot="dropdown-trigger">
+          <ha-icon icon="mdi:fan"></ha-icon>
+          <span show=${true}>
             ${localize(`source.${source}`) || source}
           </span>
-          <ha-icon icon="mdi:fan"></ha-icon>
         </paper-button>
         <paper-listbox
           slot="dropdown-content"
@@ -381,12 +381,6 @@ class VacuumCard extends LitElement {
           ?more-info="true"
         >
           <div class="header">
-            <div class="status">
-              <span class="status-text" alt=${localizedStatus}>
-                ${localizedStatus}
-              </span>
-              <paper-spinner ?active=${this.requestInProgress}></paper-spinner>
-            </div>
             <div class="source">
               ${this.renderSource()}
             </div>
@@ -396,6 +390,13 @@ class VacuumCard extends LitElement {
           </div>
 
           ${this.renderMapOrImage(state)} ${this.renderName()}
+
+          <!-- <div class="status">
+            <span class="status-text" alt=${localizedStatus}>
+              ${localizedStatus}
+            </span>
+            <paper-spinner ?active=${this.requestInProgress}></paper-spinner>
+          </div> -->
 
           <div class="stats">
             ${this.renderStats(state)}

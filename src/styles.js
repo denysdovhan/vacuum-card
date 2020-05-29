@@ -126,10 +126,19 @@ export default css`
     flex-grow: 1;
   }
 
+  .header {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-primary-color);
+  }
+
   .battery {
     text-align: right;
     font-weight: bold;
-    padding: 9px 20px;
+    padding: 8px;
   }
 
   .source {
@@ -241,20 +250,6 @@ export default css`
   .toolbar ha-icon {
     color: var(--primary-color);
     padding-right: 15px;
-  }
-
-  .header {
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-primary-color);
-  }
-
-  .header div {
-    width: 33.3%;
-    box-sizing: border-box;
   }
 
   .toolbar-split {
