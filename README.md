@@ -171,6 +171,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roomba 960
 - Dyson 360 Eye
 - Neato D7
+- Neato D6
 - [_Your vacuum?_][edit-readme]
 
 ## Development
