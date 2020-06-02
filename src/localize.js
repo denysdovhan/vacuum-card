@@ -32,8 +32,7 @@ export default function localize(string, search, replace) {
   
   try {
     langStored = JSON.parse(localStorage.getItem('selectedLanguage'));
-  }
-  catch (e) {
+  } catch (e) {
     langStored = localStorage.getItem('selectedLanguage');
   };
   
