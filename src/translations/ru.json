@@ -6,6 +6,13 @@
     "Charging": "Заряжается",
     "Returning home": "Возвращается"
   },
+  "source": {
+    "Gentle": "Деликатный",
+    "Silent": "Тихий",
+    "Standard": "Стандартный",
+    "Medium": "Средний",
+    "Turbo": "Турбо"
+  },  
   "common": {
     "name": "Пылесос",
     "description": "Карта \"пылесос\" позволяет управлять роботом-пылесосом.",
@@ -14,7 +21,8 @@
     "pause": "Пауза",
     "stop": "Остановить",
     "return_to_base": "Вернуть на док-станцию",
-    "locate": "Найти"
+    "locate": "Найти",
+    "not_available": "Пылесос недоступен"
   },
   "error": {
     "missing_entity": "Объект является обязательным полем!"
@@ -29,6 +37,9 @@
     "show_name": "Показать название?",
     "show_name_aria_label_on": "Показать название",
     "show_name_aria_label_off": "Скрыть название",
+    "show_status": "Показать статус?",
+    "show_status_aria_label_on": "Показать статус",
+    "show_status_aria_label_off": "Скрыть статус",	
     "show_toolbar": "Показать панель действий?",
     "show_toolbar_aria_label_on": "Показать панель действий",
     "show_toolbar_aria_label_off": "Скрыть панель действий",
