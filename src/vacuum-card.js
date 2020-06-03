@@ -359,7 +359,6 @@ class VacuumCard extends LitElement {
           <ha-icon-button
             icon="hass:home-map-marker"
             title="${localize('common.return_to_base')}"
-            class="toolbar-icon"
             @click="${() => this.callService('return_to_base')}"
           >
           </ha-icon-button>
@@ -370,7 +369,6 @@ class VacuumCard extends LitElement {
             <ha-icon-button
               icon="hass:play"
               title="${localize('common.start')}"
-              class="toolbar-icon"
               @click="${() => this.callService('start')}"
             >
             </ha-icon-button>
@@ -378,7 +376,6 @@ class VacuumCard extends LitElement {
             <ha-icon-button
               icon="mdi:crosshairs-gps"
               title="${localize('common.locate')}"
-              class="toolbar-split"
               @click="${() => this.callService('locate', false)}"
             >
             </ha-icon-button>

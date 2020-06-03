@@ -263,8 +263,4 @@ export default css`
     color: var(--primary-color);
     padding-right: 15px;
   }
-
-  .toolbar-split {
-    padding-right: 15px;
-  }
 `;
