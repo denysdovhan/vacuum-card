@@ -41,7 +41,7 @@ Just search for `Vacuum Card` in plugins tab.
    2. **Using YAML:** Add following code to `lovelace` section.
       ```yaml
       resources:
-        - url: /local/vacuum-card.js
+        - url: /local/vacuum-card.js?v=1.4.2
           type: module
       ```
 4. Add `custom:vacuum-card` to Lovelace UI as any other card (using either editor or YAML configuration).
