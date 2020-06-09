@@ -4,7 +4,8 @@
     "Paused": "Пауза",
     "Idle": "Ожидает",
     "Charging": "Заряжается",
-    "Returning home": "Возвращается"
+    "Returning home": "Возвращается",
+    "Segment cleaning": "Уборка зоны/комнаты"
   },
   "source": {
     "Gentle": "Деликатный",
