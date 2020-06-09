@@ -158,18 +158,16 @@ class VacuumCard extends LitElement {
   getAttributes(entity) {
     const {
       status,
+      state,
       fan_speed,
       fan_speed_list,
       battery_level,
       battery_icon,
       friendly_name,
-      valetudo_state,
     } = entity.attributes;
 
-    const valetudoStatus = valetudo_state ? valetudo_state.name : '';
-
     return {
-      status: status || valetudoStatus,
+      status: status || state,
       fan_speed,
       fan_speed_list,
       battery_level,
