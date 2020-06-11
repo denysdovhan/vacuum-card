@@ -4,7 +4,12 @@
     "Paused": "En pause",
     "Idle": "Au repos",
     "Charging": "En charge",
-    "Returning home": "Retour à la base"
+    "Returning home": "Retour à la base",
+    "docked": "Sur la base",
+    "idle": "Inactif",
+    "cleaning": "Nettoyage",
+    "returning": "Nettoyage",
+    "error": "Erreur"
   },
   "common": {
     "name": "Vacuum Card",
