@@ -1,37 +1,48 @@
 {
   "status": {
-    "Cleaning": "Cleaning",
+    "Cleaning": "Nettoyage",
     "Paused": "En pause",
-    "Idle": "Au repos",
+    "Idle": "Inactif",
     "Charging": "En charge",
     "Returning home": "Retour à la base"
   },
+  "source": {
+    "Gentle": "Doux",
+    "Silent": "Silencieux",
+    "Standard": "Standard",
+    "Medium": "Moyen",
+    "Turbo": "Turbo"
+  },
   "common": {
-    "name": "Vacuum Card",
-    "description": "Vacuum card vous permet de contrôller votre robot aspirateur.",
+    "name": "Vacuum Carte",
+    "description": "Vacuum carte vous permet de contrôler votre robot aspirateur.",
     "start": "Nettoyer",
     "continue": "Continuer",
-    "pause": "Mettre en pause",
-    "stop": "Arrêter",
-    "return_to_base": "Retourner à la base",
-    "locate": "Localiser l'aspirateur"
+    "pause": "Pause",
+    "stop": "Stop",
+    "return_to_base": "Retour base",
+    "locate": "Localiser aspirateur",
+    "not_available": "L'aspirateur n'est pas disponible"
   },
   "error": {
-    "missing_entity": "Une entité est requise!"
+    "missing_entity": "La spécification de l'entité est requise !"
   },
   "editor": {
-    "entity": "Entité (Requis)",
-    "map": "Map Camera (Optionel)",
-    "image": "Image (Optionelle)",
+    "entity": "Entité (obligatoire)",
+    "map": "Caméra de carte (facultatif)",
+    "image": "Image (facultatif)",
     "compact_view": "Vue compacte",
     "compact_view_aria_label_on": "Activer la vue compacte",
     "compact_view_aria_label_off": "Désactiver la vue compacte",
     "show_name": "Afficher le nom",
-    "show_name_aria_label_on": "Activer l'affichage du nom",
-    "show_name_aria_label_off": "Désactiver l'affichage du nom",
+    "show_name_aria_label_on": "Activer affichage du nom",
+    "show_name_aria_label_off": "Désactiver affichage du nom",
+    "show_status": "Afficher l'état",
+    "show_status_aria_label_on": "Activer l'affichage de l'état",
+    "show_status_aria_label_off": "Désactiver l'affichage de l'état",
     "show_toolbar": "Afficher la barre d'outils",
     "show_toolbar_aria_label_on": "Activer l'affichage de la barre d'outils",
     "show_toolbar_aria_label_off": "Désactiver l'affichage de la barre d'outils",
-    "code_only_note": "Note: La configuration des actions et statistiques n'est disponible qu'avec l'editeur de code exclusivement."
+    "code_only_note": "Remarque: Les options de réglage des actions et statistiques sont disponibles exclusivement en utilisant l'éditeur de code."
   }
 }
