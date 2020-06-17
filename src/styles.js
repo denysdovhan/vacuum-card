@@ -29,7 +29,7 @@ export default css`
 
   .map {
     display: block;
-    max-width: 90%;
+    max-width: 100%;
     image-rendering: crisp-edges;
   }
 
