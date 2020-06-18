@@ -151,6 +151,7 @@ This card supports translations. Please, help to add more translations and impro
 - Polski (Polish)
 - Русский (Russian)
 - Español (Spanish)
+- Čeština (Czech)
 - Magyar (Hungarian)
 - [_Your language?_][add-translation]
 

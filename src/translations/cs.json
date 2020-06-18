@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "Vysává se",
+    "Paused": "Pozastaveno",
+    "Idle": "Nečinný",
+    "Charging": "Nabíjí se",
+    "Returning home": "Vrací se domů"
+  },
+  "source": {
+    "Gentle": "Mírný",
+    "Silent": "Tichý",
+    "Standard": "Standardní",
+    "Medium": "Střední",
+    "Turbo": "Turbo"
+  },
+  "common": {
+    "name": "Karta vysavače",
+    "description": "Karta vysavače vám dovolí ovládat svůj vysavač.",
+    "start": "Začni vysávat",
+    "continue": "Pokračuj",
+    "pause": "Pozastav",
+    "stop": "Zastav",
+    "return_to_base": "Vrať se domů",
+    "locate": "Lokalizuj",
+    "not_available": "Vysavač není dostupný"
+  },
+  "error": {
+    "missing_entity": "Je vyžadováno specifikování entity!"
+  },
+  "editor": {
+    "entity": "Entita (Povinný)",
+    "map": "Mapa (Nepovinný)",
+    "image": "Fotka (Nepovinný)",
+    "compact_view": "Kompaktní zobrazení",
+    "compact_view_aria_label_on": "Zapni kompaktní zobrazení",
+    "compact_view_aria_label_off": "Vypni kompaktní zobrazení",
+    "show_name": "Zobraz název",
+    "show_name_aria_label_on": "Zapni zobrazení názvu",
+    "show_name_aria_label_off": "Vypni zobrazení názvu",
+    "show_status": "Zobraz status",
+    "show_status_aria_label_on": "Zapni zobrazení statusu",
+    "show_status_aria_label_off": "Vypni zobrazení statusu",
+    "show_toolbar": "Zobraz lištu",
+    "show_toolbar_aria_label_on": "Zapni zobrazení lišty",
+    "show_toolbar_aria_label_off": "Vypni zobrazení lišty",
+    "code_only_note": "Poznámka: Nastavení akcí a infa je dostupné pouze v editoru kódu."
+  }
+}
