@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "Tisztítás",
+    "Paused": "Szünet",
+    "Idle": "Tétlen",
+    "Charging": "Töltés",
+    "Returning home": "Hazatérés"
+  },
+  "source": {
+    "Gentle": "Gyengéd",
+    "Silent": "Csendes",
+    "Standard": "Alap",
+    "Medium": "Közepes",
+    "Turbo": "Turbo"
+  },
+  "common": {
+    "name": "Porszívó Kártya",
+    "description": "Ez a kártya lehetővé teszi, hogy robot porszívódat irányítsd.",
+    "start": "Tisztítás",
+    "continue": "Folytatás",
+    "pause": "Szünet",
+    "stop": "Megszakítás",
+    "return_to_base": "Hazatérés",
+    "locate": "Porszívó megkeresése",
+    "not_available": "A porszívó nem elérhető"
+  },
+  "error": {
+    "missing_entity": "Entitás megadása kötelező!"
+  },
+  "editor": {
+    "entity": "Entitás (Kötelező)",
+    "map": "Térkép kamera (Opcionális)",
+    "image": "Kép (Opcionális)",
+    "compact_view": "Kompakt nézet",
+    "compact_view_aria_label_on": "Kompakt nézet bekapcsolása",
+    "compact_view_aria_label_off": "Kompakt nézet kikapcsolása",
+    "show_name": "Név megjelenítése",
+    "show_name_aria_label_on": "Név megjelenítése",
+    "show_name_aria_label_off": "Név elrejtése",
+    "show_status": "Állapot megjelenítése",
+    "show_status_aria_label_on": "Állapot megjelenítése",
+    "show_status_aria_label_off": "Állapot elrejtése",
+    "show_toolbar": "Eszköztár megjelenítése",
+    "show_toolbar_aria_label_on": "Eszköztár megjelenítése",
+    "show_toolbar_aria_label_off": "Eszköztár elrejtése",
+    "code_only_note": "Megjegyzés: Parancsok és statisztikák beállítása csak a kódszerkesztőben elérhetőek."
+  }
+}
