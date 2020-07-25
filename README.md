@@ -108,6 +108,7 @@ Here is what every option means:
 | `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
 | `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                              |
 | `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
+| `compact_view` | `boolean` | `false`      | Compact view without image.                                             |
 | `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
 | `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
 
