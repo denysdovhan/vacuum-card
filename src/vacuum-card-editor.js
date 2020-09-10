@@ -129,61 +129,65 @@ export class VacuumCardEditor extends LitElement {
           @value-changed=${this._valueChanged}
         ></paper-input>
 
-        <ha-switch
-          style="margin: 10px auto;"
-          aria-label=${localize(
-            this._compact_view
-              ? 'editor.compact_view_aria_label_off'
-              : 'editor.compact_view_aria_label_on'
-          )}
-          .checked=${this._compact_view !== false}
-          .configValue=${'compact_view'}
-          @change=${this._valueChanged}
-        >
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._compact_view
+                ? 'editor.compact_view_aria_label_off'
+                : 'editor.compact_view_aria_label_on'
+            )}
+            .checked=${this._compact_view !== false}
+            .configValue=${'compact_view'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
           ${localize('editor.compact_view')}
-        </ha-switch>
+        </p>
 
-        <ha-switch
-          style="margin: 10px auto;"
-          aria-label=${localize(
-            this._show_name
-              ? 'editor.show_name_aria_label_off'
-              : 'editor.show_name_aria_label_on'
-          )}
-          .checked=${this._show_name !== false}
-          .configValue=${'show_name'}
-          @change=${this._valueChanged}
-        >
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_name
+                ? 'editor.show_name_aria_label_off'
+                : 'editor.show_name_aria_label_on'
+            )}
+            .checked=${this._show_name !== false}
+            .configValue=${'show_name'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
           ${localize('editor.show_name')}
-        </ha-switch>
+        </p>
 
-        <ha-switch
-          style="margin: 10px auto;"
-          aria-label=${localize(
-            this._show_status
-              ? 'editor.show_status_aria_label_off'
-              : 'editor.show_status_aria_label_on'
-          )}
-          .checked=${this._show_status !== false}
-          .configValue=${'show_status'}
-          @change=${this._valueChanged}
-        >
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_status
+                ? 'editor.show_status_aria_label_off'
+                : 'editor.show_status_aria_label_on'
+            )}
+            .checked=${this._show_status !== false}
+            .configValue=${'show_status'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
           ${localize('editor.show_status')}
-        </ha-switch>
+        </p>
 
-        <ha-switch
-          style="margin: 10px auto;"
-          aria-label=${localize(
-            this._show_name
-              ? 'editor.show_toolbar_aria_label_off'
-              : 'editor.show_toolbar_aria_label_on'
-          )}
-          .checked=${this._show_toolbar !== false}
-          .configValue=${'show_toolbar'}
-          @change=${this._valueChanged}
-        >
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_name
+                ? 'editor.show_toolbar_aria_label_off'
+                : 'editor.show_toolbar_aria_label_on'
+            )}
+            .checked=${this._show_toolbar !== false}
+            .configValue=${'show_toolbar'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
           ${localize('editor.show_toolbar')}
-        </ha-switch>
+        </p>
 
         <strong>
           ${localize('editor.code_only_note')}
@@ -218,6 +222,15 @@ export class VacuumCardEditor extends LitElement {
     return css`
       .card-config paper-dropdown-menu {
         width: 100%;
+      }
+
+      .option {
+        display: flex;
+        align-items: center;
+      }
+
+      .option ha-switch {
+        margin-right: 10px;
       }
     `;
   }
