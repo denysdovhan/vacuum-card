@@ -288,7 +288,7 @@ class VacuumCard extends LitElement {
     }
 
     switch (state) {
-      case 'cleaning': {
+      case 'on': case 'cleaning': {
         return html`
           <div class="toolbar">
             <paper-button @click="${() => this.callService('pause')}">
