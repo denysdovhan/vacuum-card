@@ -110,7 +110,7 @@ export default css`
     margin: 30px auto 20px auto;
   }
 
-  .vacuum.cleaning {
+  .vacuum.cleaning, .vacuum.on {
     animation: cleaning 5s linear infinite;
   }
 
