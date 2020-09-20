@@ -114,8 +114,11 @@ Here is what every option means:
 
 ### `stats` object
 
+You can use any attribute of vacuum or even any entity by `entity_id` to display by stats section:
+
 | Name        |   Type   | Default  | Description                                     |
 | ----------- | :------: | -------- | ----------------------------------------------- |
+| `entity_id` | `string` | Optional | An entity_id with state, i.e. `sensor.vacuum`.  |
 | `attribute` | `string` | Optional | Attribute name of the stat, i.e. `filter_left`. |
 | `unit`      | `string` | Optional | Unit of measure, i.e. `hours`.                  |
 | `subtitle`  | `string` | Optional | Friendly name of the stat, i.e. `Filter`.       |

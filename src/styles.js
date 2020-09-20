@@ -207,7 +207,7 @@ export default css`
     border: 0px;
   }
 
-  .stats-hours {
+  .stats-value {
     font-size: 20px;
     font-weight: bold;
   }
