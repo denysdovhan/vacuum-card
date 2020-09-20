@@ -157,6 +157,8 @@ This card supports translations. Please, help to add more translations and impro
 - Español (Spanish)
 - Čeština (Czech)
 - Magyar (Hungarian)
+- עִבְרִית (Hebrew)
+- Português (Portuguese)
 - [_Your language?_][add-translation]
 
 ## Supported models
