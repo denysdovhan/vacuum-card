@@ -1,0 +1,49 @@
+
+{
+  "status": {
+    "Cleaning": "Rengjøring",
+    "Paused": "Pauset",
+    "Idle": "Tomgang",
+    "Charging": "Lader",
+    "Returning home": "Returnerer hjem"
+  },
+  "source": {
+    "Gentle": "Skånsom",
+    "Silent": "Stille",
+    "Standard": "Standard",
+    "Medium": "Medium",
+    "Turbo": "Turbo"
+  },
+  "common": {
+    "name": "Støvsuger kort",
+    "description": "Støvsugerkortet lar deg kontrollere robotstøvsugeren din",
+    "start": "Rengjør",
+    "continue": "fortsett",
+    "pause": "Pause",
+    "stop": "Stop",
+    "return_to_base": "Dock",
+    "locate": "Lokaliser støvsuger",
+    "not_available": "Støvsugeren er ikke tilgjengelig"
+  },
+  "error": {
+    "missing_entity": "Spesifiserende enhet kreves!"
+  },
+  "editor": {
+    "entity": "Enhet (påkrevd)",
+    "map": "Kartkamera (valgfritt)",
+    "image": "Bilde (Valgfritt)",
+    "compact_view": "Kompakt visning",
+    "compact_view_aria_label_on": "Slå på kompakt visning",
+    "compact_view_aria_label_off": "Slå av kompakt visningf",
+    "show_name": "Vis navn",
+    "show_name_aria_label_on": "Slå visningsnavnet på",
+    "show_name_aria_label_off": "Slå visningsnavnet av",
+    "show_status": "Vis Status",
+    "show_status_aria_label_on": "Slå skjermstatus på",
+    "show_status_aria_label_off": "Slå skjermstatus av",
+    "show_toolbar": "Vis verktøylinjen",
+    "show_toolbar_aria_label_on": "Slå skjermverktøylinjen på",
+    "show_toolbar_aria_label_off": "Slå skjermverktøylinjen av",
+    "code_only_note": "Merk: Innstillingshandlinger og statistikkalternativer er eksklusivt tilgjengelige ved hjelp av Code Editor."
+  }
+}
