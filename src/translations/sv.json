@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "Städar",
+    "Paused": "Pausad",
+    "Idle": "Inaktiv",
+    "Charging": "Laddar",
+    "Returning home": "Återvänder hem"
+  },
+  "source": {
+    "Gentle": "Extra försiktig",
+    "Silent": "Eco - tyst",
+    "Standard": "Standard",
+    "Medium": "Medium",
+    "Turbo": "Turbo"
+  },
+  "common": {
+    "name": "Dammsugarkort",
+    "description": "Dammsugarkort låter dig att kontrollera din robotdammsugare.",
+    "start": "Städa",
+    "continue": "Fortsätt",
+    "pause": "Paus",
+    "stop": "Stopp",
+    "return_to_base": "Docka",
+    "locate": "Lokalisera dammsugare",
+    "not_available": "Dammsugare är inte tillgänglig"
+  },
+  "error": {
+    "missing_entity": "Specificera entitet är obligatoriskt!"
+  },
+  "editor": {
+    "entity": "Entitet (Obligatoriskt)",
+    "map": "Kartkamera (Valfritt)",
+    "image": "Bild (Valfritt)",
+    "compact_view": "Kompakt vy",
+    "compact_view_aria_label_on": "Aktivera kompakt vy",
+    "compact_view_aria_label_off": "Inaktivera kompakt vy",
+    "show_name": "Visa namn",
+    "show_name_aria_label_on": "Aktivera namn",
+    "show_name_aria_label_off": "Inaktivera namn",
+    "show_status": "Visa status",
+    "show_status_aria_label_on": "Aktivera status",
+    "show_status_aria_label_off": "Inaktivera status",
+    "show_toolbar": "Visa verktygsvält",
+    "show_toolbar_aria_label_on": "Aktivera verktygsfält",
+    "show_toolbar_aria_label_off": "Inaktivera verktygsfält",
+    "code_only_note": "Obs! Inställningar för händelser och statistikalternativ är enbart tillgängliga med kodredigeraren."
+  }
+}
