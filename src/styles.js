@@ -164,10 +164,13 @@ export default css`
     margin-left: calc(20px + 9px); /* size + margin of spinner */
   }
 
-  .status paper-spinner {
-    min-width: 20px;
-    width: 20px;
-    height: 20px;
+  .status ha-circular-progress {
+    --mdc-theme-primary: var(
+      --card-background-color
+    ); /* hack to override the color */
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
     margin-left: 9px;
   }
 

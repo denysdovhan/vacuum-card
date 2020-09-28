@@ -285,7 +285,10 @@ class VacuumCard extends LitElement {
         <span class="status-text" alt=${localizedStatus}>
           ${localizedStatus}
         </span>
-        <paper-spinner ?active=${this.requestInProgress}></paper-spinner>
+        <ha-circular-progress
+          .active=${this.requestInProgress}
+          size="small"
+        ></ha-circular-progress>
       </div>
     `;
   }
