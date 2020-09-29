@@ -13,6 +13,7 @@ import * as es from './translations/es.json';
 import * as cs from './translations/cs.json';
 import * as hu from './translations/hu.json';
 import * as he from './translations/he.json';
+import * as sv from './translations/sv.json';
 
 var languages = {
   en,
@@ -26,7 +27,8 @@ var languages = {
   es,
   cs,
   hu,
-  he
+  he,
+  sv
 };
 
 const DEFAULT_LANG = 'en';
