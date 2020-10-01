@@ -160,6 +160,7 @@ This card supports translations. Please, help to add more translations and impro
 - עִבְרִית (Hebrew)
 - Português (Portuguese)
 - Svenska (Swedish)
+- Norsk bokmål (Norwegian)
 - [_Your language?_][add-translation]
 
 ## Supported models
