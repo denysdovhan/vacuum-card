@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "清掃中",
+    "Paused": "已暫停",
+    "Idle": "閒置",
+    "Charging": "充電中",
+    "Returning home": "回充"
+  },
+  "source": {
+    "Gentle": "輕柔",
+    "Silent": "安靜",
+    "Standard": "標準",
+    "Medium": "強力",
+    "Turbo": "MAX"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card 允取以控制掃地機器人。 ",
+    "start": "清楚",
+    "continue": "繼續",
+    "pause": "暫停",
+    "stop": "停止",
+    "return_to_base": "回充",
+    "locate": "尋找機器人",
+    "not_available": "機器人無法使用"
+  },
+  "error": {
+    "missing_entity": "必須指定實體！"
+  },
+  "editor": {
+    "entity": "實體（必要）",
+    "map": "地圖鏡頭（選項）",
+    "image": "圖像（選項）",
+    "compact_view": "精簡模式",
+    "compact_view_aria_label_on": "精簡模式開啟",
+    "compact_view_aria_label_off": "精簡模式關閉",
+    "show_name": "顯示名稱",
+    "show_name_aria_label_on": "顯示名稱開啟",
+    "show_name_aria_label_off": "顯示名稱關閉",
+    "show_status": "顯示狀態",
+    "show_status_aria_label_on": "顯示狀態開啟",
+    "show_status_aria_label_off": "顯示狀態關閉",
+    "show_toolbar": "顯示工具列",
+    "show_toolbar_aria_label_on": "顯示工具列開啟",
+    "show_toolbar_aria_label_off": "顯示工具列關閉",
+    "code_only_note": "注意：僅能透過文字編輯模式設定動作與狀態選項。"
+  }
+}
