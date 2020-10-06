@@ -131,7 +131,10 @@ class VacuumCard extends LitElement {
     super.connectedCallback();
     if (this.map) {
       this.updateCameraImage();
-      this.thumbUpdater = setInterval(() => this.updateCameraImage(), 5000);
+      this.thumbUpdater = setInterval(
+        () => this.updateCameraImage(),
+        (this.config.map_refresh || 5) * 1000
+      );
     }
   }
 
