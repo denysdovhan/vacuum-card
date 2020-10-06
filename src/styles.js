@@ -21,6 +21,7 @@ export default css`
     cursor: pointer;
     overflow: hidden;
     position: relative;
+    text-align: center;
   }
 
   .preview.not-available {
@@ -28,7 +29,6 @@ export default css`
   }
 
   .map {
-    display: block;
     max-width: 100%;
     image-rendering: crisp-edges;
   }
