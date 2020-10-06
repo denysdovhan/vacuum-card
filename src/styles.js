@@ -29,7 +29,7 @@ export default css`
   }
 
   .map {
-    max-width: 100%;
+    max-width: 95%;
     image-rendering: crisp-edges;
   }
 
