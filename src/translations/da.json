@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "Støvsuger",
+    "Paused": "Pauset",
+    "Idle": "Inaktiv",
+    "Charging": "Lader",
+    "Returning home": "Returnerer til dock"
+  },
+  "source": {
+    "Gentle": "Mild",
+    "Silent": "Stille",
+    "Standard": "Standard",
+    "Medium": "Medium",
+    "Turbo": "Turbo"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card lader dig kontrollere din robotstøvsuger.",
+    "start": "Start",
+    "continue": "Fortsæt",
+    "pause": "Pause",
+    "stop": "Stop",
+    "return_to_base": "Gå til dock",
+    "locate": "Find støvsuger",
+    "not_available": "Støvsuger er ikke tilgængelig"
+  },
+  "error": {
+    "missing_entity": "En enhed skal specificeres!"
+  },
+  "editor": {
+    "entity": "Enhed (Påkrævet)",
+    "map": "Map Camera (Valgfrit)",
+    "image": "Billede (Valgfrit)",
+    "compact_view": "Kompakt visning",
+    "compact_view_aria_label_on": "Slå kompakt visning til",
+    "compact_view_aria_label_off": "Slå kompakt visning fra",
+    "show_name": "Vis navn",
+    "show_name_aria_label_on": "Slå visning af navn til",
+    "show_name_aria_label_off": "Slå visning af navn fra",
+    "show_status": "Vis Status",
+    "show_status_aria_label_on": "Slå visning af status til",
+    "show_status_aria_label_off": "Slå visning af status fra",
+    "show_toolbar": "Vis værktøjslinje",
+    "show_toolbar_aria_label_on": "Slå visning af værktøjslinje til",
+    "show_toolbar_aria_label_off": "Slå visning af værktøjslinje fra",
+    "code_only_note": "Bemærk: Indstilling af actions og statistik er udelukkende muligt via Code Editor."
+  }
+}
