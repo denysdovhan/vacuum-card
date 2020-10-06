@@ -105,22 +105,41 @@ class VacuumCard extends LitElement {
   }
 
   updated(changedProps) {
-    if (this.map) {
-      const url =
-        this.map.attributes.entity_picture + `&t=${new Date().getTime()}`;
-      const img = new Image();
-      img.onload = () => {
-        this.mapUrl = url;
-      };
-      img.src = url;
-    }
-
     if (
       changedProps.get('hass') &&
       changedProps.get('hass').states[this.config.entity].state !==
         this.hass.states[this.config.entity].state
     ) {
       this.requestInProgress = false;
+    }
+  }
+
+  updateCameraImage() {
+    this.hass
+      .callWS({
+        type: 'camera_thumbnail',
+        entity_id: this.config.map,
+      })
+      .then((val) => {
+        const { content_type: contentType, content } = val;
+        this.mapUrl = `data:${contentType};base64, ${content}`;
+        this.requestUpdate();
+      });
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.map) {
+      this.updateCameraImage();
+      this.thumbUpdater = setInterval(() => this.updateCameraImage(), 5000);
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    if (this.map) {
+      clearInterval(this.thumbUpdater);
+      this.map_image = null;
     }
   }
 
