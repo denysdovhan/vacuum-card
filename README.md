@@ -104,6 +104,7 @@ Here is what every option means:
 | `type`         | `string`  | **Required** | `custom:vacuum-card`                                                    |
 | `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
 | `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
+| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                               |
 | `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
 | `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
 | `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                              |
