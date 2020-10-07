@@ -179,6 +179,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roborock E4
 - Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
+- Xiaomi Mi Roborock V1 (SDJQR02RR)
 - Roomba 675
 - Roomba 960
 - Dyson 360 Eye
