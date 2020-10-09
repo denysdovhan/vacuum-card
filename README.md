@@ -104,6 +104,7 @@ Here is what every option means:
 | `type`         | `string`  | **Required** | `custom:vacuum-card`                                                    |
 | `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
 | `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
+| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                               |
 | `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
 | `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
 | `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                              |
@@ -161,6 +162,7 @@ This card supports translations. Please, help to add more translations and impro
 - Português (Portuguese)
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
+- Dansk (Danish)
 - 한국어 (Korean)
 - [_Your language?_][add-translation]
 
@@ -179,11 +181,14 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roborock E4
 - Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
+- Xiaomi Mi Roborock V1 (SDJQR02RR)
 - Roomba 675
 - Roomba 960
+- Roomba i7+
 - Dyson 360 Eye
 - Neato D7
 - Neato D6
+- Shark IQ
 - [_Your vacuum?_][edit-readme]
 
 ## Development
