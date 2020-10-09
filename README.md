@@ -233,7 +233,7 @@ MIT © [Denys Dovhan][denysdovhan]
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest
 [ha-scripts]: https://www.home-assistant.io/docs/scripts/
 [edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/master/README.md
-[add-translation]: https://github.com/denysdovhan/vacuum-card/tree/master/src/translations
+[add-translation]: https://github.com/denysdovhan/vacuum-card/blob/master/CONTRIBUTING.md#how-to-add-translation
 [macbury-smart-house]: https://macbury.github.io/SmartHouse/HomeAssistant/Vacuum/
 [bbbenji-card]: https://gist.github.com/bbbenji/24372e423f8669b2e6713638d8f8ceb2
 [denysdovhan]: https://denysdovhan.com
