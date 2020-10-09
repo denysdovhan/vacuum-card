@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "청소중",
+    "Paused": "일시정지",
+    "Idle": "대기중",
+    "Charging": "충전중",
+    "Returning home": "복귀중"
+  },
+  "source": {
+    "Gentle": "물걸레",
+    "Silent": "저소음",
+    "Standard": "밸런스",
+    "Medium": "터보",
+    "Turbo": "최강"
+  },
+  "common": {
+    "name": "청소기 카드",
+    "description": "청소기 카드는 로봇 청소기를 제어합니다.",
+    "start": "청소 시작",
+    "continue": "청소 재개",
+    "pause": "일시정지",
+    "stop": "정지",
+    "return_to_base": "복귀",
+    "locate": "청소기 위치",
+    "not_available": "청소기 사용 불가"
+  },
+  "error": {
+    "missing_entity": "구성요소를 선택해주세요."
+  },
+  "editor": {
+    "entity": "구성요소 (필수 요소)",
+    "map": "지도 (선택 사항)",
+    "image": "이미지 (선택 사항)",
+    "compact_view": "간단히 보기",
+    "compact_view_aria_label_on": "간단히 보기 켜기",
+    "compact_view_aria_label_off": "간단히 보기 끄기",
+    "show_name": "이름 표시",
+    "show_name_aria_label_on": "이름 표시 켜기",
+    "show_name_aria_label_off": "이름 표시 끄기",
+    "show_status": "상태 표시",
+    "show_status_aria_label_on": "상태 표시 켜기",
+    "show_status_aria_label_off": "상태 표시 끄기",
+    "show_toolbar": "툴바 표시",
+    "show_toolbar_aria_label_on": "툴바 표시 켜기",
+    "show_toolbar_aria_label_off": "툴바 표시 끄기",
+    "code_only_note": "동작과 상태 설정은 코드 에디터에서 수정할 수 있습니다."
+  }
+}

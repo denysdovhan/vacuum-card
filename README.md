@@ -163,6 +163,7 @@ This card supports translations. Please, help to add more translations and impro
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
 - Dansk (Danish)
+- 한국어 (Korean)
 - [_Your language?_][add-translation]
 
 ## Supported models
