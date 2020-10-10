@@ -15,7 +15,7 @@ import * as hu from './translations/hu.json';
 import * as he from './translations/he.json';
 import * as sv from './translations/sv.json';
 import * as nb from './translations/nb.json';
-import * as pt_br from './translations/pt-br.json';
+import * as pt_BR from './translations/pt-br.json';
 
 var languages = {
   en,
@@ -31,7 +31,8 @@ var languages = {
   hu,
   he,
   sv,
-  nb
+  nb,
+  pt_BR
 };
 
 const DEFAULT_LANG = 'en';
@@ -47,7 +48,7 @@ export default function localize(string, search, replace) {
     langStored = localStorage.getItem('selectedLanguage');
   };
   
-  const lang = (langStored || navigator.language.split('-')[0] || DEFAULT_LANG)
+  const lang = (langStored || navigator.language || DEFAULT_LANG)
     .replace(/['"]+/g, '')
     .replace('-', '_');
 
