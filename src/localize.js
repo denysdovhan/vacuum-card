@@ -15,7 +15,7 @@ import * as hu from './translations/hu.json';
 import * as he from './translations/he.json';
 import * as sv from './translations/sv.json';
 import * as nb from './translations/nb.json';
-import * as pt_BR from './translations/pt-br.json';
+import * as pt_BR from './translations/pt-BR.json';
 
 var languages = {
   en,
