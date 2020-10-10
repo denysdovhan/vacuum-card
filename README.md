@@ -161,7 +161,7 @@ This card supports translations. Please, help to add more translations and impro
 - Português (Portuguese)
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
-- Português Brazil (Brazilian portuguese)
+- Português Brazil (Portuguese - Brazil)
 - [_Your language?_][add-translation]
 
 ## Supported models
