@@ -266,9 +266,14 @@ class VacuumCard extends LitElement {
         return html``;
       }
 
-      const value = entity_id
+      const [attributePrefix, attributeSuffix] = attribute.split('.');
+      let value = entity_id
         ? this.hass.states[entity_id].state
-        : this.entity.attributes[attribute];
+        : this.entity.attributes[attributePrefix];
+
+      if (attributeSuffix) {
+        value = value[attributeSuffix];
+      }
 
       return html`
         <div class="stats-block">
