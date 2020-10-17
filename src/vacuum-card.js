@@ -129,7 +129,7 @@ class VacuumCard extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    if (this.map) {
+    if (!this.compactView && this.map) {
       this.updateCameraImage();
       this.thumbUpdater = setInterval(
         () => this.updateCameraImage(),
