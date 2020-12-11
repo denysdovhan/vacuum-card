@@ -46,7 +46,10 @@ class VacuumCard extends LitElement {
   }
 
   get map() {
-    return this.hass.states[this.config.map];
+    if (this.hass !== undefined) {
+      return this.hass.states[this.config.map];
+    }
+    return null;
   }
 
   get image() {
