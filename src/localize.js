@@ -17,6 +17,7 @@ import * as sv from './translations/sv.json';
 import * as nb from './translations/nb.json';
 import * as da from './translations/da.json';
 import * as ko from './translations/ko.json';
+import * as zh_TW from './translations/zh_TW.json';
 
 var languages = {
   en,
@@ -34,7 +35,8 @@ var languages = {
   sv,
   nb,
   da,
-  ko
+  ko,
+  zh_TW
 };
 
 const DEFAULT_LANG = 'en';

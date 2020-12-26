@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "清掃中",
+    "Paused": "暫停中",
+    "Idle": "閒置中",
+    "Charging": "充電中",
+    "Returning home": "正在回家"
+  },
+  "source": {
+    "Gentle": "溫和",
+    "Silent": "安靜",
+    "Standard": "標準",
+    "Medium": "中",
+    "Turbo": "超強"
+  },
+  "common": {
+    "name": "掃地機器人卡片",
+    "description": "吸塵器卡片可以讓您控制您的掃地機器人",
+    "start": "清掃",
+    "continue": "繼續",
+    "pause": "暫停",
+    "stop": "停止",
+    "return_to_base": "回到充電樁",
+    "locate": "定位掃地機器人",
+    "not_available": "掃地機器人並不支援"
+  },
+  "error": {
+    "missing_entity": "必須指定一個實體!"
+  },
+  "editor": {
+    "entity": "實體 (必填)",
+    "map": "地圖 (選填)",
+    "image": "圖片 (選填)",
+    "compact_view": "簡易檢視",
+    "compact_view_aria_label_on": "切換簡易顯示為開",
+    "compact_view_aria_label_off": "切換簡易顯示為關",
+    "show_name": "顯示名字",
+    "show_name_aria_label_on": "切換顯示名字為開",
+    "show_name_aria_label_off": "切換顯示名字為關",
+    "show_status": "顯示狀態",
+    "show_status_aria_label_on": "切換顯示狀態為開",
+    "show_status_aria_label_off": "切換顯示狀態為關",
+    "show_toolbar": "顯示工具欄",
+    "show_toolbar_aria_label_on": "切換顯示狀態為開",
+    "show_toolbar_aria_label_off": "切換顯示狀態為關",
+    "code_only_note": "提醒: 設定動作和統計訊息僅可透過編碼編輯器中使用"
+  }
+}
