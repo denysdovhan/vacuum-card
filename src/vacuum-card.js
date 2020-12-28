@@ -189,7 +189,7 @@ class VacuumCard extends LitElement {
     } = entity.attributes;
 
     return {
-      status: status || state,
+      status: status || state || entity.state,
       fan_speed,
       fan_speed_list,
       battery_level,
