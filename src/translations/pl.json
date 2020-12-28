@@ -1,10 +1,10 @@
 {
   "status": {
-    "Cleaning": "Sprzątanie",
-    "Paused": "Wstrzymany",
-    "Idle": "Bezczynny",
-    "Charging": "Ładowanie",
-    "Returning home": "Powrót do bazy"
+    "cleaning": "Sprzątanie",
+    "paused": "Wstrzymany",
+    "idle": "Bezczynny",
+    "charging": "Ładowanie",
+    "returning home": "Powrót do bazy"
   },
   "common": {
     "name": "Vacuum Card",

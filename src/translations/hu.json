@@ -1,17 +1,17 @@
 {
   "status": {
-    "Cleaning": "Tisztítás",
-    "Paused": "Szünet",
-    "Idle": "Tétlen",
-    "Charging": "Töltés",
-    "Returning home": "Hazatérés"
+    "cleaning": "Tisztítás",
+    "paused": "Szünet",
+    "idle": "Tétlen",
+    "charging": "Töltés",
+    "returning home": "Hazatérés"
   },
   "source": {
-    "Gentle": "Gyengéd",
-    "Silent": "Csendes",
-    "Standard": "Alap",
-    "Medium": "Közepes",
-    "Turbo": "Turbo"
+    "gentle": "Gyengéd",
+    "silent": "Csendes",
+    "standard": "Alap",
+    "medium": "Közepes",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Porszívó Kártya",

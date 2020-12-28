@@ -1,17 +1,17 @@
 {
   "status": {
-    "Cleaning": "Støvsuger",
-    "Paused": "Pauset",
-    "Idle": "Inaktiv",
-    "Charging": "Lader",
-    "Returning home": "Returnerer til dock"
+    "cleaning": "Støvsuger",
+    "paused": "Pauset",
+    "idle": "Inaktiv",
+    "charging": "Lader",
+    "returning home": "Returnerer til dock"
   },
   "source": {
-    "Gentle": "Mild",
-    "Silent": "Stille",
-    "Standard": "Standard",
-    "Medium": "Medium",
-    "Turbo": "Turbo"
+    "gentle": "Mild",
+    "silent": "Stille",
+    "standard": "Standard",
+    "medium": "Medium",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Vacuum Card",

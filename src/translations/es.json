@@ -1,18 +1,18 @@
 {
   "status": {
-    "Cleaning": "Limpiando",
-    "Paused": "En pausa",
-    "Idle": "Inactivo",
-    "Charging": "Cargando",
-    "Returning home": "Volviendo a la base",
-    "Segment cleaning": "Limpiando zona"
+    "cleaning": "Limpiando",
+    "caused": "En pausa",
+    "idle": "Inactivo",
+    "charging": "Cargando",
+    "returning home": "Volviendo a la base",
+    "segment cleaning": "Limpiando zona"
   },
   "source": {
-    "Gentle": "Delicado",
-    "Silent": "Silencioso",
-    "Standard": "Standard",
-    "Medium": "Medio",
-    "Turbo": "Turbo"
+    "gentle": "Delicado",
+    "silent": "Silencioso",
+    "standard": "Standard",
+    "medium": "Medio",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Vacuum Card",

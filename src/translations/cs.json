@@ -1,17 +1,17 @@
 {
   "status": {
-    "Cleaning": "Vysává se",
-    "Paused": "Pozastaveno",
-    "Idle": "Nečinný",
-    "Charging": "Nabíjí se",
-    "Returning home": "Vrací se domů"
+    "cleaning": "Vysává se",
+    "paused": "Pozastaveno",
+    "idle": "Nečinný",
+    "charging": "Nabíjí se",
+    "returning home": "Vrací se domů"
   },
   "source": {
-    "Gentle": "Mírný",
-    "Silent": "Tichý",
-    "Standard": "Standardní",
-    "Medium": "Střední",
-    "Turbo": "Turbo"
+    "gentle": "Mírný",
+    "silent": "Tichý",
+    "standard": "Standardní",
+    "medium": "Střední",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Karta vysavače",

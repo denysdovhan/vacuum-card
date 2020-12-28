@@ -1,17 +1,18 @@
 {
   "status": {
-    "Cleaning": "Cleaning",
-    "Paused": "Paused",
-    "Idle": "Idle",
-    "Charging": "Charging",
-    "Returning home": "Returning home"
+    "cleaning": "Cleaning",
+    "paused": "Paused",
+    "idle": "Idle",
+    "charging": "Charging",
+    "returning home": "Returning home",
+    "docked": "Docked"
   },
   "source": {
-    "Gentle": "Gentle",
-    "Silent": "Silent",
-    "Standard": "Standard",
-    "Medium": "Medium",
-    "Turbo": "Turbo"
+    "gentle": "Gentle",
+    "silent": "Silent",
+    "standard": "Standard",
+    "medium": "Medium",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Vacuum Card",
