@@ -191,6 +191,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Neato D7
 - Neato D6
 - Shark IQ
+- Ecovacs Deebot OZMO T8 AIVI
 - [_Your vacuum?_][edit-readme]
 
 ## Development
