@@ -1,18 +1,18 @@
 {
   "status": {
-    "Cleaning": "Прибирає",
-    "Paused": "Пауза",
-    "Idle": "Очікує",
-    "Charging": "Заряджається",
-    "Returning home": "Повертається",
-    "Segment cleaning": "Зоноване прибирання"
+    "cleaning": "Прибирає",
+    "paused": "Пауза",
+    "idle": "Очікує",
+    "charging": "Заряджається",
+    "returning home": "Повертається",
+    "segment cleaning": "Зоноване прибирання"
   },
   "source": {
-    "Gentle": "Делікатний",
-    "Silent": "Тихий",
-    "Standard": "Стандартний",
-    "Medium": "Середній",
-    "Turbo": "Турбо"
+    "gentle": "Делікатний",
+    "silent": "Тихий",
+    "standard": "Стандартний",
+    "medium": "Середній",
+    "turbo": "Турбо"
   },
   "common": {
     "name": "Пилосос",

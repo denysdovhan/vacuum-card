@@ -150,7 +150,7 @@ This card supports translations. Please, help to add more translations and impro
 
 - English
 - Українська (Ukrainian)
-- Deutsche (German)
+- Deutsch (German)
 - Français (French)
 - Italiano (Italian)
 - Nederlands (Dutch)
@@ -196,6 +196,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Neato D7
 - Neato D6
 - Shark IQ
+- Ecovacs Deebot 950
 - EcoVacs Deebot OZMO T8 AIVI
 - [_Your vacuum?_][edit-readme]
 

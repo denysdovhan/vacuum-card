@@ -1,17 +1,17 @@
 {
   "status": {
-    "Cleaning": "Nettoyage",
-    "Paused": "En pause",
-    "Idle": "Inactif",
-    "Charging": "En charge",
-    "Returning home": "Retour à la base"
+    "cleaning": "Nettoyage",
+    "paused": "En pause",
+    "idle": "Inactif",
+    "charging": "En charge",
+    "returning home": "Retour à la base"
   },
   "source": {
-    "Gentle": "Doux",
-    "Silent": "Silencieux",
-    "Standard": "Standard",
-    "Medium": "Moyen",
-    "Turbo": "Turbo"
+    "gentle": "Doux",
+    "silent": "Silencieux",
+    "standard": "Standard",
+    "medium": "Moyen",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Vacuum Carte",

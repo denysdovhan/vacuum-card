@@ -1,10 +1,10 @@
 {
   "status": {
-    "Cleaning": "Aan het schoonmaken",
-    "Paused": "Gepauzeerd",
-    "Idle": "Inactief",
-    "Charging": "Aan het opladen",
-    "Returning home": "Keert terug naar dock"
+    "cleaning": "Aan het schoonmaken",
+    "paused": "Gepauzeerd",
+    "idle": "Inactief",
+    "charging": "Aan het opladen",
+    "returning home": "Keert terug naar dock"
   },
   "common": {
     "name": "Stofzuiger kaart",

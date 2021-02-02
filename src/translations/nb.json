@@ -1,18 +1,17 @@
-
 {
   "status": {
-    "Cleaning": "Rengjøring",
-    "Paused": "Pauset",
-    "Idle": "Tomgang",
-    "Charging": "Lader",
-    "Returning home": "Returnerer hjem"
+    "cleaning": "Rengjøring",
+    "paused": "Pauset",
+    "idle": "Tomgang",
+    "charging": "Lader",
+    "returning home": "Returnerer hjem"
   },
   "source": {
-    "Gentle": "Skånsom",
-    "Silent": "Stille",
-    "Standard": "Standard",
-    "Medium": "Medium",
-    "Turbo": "Turbo"
+    "gentle": "Skånsom",
+    "silent": "Stille",
+    "standard": "Standard",
+    "medium": "Medium",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Støvsuger kort",
