@@ -179,6 +179,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roborock S5 Max
 - Roborock S50
 - Roborock S4
+- Roborock S4 Max
 - Roborock E25
 - Roborock E4
 - Mijia Robot Vacuum Cleaner 1C (STYTJ01ZHM)
