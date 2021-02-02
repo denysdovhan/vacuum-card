@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Build
       - name: Build the file
         run: |
           cd /home/runner/work/vacuum-card/vacuum-card
