@@ -46,6 +46,9 @@ class VacuumCard extends LitElement {
   }
 
   get map() {
+    if (!this.hass) {
+      return null;
+    }
     return this.hass.states[this.config.map];
   }
 
