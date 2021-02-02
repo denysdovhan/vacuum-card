@@ -175,6 +175,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 
 - Roborock S6 MaxV
 - Roborock S6
+- Roborock S6 Pure
 - Roborock S5
 - Roborock S5 Max
 - Roborock S50
