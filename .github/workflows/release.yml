@@ -1,25 +1,23 @@
 name: Release
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 jobs:
   release:
     name: Prepare release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       # Build
       - name: Build the file
         run: |
           cd /home/runner/work/vacuum-card/vacuum-card
           npm install
+          npm run lint
           npm run build
-      # Upload build file to the release as an asset
-      - name: Upload zip to release
-        uses: svenstaro/upload-release-action@v1-release
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/vacuum-card/vacuum-card/dist/vacuum-card.js
-          asset_name: vacuum-card.js
-          tag: ${{ github.ref }}
-          overwrite: true
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
