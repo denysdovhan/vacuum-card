@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
+import get from 'lodash.get';
 import './vacuum-card-editor';
 import localize from './localize';
 import styles from './styles';
@@ -271,7 +272,7 @@ class VacuumCard extends LitElement {
 
       const value = entity_id
         ? this.hass.states[entity_id].state
-        : this.entity.attributes[attribute];
+        : get(this.entity.attributes, attribute);
 
       return html`
         <div class="stats-block">
