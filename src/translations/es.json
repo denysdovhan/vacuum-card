@@ -22,7 +22,7 @@
     "pause": "Pausar",
     "stop": "Detener",
     "return_to_base": "Volver a la base",
-    "locate": "Encontrar"
+    "locate": "Localizar"
   },
   "error": {
     "missing_entity": "¡Se requiere especificar una entidad!"
