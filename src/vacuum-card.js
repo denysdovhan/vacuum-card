@@ -168,6 +168,19 @@ class VacuumCard extends LitElement {
     const fan_speed = e.target.getAttribute('value');
     this.callService('set_fan_speed', false, { fan_speed });
   }
+  
+  handleStart() {
+	var start_action = this.config.start_action;
+	if (!start_action) {
+		this.callService('start');
+		return;
+	}
+	
+	var service = start_action.service;
+	var service_data = start_action.service_data;
+	const [domain, name] = service.split('.');
+    this.hass.callService(domain, name, service_data);
+  }
 
   callService(service, isRequest = true, options = {}) {
     this.hass.callService('vacuum', service, {
@@ -348,7 +361,7 @@ class VacuumCard extends LitElement {
       case 'paused': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${() => this.callService('start')}">
+            <paper-button @click="${() => this.handleStart()}">
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
@@ -363,7 +376,7 @@ class VacuumCard extends LitElement {
       case 'returning': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${() => this.callService('start')}">
+            <paper-button @click="${() => this.handleStart()}">
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
@@ -405,7 +418,7 @@ class VacuumCard extends LitElement {
             <ha-icon-button
               icon="hass:play"
               title="${localize('common.start')}"
-              @click="${() => this.callService('start')}"
+              @click="${() => this.handleStart()}"
             >
             </ha-icon-button>
 
