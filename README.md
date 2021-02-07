@@ -58,13 +58,18 @@ This card can be configured using Lovelace UI editor.
 5. Choose `entity`.
 6. Now you should see the preview of the card!
 
-_Sorry, no support for `actions` and `stats` in visual config yet._
+_Sorry, no support for `start_action`, `actions` and `stats` in visual config yet._
 
 Typical example of using this card in YAML config would look like this:
 
 ```yaml
 type: 'custom:vacuum-card'
 entity: vacuum.vacuum_cleaner
+start_action:
+  service: xiaomi_miio.vacuum_clean_segment
+  service_data:
+    entity_id: vacuum.vacuum_cleaner
+    segments: [16, 20]
 stats:
   default:
     - attribute: filter_left
@@ -113,6 +118,7 @@ Here is what every option means:
 | `compact_view` | `boolean` | `false`      | Compact view without image.                                             |
 | `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
 | `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
+| `start_action` | `object`  | Optional     | Custom start action for your vacuum cleaner.                            |
 
 ### `stats` object
 
@@ -134,6 +140,15 @@ You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning spe
 | `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`. |
 | `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
 | `icon`         | `string` | Optional                          | Any icon for action button.                        |
+| `service_data` | `object` | `service_data` for `service` call |
+
+### `start_action` object
+
+You can defined [custom scripts][ha-scripts] for custom clean start action i.e cleaning specific room.
+
+| Name           |   Type   | Default                           | Description                                        |
+| -------------- | :------: | --------------------------------- | -------------------------------------------------- |
+| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
 | `service_data` | `object` | `service_data` for `service` call |
 
 ## Animations
