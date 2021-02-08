@@ -37,7 +37,8 @@ Just search for `Vacuum Card` in plugins tab.
 1. Download `vacuum-card.js` file from the [latest-release].
 2. Put `vacuum-card.js` file into your `config/www` folder.
 3. Add reference to `vacuum-card.js` in Lovelace. There's two way to do that:
-   1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources_ → Click Plus button → Set _Url_ as `/local/vacuum-card.js` → Set _Resource type_ as `JavaScript Module`.
+   1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources Tab_ → Click Plus button → Set _Url_ as `/local/vacuum-card.js` → Set _Resource type_ as `JavaScript Module`.
+   **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
    2. **Using YAML:** Add following code to `lovelace` section.
       ```yaml
       resources:
@@ -149,7 +150,7 @@ This card supports translations. Please, help to add more translations and impro
 
 - English
 - Українська (Ukrainian)
-- Deutsche (German)
+- Deutsch (German)
 - Français (French)
 - Italiano (Italian)
 - Nederlands (Dutch)
@@ -175,15 +176,19 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 
 - Roborock S6 MaxV
 - Roborock S6
+- Roborock S6 Pure
 - Roborock S5
 - Roborock S5 Max
 - Roborock S50
 - Roborock S4
+- Roborock S4 Max
 - Roborock E25
 - Roborock E4
+- Mijia Robot Vacuum Cleaner 1C (STYTJ01ZHM)
 - Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
 - Xiaomi Mi Roborock V1 (SDJQR02RR)
+- Xiaomi Mijia 1C 
 - Roomba 675
 - Roomba 960
 - Roomba 981
@@ -192,6 +197,8 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Neato D7
 - Neato D6
 - Shark IQ
+- Ecovacs Deebot 950
+- EcoVacs Deebot OZMO T8 AIVI
 - [_Your vacuum?_][edit-readme]
 
 ## Development

@@ -1,28 +1,28 @@
 {
   "status": {
-    "Cleaning": "Limpiando",
-    "Paused": "En pausa",
-    "Idle": "Inactivo",
-    "Charging": "Cargando",
-    "Returning home": "Volviendo a la base",
-    "Segment cleaning": "Limpiando zona"
+    "cleaning": "Limpiando",
+    "caused": "En pausa",
+    "idle": "Inactivo",
+    "charging": "Cargando",
+    "returning home": "Volviendo a la base",
+    "segment cleaning": "Limpiando zona"
   },
   "source": {
-    "Gentle": "Delicado",
-    "Silent": "Silencioso",
-    "Standard": "Standard",
-    "Medium": "Medio",
-    "Turbo": "Turbo"
+    "gentle": "Delicado",
+    "silent": "Silencioso",
+    "standard": "Standard",
+    "medium": "Medio",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Vacuum Card",
     "description": "Vacuum card te permite controlar tu robot aspirador.",
-    "start": "Conenzar",
+    "start": "Comenzar",
     "continue": "Continuar",
     "pause": "Pausar",
     "stop": "Detener",
     "return_to_base": "Volver a la base",
-    "locate": "Encontrar"
+    "locate": "Localizar"
   },
   "error": {
     "missing_entity": "¡Se requiere especificar una entidad!"

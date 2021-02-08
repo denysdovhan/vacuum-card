@@ -1,19 +1,19 @@
 {
   "status": {
-    "Cleaning": "Убирает",
-    "Paused": "Пауза",
-    "Idle": "Ожидает",
-    "Charging": "Заряжается",
-    "Returning home": "Возвращается",
-    "Segment cleaning": "Уборка зоны/комнаты"
+    "cleaning": "Убирает",
+    "paused": "Пауза",
+    "idle": "Ожидает",
+    "charging": "Заряжается",
+    "returning home": "Возвращается",
+    "segment cleaning": "Уборка зоны/комнаты"
   },
   "source": {
-    "Gentle": "Деликатный",
-    "Silent": "Тихий",
-    "Standard": "Стандартный",
-    "Medium": "Средний",
-    "Turbo": "Турбо"
-  },  
+    "gentle": "Деликатный",
+    "silent": "Тихий",
+    "standard": "Стандартный",
+    "medium": "Средний",
+    "turbo": "Турбо"
+  },
   "common": {
     "name": "Пылесос",
     "description": "Карта \"пылесос\" позволяет управлять роботом-пылесосом.",
@@ -40,7 +40,7 @@
     "show_name_aria_label_off": "Скрыть название",
     "show_status": "Показать статус?",
     "show_status_aria_label_on": "Показать статус",
-    "show_status_aria_label_off": "Скрыть статус",	
+    "show_status_aria_label_off": "Скрыть статус",
     "show_toolbar": "Показать панель действий?",
     "show_toolbar_aria_label_on": "Показать панель действий",
     "show_toolbar_aria_label_off": "Скрыть панель действий",

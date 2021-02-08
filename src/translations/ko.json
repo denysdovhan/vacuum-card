@@ -1,17 +1,17 @@
 {
   "status": {
-    "Cleaning": "청소중",
-    "Paused": "일시정지",
-    "Idle": "대기중",
-    "Charging": "충전중",
-    "Returning home": "복귀중"
+    "cleaning": "청소중",
+    "paused": "일시정지",
+    "idle": "대기중",
+    "charging": "충전중",
+    "returning home": "복귀중"
   },
   "source": {
-    "Gentle": "물걸레",
-    "Silent": "저소음",
-    "Standard": "밸런스",
-    "Medium": "터보",
-    "Turbo": "최강"
+    "gentle": "물걸레",
+    "silent": "저소음",
+    "standard": "밸런스",
+    "medium": "터보",
+    "turbo": "최강"
   },
   "common": {
     "name": "청소기 카드",

@@ -1,17 +1,17 @@
 {
   "status": {
-    "Cleaning": "Städar",
-    "Paused": "Pausad",
-    "Idle": "Inaktiv",
-    "Charging": "Laddar",
-    "Returning home": "Återvänder hem"
+    "cleaning": "Städar",
+    "paused": "Pausad",
+    "idle": "Inaktiv",
+    "charging": "Laddar",
+    "returning home": "Återvänder hem"
   },
   "source": {
-    "Gentle": "Extra försiktig",
-    "Silent": "Eco - tyst",
-    "Standard": "Standard",
-    "Medium": "Medium",
-    "Turbo": "Turbo"
+    "gentle": "Extra försiktig",
+    "silent": "Eco - tyst",
+    "standard": "Standard",
+    "medium": "Medium",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Dammsugarkort",

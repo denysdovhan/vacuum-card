@@ -42,16 +42,16 @@ var languages = {
 const DEFAULT_LANG = 'en';
 
 export default function localize(string, search, replace) {
-  const [section, key] = string.split('.');
+  const [section, key] = string.toLowerCase().split('.');
 
   let langStored;
-  
+
   try {
     langStored = JSON.parse(localStorage.getItem('selectedLanguage'));
   } catch (e) {
     langStored = localStorage.getItem('selectedLanguage');
-  };
-  
+  }
+
   const lang = (langStored || navigator.language.split('-')[0] || DEFAULT_LANG)
     .replace(/['"]+/g, '')
     .replace('-', '_');

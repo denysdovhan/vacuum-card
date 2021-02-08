@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
+import get from 'lodash.get';
 import './vacuum-card-editor';
 import localize from './localize';
 import styles from './styles';
@@ -46,6 +47,9 @@ class VacuumCard extends LitElement {
   }
 
   get map() {
+    if (!this.hass) {
+      return null;
+    }
     return this.hass.states[this.config.map];
   }
 
@@ -189,7 +193,7 @@ class VacuumCard extends LitElement {
     } = entity.attributes;
 
     return {
-      status: status || state,
+      status: status || state || entity.state,
       fan_speed,
       fan_speed_list,
       battery_level,
@@ -268,7 +272,7 @@ class VacuumCard extends LitElement {
 
       const value = entity_id
         ? this.hass.states[entity_id].state
-        : this.entity.attributes[attribute];
+        : get(this.entity.attributes, attribute);
 
       return html`
         <div class="stats-block">
@@ -406,7 +410,7 @@ class VacuumCard extends LitElement {
             </ha-icon-button>
 
             <ha-icon-button
-              icon="mdi:crosshairs-gps"
+              icon="mdi:map-marker"
               title="${localize('common.locate')}"
               @click="${() => this.callService('locate', false)}"
             >
