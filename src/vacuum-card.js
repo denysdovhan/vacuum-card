@@ -170,15 +170,13 @@ class VacuumCard extends LitElement {
   }
   
   handleStart() {
-	var start_action = this.config.start_action;
-	if (!start_action) {
-		this.callService('start');
-		return;
-	}
+    if (!this.config.start_action) {
+      this.callService('start');
+      return;
+    }
 	
-	var service = start_action.service;
-	var service_data = start_action.service_data;
-	const [domain, name] = service.split('.');
+    const {service, service_data} = this.config.start_action;
+    const [domain, name] = service.split('.');
     this.hass.callService(domain, name, service_data);
   }
 
@@ -361,7 +359,7 @@ class VacuumCard extends LitElement {
       case 'paused': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${() => this.handleStart()}">
+            <paper-button @click="${this.handleStart}">
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
@@ -376,7 +374,7 @@ class VacuumCard extends LitElement {
       case 'returning': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${() => this.handleStart()}">
+            <paper-button @click="${this.handleStart}">
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
@@ -418,7 +416,7 @@ class VacuumCard extends LitElement {
             <ha-icon-button
               icon="hass:play"
               title="${localize('common.start')}"
-              @click="${() => this.handleStart()}"
+              @click="${this.handleStart}"
             >
             </ha-icon-button>
 
