@@ -165,6 +165,7 @@ This card supports translations. Please, help to add more translations and impro
 - Norsk bokmål (Norwegian)
 - Dansk (Danish)
 - 한국어 (Korean)
+- Suomi (Finnish)
 - [_Your language?_][add-translation]
 
 ## Supported models
