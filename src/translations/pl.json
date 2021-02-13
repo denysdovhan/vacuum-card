@@ -19,6 +19,9 @@
   "error": {
     "missing_entity": "Ustawienie encji jest wymagane!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Encja (wymagane)",
     "map": "Kamera (opcjonalne)",

@@ -19,6 +19,9 @@
   "error": {
     "missing_entity": "Het specificeren van een entiteit is verplicht!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entiteit (Verplicht)",
     "map": "Kaart Camera (Optioneel)",

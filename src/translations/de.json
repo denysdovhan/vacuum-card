@@ -21,6 +21,9 @@
   "error": {
     "missing_entity": "Angabe der Entität ist erforderlich!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entität (Erforderlich)",
     "map": "Map Camera (Optional)",

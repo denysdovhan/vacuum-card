@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "La spécification de l'entité est requise !"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entité (obligatoire)",
     "map": "Caméra de carte (facultatif)",

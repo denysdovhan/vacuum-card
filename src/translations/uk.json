@@ -28,6 +28,9 @@
   "error": {
     "missing_entity": "Об’єкт є обов’язковим полем!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Об’єкт (Required)",
     "map": "Камера для карти (Додатково)",
