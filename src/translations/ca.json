@@ -1,0 +1,50 @@
+{
+  "status": {
+    "cleaning": "Limpiando",
+    "paused": "En pausa",
+    "idle": "Inactivo",
+    "charging": "Cargando",
+    "returning home": "Volviendo a la base",
+    "docked": "En la base",
+    "segment cleaning": "Limpiando zona"
+  },
+  "source": {
+    "gentle": "Delicado",
+    "silent": "Silencioso",
+    "standard": "Estándar",
+    "medium": "Medio",
+    "turbo": "Turbo"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card te permite controlar tu robot aspirador.",
+    "start": "Comenzar",
+    "continue": "Continuar",
+    "pause": "Pausar",
+    "stop": "Detener",
+    "return_to_base": "Volver a la base",
+    "locate": "Localizar",
+    "not_available": "Vacuum no está disponible"
+  },
+  "error": {
+    "missing_entity": "¡Se requiere especificar una entidad!"
+  },
+  "editor": {
+    "entity": "Entidad (Requerido)",
+    "map": "Map Camera (Opcional)",
+    "image": "Imagen (Opcional)",
+    "compact_view": "Vista compacta",
+    "compact_view_aria_label_on": "Activar vista compacta",
+    "compact_view_aria_label_off": "Desactivar vista compacta",
+    "show_name": "Nombre a mostrar",
+    "show_name_aria_label_on": "Mostrar nombre",
+    "show_name_aria_label_off": "Ocultar nombre",
+    "show_status": "Mostrar estado",
+    "show_status_aria_label_on": "Activar estado de la pantalla",
+    "show_status_aria_label_off": "Desactivar estado de la pantalla",
+    "show_toolbar": "Mostrar barra de herramientas",
+    "show_toolbar_aria_label_on": "Activar la barra de herramientas",
+    "show_toolbar_aria_label_off": "Desactivar la barra de herramientas",
+    "code_only_note": "Nota: La configuración de las acciones y estadísticas está únicamente disponible a través del Editor de Código."
+  }
+}
