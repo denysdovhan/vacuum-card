@@ -22,7 +22,7 @@
     "pause": "Pausa",
     "stop": "Atura",
     "return_to_base": "Torna a la base",
-    "locate": "Localitzar",
+    "locate": "Localitza",
     "not_available": "No disponible"
   },
   "error": {
@@ -42,8 +42,8 @@
     "show_status_aria_label_on": "Mostra estat",
     "show_status_aria_label_off": "Amaga estat",
     "show_toolbar": "Mostrar barra d'eines",
-    "show_toolbar_aria_label_on": "Mostrar barra d'eines",
-    "show_toolbar_aria_label_off": "Amagar barra d'eines",
+    "show_toolbar_aria_label_on": "Mostra barra d'eines",
+    "show_toolbar_aria_label_off": "Amaga barra d'eines",
     "code_only_note": "Nota: Configuració de les accions i estadístiques només disponible des de l'Editor de Codi."
   }
 }
