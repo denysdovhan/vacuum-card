@@ -1,50 +1,49 @@
 {
   "status": {
-    "cleaning": "Limpiando",
+    "cleaning": "Netejant",
     "paused": "En pausa",
-    "idle": "Inactivo",
-    "charging": "Cargando",
-    "returning home": "Volviendo a la base",
-    "docked": "En la base",
-    "segment cleaning": "Limpiando zona"
+    "idle": "Inactiu",
+    "charging": "Carregant",
+    "returning home": "Tornant a la base",
+    "docked": "A la base"
   },
   "source": {
-    "gentle": "Delicado",
-    "silent": "Silencioso",
-    "standard": "Estándar",
-    "medium": "Medio",
+    "gentle": "Delicat",
+    "silent": "Silenciós",
+    "standard": "Estàndard",
+    "medium": "Mitjà",
     "turbo": "Turbo"
   },
   "common": {
     "name": "Vacuum Card",
-    "description": "Vacuum card te permite controlar tu robot aspirador.",
-    "start": "Comenzar",
-    "continue": "Continuar",
-    "pause": "Pausar",
-    "stop": "Detener",
-    "return_to_base": "Volver a la base",
-    "locate": "Localizar",
-    "not_available": "Vacuum no está disponible"
+    "description": "Vacuum card us permet controlar el robot aspirador.",
+    "start": "Neteja",
+    "continue": "Continua",
+    "pause": "Pausa",
+    "stop": "Atura",
+    "return_to_base": "Torna a la base",
+    "locate": "Localitzar",
+    "not_available": "No disponible"
   },
   "error": {
-    "missing_entity": "¡Se requiere especificar una entidad!"
+    "missing_entity": "Cal especificar una entitat."
   },
   "editor": {
-    "entity": "Entidad (Requerido)",
-    "map": "Map Camera (Opcional)",
-    "image": "Imagen (Opcional)",
-    "compact_view": "Vista compacta",
-    "compact_view_aria_label_on": "Activar vista compacta",
-    "compact_view_aria_label_off": "Desactivar vista compacta",
-    "show_name": "Nombre a mostrar",
-    "show_name_aria_label_on": "Mostrar nombre",
-    "show_name_aria_label_off": "Ocultar nombre",
-    "show_status": "Mostrar estado",
-    "show_status_aria_label_on": "Activar estado de la pantalla",
-    "show_status_aria_label_off": "Desactivar estado de la pantalla",
-    "show_toolbar": "Mostrar barra de herramientas",
-    "show_toolbar_aria_label_on": "Activar la barra de herramientas",
-    "show_toolbar_aria_label_off": "Desactivar la barra de herramientas",
-    "code_only_note": "Nota: La configuración de las acciones y estadísticas está únicamente disponible a través del Editor de Código."
+    "entity": "Entitat (Requerit)",
+    "map": "Càmera de mapa (Opcional)",
+    "image": "Imatge (Opcional)",
+    "compact_view": "Visualització compacta",
+    "compact_view_aria_label_on": "Activar visualització compacta",
+    "compact_view_aria_label_off": "Desactivar visualització compacta",
+    "show_name": "Mostrar nom",
+    "show_name_aria_label_on": "Mostra nom",
+    "show_name_aria_label_off": "Amaga nom",
+    "show_status": "Mostrar estat",
+    "show_status_aria_label_on": "Mostra estat",
+    "show_status_aria_label_off": "Amaga estat",
+    "show_toolbar": "Mostrar barra d'eines",
+    "show_toolbar_aria_label_on": "Mostrar barra d'eines",
+    "show_toolbar_aria_label_off": "Amagar barra d'eines",
+    "code_only_note": "Nota: Configuració de les accions i estadístiques només disponible des de l'Editor de Codi."
   }
 }
