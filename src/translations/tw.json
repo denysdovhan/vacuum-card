@@ -1,0 +1,50 @@
+{
+  "status": {
+    "Cleaning": "清掃中",
+    "Paused": "暫停中",
+    "Idle": "閒置中",
+    "Charging": "充電中",
+    "Returning home": "正在返回充電座",
+    "docked": "返回充電座",
+    "segment cleaning": "區域清掃"
+  },
+  "source": {
+    "Gentle": "拖地",
+    "Silent": "安靜",
+    "Standard": "標準",
+    "Medium": "強力",
+    "Turbo": "MAX"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum Card 可以讓您控制掃地機器人",
+    "start": "開始清掃",
+    "continue": "繼續清掃",
+    "pause": "暫停清掃",
+    "stop": "停止清掃",
+    "return_to_base": "返回充電座",
+    "locate": "定位掃地機器人",
+    "not_available": "掃地機器人並不支援"
+  },
+  "error": {
+    "missing_entity": "必須指定一個實體!"
+  },
+  "editor": {
+    "entity": "實體 (必填)",
+    "map": "地圖 (選填)",
+    "image": "圖片 (選填)",
+    "compact_view": "精簡檢視",
+    "compact_view_aria_label_on": "開啟精簡檢視",
+    "compact_view_aria_label_off": "關閉精簡檢視",
+    "show_name": "顯示名字",
+    "show_name_aria_label_on": "開啟名字顯示",
+    "show_name_aria_label_off": "關閉名字顯示",
+    "show_status": "顯示狀態",
+    "show_status_aria_label_on": "開啟狀態顯示",
+    "show_status_aria_label_off": "關閉狀態顯示",
+    "show_toolbar": "顯示工具欄",
+    "show_toolbar_aria_label_on": "開啟工具欄顯示",
+    "show_toolbar_aria_label_off": "關閉工具欄顯示",
+    "code_only_note": "提醒: 如果要使用 actions 和 stats 選項，請使用編碼編輯器編輯"
+  }
+}
