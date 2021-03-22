@@ -36,14 +36,14 @@
     "compact_view_aria_label_on": "開啟精簡檢視",
     "compact_view_aria_label_off": "關閉精簡檢視",
     "show_name": "顯示名字",
-    "show_name_aria_label_on": "開啟顯示名字",
-    "show_name_aria_label_off": "關閉顯示名字",
+    "show_name_aria_label_on": "開啟名字顯示",
+    "show_name_aria_label_off": "關閉名字顯示",
     "show_status": "顯示狀態",
     "show_status_aria_label_on": "開啟狀態顯示",
     "show_status_aria_label_off": "關閉狀態顯示",
     "show_toolbar": "顯示工具欄",
     "show_toolbar_aria_label_on": "開啟工具欄顯示",
-    "show_toolbar_aria_label_off": "關閉工具欄",
+    "show_toolbar_aria_label_off": "關閉工具欄顯示",
     "code_only_note": "提醒: 如果要使用 actions 和 stats 選項，請使用編碼編輯器編輯"
   }
 }
