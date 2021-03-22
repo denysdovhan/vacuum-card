@@ -167,6 +167,7 @@ This card supports translations. Please, help to add more translations and impro
 - 한국어 (Korean)
 - Suomi (Finnish)
 - Català (Catalan)
+- 正體中文 (Traditional Chinese)
 - [_Your language?_][add-translation]
 
 ## Supported models
