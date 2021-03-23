@@ -5,7 +5,7 @@
     "idle": "閒置中",
     "charging": "充電中",
     "returning home": "正在返回充電座",
-    "docked": "返回充電座",
+    "docked": "充電中",
     "segment cleaning": "區域清掃"
   },
   "source": {
