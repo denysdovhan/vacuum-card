@@ -15,28 +15,28 @@
   },
   "common": {
     "name": "Støvsugarkort",
-    "description": "Støvsugerkortet let deg kontrollere robotstøvsugeren din",
-    "start": "Rengjer",
+    "description": "Støvsugarkortet let deg kontrollere robotstøvsugaren din",
+    "start": "Reingjer",
     "continue": "Fortsett",
     "pause": "Sett på pause",
     "stop": "Stopp",
-    "return_to_base": "Dock",
+    "return_to_base": "Dokk",
     "locate": "Lokaliser støvsugar",
-    "not_available": "Støvsugeran er ikkje tilgjengeleg"
+    "not_available": "Støvsugaren er ikkje tilgjengeleg"
   },
   "error": {
     "missing_entity": "Spesifiserande oppføring kravd!"
   },
   "editor": {
-    "entity": "Oppføring (påkrevd)",
+    "entity": "Oppføring (påkravd)",
     "map": "Kartkamera (valfritt)",
     "image": "Bilde (valfritt)",
-    "compact_view": "Kompakt visning",
-    "compact_view_aria_label_on": "Slå på kompakt visning",
-    "compact_view_aria_label_off": "Slå av kompakt visningf",
+    "compact_view": "Kompakt vising",
+    "compact_view_aria_label_on": "Slå på kompakt vising",
+    "compact_view_aria_label_off": "Slå av kompakt vising",
     "show_name": "Vis namn",
-    "show_name_aria_label_on": "Slå visningsnanet på",
-    "show_name_aria_label_off": "Slå visningsnamnet av",
+    "show_name_aria_label_on": "Slå visingsnanet på",
+    "show_name_aria_label_off": "Slå visingsnamnet av",
     "show_status": "Vis status",
     "show_status_aria_label_on": "Slå skjermstatus på",
     "show_status_aria_label_off": "Slå skjermstatus av",
