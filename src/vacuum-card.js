@@ -18,7 +18,6 @@ class VacuumCard extends LitElement {
     return {
       hass: Object,
       config: Object,
-      mapUrl: String,
       requestInProgress: Boolean,
     };
   }
@@ -118,25 +117,12 @@ class VacuumCard extends LitElement {
     }
   }
 
-  updateCameraImage() {
-    this.hass
-      .callWS({
-        type: 'camera_thumbnail',
-        entity_id: this.config.map,
-      })
-      .then((val) => {
-        const { content_type: contentType, content } = val;
-        this.mapUrl = `data:${contentType};base64, ${content}`;
-        this.requestUpdate();
-      });
-  }
-
   connectedCallback() {
     super.connectedCallback();
     if (!this.compactView && this.map) {
-      this.updateCameraImage();
+      this.requestUpdate();
       this.thumbUpdater = setInterval(
-        () => this.updateCameraImage(),
+        () => this.requestUpdate(),
         (this.config.map_refresh || 5) * 1000
       );
     }
@@ -146,7 +132,6 @@ class VacuumCard extends LitElement {
     super.disconnectedCallback();
     if (this.map) {
       clearInterval(this.thumbUpdater);
-      this.map_image = null;
     }
   }
 
@@ -250,11 +235,18 @@ class VacuumCard extends LitElement {
     }
 
     if (this.map) {
-      return html` <img class="map" src="${this.mapUrl}" /> `;
+      return this.hass.states[this.config.map] &&
+        this.hass.states[this.config.map].attributes.entity_picture
+        ? html`<img
+            class="map"
+            src="${this.hass.states[this.config.map].attributes
+              .entity_picture}&v=${+new Date()}"
+          />`
+        : html``;
     }
 
     if (this.image) {
-      return html` <img class="vacuum ${state}" src="${this.image}" /> `;
+      return html`<img class="vacuum ${state}" src="${this.image}" />`;
     }
 
     return html``;
