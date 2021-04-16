@@ -163,6 +163,7 @@ This card supports translations. Please, help to add more translations and impro
 - Português (Portuguese)
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
+- Norsk nynorsk (Norwegian)
 - Dansk (Danish)
 - 한국어 (Korean)
 - Suomi (Finnish)
