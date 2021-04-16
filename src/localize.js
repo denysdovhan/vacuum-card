@@ -15,6 +15,7 @@ import * as hu from './translations/hu.json';
 import * as he from './translations/he.json';
 import * as sv from './translations/sv.json';
 import * as nb from './translations/nb.json';
+import * as nn from './translations/nn.json';
 import * as da from './translations/da.json';
 import * as ko from './translations/ko.json';
 import * as fi from './translations/fi.json';
@@ -36,6 +37,7 @@ var languages = {
   he,
   sv,
   nb,
+  nn,
   da,
   ko,
   fi,
