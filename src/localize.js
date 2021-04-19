@@ -43,7 +43,8 @@ var languages = {
   ko,
   fi,
   ca,
-  tw
+  tw,
+  vi
 };
 
 const DEFAULT_LANG = 'en';
