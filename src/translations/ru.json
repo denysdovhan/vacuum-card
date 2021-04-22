@@ -5,7 +5,8 @@
     "idle": "Ожидает",
     "charging": "Заряжается",
     "returning home": "Возвращается",
-    "segment cleaning": "Уборка зоны/комнаты"
+    "segment cleaning": "Уборка зоны/комнаты",
+    "docked": "На базе"
   },
   "source": {
     "gentle": "Деликатный",
