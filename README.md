@@ -38,7 +38,7 @@ Just search for `Vacuum Card` in plugins tab.
 2. Put `vacuum-card.js` file into your `config/www` folder.
 3. Add reference to `vacuum-card.js` in Lovelace. There's two way to do that:
    1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources Tab_ → Click Plus button → Set _Url_ as `/local/vacuum-card.js` → Set _Resource type_ as `JavaScript Module`.
-   **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
+      **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
    2. **Using YAML:** Add following code to `lovelace` section.
       ```yaml
       resources:
@@ -168,7 +168,7 @@ This card supports translations. Please, help to add more translations and impro
 - 한국어 (Korean)
 - Suomi (Finnish)
 - Català (Catalan)
-- 正體中文 (Traditional Chinese) 
+- 正體中文 (Traditional Chinese)
 - Việt Nam (Vietnamese)
 - [_Your language?_][add-translation]
 
@@ -192,7 +192,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
 - Xiaomi Mi Roborock V1 (SDJQR02RR)
-- Xiaomi Mijia 1C 
+- Xiaomi Mijia 1C
 - Roomba 675
 - Roomba 960
 - Roomba 981
@@ -204,6 +204,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Shark IQ
 - Ecovacs Deebot 950
 - EcoVacs Deebot OZMO T8 AIVI
+- EcoVacs Deebot N79
 - Eufy Robovac 30c
 - Mi Robot Vacuum-Mop P
 - [_Your vacuum?_][edit-readme]
