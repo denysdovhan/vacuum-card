@@ -318,6 +318,9 @@ class VacuumCard extends LitElement {
 
     switch (state) {
       case 'on':
+      case 'auto':
+      case 'spot':
+      case 'edge':
       case 'cleaning': {
         return html`
           <div class="toolbar">
