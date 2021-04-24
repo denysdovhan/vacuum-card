@@ -110,8 +110,12 @@ export default css`
     margin: 30px auto 20px auto;
   }
 
+  .vacuum.on,
   .vacuum.cleaning,
-  .vacuum.on {
+  .vacuum.auto,
+  .vacuum.spot,
+  .vacuum.edge,
+  .vacuum.single_room {
     animation: cleaning 5s linear infinite;
   }
 
@@ -123,7 +127,8 @@ export default css`
     opacity: 100%;
   }
 
-  .vacuum.docked {
+  .vacuum.docked,
+  .vacuum.idle {
     opacity: 50%;
   }
 
