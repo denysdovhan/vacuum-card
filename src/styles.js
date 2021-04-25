@@ -224,6 +224,8 @@ export default css`
     min-height: 30px;
     display: flex;
     flex-direction: row;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
 
