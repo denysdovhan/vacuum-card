@@ -127,8 +127,7 @@ export default css`
     opacity: 100%;
   }
 
-  .vacuum.docked,
-  .vacuum.idle {
+  .vacuum.docked {
     opacity: 50%;
   }
 
