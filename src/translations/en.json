@@ -12,7 +12,8 @@
     "returning home": "Returning Home",
     "returning": "Returning Home",
     "docked": "Docked",
-    "unknown": "Unknown"
+    "unknown": "Unknown",
+    "offline": "Offline"
   },
   "source": {
     "gentle": "Gentle",

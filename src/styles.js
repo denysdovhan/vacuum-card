@@ -185,7 +185,7 @@ export default css`
     font-size: 16px;
   }
 
-  .not-available {
+  .not-available .offline {
     text-align: center;
     color: var(--text-primary-color);
     font-size: 16px;
