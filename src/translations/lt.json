@@ -1,0 +1,49 @@
+{
+  "status": {
+    "cleaning": "Valo",
+    "paused": "Pristabdytas",
+    "idle": "Neturi darbo",
+    "charging": "Kraunasi",
+    "returning home": "Grįžtą namo",
+    "docked": "Doke"
+  },
+  "source": {
+    "gentle": "Švelnus",
+    "silent": "Tylus",
+    "standard": "Standartinis",
+    "medium": "Vidutinis",
+    "turbo": "Turbo"
+  },
+  "common": {
+    "name": "Siurblio kortelė",
+    "description": "Siurblio kortelė leidžia valdyti jūsų robotą siurblį",
+    "start": "Valyti",
+    "continue": "Tęsti",
+    "pause": "Pristabdyti",
+    "stop": "Sustabdyti",
+    "return_to_base": "Statyti į doką",
+    "locate": "Ieškoti siurblio",
+    "not_available": "Siurblys yra nepasiekiamas"
+  },
+  "error": {
+    "missing_entity": "Būtina nurodyti entity!"
+  },
+  "editor": {
+    "entity": "Entity (Būtina)",
+    "map": "Žemėlapio kamera (Neprivaloma)",
+    "image": "Paveikslėlis (Neprivaloma)",
+    "compact_view": "Glaustas vaizdas",
+    "compact_view_aria_label_on": "Įjungti glaustą vaizdą",
+    "compact_view_aria_label_off": "Išjungti glaustą vaizdą",
+    "show_name": "Rodyti pavadinimą",
+    "show_name_aria_label_on": "Įjungti pavadinimo rodymą",
+    "show_name_aria_label_off": "Išjungti pavadinimo rodymą",
+    "show_status": "Rodyti būseną",
+    "show_status_aria_label_on": "Įjungti būsenos rodymą",
+    "show_status_aria_label_off": "Išjungti būsenos rodymą",
+    "show_toolbar": "Rodyti įrankių juostą",
+    "show_toolbar_aria_label_on": "Įjungti įrankių juostos rodymą",
+    "show_toolbar_aria_label_off": "Išjungti įrankių juostos rodymą",
+    "code_only_note": "Pastaba: Veiksmų ir statistikos nustatymai gali būti redaguojami tik naudojantis kodo redaguotoju."
+  }
+}
