@@ -8,6 +8,12 @@
     "segment cleaning": "Zimmerreinigung",
     "docked": "Angedockt"
   },
+  "source": {
+    "silent": "Leise",
+    "standard": "Normal",
+    "medium": "Turbo",
+    "turbo": "Max."
+  },
   "common": {
     "name": "Vacuum Card",
     "description": "Vacuum card ermöglicht es Ihnen, Ihr Staubsaugerroboter zu steuern.",
