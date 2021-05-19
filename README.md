@@ -134,7 +134,7 @@ You can use any attribute of vacuum or even any entity by `entity_id` to display
 
 ### `actions` object
 
-You can defined service invocations to override default actions behavior.
+You can defined service invocations to override default actions behavior. Available actions to override are `start`, `pause`, `resume`, `stop`, `locate` and `return_to_base`.
 
 | Name           |   Type   | Default                           | Description                                     |
 | -------------- | :------: | --------------------------------- | ----------------------------------------------- |
