@@ -38,7 +38,7 @@ Just search for `Vacuum Card` in plugins tab.
 2. Put `vacuum-card.js` file into your `config/www` folder.
 3. Add reference to `vacuum-card.js` in Lovelace. There's two way to do that:
    1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources Tab_ → Click Plus button → Set _Url_ as `/local/vacuum-card.js` → Set _Resource type_ as `JavaScript Module`.
-   **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
+      **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
    2. **Using YAML:** Add following code to `lovelace` section.
       ```yaml
       resources:
@@ -65,11 +65,12 @@ Typical example of using this card in YAML config would look like this:
 ```yaml
 type: 'custom:vacuum-card'
 entity: vacuum.vacuum_cleaner
-start_action:
-  service: xiaomi_miio.vacuum_clean_segment
-  service_data:
-    entity_id: vacuum.vacuum_cleaner
-    segments: [16, 20]
+actions:
+  start:
+    service: xiaomi_miio.vacuum_clean_segment
+    service_data:
+      entity_id: vacuum.vacuum_cleaner
+      segments: [16, 20]
 stats:
   default:
     - attribute: filter_left
@@ -91,7 +92,7 @@ stats:
     - attribute: cleaning_time
       unit: minutes
       subtitle: Cleaning time
-actions:
+shortcuts:
   - name: Clean living room
     service: script.clean_living_room
     icon: 'mdi:sofa'
@@ -105,20 +106,20 @@ actions:
 
 Here is what every option means:
 
-| Name           |   Type    | Default      | Description                                                             |
-| -------------- | :-------: | ------------ | ----------------------------------------------------------------------- |
-| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                    |
-| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
-| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
-| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                               |
-| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
-| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
-| `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                              |
-| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
-| `compact_view` | `boolean` | `false`      | Compact view without image.                                             |
-| `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
-| `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
-| `start_action` | `object`  | Optional     | Custom start action for your vacuum cleaner.                            |
+| Name           |   Type    | Default      | Description                                                                                               |
+| -------------- | :-------: | ------------ | --------------------------------------------------------------------------------------------------------- |
+| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                                                      |
+| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                  |
+| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
+| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
+| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
+| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
+| `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                                                                |
+| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                                                                |
+| `compact_view` | `boolean` | `false`      | Compact view without image.                                                                               |
+| `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
+| `actions`      | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
+| `shortcuts`    | `object`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
 
 ### `stats` object
 
@@ -133,22 +134,22 @@ You can use any attribute of vacuum or even any entity by `entity_id` to display
 
 ### `actions` object
 
-You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `actions` option.
+You can defined service invocations to override default actions behavior.
+
+| Name           |   Type   | Default                           | Description                                     |
+| -------------- | :------: | --------------------------------- | ----------------------------------------------- |
+| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`. |
+| `service_data` | `object` | `service_data` for `service` call |
+
+### `shortcuts` object
+
+You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `shortcuts` option.
 
 | Name           |   Type   | Default                           | Description                                        |
 | -------------- | :------: | --------------------------------- | -------------------------------------------------- |
 | `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`. |
 | `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
 | `icon`         | `string` | Optional                          | Any icon for action button.                        |
-| `service_data` | `object` | `service_data` for `service` call |
-
-### `start_action` object
-
-You can defined [custom scripts][ha-scripts] for custom clean start action i.e cleaning specific room.
-
-| Name           |   Type   | Default                           | Description                                        |
-| -------------- | :------: | --------------------------------- | -------------------------------------------------- |
-| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
 | `service_data` | `object` | `service_data` for `service` call |
 
 ## Animations
@@ -202,7 +203,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
 - Xiaomi Mi Roborock V1 (SDJQR02RR)
-- Xiaomi Mijia 1C 
+- Xiaomi Mijia 1C
 - Roomba 675
 - Roomba 960
 - Roomba 981
