@@ -406,7 +406,7 @@ class VacuumCard extends LitElement {
             </ha-icon-button>
 
             <ha-icon-button
-              icon="mdi:map-marker"
+              icon="mdi:crosshairs-gps"
               title="${localize('common.locate')}"
               @click="${() => this.callService('locate', false)}"
             >
