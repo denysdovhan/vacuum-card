@@ -100,7 +100,7 @@ class VacuumCard extends LitElement {
   }
 
   getCardSize() {
-    return 2;
+    return this.config.compact_view || false ? 2 : 8;
   }
 
   shouldUpdate(changedProps) {
