@@ -30,6 +30,7 @@ export default css`
 
   .map {
     max-width: 95%;
+    image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 
