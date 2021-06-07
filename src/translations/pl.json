@@ -10,7 +10,7 @@
     "name": "Vacuum Card",
     "description": "Vacuum card pozwala zdalnie kontrolować odkurzacz.",
     "start": "Sprzątaj",
-    "continue": "Kontyntynuj",
+    "continue": "Kontynuuj",
     "pause": "Wstrzymaj",
     "stop": "Zatrzymaj",
     "return_to_base": "Powrót",
