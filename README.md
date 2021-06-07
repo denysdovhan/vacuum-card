@@ -179,6 +179,7 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
+- Roborock S7
 - Roborock S6 MaxV
 - Roborock S6
 - Roborock S6 Pure
