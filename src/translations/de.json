@@ -10,9 +10,10 @@
   },
   "source": {
     "silent": "Leise",
-    "standard": "Normal",
+    "standard": "Balanciert",
     "medium": "Turbo",
     "turbo": "Max."
+    "gentle": "Schonend"
   },
   "common": {
     "name": "Vacuum Card",
