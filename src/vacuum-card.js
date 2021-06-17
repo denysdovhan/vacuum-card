@@ -299,7 +299,7 @@ class VacuumCard extends LitElement {
     }
 
     return html`
-      <div class="status" style="direction:ltr">
+      <div class="status">
         <span class="status-text" alt=${localizedStatus}>
           ${localizedStatus}
         </span>
