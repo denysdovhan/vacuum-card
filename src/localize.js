@@ -20,9 +20,10 @@ import * as da from './translations/da.json';
 import * as ko from './translations/ko.json';
 import * as fi from './translations/fi.json';
 import * as ca from './translations/ca.json';
-import * as tw from './translations/tw.json';
+import * as zh_Hant from './translations/zh-Hant.json';
 import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
+import * as zh_Hans from './translations/zh-Hans.json';
 
 var languages = {
   en,
@@ -44,9 +45,10 @@ var languages = {
   ko,
   fi,
   ca,
-  tw,
+  zh_Hant,
   vi,
-  lt
+  lt,
+  zh_Hans,
 };
 
 const DEFAULT_LANG = 'en';

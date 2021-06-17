@@ -1,0 +1,59 @@
+{
+  "status": {
+    "Cleaning": "正在清扫",
+    "auto": "自动清扫",
+    "segment cleaning": "区域清扫",
+    "Paused": "暂停",
+    "Idle": "待机",
+    "stop": "已停止",
+    "Charging": "正在充电",
+    "Returning home": "正在返回充电座",
+    "returning": "正在返回充电座",
+    "docked": "位于充电座",
+    "unknown": "未知",
+    "offline": "离线"
+  },
+  "source": {
+    "Gentle": "拖地",
+    "Silent": "静音",
+    "Medium": "中等",
+    "Turbo": "超频",
+    "quiet": "静音",
+    "Standard": "标准",
+    "normal": "标准",
+    "max": "强劲",
+    "max+": "超强"
+  },
+  "common": {
+    "name": "扫地机器人",
+    "description": "控制扫地机器人",
+    "start": "开始清扫",
+    "continue": "继续清扫",
+    "pause": "暂停",
+    "stop": "停止清扫",
+    "return_to_base": "返回充电座",
+    "locate": "定位扫地机器人",
+    "not_available": "扫地机器人不可用"
+  },
+  "error": {
+    "missing_entity": "必须指定一个扫地机器人实体!"
+  },
+  "editor": {
+    "entity": "实体 (必填)",
+    "map": "地图 (选填)",
+    "image": "图片 (选填)",
+    "compact_view": "摘要视图",
+    "compact_view_aria_label_on": "开启摘要视图",
+    "compact_view_aria_label_off": "关闭摘要视图",
+    "show_name": "显示名称",
+    "show_name_aria_label_on": "开启名称显示",
+    "show_name_aria_label_off": "关闭名称显示",
+    "show_status": "显示状态",
+    "show_status_aria_label_on": "开启状态显示",
+    "show_status_aria_label_off": "关闭状态显示",
+    "show_toolbar": "显示工具栏",
+    "show_toolbar_aria_label_on": "开启工具栏显示",
+    "show_toolbar_aria_label_off": "关闭工具栏显示",
+    "code_only_note": "提示: 如果要使用 操作(actions) 和 状态(stats) 选项，请使用代码编辑器(yaml)编辑"
+  }
+}
