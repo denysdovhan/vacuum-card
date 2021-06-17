@@ -1,6 +1,7 @@
 {
   "status": {
     "cleaning": "מנקה",
+    "Segment cleaning": "ניקוי חדרים",
     "auto": "ניקוי אוטומטי",
     "spot": "ניקוי אזור",
     "edge": "ניקוי פינה",
@@ -10,7 +11,7 @@
     "stop": "נעצר",
     "charging": "בטעינה",
     "returning home": "בחזרה הביתה",
-    "returning": "בחזרה הביתה",
+    "returning": "בחזרה",
     "docked": "לתחנה",
     "unknown": "לא ידוע",
     "offline": "כבוי"
