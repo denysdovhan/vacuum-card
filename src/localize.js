@@ -21,9 +21,11 @@ import * as ko from './translations/ko.json';
 import * as fi from './translations/fi.json';
 import * as ca from './translations/ca.json';
 import * as zh_Hant from './translations/zh-Hant.json';
+import * as zh_TW from './translations/zh-Hans.json';
 import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
 import * as zh_Hans from './translations/zh-Hans.json';
+import * as zh_CN from './translations/zh-Hans.json';
 
 var languages = {
   en,
@@ -46,9 +48,11 @@ var languages = {
   fi,
   ca,
   zh_Hant,
+  zh_TW,
   vi,
   lt,
   zh_Hans,
+  zh_CN,
 };
 
 const DEFAULT_LANG = 'en';
@@ -59,12 +63,14 @@ export default function localize(string, search, replace) {
   let langStored;
 
   try {
+    //localStorage store the language code that follows the BCP47 format
     langStored = JSON.parse(localStorage.getItem('selectedLanguage'));
   } catch (e) {
     langStored = localStorage.getItem('selectedLanguage');
   }
 
-  const lang = (langStored || navigator.language.split('-')[0] || DEFAULT_LANG)
+  //language code from 'navigator.language' follows RFC1766 format
+  const lang = (langStored || navigator.language || DEFAULT_LANG)
     .replace(/['"]+/g, '')
     .replace('-', '_');
 

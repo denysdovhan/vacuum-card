@@ -1,19 +1,19 @@
 {
   "status": {
-    "Cleaning": "清掃中",
-    "Paused": "暫停中",
-    "Idle": "閒置中",
-    "Charging": "充電中",
-    "Returning home": "正在返回充電座",
+    "cleaning": "清掃中",
+    "paused": "暫停中",
+    "idle": "閒置中",
+    "charging": "充電中",
+    "returning home": "正在返回充電座",
     "docked": "返回充電座",
     "segment cleaning": "區域清掃"
   },
   "source": {
-    "Gentle": "拖地",
-    "Silent": "安靜",
-    "Standard": "標準",
-    "Medium": "強力",
-    "Turbo": "MAX"
+    "gentle": "拖地",
+    "silent": "安靜",
+    "standard": "標準",
+    "medium": "強力",
+    "turbo": "MAX"
   },
   "common": {
     "name": "Vacuum Card",

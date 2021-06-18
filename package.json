@@ -24,6 +24,9 @@
   "author": "Denys Dovhan <denysdovhan@gmail.com> (http://denysdovhan.com/)",
   "license": "MIT",
   "dependencies": {
+    "accept-language": "^3.0.18",
+    "bcp-47": "^2.0.0",
+    "bcp47": "^1.1.2",
     "custom-card-helpers": "^1.6.4",
     "lit-element": "^2.3.1",
     "lodash.get": "^4.4.2"
