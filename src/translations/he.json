@@ -14,7 +14,8 @@
     "returning": "חוזר",
     "docked": "לתחנה",
     "unknown": "לא ידוע",
-    "offline": "כבוי"
+    "offline": "מנותק",
+    "error": "שגיאה"
   },
   "source": {
     "gentle": "עדין",
