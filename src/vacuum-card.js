@@ -175,6 +175,8 @@ class VacuumCard extends LitElement {
       battery_level,
       battery_icon,
       friendly_name,
+      detected_pad = null,
+      tank_level = 0,
     } = entity.attributes;
 
     return {
@@ -184,19 +186,46 @@ class VacuumCard extends LitElement {
       battery_level,
       battery_icon,
       friendly_name,
+      detected_pad,
+      tank_level,
     };
   }
 
+  renderMopSetting(source) {
+    const [mopBehavior, amount] = source.split('-').map((x) => x.trim());
+    const sprayAmount = {
+      '1': 'Low',
+      '2': 'Med',
+      '3': 'High',
+    }[amount];
+
+    const behavior = mopBehavior;
+    const spray = sprayAmount;
+
+    return `${localize(`source.${behavior}}`) || behavior} - ${
+      localize(`source.${spray}`) || spray
+    }`;
+  }
+
   renderSource() {
-    const { fan_speed: source, fan_speed_list: sources } = this.getAttributes(
-      this.entity
-    );
+    const {
+      fan_speed: source,
+      fan_speed_list: sources,
+      detected_pad: pad,
+      tank_level: level,
+    } = this.getAttributes(this.entity);
 
     if (!sources) {
       return html``;
     }
 
     const selected = sources.indexOf(source);
+
+    // In case this is actually a mop, check the pad type. If the water is empty, change the icon to alert.
+    let icon = 'fan';
+    if (pad) icon = pad.indexOf('dry') < 0 ? 'water' : 'water-off';
+    if (pad && level === 0) icon = 'water-remove-outline';
+    const mopSetting = pad ? this.renderMopSetting(source) : null;
 
     return html`
       <paper-menu-button
@@ -208,9 +237,11 @@ class VacuumCard extends LitElement {
         @click="${(e) => e.stopPropagation()}"
       >
         <paper-button slot="dropdown-trigger">
-          <ha-icon icon="mdi:fan"></ha-icon>
+          <ha-icon icon="mdi:${`${icon}`}"></ha-icon>
           <span show=${true}>
-            ${localize(`source.${source}`) || source}
+            ${mopSetting
+              ? `${mopSetting}`
+              : localize(`source.${source}`) || `${source}`}
           </span>
         </paper-button>
         <paper-listbox
@@ -221,7 +252,9 @@ class VacuumCard extends LitElement {
           ${sources.map(
             (item) =>
               html`<paper-item value=${item}
-                >${localize(`source.${item}`) || item}</paper-item
+                >${mopSetting
+                  ? `${this.renderMopSetting(item)}`
+                  : localize(`source.${item}`) || item}</paper-item
               >`
           )}
         </paper-listbox>
@@ -472,12 +505,12 @@ class VacuumCard extends LitElement {
   }
 }
 
-customElements.define('vacuum-card', VacuumCard);
+customElements.define('nwh-vacuum-card', VacuumCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
   preview: true,
-  type: 'vacuum-card',
+  type: 'nwh-vacuum-card',
   name: localize('common.name'),
   description: localize('common.description'),
 });
