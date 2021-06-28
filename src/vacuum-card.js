@@ -221,10 +221,15 @@ class VacuumCard extends LitElement {
 
     const selected = sources.indexOf(source);
 
+		let icon = 'fan';
+
     // In case this is actually a mop, check the pad type. If the water is empty, change the icon to alert.
-    let icon = 'fan';
-    if (pad) icon = pad.indexOf('dry') < 0 ? 'water' : 'water-off';
-    if (pad && level === 0) icon = 'water-remove-outline';
+		if (pad) {
+			icon = pad.toLowerCase().indexOf('dry') < 0 ? 'water' : 'water-off';
+			if (level === 0) icon = 'water-remove-outline';
+			if (pad.toLowerCase() === 'invalid') icon = 'alert-circle';
+		}
+
     const mopSetting = pad ? this.renderMopSetting(source) : null;
 
     return html`
