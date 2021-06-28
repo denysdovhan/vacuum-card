@@ -505,12 +505,12 @@ class VacuumCard extends LitElement {
   }
 }
 
-customElements.define('nwh-vacuum-card', VacuumCard);
+customElements.define('vacuum-card', VacuumCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
   preview: true,
-  type: 'nwh-vacuum-card',
+  type: 'vacuum-card',
   name: localize('common.name'),
   description: localize('common.description'),
 });
