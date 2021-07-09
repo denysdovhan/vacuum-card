@@ -159,6 +159,7 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: center;
+    direction: ltr;
   }
 
   .status-text {
