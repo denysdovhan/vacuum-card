@@ -10,7 +10,7 @@
   },
   "source": {
     "silent": "Leise",
-    "standard": "Balanciert",
+    "standard": "Standard",
     "medium": "Turbo",
     "turbo": "Max",
     "gentle": "Schonend"
