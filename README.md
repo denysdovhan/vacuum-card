@@ -171,6 +171,7 @@ This card supports translations. Please, help to add more translations and impro
 - 正體中文 (Traditional Chinese)
 - Việt Nam (Vietnamese)
 - Lietuvių (Lithuanian)
+- Română (Romanian)
 - [_Your language?_][add-translation]
 
 ## Supported models
