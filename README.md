@@ -171,6 +171,7 @@ This card supports translations. Please, help to add more translations and impro
 - 正體中文 (Traditional Chinese)
 - Việt Nam (Vietnamese)
 - Lietuvių (Lithuanian)
+- Română (Romanian)
 - [_Your language?_][add-translation]
 
 ## Supported models
@@ -212,6 +213,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Eufy Robovac 30c
 - Eufy Robovac 15C Max
 - Mi Robot Vacuum-Mop P
+- EcoVacs T9 AIVI
 - [_Your vacuum?_][edit-readme]
 
 ## Development

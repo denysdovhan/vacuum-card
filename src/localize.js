@@ -23,6 +23,7 @@ import * as ca from './translations/ca.json';
 import * as tw from './translations/tw.json';
 import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
+import * as ro from './translations/ro.json';
 
 var languages = {
   en,
@@ -46,7 +47,8 @@ var languages = {
   ca,
   tw,
   vi,
-  lt
+  lt,
+  ro
 };
 
 const DEFAULT_LANG = 'en';

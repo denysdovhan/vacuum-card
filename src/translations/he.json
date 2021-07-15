@@ -1,19 +1,21 @@
 {
   "status": {
     "cleaning": "מנקה",
+    "Segment cleaning": "ניקוי חדרים",
     "auto": "ניקוי אוטומטי",
     "spot": "ניקוי אזור",
     "edge": "ניקוי פינה",
     "single_room": "ניקוי חדר יחיד",
     "paused": "מושהה",
-    "idle": "סרק",
+    "idle": "ממתין",
     "stop": "נעצר",
     "charging": "בטעינה",
     "returning home": "בחזרה הביתה",
-    "returning": "בחזרה הביתה",
+    "returning": "חוזר",
     "docked": "לתחנה",
     "unknown": "לא ידוע",
-    "offline": "כבוי"
+    "offline": "מנותק",
+    "error": "שגיאה"
   },
   "source": {
     "gentle": "עדין",
