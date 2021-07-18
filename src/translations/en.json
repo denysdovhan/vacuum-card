@@ -55,6 +55,12 @@
     "show_toolbar": "Show Toolbar",
     "show_toolbar_aria_label_on": "Toggle display toolbar on",
     "show_toolbar_aria_label_off": "Toggle display toolbar off",
+    "show_startbutton": "Show Start Action on Toolbar",
+    "show_startbutton_aria_label_on": "Toggle display start action on",
+    "show_startbutton_aria_label_off": "Toggle display start action off",
+    "show_locatebutton": "Show Locate Action on Toolbar",
+    "show_locatebutton_aria_label_on": "Toggle display locate action on",
+    "show_locatebutton_aria_label_off": "Toggle display locate action off",
     "code_only_note": "Note: Setting actions and stats options are available exclusively using Code Editor."
   }
 }

@@ -76,6 +76,22 @@ export class VacuumCardEditor extends LitElement {
     return false;
   }
 
+  get _show_startbutton() {
+    if (typeof this._config.show_startbutton == 'boolean') {
+      return this._config.show_startbutton;
+    }
+
+    return true;
+  }
+
+  get _show_locatebutton() {
+    if (typeof this._config.show_locatebutton == 'boolean') {
+      return this._config.show_locatebutton;
+    }
+
+    return true;
+  }
+
   getEntitiesByType(type) {
     return Object.keys(this.hass.states).filter(
       (eid) => eid.substr(0, eid.indexOf('.')) === type
@@ -187,6 +203,36 @@ export class VacuumCardEditor extends LitElement {
           >
           </ha-switch>
           ${localize('editor.show_toolbar')}
+        </p>
+
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_startbutton
+                ? 'editor.show_startbutton_aria_label_off'
+                : 'editor.show_startbutton_aria_label_on'
+            )}
+            .checked=${this._show_startbutton !== false}
+            .configValue=${'show_startbutton'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.show_startbutton')}
+        </p>
+
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_locatebutton
+                ? 'editor.show_locatebutton_aria_label_off'
+                : 'editor.show_locatebutton_aria_label_on'
+            )}
+            .checked=${this._show_locatebutton !== false}
+            .configValue=${'show_locatebutton'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.show_locatebutton')}
         </p>
 
         <strong>

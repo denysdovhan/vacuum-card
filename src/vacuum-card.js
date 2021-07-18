@@ -84,6 +84,22 @@ class VacuumCard extends LitElement {
     return this.config.show_toolbar;
   }
 
+  get showStartButton() {
+    if (this.config.show_startbutton === undefined) {
+      return true;
+    }
+
+    return this.config.show_startbutton;
+  }
+
+  get showLocateButton() {
+    if (this.config.show_locatebutton === undefined) {
+      return true;
+    }
+
+    return this.config.show_locatebutton;
+  }
+
   get compactView() {
     if (this.config.compact_view === undefined) {
       return false;
@@ -396,24 +412,32 @@ class VacuumCard extends LitElement {
           </ha-icon-button>
         `;
 
+        const startButton = html`
+          <ha-icon-button
+            icon="hass:play"
+            title="${localize('common.start')}"
+            @click="${() => this.callService('start')}"
+          >
+          </ha-icon-button>
+        `;
+
+        const locateButton = html`
+          <ha-icon-button
+            icon="mdi:map-marker"
+            title="${localize('common.locate')}"
+            @click="${() => this.callService('locate', false)}"
+          >
+          </ha-icon-button>
+        `;
+
         return html`
           <div class="toolbar">
-            <ha-icon-button
-              icon="hass:play"
-              title="${localize('common.start')}"
-              @click="${() => this.callService('start')}"
-            >
-            </ha-icon-button>
-
-            <ha-icon-button
-              icon="mdi:map-marker"
-              title="${localize('common.locate')}"
-              @click="${() => this.callService('locate', false)}"
-            >
-            </ha-icon-button>
-
+            ${this.showStartButton ? startButton : ''}
+            ${this.showLocateButton ? locateButton : ''}
             ${state === 'idle' ? dockButton : ''}
-            <div class="fill-gap"></div>
+            ${this.showStartButton || this.showLocateButton || state === 'idle'
+              ? html`<div class="fill-gap"></div>`
+              : ''}
             ${buttons}
           </div>
         `;
