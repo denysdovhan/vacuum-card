@@ -13,7 +13,8 @@
     "returning": "Returning Home",
     "docked": "Docked",
     "unknown": "Unknown",
-    "offline": "Offline"
+    "offline": "Offline",
+    "error": "Error"
   },
   "source": {
     "gentle": "Gentle",

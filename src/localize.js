@@ -26,6 +26,7 @@ import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
 import * as zh_Hans from './translations/zh-Hans.json';
 import * as zh_CN from './translations/zh-Hans.json';
+import * as ro from './translations/ro.json';
 
 var languages = {
   en,
@@ -53,6 +54,7 @@ var languages = {
   lt,
   zh_Hans,
   zh_CN,
+  ro
 };
 
 const DEFAULT_LANG = 'en';
