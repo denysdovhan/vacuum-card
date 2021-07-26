@@ -213,6 +213,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Eufy Robovac 15C Max
 - Mi Robot Vacuum-Mop P
 - EcoVacs T9 AIVI
+- 360 S7 Pro (https://www.amazon.com/360-Technology-Multi-Floor-Selective-Low-Medium/dp/B088WXQHTP)
 - [_Your vacuum?_][edit-readme]
 
 ## Development
