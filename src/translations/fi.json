@@ -1,0 +1,48 @@
+{
+  "status": {
+    "Cleaning": "Siivoaa",
+    "Paused": "Pysäytetty",
+    "Idle": "Toimeton",
+    "Charging": "Latauksessa",
+    "Returning home": "Palaa kotiin"
+  },
+  "source": {
+    "Gentle": "Hellävarainen",
+    "Silent": "Hiljainen",
+    "Standard": "Normaali",
+    "Medium": "Keskitaso",
+    "Turbo": "Turbo"
+  },
+  "common": {
+    "name": "Pölynimurikortti",
+    "description": "Pölynimurikortti sallii robotti imurin ohjauksen.",
+    "start": "Siivoa",
+    "continue": "Jatka",
+    "pause": "Tauko",
+    "stop": "Pysähdy",
+    "return_to_base": "Latausasemaan",
+    "locate": "Paikanna imuri",
+    "not_available": "Imuri ei saatavilla"
+  },
+  "error": {
+    "missing_entity": "Entiteetti puuttuu!"
+  },
+  "editor": {
+    "entity": "Entiteetti (Vaaditaan)",
+    "map": "Kartan kamera (Valinnainen)",
+    "image": "Kuva (Valinnainen)",
+    "compact_view": "Kompakti näkymä",
+    "compact_view_aria_label_on": "Kompakti näkymä päälle",
+    "compact_view_aria_label_off": "Kompakti näkymä pois",
+    "show_name": "Näytä Nimi",
+    "show_name_aria_label_on": "Näyttönimi päälle",
+    "show_name_aria_label_off": "Näyttönimi pois",
+    "show_status": "Näytä Tila",
+    "show_status_aria_label_on": "Tilanäyttö päälle",
+    "show_status_aria_label_off": "Tilanäyttö pois",
+    "show_toolbar": "Näytä työkalurivi",
+    "show_toolbar_aria_label_on": "Työkalurivi päälle",
+    "show_toolbar_aria_label_off": "Työkalurivi pois",
+    "code_only_note": "Huom: Toimintojen ja tilastojen optiot ovat saatavilla ainoastaan koodieditorissa"
+  }
+}

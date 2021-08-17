@@ -38,7 +38,7 @@ Just search for `Vacuum Card` in plugins tab.
 2. Put `vacuum-card.js` file into your `config/www` folder.
 3. Add reference to `vacuum-card.js` in Lovelace. There's two way to do that:
    1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources Tab_ → Click Plus button → Set _Url_ as `/local/vacuum-card.js` → Set _Resource type_ as `JavaScript Module`.
-   **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
+      **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
    2. **Using YAML:** Add following code to `lovelace` section.
       ```yaml
       resources:
@@ -163,8 +163,15 @@ This card supports translations. Please, help to add more translations and impro
 - Português (Portuguese)
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
+- Norsk nynorsk (Norwegian)
 - Dansk (Danish)
 - 한국어 (Korean)
+- Suomi (Finnish)
+- Català (Catalan)
+- 正體中文 (Traditional Chinese)
+- Việt Nam (Vietnamese)
+- Lietuvių (Lithuanian)
+- Română (Romanian)
 - [_Your language?_][add-translation]
 
 ## Supported models
@@ -173,6 +180,7 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
+- Roborock S7
 - Roborock S6 MaxV
 - Roborock S6
 - Roborock S6 Pure
@@ -187,17 +195,28 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Xiaomi Mi Robot (STYJ02YM)
 - Xiaomi Mi Robot 1S
 - Xiaomi Mi Roborock V1 (SDJQR02RR)
-- Xiaomi Mijia 1C 
+- Xiaomi Mijia 1C
 - Roomba 675
+- Roomba 676
 - Roomba 960
+- Roomba 980
 - Roomba 981
+- Roomba i3
 - Roomba i7+
 - Dyson 360 Eye
 - Neato D7
 - Neato D6
+- Neato D4
 - Shark IQ
 - Ecovacs Deebot 950
 - EcoVacs Deebot OZMO T8 AIVI
+- EcoVacs Deebot N79
+- Eufy Robovac 30c
+- Eufy Robovac 15C Max
+- Mi Robot Vacuum-Mop P
+- EcoVacs T9 AIVI
+- Dreame L10 Pro
+- Dreame D9
 - [_Your vacuum?_][edit-readme]
 
 ## Development

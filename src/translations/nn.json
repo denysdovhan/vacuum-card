@@ -1,0 +1,48 @@
+{
+  "status": {
+    "cleaning": "Rengjer",
+    "paused": "Pausa",
+    "idle": "Tomgang",
+    "charging": "Ladar",
+    "returning home": "Returnerer heim"
+  },
+  "source": {
+    "gentle": "Skånsam",
+    "silent": "Stille",
+    "standard": "Standard",
+    "medium": "Medium",
+    "turbo": "Turbo"
+  },
+  "common": {
+    "name": "Støvsugarkort",
+    "description": "Støvsugarkortet let deg kontrollere robotstøvsugaren din",
+    "start": "Reingjer",
+    "continue": "Fortsett",
+    "pause": "Sett på pause",
+    "stop": "Stopp",
+    "return_to_base": "Dokk",
+    "locate": "Lokaliser støvsugar",
+    "not_available": "Støvsugaren er ikkje tilgjengeleg"
+  },
+  "error": {
+    "missing_entity": "Spesifiserande oppføring kravd!"
+  },
+  "editor": {
+    "entity": "Oppføring (påkravd)",
+    "map": "Kartkamera (valfritt)",
+    "image": "Bilde (valfritt)",
+    "compact_view": "Kompakt vising",
+    "compact_view_aria_label_on": "Slå på kompakt vising",
+    "compact_view_aria_label_off": "Slå av kompakt vising",
+    "show_name": "Vis namn",
+    "show_name_aria_label_on": "Slå visingsnanet på",
+    "show_name_aria_label_off": "Slå visingsnamnet av",
+    "show_status": "Vis status",
+    "show_status_aria_label_on": "Slå skjermstatus på",
+    "show_status_aria_label_off": "Slå skjermstatus av",
+    "show_toolbar": "Vis verktøylinja",
+    "show_toolbar_aria_label_on": "Slå skjermverktøylinja på",
+    "show_toolbar_aria_label_off": "Slå skjermverktøylinja av",
+    "code_only_note": "Merk: Innstillingshandlingar og statistikkalternativ er berre tilgjengeleg ved hjelp av Code Editor."
+  }
+}

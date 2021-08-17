@@ -1,18 +1,29 @@
 {
   "status": {
     "cleaning": "Cleaning",
+    "auto": "Automatic Cleaning",
+    "spot": "Spot Cleaning",
+    "edge": "Edge Cleaning",
+    "single_room": "Single Room Cleaning",
     "paused": "Paused",
     "idle": "Idle",
+    "stop": "Stopped",
     "charging": "Charging",
-    "returning home": "Returning home",
-    "docked": "Docked"
+    "returning home": "Returning Home",
+    "returning": "Returning Home",
+    "docked": "Docked",
+    "unknown": "Unknown",
+    "offline": "Offline",
+    "error": "Error"
   },
   "source": {
     "gentle": "Gentle",
     "silent": "Silent",
     "standard": "Standard",
     "medium": "Medium",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "high": "High"
   },
   "common": {
     "name": "Vacuum Card",
@@ -22,7 +33,7 @@
     "pause": "Pause",
     "stop": "Stop",
     "return_to_base": "Dock",
-    "locate": "Locate vacuum",
+    "locate": "Locate Vacuum",
     "not_available": "Vacuum is not available"
   },
   "error": {

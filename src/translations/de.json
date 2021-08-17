@@ -5,8 +5,16 @@
     "idle": "Untätig",
     "charging": "Aufladen",
     "returning home": "Rückkehr zu Dockingstation",
+    "returning": "Rückkehr zu Dockingstation",
     "segment cleaning": "Zimmerreinigung",
-    "docked": "Angedockt"
+    "docked": "Angedockt",
+    "error": "Fehler"
+  },
+  "source": {
+    "silent": "Leise",
+    "standard": "Normal",
+    "medium": "Turbo",
+    "turbo": "Max."
   },
   "common": {
     "name": "Vacuum Card",

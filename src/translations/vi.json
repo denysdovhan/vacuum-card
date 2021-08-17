@@ -1,0 +1,49 @@
+{
+  "status": {
+    "cleaning": "Đang dọn dẹp",
+    "paused": "Dừng",
+    "idle": "Nghỉ",
+    "charging": "Đang sạc",
+    "returning home": "Đang về Dock",
+    "docked": "Đang ở Dock"
+  },
+  "source": {
+    "gentle": "Nhẹ",
+    "silent": "Yên tĩnh",
+    "standard": "Tiêu chuẩn",
+    "medium": "Vừa phải",
+    "turbo": "Tối đa"
+  },
+  "common": {
+    "name": "Robot hút bụi Card",
+    "description": "Robot hút bụi Card cho phép bạn điều khiển robot hút bụi một cách dễ dàng",
+    "start": "Dọn dẹp",
+    "continue": "Tiếp tục",
+    "pause": "Tạm dừng",
+    "stop": "Dừng",
+    "return_to_base": "Về Dock",
+    "locate": "Định vị",
+    "not_available": "Thiết bị không khả dụng"
+  },
+  "error": {
+    "missing_entity": "Khai báo thiếu Entity"
+  },
+  "editor": {
+    "entity": "Entity (Yêu cầu)",
+    "map": "Hiển thị sơ đồ   (Tuỳ chọn)",
+    "image": "Image (Tuỳ chọn)",
+    "compact_view": "Thu gọn",
+    "compact_view_aria_label_on": "Xem thu gọn",
+    "compact_view_aria_label_off": "Xem mở rộng",
+    "show_name": "Hiện tên",
+    "show_name_aria_label_on": "Hiện tên",
+    "show_name_aria_label_off": "Ẩn tên",
+    "show_status": "Hiện trạng thái",
+    "show_status_aria_label_on": "Hiện trạng thái",
+    "show_status_aria_label_off": "Ẩn trạng thái",
+    "show_toolbar": "Hiện thanh công cụ",
+    "show_toolbar_aria_label_on": "Hiện thanh công cụ",
+    "show_toolbar_aria_label_off": "Ẩn thanh công cụ",
+    "code_only_note": "Lưu ý: Cài đặt thao tác và tùy chọn thống kê chỉ có sẵn bằng trình chỉnh sửa mã"
+  }
+}

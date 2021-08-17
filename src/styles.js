@@ -30,6 +30,7 @@ export default css`
 
   .map {
     max-width: 95%;
+    image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 
@@ -110,8 +111,12 @@ export default css`
     margin: 30px auto 20px auto;
   }
 
+  .vacuum.on,
   .vacuum.cleaning,
-  .vacuum.on {
+  .vacuum.auto,
+  .vacuum.spot,
+  .vacuum.edge,
+  .vacuum.single_room {
     animation: cleaning 5s linear infinite;
   }
 
@@ -154,6 +159,7 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: center;
+    direction: ltr;
   }
 
   .status-text {
@@ -181,7 +187,7 @@ export default css`
     font-size: 16px;
   }
 
-  .not-available {
+  .not-available .offline {
     text-align: center;
     color: var(--text-primary-color);
     font-size: 16px;
@@ -224,6 +230,8 @@ export default css`
     min-height: 30px;
     display: flex;
     flex-direction: row;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
 

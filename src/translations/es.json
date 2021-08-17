@@ -1,16 +1,17 @@
 {
   "status": {
     "cleaning": "Limpiando",
-    "caused": "En pausa",
+    "paused": "En pausa",
     "idle": "Inactivo",
     "charging": "Cargando",
     "returning home": "Volviendo a la base",
+    "docked": "En la base",
     "segment cleaning": "Limpiando zona"
   },
   "source": {
     "gentle": "Delicado",
     "silent": "Silencioso",
-    "standard": "Standard",
+    "standard": "Estándar",
     "medium": "Medio",
     "turbo": "Turbo"
   },
@@ -22,7 +23,8 @@
     "pause": "Pausar",
     "stop": "Detener",
     "return_to_base": "Volver a la base",
-    "locate": "Encontrar"
+    "locate": "Localizar",
+    "not_available": "Vacuum no está disponible"
   },
   "error": {
     "missing_entity": "¡Se requiere especificar una entidad!"
@@ -30,13 +32,16 @@
   "editor": {
     "entity": "Entidad (Requerido)",
     "map": "Map Camera (Opcional)",
-    "image": "Imágen (Opcional)",
+    "image": "Imagen (Opcional)",
     "compact_view": "Vista compacta",
     "compact_view_aria_label_on": "Activar vista compacta",
     "compact_view_aria_label_off": "Desactivar vista compacta",
     "show_name": "Nombre a mostrar",
     "show_name_aria_label_on": "Mostrar nombre",
     "show_name_aria_label_off": "Ocultar nombre",
+    "show_status": "Mostrar estado",
+    "show_status_aria_label_on": "Activar estado de la pantalla",
+    "show_status_aria_label_off": "Desactivar estado de la pantalla",
     "show_toolbar": "Mostrar barra de herramientas",
     "show_toolbar_aria_label_on": "Activar la barra de herramientas",
     "show_toolbar_aria_label_off": "Desactivar la barra de herramientas",

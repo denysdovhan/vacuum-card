@@ -15,8 +15,15 @@ import * as hu from './translations/hu.json';
 import * as he from './translations/he.json';
 import * as sv from './translations/sv.json';
 import * as nb from './translations/nb.json';
+import * as nn from './translations/nn.json';
 import * as da from './translations/da.json';
 import * as ko from './translations/ko.json';
+import * as fi from './translations/fi.json';
+import * as ca from './translations/ca.json';
+import * as tw from './translations/tw.json';
+import * as vi from './translations/vi.json';
+import * as lt from './translations/lt.json';
+import * as ro from './translations/ro.json';
 
 var languages = {
   en,
@@ -33,8 +40,15 @@ var languages = {
   he,
   sv,
   nb,
+  nn,
   da,
   ko,
+  fi,
+  ca,
+  tw,
+  vi,
+  lt,
+  ro
 };
 
 const DEFAULT_LANG = 'en';
