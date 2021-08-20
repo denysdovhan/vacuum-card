@@ -199,6 +199,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roomba 675
 - Roomba 676
 - Roomba 960
+- Roomba 980
 - Roomba 981
 - Roomba i3
 - Roomba i7+
@@ -214,6 +215,8 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Eufy Robovac 15C Max
 - Mi Robot Vacuum-Mop P
 - EcoVacs T9 AIVI
+- Dreame L10 Pro
+- Dreame D9
 - [_Your vacuum?_][edit-readme]
 
 ## Development
