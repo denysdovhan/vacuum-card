@@ -24,6 +24,7 @@ import * as tw from './translations/tw.json';
 import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
 import * as ro from './translations/ro.json';
+import * as pt from './translations/pt.json';
 
 var languages = {
   en,
@@ -48,7 +49,8 @@ var languages = {
   tw,
   vi,
   lt,
-  ro
+  ro,
+  pt
 };
 
 const DEFAULT_LANG = 'en';
