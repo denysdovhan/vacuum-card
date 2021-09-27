@@ -75,6 +75,30 @@ class VacuumCard extends LitElement {
     return this.config.show_name;
   }
 
+  get showLocate() {
+    if (this.config.show_locate === undefined) {
+      return true;
+    }
+
+    return this.config.show_locate;
+  }
+
+  get showHeaderAction() {
+    if (this.config.show_header_action === undefined) {
+      return false;
+    }
+
+    return this.config.show_header_action;
+  }
+
+  get showStart() {
+    if (this.config.show_start === undefined) {
+      return true;
+    }
+
+    return this.config.show_start;
+  }
+
   get showStatus() {
     if (this.config.show_status === undefined) {
       return true;
@@ -192,6 +216,25 @@ class VacuumCard extends LitElement {
       battery_icon,
       friendly_name,
     };
+  }
+
+  renderHeaderAction() {
+    if (this.showHeaderAction == false) {
+      return html``;
+    }
+
+    const { header_action = [] } = this.config;
+
+    const execute = () => {
+      const [domain, name] = header_action.service.split('.');
+      this.hass.callService(domain, name, header_action.service_data);
+    };
+
+    return html`<div class="header_action"><ha-icon-button
+      icon="${header_action.icon}"
+      title="${header_action.name}"
+      @click="${execute}"
+    ></ha-icon-button></div>`;
   }
 
   renderSource() {
@@ -389,7 +432,7 @@ class VacuumCard extends LitElement {
           };
           return html`<ha-icon-button
             icon="${icon}"
-            title="${name}"
+            title="${execute}"
             @click="${execute}"
           ></ha-icon-button>`;
         });
@@ -403,21 +446,29 @@ class VacuumCard extends LitElement {
           </ha-icon-button>
         `;
 
+        const startButton = html`
+          <ha-icon-button
+            icon="hass:play"
+            title="${localize('common.start')}"
+            @click="${() => this.callService('start')}"
+          >
+          </ha-icon-button>
+        `;
+
+        const locateButton = html`
+          <ha-icon-button
+            icon="mdi:map-marker"
+            title="${localize('common.locate')}"
+            @click="${() => this.callService('locate', false)}"
+          >
+          </ha-icon-button>
+        `;
+
         return html`
           <div class="toolbar">
-            <ha-icon-button
-              icon="hass:play"
-              title="${localize('common.start')}"
-              @click="${() => this.callService('start')}"
-            >
-            </ha-icon-button>
+            ${ this.showStart == true ? startButton : ''}
 
-            <ha-icon-button
-              icon="mdi:map-marker"
-              title="${localize('common.locate')}"
-              @click="${() => this.callService('locate', false)}"
-            >
-            </ha-icon-button>
+            ${ this.showLocate == true ? locateButton : ''}
 
             ${state === 'idle' ? dockButton : ''}
             <div class="fill-gap"></div>
@@ -448,18 +499,16 @@ class VacuumCard extends LitElement {
 
     return html`
       <ha-card>
-        <div
-          class="preview"
-          @click="${() => this.handleMore()}"
-          ?more-info="true"
-        >
+        <div class="preview">
           <div class="header">
+            ${this.renderHeaderAction()}
             <div class="source">
               ${this.renderSource()}
             </div>
-            <div class="battery">
+            <div class="battery" @click="${() => this.handleMore()}" ?more-info="true">
               ${battery_level}% <ha-icon icon="${battery_icon}"></ha-icon>
             </div>
+
           </div>
 
           ${this.renderMapOrImage(state)}

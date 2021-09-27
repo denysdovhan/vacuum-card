@@ -145,6 +145,10 @@ export default css`
     color: var(--text-primary-color);
   }
 
+  .header_action {
+    padding: 8px 8px 8px 0px;
+  }
+
   .battery {
     text-align: right;
     font-weight: bold;
@@ -153,6 +157,7 @@ export default css`
 
   .source {
     text-align: center;
+    padding: 8px;
   }
 
   .status {

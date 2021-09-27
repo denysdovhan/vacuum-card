@@ -52,6 +52,30 @@ export class VacuumCardEditor extends LitElement {
     return '';
   }
 
+  get _show_locate() {
+    if (this._config) {
+      return this._config.show_locate || true;
+    }
+
+    return '';
+  }
+
+  get _show_header_action() {
+    if (this._config) {
+      return this._config.show_header_action || false;
+    }
+
+    return '';
+  }
+
+  get _show_start() {
+    if (this._config) {
+      return this._config.show_start || true;
+    }
+
+    return '';
+  }
+
   get _show_status() {
     if (this._config) {
       return this._config.show_status || true;
@@ -157,6 +181,51 @@ export class VacuumCardEditor extends LitElement {
           >
           </ha-switch>
           ${localize('editor.show_name')}
+        </p>
+
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_locate
+                ? 'editor.show_locate_aria_label_off'
+                : 'editor.show_locate_aria_label_on'
+            )}
+            .checked=${this._show_locate !== false}
+            .configValue=${'show_locate'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.show_locate')}
+        </p>
+
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_header_action
+                ? 'editor.show_header_action_aria_label_off'
+                : 'editor.show_header_action_aria_label_on'
+            )}
+            .checked=${this._show_header_action !== false}
+            .configValue=${'show_header_action'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.show_header_action')}
+        </p>
+
+        <p class="option">
+          <ha-switch
+            aria-label=${localize(
+              this._show_start
+                ? 'editor.show_start_aria_label_off'
+                : 'editor.show_start_aria_label_on'
+            )}
+            .checked=${this._show_start !== false}
+            .configValue=${'show_start'}
+            @change=${this._valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.show_start')}
         </p>
 
         <p class="option">

@@ -100,19 +100,34 @@ actions:
 
 Here is what every option means:
 
-| Name           |   Type    | Default      | Description                                                             |
-| -------------- | :-------: | ------------ | ----------------------------------------------------------------------- |
-| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                    |
-| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
-| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
-| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                               |
-| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
-| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
-| `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                              |
-| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
-| `compact_view` | `boolean` | `false`      | Compact view without image.                                             |
-| `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
-| `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
+| Name                 |   Type    | Default      | Description                                                             |
+| -------------------- | :-------: | ------------ | ----------------------------------------------------------------------- |
+| `type`               | `string`  | **Required** | `custom:vacuum-card`                                                    |
+| `entity`             | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
+| `map`                | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
+| `map_refresh`        | `integer` | `5`          | Update interval for map camera in seconds                               |
+| `image`              | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
+| `show_name`          | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
+| `show_status`        | `boolean` | `true`       | Show status of the vacuum.                                              |
+| `show_toolbar`       | `boolean` | `true`       | Show toolbar with actions.                                              |
+| `show_locate`        | `boolean` | `true`       | Show location action button in toolbar.                                 |
+| `show_header_action` | `boolean` | `false`      | Show header action button - customized below.                           |
+| `show_start`         | `boolean` | `true`       | Show start action button in toolbar.                                    |
+| `compact_view`       | `boolean` | `false`      | Compact view without image.                                             |
+| `header_action`      | `object`  | Optional     | Custom header action for your vacuum cleaner.                           |
+| `stats`              | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
+| `actions`            | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
+
+### `header_action` object
+
+You can define [custom scripts][ha-scripts] for custom actions - this allows you to define an action for the header which is present even as the toolbar changes.
+
+| Name           |   Type   | Default                           | Description                                        |
+| -------------- | :------: | --------------------------------- | -------------------------------------------------- |
+| `name`         | `string` | Optional                          | Friendly name of the action, i.e. `sensor.vacuum`. |
+| `icon`         | `string` | Optional                          | Any icon for action button.                        |
+| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
+| `service_data` | `object` | `service_data` for `service` call |                                                    |
 
 ### `stats` object
 
@@ -127,7 +142,7 @@ You can use any attribute of vacuum or even any entity by `entity_id` to display
 
 ### `actions` object
 
-You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `actions` option.
+You can define [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `actions` option.
 
 | Name           |   Type   | Default                           | Description                                        |
 | -------------- | :------: | --------------------------------- | -------------------------------------------------- |
@@ -217,6 +232,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - EcoVacs T9 AIVI
 - Dreame L10 Pro
 - Dreame D9
+- Wyze Robot Vacuum
 - [_Your vacuum?_][edit-readme]
 
 ## Development
