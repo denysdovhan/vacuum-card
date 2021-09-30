@@ -211,6 +211,8 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Ecovacs Deebot 950
 - EcoVacs Deebot OZMO T8 AIVI
 - EcoVacs Deebot N79
+- EcoVacs Deebot N8
+- EcoVacs Deebot N8+
 - Eufy Robovac 30c
 - Eufy Robovac 15C Max
 - Mi Robot Vacuum-Mop P
