@@ -432,7 +432,7 @@ class VacuumCard extends LitElement {
           };
           return html`<ha-icon-button
             icon="${icon}"
-            title="${execute}"
+            title="${name}"
             @click="${execute}"
           ></ha-icon-button>`;
         });
