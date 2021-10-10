@@ -203,6 +203,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roomba 981
 - Roomba i3
 - Roomba i7+
+- Roomba e5
 - Dyson 360 Eye
 - Neato D7
 - Neato D6
