@@ -30,6 +30,7 @@ export default css`
 
   .map {
     max-width: 95%;
+    image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 
@@ -158,6 +159,7 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: center;
+    direction: ltr;
   }
 
   .status-text {
@@ -228,6 +230,8 @@ export default css`
     min-height: 30px;
     display: flex;
     flex-direction: row;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
 

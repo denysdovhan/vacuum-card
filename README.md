@@ -187,6 +187,7 @@ This card supports translations. Please, help to add more translations and impro
 - 正體中文 (Traditional Chinese)
 - Việt Nam (Vietnamese)
 - Lietuvių (Lithuanian)
+- Română (Romanian)
 - [_Your language?_][add-translation]
 
 ## Supported models
@@ -195,6 +196,7 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
+- Roborock S7
 - Roborock S6 MaxV
 - Roborock S6
 - Roborock S6 Pure
@@ -211,9 +213,16 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Xiaomi Mi Roborock V1 (SDJQR02RR)
 - Xiaomi Mijia 1C
 - Roomba 675
+- Roomba 676
 - Roomba 960
+- Roomba 980
 - Roomba 981
+- Roomba i3
 - Roomba i7+
+- Roomba e5
+- Roomba S9
+- Braava M6
+- Roomba s9+
 - Dyson 360 Eye
 - Neato D7
 - Neato D6
@@ -222,9 +231,17 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Ecovacs Deebot 950
 - EcoVacs Deebot OZMO T8 AIVI
 - EcoVacs Deebot N79
+- EcoVacs Deebot N8
+- EcoVacs Deebot N8+
 - Eufy Robovac 30c
 - Eufy Robovac 15C Max
 - Mi Robot Vacuum-Mop P
+- EcoVacs T9 AIVI
+- Dreame Z10 Pro
+- Dreame L10 Pro
+- Dreame D9
+- Dreame F9
+- 360 S7 Pro
 - [_Your vacuum?_][edit-readme]
 
 ## Development

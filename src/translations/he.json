@@ -1,17 +1,31 @@
 {
   "status": {
     "cleaning": "מנקה",
+    "segment cleaning": "ניקוי מקטע",
+    "auto": "ניקוי אוטומטי",
+    "spot": "ניקוי אזור",
+    "edge": "ניקוי פינה",
+    "single_room": "ניקוי חדר יחיד",
     "paused": "מושהה",
-    "idle": "סרק",
+    "idle": "ממתין",
+    "stop": "נעצר",
     "charging": "בטעינה",
-    "returning home": "בחזרה הביתה"
+    "returning home": "בחזרה הביתה",
+    "returning": "חוזר",
+    "docked": "בתחנה",
+    "unknown": "לא ידוע",
+    "offline": "מנותק",
+    "error": "שגיאה"
   },
   "source": {
     "gentle": "עדין",
     "silent": "שקט",
     "standard": "רגיל",
     "medium": "בינוני",
-    "turbo": "טורבו"
+    "turbo": "טורבו",
+    "normal": "נורמלי",
+    "high": "גבוה",
+    "auto": "אוטומטי"
   },
   "common": {
     "name": "כרטיס שואב",
@@ -20,7 +34,7 @@
     "continue": "המשך",
     "pause": "השהה",
     "stop": "עצור",
-    "return_to_base": "הגינה",
+    "return_to_base": "עגינה",
     "locate": "אתר שואב",
     "not_available": "השואב אינו זמין"
   },

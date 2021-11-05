@@ -1,0 +1,60 @@
+{
+  "status": {
+    "cleaning": "Curățare",
+    "auto": "Curățare Automată",
+    "spot": "Curățare Punct",
+    "edge": "Curățare Margini",
+    "single_room": "Curățare o singură cameră",
+    "paused": "Repauz",
+    "idle": "Inactiv",
+    "stop": "Oprit",
+    "charging": "Încărcare",
+    "returning home": "Revenire Acasă",
+    "returning": "Revenire Acasă",
+    "docked": "Parcat",
+    "unknown": "Necunoscut",
+    "offline": "Deconectat",
+    "error": "Eroare"
+  },
+  "source": {
+    "gentle": "Blând",
+    "silent": "Silențios",
+    "standard": "Standard",
+    "medium": "Mediu",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "high": "Ridicat"
+  },
+  "common": {
+    "name": "Card de vid.",
+    "description": "Un card de vid vă permite să controlați vidul robotului.",
+    "start": "Curat",
+    "continue": "Continuă",
+    "pause": "Repauz",
+    "stop": "Stop",
+    "return_to_base": "Parchează",
+    "locate": "Găsește Aspirator",
+    "not_available": "Aspiratorul nu este disponibil"
+  },
+  "error": {
+    "missing_entity": "Este necesară specificarea entității!"
+  },
+  "editor": {
+    "entity": "Entitate (Necesar)",
+    "map": "Camera Harta (Optional)",
+    "image": "Imagine (Optional)",
+    "compact_view": "Vizualizare compactă",
+    "compact_view_aria_label_on": "Pornește vizualizare compactă",
+    "compact_view_aria_label_off": "Oprește vizualizare compactă compact view off",
+    "show_name": "Arată Nume",
+    "show_name_aria_label_on": "Pornește arată nume",
+    "show_name_aria_label_off": "Oprește arată nume",
+    "show_status": "Arată Status",
+    "show_status_aria_label_on": "Pornește arată status",
+    "show_status_aria_label_off": "Oprește arată status",
+    "show_toolbar": "Arată bara de instrumente",
+    "show_toolbar_aria_label_on": "Pornește arată bara de instrumente",
+    "show_toolbar_aria_label_off": "Oprește arată bara de instrumente",
+    "code_only_note": "Notă: Acțiunile de setare și opțiunile de statistici sunt disponibile exclusiv folosind Editorul de cod."
+  }
+}

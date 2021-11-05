@@ -5,6 +5,13 @@ import './vacuum-card-editor';
 import localize from './localize';
 import styles from './styles';
 import defaultImage from './vacuum.png';
+import { version } from '../package.json';
+
+console.info(
+  `%c VACUUM-CARD %c ${version} `,
+  'color: white; background: blue; font-weight: 700;',
+  'color: blue; background: white; font-weight: 700;'
+);
 
 if (!customElements.get('ha-icon-button')) {
   customElements.define(
@@ -106,7 +113,7 @@ class VacuumCard extends LitElement {
   }
 
   getCardSize() {
-    return 2;
+    return this.config.compact_view || false ? 3 : 8;
   }
 
   shouldUpdate(changedProps) {
@@ -452,37 +459,32 @@ class VacuumCard extends LitElement {
             const execute = () => {
               this.callAction({ service, service_data });
             };
-            return html`<ha-icon-button
-              icon="${icon}"
-              title="${name}"
-              @click="${execute}"
+            return html`<ha-icon-button title="${name}" @click="${execute}"
+              ><ha-icon icon="${icon}"></ha-icon
             ></ha-icon-button>`;
           }
         );
 
         const dockButton = html`
           <ha-icon-button
-            icon="hass:home-map-marker"
             title="${localize('common.return_to_base')}"
             @click="${this.handleReturnToBase}"
-          >
+            ><ha-icon icon="hass:home-map-marker"></ha-icon>
           </ha-icon-button>
         `;
 
         return html`
           <div class="toolbar">
             <ha-icon-button
-              icon="hass:play"
               title="${localize('common.start')}"
               @click="${this.handleStart}"
-            >
+              ><ha-icon icon="hass:play"></ha-icon>
             </ha-icon-button>
 
             <ha-icon-button
-              icon="mdi:map-marker"
               title="${localize('common.locate')}"
               @click="${this.handleLocate}"
-            >
+              ><ha-icon icon="mdi:map-marker"></ha-icon>
             </ha-icon-button>
 
             ${state === 'idle' ? dockButton : ''}

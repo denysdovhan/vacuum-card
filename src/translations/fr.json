@@ -1,17 +1,28 @@
 {
   "status": {
     "cleaning": "Nettoyage",
+    "auto": "Nettoyage Automatique",
+    "spot": "Nettoyage Localisé",
+    "edge": "Nettoyage Contours",
+    "single_room": "Nettoyage Pièce Unique",
     "paused": "En pause",
     "idle": "Inactif",
+    "stop": "Arrêté",
     "charging": "En charge",
-    "returning home": "Retour à la base"
+    "returning home": "Retour à la base",
+    "returning": "Retour à la base",
+    "docked": "A la base",
+    "unknown": "Inconnu",
+    "offline": "Déconnecté"
   },
   "source": {
     "gentle": "Doux",
     "silent": "Silencieux",
     "standard": "Standard",
     "medium": "Moyen",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "high": "Intense"
   },
   "common": {
     "name": "Vacuum Carte",
