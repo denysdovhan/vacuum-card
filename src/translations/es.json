@@ -29,6 +29,9 @@
   "error": {
     "missing_entity": "¡Se requiere especificar una entidad!"
   },
+  "warning": {
+    "actions_array": "ATENCIÓN: La opcion 'actions' está reservada para sobreescribir el comportamiento por defecto de los botones existentes. Si su intención es añadir acciones adicionales, debe utilizar la opcion 'shortcuts' en su lugar."
+  },
   "editor": {
     "entity": "Entidad (Requerido)",
     "map": "Map Camera (Opcional)",

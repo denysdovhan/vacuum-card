@@ -58,13 +58,19 @@ This card can be configured using Lovelace UI editor.
 5. Choose `entity`.
 6. Now you should see the preview of the card!
 
-_Sorry, no support for `actions` and `stats` in visual config yet._
+_Sorry, no support for `actions`, `shortcuts` and `stats` in visual config yet._
 
 Typical example of using this card in YAML config would look like this:
 
 ```yaml
 type: 'custom:vacuum-card'
 entity: vacuum.vacuum_cleaner
+actions:
+  start:
+    service: xiaomi_miio.vacuum_clean_segment
+    service_data:
+      entity_id: vacuum.vacuum_cleaner
+      segments: [16, 20]
 stats:
   default:
     - attribute: filter_left
@@ -86,7 +92,7 @@ stats:
     - attribute: cleaning_time
       unit: minutes
       subtitle: Cleaning time
-actions:
+shortcuts:
   - name: Clean living room
     service: script.clean_living_room
     icon: 'mdi:sofa'
@@ -100,19 +106,20 @@ actions:
 
 Here is what every option means:
 
-| Name           |   Type    | Default      | Description                                                             |
-| -------------- | :-------: | ------------ | ----------------------------------------------------------------------- |
-| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                    |
-| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                |
-| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map. |
-| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                               |
-| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.    |
-| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                       |
-| `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                              |
-| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                              |
-| `compact_view` | `boolean` | `false`      | Compact view without image.                                             |
-| `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                          |
-| `actions`      | `object`  | Optional     | Custom actions for your vacuum cleaner.                                 |
+| Name           |   Type    | Default      | Description                                                                                               |
+| -------------- | :-------: | ------------ | --------------------------------------------------------------------------------------------------------- |
+| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                                                      |
+| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                  |
+| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
+| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
+| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
+| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
+| `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                                                                |
+| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                                                                |
+| `compact_view` | `boolean` | `false`      | Compact view without image.                                                                               |
+| `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
+| `actions`      | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
+| `shortcuts`    | `object`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
 
 ### `stats` object
 
@@ -127,7 +134,16 @@ You can use any attribute of vacuum or even any entity by `entity_id` to display
 
 ### `actions` object
 
-You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `actions` option.
+You can defined service invocations to override default actions behavior. Available actions to override are `start`, `pause`, `resume`, `stop`, `locate` and `return_to_base`.
+
+| Name           |   Type   | Default                           | Description                                     |
+| -------------- | :------: | --------------------------------- | ----------------------------------------------- |
+| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`. |
+| `service_data` | `object` | `service_data` for `service` call |
+
+### `shortcuts` object
+
+You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `shortcuts` option.
 
 | Name           |   Type   | Default                           | Description                                        |
 | -------------- | :------: | --------------------------------- | -------------------------------------------------- |

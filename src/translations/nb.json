@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "Spesifiserende enhet kreves!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Enhet (påkrevd)",
     "map": "Kartkamera (valgfritt)",

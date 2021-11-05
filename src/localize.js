@@ -50,7 +50,7 @@ var languages = {
   vi,
   lt,
   ro,
-  pt
+  pt,
 };
 
 const DEFAULT_LANG = 'en';

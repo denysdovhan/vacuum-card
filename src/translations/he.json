@@ -41,6 +41,9 @@
   "error": {
     "missing_entity": "יש צורך לציין ישות!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "ישות (נדרש)",
     "map": "מצלמת מפה (אפשרי)",

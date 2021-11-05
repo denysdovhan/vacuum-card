@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "Entidade obrigatória!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entidade (Obrigatório)",
     "map": "Mapa (Opcional)",
