@@ -221,6 +221,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Eufy Robovac 15C Max
 - Mi Robot Vacuum-Mop P
 - EcoVacs T9 AIVI
+- Dreame Z10 Pro
 - Dreame L10 Pro
 - Dreame D9
 - Dreame F9
