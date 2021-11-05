@@ -204,6 +204,9 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roomba i3
 - Roomba i7+
 - Roomba e5
+- Roomba S9
+- Braava M6
+- Roomba s9+
 - Dyson 360 Eye
 - Neato D7
 - Neato D6
@@ -218,6 +221,8 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - EcoVacs T9 AIVI
 - Dreame L10 Pro
 - Dreame D9
+- Dreame F9
+- 360 S7 Pro
 - [_Your vacuum?_][edit-readme]
 
 ## Development
