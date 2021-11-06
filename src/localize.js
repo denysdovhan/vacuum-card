@@ -10,7 +10,6 @@ import * as pl from './translations/pl.json';
 import * as it from './translations/it.json';
 import * as ru from './translations/ru.json';
 import * as es from './translations/es.json';
-import * as es_419 from './translations/es.json';
 import * as cs from './translations/cs.json';
 import * as hu from './translations/hu.json';
 import * as he from './translations/he.json';
@@ -36,7 +35,6 @@ var languages = {
   it,
   ru,
   es,
-  es_419,
   cs,
   hu,
   he,
