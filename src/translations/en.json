@@ -23,7 +23,8 @@
     "medium": "Medium",
     "turbo": "Turbo",
     "normal": "Normal",
-    "high": "High"
+    "high": "High",
+    "strong": "Strong"
   },
   "common": {
     "name": "Vacuum Card",
