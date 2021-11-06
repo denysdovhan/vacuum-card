@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "En enhed skal specificeres!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Enhed (Påkrævet)",
     "map": "Map Camera (Valgfrit)",
