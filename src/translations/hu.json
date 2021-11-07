@@ -3,14 +3,19 @@
     "cleaning": "Tisztítás",
     "paused": "Szünet",
     "idle": "Tétlen",
+    "docked": "Dokkolt",
     "charging": "Töltés",
     "returning home": "Hazatérés"
   },
   "source": {
     "gentle": "Gyengéd",
     "silent": "Csendes",
+    "silence": "Csendes",
     "standard": "Alap",
+    "stanrd": "Alap",
     "medium": "Közepes",
+    "middle": "Közepes",
+    "enchance": "Erős",
     "turbo": "Turbo"
   },
   "common": {
