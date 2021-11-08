@@ -92,19 +92,19 @@ class VacuumCard extends LitElement {
   }
 
   get showStartButton() {
-    if (this.config.show_startbutton === undefined) {
+    if (this.config.show_start_button === undefined) {
       return true;
     }
 
-    return this.config.show_startbutton;
+    return this.config.show_start_button;
   }
 
   get showLocateButton() {
-    if (this.config.show_locatebutton === undefined) {
+    if (this.config.show_locate_button === undefined) {
       return true;
     }
 
-    return this.config.show_locatebutton;
+    return this.config.show_locate_button;
   }
 
   get compactView() {

@@ -76,17 +76,17 @@ export class VacuumCardEditor extends LitElement {
     return false;
   }
 
-  get _show_startbutton() {
-    if (typeof this._config.show_startbutton == 'boolean') {
-      return this._config.show_startbutton;
+  get _show_start_button() {
+    if (typeof this._config.show_start_button == 'boolean') {
+      return this._config.show_start_button;
     }
 
     return true;
   }
 
-  get _show_locatebutton() {
-    if (typeof this._config.show_locatebutton == 'boolean') {
-      return this._config.show_locatebutton;
+  get _show_locate_button() {
+    if (typeof this._config.show_locate_button == 'boolean') {
+      return this._config.show_locate_button;
     }
 
     return true;
@@ -208,31 +208,31 @@ export class VacuumCardEditor extends LitElement {
         <p class="option">
           <ha-switch
             aria-label=${localize(
-              this._show_startbutton
-                ? 'editor.show_startbutton_aria_label_off'
-                : 'editor.show_startbutton_aria_label_on'
+              this._show_start_button
+                ? 'editor.show_start_button_aria_label_off'
+                : 'editor.show_start_button_aria_label_on'
             )}
-            .checked=${this._show_startbutton !== false}
-            .configValue=${'show_startbutton'}
+            .checked=${this._show_start_button !== false}
+            .configValue=${'show_start_button'}
             @change=${this._valueChanged}
           >
           </ha-switch>
-          ${localize('editor.show_startbutton')}
+          ${localize('editor.show_start_button')}
         </p>
 
         <p class="option">
           <ha-switch
             aria-label=${localize(
-              this._show_locatebutton
-                ? 'editor.show_locatebutton_aria_label_off'
-                : 'editor.show_locatebutton_aria_label_on'
+              this._show_locate_button
+                ? 'editor.show_locate_button_aria_label_off'
+                : 'editor.show_locate_button_aria_label_on'
             )}
-            .checked=${this._show_locatebutton !== false}
-            .configValue=${'show_locatebutton'}
+            .checked=${this._show_locate_button !== false}
+            .configValue=${'show_locate_button'}
             @change=${this._valueChanged}
           >
           </ha-switch>
-          ${localize('editor.show_locatebutton')}
+          ${localize('editor.show_locate_button')}
         </p>
 
         <strong>
