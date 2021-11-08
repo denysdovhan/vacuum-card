@@ -19,11 +19,15 @@
   "source": {
     "gentle": "Gentle",
     "silent": "Silent",
+    "silence": "Silent",
     "standard": "Standard",
+    "stanrd": "Standard",
     "medium": "Medium",
+    "middle": "Medium",
     "turbo": "Turbo",
     "normal": "Normal",
     "high": "High",
+    "enchance": "Strong",
     "strong": "Strong"
   },
   "common": {
