@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "구성요소를 선택해주세요."
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "구성요소 (필수 요소)",
     "map": "지도 (선택 사항)",

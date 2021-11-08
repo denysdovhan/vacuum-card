@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "Specificera entitet är obligatoriskt!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entitet (Obligatoriskt)",
     "map": "Kartkamera (Valfritt)",
