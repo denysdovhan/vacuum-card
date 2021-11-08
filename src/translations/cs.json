@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "Je vyžadováno specifikování entity!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entita (Povinný)",
     "map": "Mapa (Nepovinný)",
