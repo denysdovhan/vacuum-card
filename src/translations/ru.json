@@ -8,6 +8,7 @@
     "returning": "Возвращается",
     "docked": "На базе",
     "segment cleaning": "Уборка зоны/комнаты"
+    "mopping": "Мытье полов"
   },
   "source": {
     "gentle": "Деликатный",
@@ -15,6 +16,7 @@
     "standard": "Стандартный",
     "medium": "Средний",
     "turbo": "Турбо"
+    "strong": "Сильная"
   },
   "common": {
     "name": "Пылесос",
