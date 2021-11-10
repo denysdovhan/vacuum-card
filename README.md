@@ -177,6 +177,7 @@ This card supports translations. Please, help to add more translations and impro
 - Magyar (Hungarian)
 - עִבְרִית (Hebrew)
 - Português (Portuguese)
+- Português Brasileiro (Brazilian Portuguese)
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
 - Norsk nynorsk (Norwegian)
