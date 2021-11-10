@@ -1,0 +1,64 @@
+{
+  "status": {
+    "cleaning": "Limpando",
+    "auto": "Limpeza automatica ",
+    "spot": "Limpando local",
+    "edge": "Limpando borda",
+    "single_room": "Limpando um quarto",
+    "paused": "Em pausa",
+    "idle": "Ocioso",
+    "stop": "Parado",
+    "charging": "Carregando",
+    "returning home": "Voltando à base",
+    "returning": "Voltando",
+    "docked": "Na base",
+    "unknown": "Desconhecido",
+    "offline": "Offline",
+    "error": "Erro"
+  },
+  "source": {
+    "gentle": "Delicado",
+    "silent": "Silencioso",
+    "standard": "Standard",
+    "medium": "Médio",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "high": "Alto",
+    "strong": "Forte"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card para controlar seu robô aspirador.",
+    "start": "Limpar",
+    "continue": "Continuar",
+    "pause": "Pausa",
+    "stop": "Parar",
+    "return_to_base": "Retornar à base",
+    "locate": "Localizar aspirador",
+    "not_available": "Aspirador indisponível"
+  },
+  "error": {
+    "missing_entity": "Entidade obrigatória"
+  },
+  "warning": {
+    "actions_array": "AVISO: 'actions' são reservadas para substituir as ações padrões para botões existentes. Se sua intenção era adicionar ações adicionais, use a opção 'shortcuts'."
+  },
+  "editor": {
+    "entity": "Entidade (Obrigatória)",
+    "map": "Mapa (Opcional)",
+    "image": "Imagem (Opcional)",
+    "compact_view": "Vista Compacta",
+    "compact_view_aria_label_on": "Ativar visualização compacta",
+    "compact_view_aria_label_off": "Desativar visualização compacta",
+    "show_name": "Mostrar nome",
+    "show_name_aria_label_on": "Mostrar nome",
+    "show_name_aria_label_off": "Ocultar nome",
+    "show_status": "Mostrar estado",
+    "show_status_aria_label_on": "Mostrar estado",
+    "show_status_aria_label_off": "Ocultar estado",
+    "show_toolbar": "Mostrar barra de ferramentas",
+    "show_toolbar_aria_label_on": "Mostrar barra de ferramentas",
+    "show_toolbar_aria_label_off": "Ocultar barra de ferramentas",
+    "code_only_note": "Nota: Ações e estatísticas estão disponiveis exclusivamente usando o editor de código."
+  }
+}
