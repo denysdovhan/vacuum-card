@@ -496,9 +496,8 @@ class VacuumCard extends LitElement {
     }
   }
 
-  render() {
-    if (!this.entity) {
-      return html`
+  renderNotAvailable() {
+    return html`
         <ha-card>
           <div class="preview not-available">
             <div class="metadata">
@@ -509,6 +508,16 @@ class VacuumCard extends LitElement {
           </div>
         </ha-card>
       `;
+  }
+
+  render() {
+    if (
+      !this.entity ||
+      (this.entity.attributes.status ||
+        this.entity.attributes.state ||
+        this.entity.state) === 'unavailable'
+    ) {
+      return this.renderNotAvailable();
     }
 
     const { state } = this.entity;
