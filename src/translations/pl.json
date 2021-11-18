@@ -1,10 +1,30 @@
 {
   "status": {
     "cleaning": "Sprzątanie",
+    "auto": "Automatyczne Sprzątnie",
+    "spot": "Sprzątanie Miejscowe",
+    "edge": "Sprzątanie Brzegowe",
+    "single_room": "Sprzątanie Pomiesczenia",
     "paused": "Wstrzymany",
     "idle": "Bezczynny",
+    "stop": "Zatrzymany",
     "charging": "Ładowanie",
-    "returning home": "Powrót do bazy"
+    "returning home": "Powrót Do Bazy",
+    "returning": "Powrót Do Bazy",
+    "docked": "W Bazie",
+    "unknown": "Nieznany",
+    "offline": "Offline",
+    "error": "Błąd"
+  },
+  "source": {
+    "gentle": "Delikatny",
+    "silent": "Cichy",
+    "standard": "Standardowy",
+    "medium": "Średni",
+    "turbo": "Turbo",
+    "normal": "Normalny",
+    "high": "Wysoki",
+    "strong": "Silny"
   },
   "common": {
     "name": "Vacuum Card",
@@ -13,26 +33,30 @@
     "continue": "Kontynuuj",
     "pause": "Wstrzymaj",
     "stop": "Zatrzymaj",
-    "return_to_base": "Powrót",
-    "locate": "Zlokalizuj odkurzacz"
+    "return_to_base": "Powrót do bazy",
+    "locate": "Zlokalizuj odkurzacz",
+    "not_available": "Odkurzacz nie jest dostępny"
   },
   "error": {
     "missing_entity": "Ustawienie encji jest wymagane!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "UWAGA: 'actions' jest używane aby napisać podstawowe przyciski. Jeśli chcesz dodać dodatkowe akcje użyj opcji 'shortcuts'."
   },
   "editor": {
-    "entity": "Encja (wymagane)",
-    "map": "Kamera (opcjonalne)",
-    "image": "Obrazek (opcjonalne)",
-    "compact_view": "Widok kompaktowy",
+    "entity": "Encja (Wymagane)",
+    "map": "Kamera (Opcjonalne)",
+    "image": "Obrazek (Opcjonalne)",
+    "compact_view": "Widok Kompaktowy",
     "compact_view_aria_label_on": "Włącz widok kompaktowy",
     "compact_view_aria_label_off": "Wyłącz widok kompaktowy",
-    "show_name": "Pokaż nazwę",
+    "show_name": "Pokaż Nazwę",
     "show_name_aria_label_on": "Włącz widok nazwy",
     "show_name_aria_label_off": "Wyłącz widok nazwy",
-    "show_toolbar": "Pasek narzędzi",
+    "show_status": "Pokaż Status",
+    "show_status_aria_label_on": "Włącz widok statusu",
+    "show_status_aria_label_off": "Wyłącz widok statusu",
+    "show_toolbar": "Pasek Narzędzi",
     "show_toolbar_aria_label_on": "Włącz pasek narzędzi",
     "show_toolbar_aria_label_off": "Wyłącz pasek narzędzi",
     "code_only_note": "Uwaga: Ustawianie opcji i informacji statystyk jest dostępne tylko poprzez edytor kodu YAML."
