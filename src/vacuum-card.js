@@ -331,28 +331,77 @@ class VacuumCard extends LitElement {
     return html``;
   }
 
+  parseConversion(conversion) {
+    let conversion_str = conversion.toString();
+    const allowed_operators = ['+', '-', '*', '/'];
+    let factor = conversion_str.substr(1);
+    let operator = null;
+    for (let i = 0; i < allowed_operators.length; i++) {
+      if (!conversion_str.startsWith(allowed_operators[i])) {
+        continue;
+      }
+      operator = allowed_operators[i];
+      break;
+    }
+    if (operator == null) {
+      operator = '+';
+      factor = conversion_str;
+    }
+    return {
+      operator: operator,
+      factor: parseFloat(factor),
+    };
+  }
+
+  convertValue(value, conversion) {
+    const { operator, factor } = this.parseConversion(conversion);
+    const sensor_value = parseFloat(value);
+    let calculated_value = 0.0;
+    switch (operator) {
+      case '-':
+        calculated_value = sensor_value - factor;
+        break;
+      case '*':
+        calculated_value = sensor_value * factor;
+        break;
+      case '/':
+        calculated_value = sensor_value / factor;
+        break;
+      default:
+        calculated_value = sensor_value + factor;
+        break;
+    }
+    return calculated_value.toFixed(2)
+  }
+
   renderStats(state) {
     const { stats = {} } = this.config;
 
     const statsList = stats[state] || stats.default || [];
 
-    return statsList.map(({ entity_id, attribute, unit, subtitle }) => {
-      if (!entity_id && !attribute) {
-        return html``;
+    return statsList.map(
+      ({ entity_id, attribute, unit, subtitle, conversion }) => {
+        if (!entity_id && !attribute) {
+          return html``;
+        }
+
+        let value = entity_id
+          ? this.hass.states[entity_id].state
+          : get(this.entity.attributes, attribute);
+
+        if (conversion) {
+          value = this.convertValue(value, conversion);
+        }
+
+        return html`
+          <div class="stats-block">
+            <span class="stats-value">${value}</span>
+            ${unit}
+            <div class="stats-subtitle">${subtitle}</div>
+          </div>
+        `;
       }
-
-      const value = entity_id
-        ? this.hass.states[entity_id].state
-        : get(this.entity.attributes, attribute);
-
-      return html`
-        <div class="stats-block">
-          <span class="stats-value">${value}</span>
-          ${unit}
-          <div class="stats-subtitle">${subtitle}</div>
-        </div>
-      `;
-    });
+    );
   }
 
   renderName() {

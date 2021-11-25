@@ -125,12 +125,29 @@ Here is what every option means:
 
 You can use any attribute of vacuum or even any entity by `entity_id` to display by stats section:
 
-| Name        |   Type   | Default  | Description                                     |
-| ----------- | :------: | -------- | ----------------------------------------------- |
-| `entity_id` | `string` | Optional | An entity_id with state, i.e. `sensor.vacuum`.  |
-| `attribute` | `string` | Optional | Attribute name of the stat, i.e. `filter_left`. |
-| `unit`      | `string` | Optional | Unit of measure, i.e. `hours`.                  |
-| `subtitle`  | `string` | Optional | Friendly name of the stat, i.e. `Filter`.       |
+| Name         |   Type   | Default  | Description                                                  |
+| ------------ | :------: | -------- | ------------------------------------------------------------ |
+| `entity_id`  | `string` | Optional | An entity_id with state, i.e. `sensor.vacuum`.               |
+| `attribute`  | `string` | Optional | Attribute name of the stat, i.e. `filter_left`.              |
+| `unit`       | `string` | Optional | Unit of measure, i.e. `hours`.                               |
+| `subtitle`   | `string` | Optional | Friendly name of the stat, i.e. `Filter`.                    |
+| `conversion` | `string` | Optional | Apply conversion function to the value of the entity before displaying<br/>Available operations: `+`, `-`, `*`, `/`<br />Syntax: `[operation][value]`<br />For example: `/3600` will divide the value from entity by 3600<br />The result of the operation is rounded to 2 decimal points before displaying |
+
+Example of using external entity:
+
+```yaml
+type: custom:vacuum-card
+  entity: vacuum.roborock
+  stats:
+    default:
+      - attribute: filter_left
+        entity_id: sensor.roborock_filter_left
+        unit: h
+        subtitle: Filter
+        conversion: /3600
+```
+
+
 
 ### `actions` object
 
