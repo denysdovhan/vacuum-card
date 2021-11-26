@@ -5,6 +5,7 @@
     "idle": "Inattivo",
     "charging": "In carica",
     "returning home": "In rientro alla base"
+    "docked": "In Base"
   },
   "common": {
     "name": "Vacuum Card",
