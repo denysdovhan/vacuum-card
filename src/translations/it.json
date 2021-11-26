@@ -7,6 +7,13 @@
     "returning home": "In rientro alla base"
     "docked": "In Base"
   },
+  "source": {
+    "gentle": "Gentile",
+    "silent": "Silenzioso",
+    "standard": "Normale",
+    "medium": "Medio",
+    "turbo": "Turbo"
+  },
   "common": {
     "name": "Vacuum Card",
     "description": "Vacuum card consente di controllare il tuo aspirapolvere.",
@@ -16,6 +23,7 @@
     "stop": "Stop",
     "return_to_base": "Base",
     "locate": "Trova aspirapolvere"
+    "not_available": "Vacuum non disponibile"
   },
   "error": {
     "missing_entity": "È necessario specificare l'entità!"
@@ -30,6 +38,9 @@
     "show_name": "Mostra Nome",
     "show_name_aria_label_on": "Attiva nome",
     "show_name_aria_label_off": "Disattiva nome",
+    "show_status": "Mostra Stato",
+    "show_status_aria_label_on": "Attiva stato",
+    "show_status_aria_label_off": "Disattiva stato",    
     "show_toolbar": "Mostra barra degli strumenti",
     "show_toolbar_aria_label_on": "Attiva barra degli strumenti",
     "show_toolbar_aria_label_off": "Disattiva barra degli strumenti",
