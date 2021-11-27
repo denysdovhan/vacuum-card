@@ -17,7 +17,7 @@ export default css`
   }
 
   .preview {
-    background: var(--primary-color);
+    background: var(--background-color);
     cursor: pointer;
     overflow: hidden;
     position: relative;
