@@ -6,6 +6,7 @@ import localize from './localize';
 import styles from './styles';
 import defaultImage from './vacuum.png';
 import { version } from '../package.json';
+import { String } from 'typescript-string-operations';
 
 console.info(
   `%c VACUUM-CARD %c ${version} `,
@@ -99,6 +100,26 @@ class VacuumCard extends LitElement {
     return this.config.compact_view;
   }
 
+  get waterLevel() {
+    if (!this.hass || !this.config.water_level) {
+      return null;
+    }
+
+    const entity_type = 'select';
+    const waterLevel = this.config.water_level;
+    if (!waterLevel.startsWith(entity_type)) {
+      throw new Error(
+        String.Format(
+          localize('error.domain_not_supported'),
+          entity_type,
+          waterLevel.split('.')[0]
+        )
+      );
+    }
+
+    return this.hass.states[waterLevel];
+  }
+
   setConfig(config) {
     if (!config.entity) {
       throw new Error(localize('error.missing_entity'));
@@ -165,6 +186,14 @@ class VacuumCard extends LitElement {
   handleSpeed(e) {
     const fan_speed = e.target.getAttribute('value');
     this.callService('set_fan_speed', false, { fan_speed });
+  }
+
+  handleSelect(e) {
+    const value = e.target.getAttribute('value');
+    this.hass.callService('select', 'select_option', {
+      entity_id: this.waterLevel.entity_id,
+      option: value,
+    });
   }
 
   handleStart() {
@@ -271,11 +300,44 @@ class VacuumCard extends LitElement {
       this.entity
     );
 
-    if (!sources) {
+    return this.renderDropDown(
+      source,
+      sources,
+      'mdi:fan',
+      this.handleSpeed,
+      'source'
+    );
+  }
+
+  renderWaterLevel() {
+    const entity = this.waterLevel;
+    if (entity) {
+      return this.renderDropDown(
+        entity.state,
+        entity.attributes.options,
+        'mdi:water',
+        this.handleSelect,
+        'water_level'
+      );
+    }
+  }
+
+  renderDropDown(
+    selectedObject,
+    objects,
+    icon,
+    onSelected,
+    localizePrefix = ''
+  ) {
+    if (!objects) {
       return html``;
     }
 
-    const selected = sources.indexOf(source);
+    const selected = objects.indexOf(selectedObject);
+
+    if (localizePrefix !== '' && !localizePrefix.endsWith('.')) {
+      localizePrefix += '.';
+    }
 
     return html`
       <paper-menu-button
@@ -287,20 +349,20 @@ class VacuumCard extends LitElement {
         @click="${(e) => e.stopPropagation()}"
       >
         <paper-button slot="dropdown-trigger">
-          <ha-icon icon="mdi:fan"></ha-icon>
+          <ha-icon icon=${icon}></ha-icon>
           <span show=${true}>
-            ${localize(`source.${source}`) || source}
+            ${localize(`${localizePrefix}${selectedObject}`) || selectedObject}
           </span>
         </paper-button>
         <paper-listbox
           slot="dropdown-content"
           selected=${selected}
-          @click="${(e) => this.handleSpeed(e)}"
+          @click="${(e) => onSelected(e)}"
         >
-          ${sources.map(
+          ${objects.map(
             (item) =>
               html`<paper-item value=${item}
-                >${localize(`source.${item}`) || item}</paper-item
+                >${localize(`${localizePrefix}${item}`) || item}</paper-item
               >`
           )}
         </paper-listbox>
@@ -518,8 +580,8 @@ class VacuumCard extends LitElement {
       <ha-card>
         <div class="preview" @click="${this.handleMore}" ?more-info="true">
           <div class="header">
-            <div class="source">
-              ${this.renderSource()}
+            <div class="drop-down">
+              ${this.renderSource()} ${this.renderWaterLevel()}
             </div>
             <div class="battery">
               ${battery_level}% <ha-icon icon="${battery_icon}"></ha-icon>

@@ -151,7 +151,7 @@ export default css`
     padding: 8px;
   }
 
-  .source {
+  .drop-down {
     text-align: center;
   }
 
