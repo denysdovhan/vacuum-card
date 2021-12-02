@@ -120,6 +120,7 @@ Here is what every option means:
 | `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
 | `actions`      | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
 | `shortcuts`    | `object`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
+| `water_level`  | `string`  | Optional     | An entity_id within the `select` domain, for showing/setting the water level of the vacuum.               |
 
 ### `stats` object
 
