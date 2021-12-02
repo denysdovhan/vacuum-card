@@ -36,6 +36,14 @@ export class VacuumCardEditor extends LitElement {
     return '';
   }
 
+  get _water_level() {
+    if (this._config) {
+      return this._config.water_level || '';
+    }
+
+    return '';
+  }
+
   get _image() {
     if (this._config) {
       return this._config.image || '';
@@ -82,6 +90,25 @@ export class VacuumCardEditor extends LitElement {
     );
   }
 
+  renderDropDownMenu(configValue, selectedEntity, entities) {
+    return html`
+      <paper-dropdown-menu
+        label="${localize('editor.' + configValue)}"
+        @value-changed=${this._valueChanged}
+        .configValue=${configValue}
+      >
+        <paper-listbox
+          slot="dropdown-content"
+          .selected=${entities.indexOf(selectedEntity)}
+        >
+          ${entities.map((entity) => {
+            return html` <paper-item>${entity}</paper-item> `;
+          })}
+        </paper-listbox>
+      </paper-dropdown-menu>
+    `;
+  }
+
   render() {
     if (!this.hass) {
       return nothing;
@@ -89,38 +116,17 @@ export class VacuumCardEditor extends LitElement {
 
     const vacuumEntities = this.getEntitiesByType('vacuum');
     const cameraEntities = this.getEntitiesByType('camera');
+    const selectEntities = this.getEntitiesByType('select');
 
     return html`
       <div class="card-config">
-        <paper-dropdown-menu
-          label="${localize('editor.entity')}"
-          @value-changed=${this._valueChanged}
-          .configValue=${'entity'}
-        >
-          <paper-listbox
-            slot="dropdown-content"
-            .selected=${vacuumEntities.indexOf(this._entity)}
-          >
-            ${vacuumEntities.map((entity) => {
-              return html` <paper-item>${entity}</paper-item> `;
-            })}
-          </paper-listbox>
-        </paper-dropdown-menu>
-
-        <paper-dropdown-menu
-          label="${localize('editor.entity')}"
-          @value-changed=${this._valueChanged}
-          .configValue=${'map'}
-        >
-          <paper-listbox
-            slot="dropdown-content"
-            .selected=${cameraEntities.indexOf(this._map)}
-          >
-            ${cameraEntities.map((entity) => {
-              return html` <paper-item>${entity}</paper-item> `;
-            })}
-          </paper-listbox>
-        </paper-dropdown-menu>
+        ${this.renderDropDownMenu('entity', this._entity, vacuumEntities)}
+        ${this.renderDropDownMenu('map', this._map, cameraEntities)}
+        ${this.renderDropDownMenu(
+          'water_level',
+          this._water_level,
+          selectEntities
+        )}
 
         <paper-input
           label="${localize('editor.image')}"

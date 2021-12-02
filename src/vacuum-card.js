@@ -6,6 +6,8 @@ import localize from './localize';
 import styles from './styles.css';
 import defaultImage from './vacuum.svg';
 import { version } from '../package.json';
+import { String } from 'typescript-string-operations';
+
 import './vacuum-card-editor';
 
 registerTemplates();
@@ -102,6 +104,26 @@ class VacuumCard extends LitElement {
     return this.config.compact_view;
   }
 
+  get waterLevel() {
+    if (!this.hass || !this.config.water_level) {
+      return null;
+    }
+
+    const entity_type = 'select';
+    const waterLevel = this.config.water_level;
+    if (!waterLevel.startsWith(entity_type)) {
+      throw new Error(
+        String.Format(
+          localize('error.domain_not_supported'),
+          entity_type,
+          waterLevel.split('.')[0]
+        )
+      );
+    }
+
+    return this.hass.states[waterLevel];
+  }
+
   setConfig(config) {
     if (!config.entity) {
       throw new Error(localize('error.missing_entity'));
@@ -170,6 +192,44 @@ class VacuumCard extends LitElement {
     this.callService('set_fan_speed', { isRequest: false }, { fan_speed });
   }
 
+  handleSelect(e) {
+    const value = e.target.getAttribute('value');
+    this.hass.callService('select', 'select_option', {
+      entity_id: this.waterLevel.entity_id,
+      option: value,
+    });
+  }
+
+  handleStart() {
+    const actions = this.config.actions;
+    if (!actions || !actions.start) {
+      this.callService('start');
+      return;
+    }
+
+    this.callAction(actions.start);
+  }
+
+  handlePause() {
+    const actions = this.config.actions;
+    if (!actions || !actions.pause) {
+      this.callService('pause');
+      return;
+    }
+
+    this.callAction(actions.pause);
+  }
+
+  handleResume() {
+    const actions = this.config.actions;
+    if (!actions || !actions.resume) {
+      this.callService('start');
+      return;
+    }
+
+    this.callAction(actions.resume);
+  }
+
   handleAction(action, params = { isRequest: true }) {
     const actions = this.config.actions || {};
 
@@ -229,19 +289,52 @@ class VacuumCard extends LitElement {
       this.entity
     );
 
-    if (!sources) {
+    return this.renderDropDown(
+      source,
+      sources,
+      'mdi:fan',
+      this.handleSpeed,
+      'source'
+    );
+  }
+
+  renderWaterLevel() {
+    const entity = this.waterLevel;
+    if (entity) {
+      return this.renderDropDown(
+        entity.state,
+        entity.attributes.options,
+        'mdi:water',
+        this.handleSelect,
+        'water_level'
+      );
+    }
+  }
+
+  renderDropDown(
+    selectedObject,
+    objects,
+    icon,
+    onSelected,
+    localizePrefix = ''
+  ) {
+    if (!objects) {
       return nothing;
     }
 
-    const selected = sources.indexOf(source);
+    const selected = objects.indexOf(selectedObject);
+
+    if (localizePrefix !== '' && !localizePrefix.endsWith('.')) {
+      localizePrefix += '.';
+    }
 
     return html`
       <div class="tip">
         <ha-button-menu @click="${(e) => e.stopPropagation()}">
           <div slot="trigger">
-            <ha-icon icon="mdi:fan"></ha-icon>
+            <ha-icon icon="${icon}"></ha-icon>
             <span class="icon-title">
-              ${localize(`source.${source}`) || source}
+              ${localize(`${localizePrefix}${selectedObject}`) || selectedObject}
             </span>
           </div>
           ${sources.map(
@@ -250,7 +343,7 @@ class VacuumCard extends LitElement {
                 <mwc-list-item
                   ?activated=${selected === index}
                   value=${item}
-                  @click=${(e) => this.handleSpeed(e)}
+                  @click=${(e) => onSelected(e)}"
                 >
                   ${localize(`source.${item}`) || item}
                 </mwc-list-item>
@@ -511,7 +604,7 @@ class VacuumCard extends LitElement {
         <div class="preview">
           <div class="header">
             <div class="tips">
-              ${this.renderSource()} ${this.renderBattery()}
+              ${this.renderSource()} ${this.renderWaterLevel()} ${this.renderBattery()}
             </div>
             <ha-icon-button
               class="more-info"
