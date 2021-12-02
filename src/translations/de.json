@@ -12,9 +12,11 @@
   },
   "source": {
     "silent": "Leise",
-    "standard": "Normal",
     "medium": "Mittel",
-    "turbo": "Max."
+    "turbo": "Max.",
+    "quiet": "Leise",
+    "max": "Maximal",
+    "max+": "Maximal+"
   },
   "common": {
     "name": "Vacuum Card",
