@@ -52,7 +52,7 @@ var languages = {
   lt,
   ro,
   pt,
-  tr;
+  tr,
 };
 
 const DEFAULT_LANG = 'en';
