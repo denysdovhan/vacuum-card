@@ -4,7 +4,6 @@ about: Create a report to improve this project
 title: ''
 labels: bug
 assignees: ''
-
 ---
 
 **Before submitting a bug**
@@ -20,7 +19,7 @@ A clear and concise description of what the bug is.
 
 1. Go to '...'
 2. Click on '....'
-4. See error
+3. See error
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.

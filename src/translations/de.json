@@ -5,14 +5,19 @@
     "idle": "Untätig",
     "charging": "Aufladen",
     "returning home": "Rückkehr zu Dockingstation",
+    "returning": "Rückkehr zu Dockingstation",
     "segment cleaning": "Zimmerreinigung",
-    "docked": "Angedockt"
+    "docked": "Angedockt",
+    "error": "Fehler"
   },
   "source": {
     "silent": "Leise",
     "standard": "Standard",
-    "medium": "Turbo",
+    "medium": "Mittel",
     "turbo": "Max",
+    "quiet": "Leise",
+    "max": "Maximal",
+    "max+": "Maximal+",
     "gentle": "Schonend"
   },
   "common": {
@@ -27,6 +32,9 @@
   },
   "error": {
     "missing_entity": "Angabe der Entität ist erforderlich!"
+  },
+  "warning": {
+    "actions_array": ""
   },
   "editor": {
     "entity": "Entität (Erforderlich)",

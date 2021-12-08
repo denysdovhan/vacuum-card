@@ -7,14 +7,16 @@
     "returning home": "Возвращается",
     "returning": "Возвращается",
     "docked": "На базе",
-    "segment cleaning": "Уборка зоны/комнаты"
+    "segment cleaning": "Уборка зоны/комнаты",
+    "mopping": "Мытье полов"
   },
   "source": {
     "gentle": "Деликатный",
     "silent": "Тихий",
     "standard": "Стандартный",
     "medium": "Средний",
-    "turbo": "Турбо"
+    "turbo": "Турбо",
+    "strong": "Сильный"
   },
   "common": {
     "name": "Пылесос",
@@ -29,6 +31,9 @@
   },
   "error": {
     "missing_entity": "Объект является обязательным полем!"
+  },
+  "warning": {
+    "actions_array": ""
   },
   "editor": {
     "entity": "Объект (Обязательное)",

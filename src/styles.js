@@ -159,6 +159,7 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: center;
+    direction: ltr;
   }
 
   .status-text {
@@ -229,6 +230,8 @@ export default css`
     min-height: 30px;
     display: flex;
     flex-direction: row;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
 
@@ -270,6 +273,6 @@ export default css`
 
   .toolbar ha-icon {
     color: var(--primary-color);
-    padding-right: 15px;
+    display: flex;
   }
 `;

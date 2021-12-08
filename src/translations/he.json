@@ -1,19 +1,21 @@
 {
   "status": {
     "cleaning": "מנקה",
+    "segment cleaning": "ניקוי מקטע",
     "auto": "ניקוי אוטומטי",
     "spot": "ניקוי אזור",
     "edge": "ניקוי פינה",
     "single_room": "ניקוי חדר יחיד",
     "paused": "מושהה",
-    "idle": "סרק",
+    "idle": "ממתין",
     "stop": "נעצר",
     "charging": "בטעינה",
     "returning home": "בחזרה הביתה",
-    "returning": "בחזרה הביתה",
-    "docked": "לתחנה",
+    "returning": "חוזר",
+    "docked": "בתחנה",
     "unknown": "לא ידוע",
-    "offline": "כבוי"
+    "offline": "מנותק",
+    "error": "שגיאה"
   },
   "source": {
     "gentle": "עדין",
@@ -22,7 +24,8 @@
     "medium": "בינוני",
     "turbo": "טורבו",
     "normal": "נורמלי",
-    "high": "גבוה"
+    "high": "גבוה",
+    "auto": "אוטומטי"
   },
   "common": {
     "name": "כרטיס שואב",
@@ -37,6 +40,9 @@
   },
   "error": {
     "missing_entity": "יש צורך לציין ישות!"
+  },
+  "warning": {
+    "actions_array": ""
   },
   "editor": {
     "entity": "ישות (נדרש)",

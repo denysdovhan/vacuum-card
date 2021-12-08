@@ -27,6 +27,9 @@
   "error": {
     "missing_entity": "Entitás megadása kötelező!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entitás (Kötelező)",
     "map": "Térkép kamera (Opcionális)",

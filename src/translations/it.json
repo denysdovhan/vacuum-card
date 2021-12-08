@@ -19,6 +19,9 @@
   "error": {
     "missing_entity": "È necessario specificare l'entità!"
   },
+  "warning": {
+    "actions_array": ""
+  },
   "editor": {
     "entity": "Entità (Richiesto)",
     "map": "Mappa (Opzionale)",

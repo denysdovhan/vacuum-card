@@ -13,7 +13,8 @@
     "returning": "Returning Home",
     "docked": "Docked",
     "unknown": "Unknown",
-    "offline": "Offline"
+    "offline": "Offline",
+    "error": "Error"
   },
   "source": {
     "gentle": "Gentle",
@@ -22,7 +23,11 @@
     "medium": "Medium",
     "turbo": "Turbo",
     "normal": "Normal",
-    "high": "High"
+    "high": "High",
+    "strong": "Strong",
+    "quiet": "Quiet",
+    "max": "Max",
+    "max+": "Max+"
   },
   "common": {
     "name": "Vacuum Card",
@@ -37,6 +42,9 @@
   },
   "error": {
     "missing_entity": "Specifying entity is required!"
+  },
+  "warning": {
+    "actions_array": "WARNING: 'actions' is reserved to override default actions for existing buttons. If your intention was to add additional actions, use the 'shortcuts' option instead."
   },
   "editor": {
     "entity": "Entity (Required)",
