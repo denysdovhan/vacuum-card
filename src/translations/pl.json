@@ -36,7 +36,7 @@
     "pause": "Wstrzymaj",
     "stop": "Zatrzymaj",
     "return_to_base": "Powrót do bazy",
-    "locate": "Zlokalizuj odkurzacz"
+    "locate": "Zlokalizuj odkurzacz",
     "not_available": "Odkurzacz jest niedostępny"
   },
   "error": {
