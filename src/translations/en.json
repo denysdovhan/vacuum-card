@@ -24,7 +24,10 @@
     "turbo": "Turbo",
     "normal": "Normal",
     "high": "High",
-    "strong": "Strong"
+    "strong": "Strong",
+    "quiet": "Quiet",
+    "max": "Max",
+    "max+": "Max+"
   },
   "common": {
     "name": "Vacuum Card",
