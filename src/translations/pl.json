@@ -18,14 +18,14 @@
   },
   "source": {
     "gentle": "Delikatne",
-    "low": "Ciche",
+    "low": "Niskie",
     "silent": "Ciche",
     "standard": "Standardowe",
     "medium": "Średnie",
     "turbo": "Turbo",
     "normal": "Normalne",
     "high": "Wysokie",
-    "max": "Wysokie",
+    "max": "Maksymalne",
     "strong": "Mocne"
   },
   "common": {
