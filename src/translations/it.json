@@ -4,7 +4,7 @@
     "paused": "In pausa",
     "idle": "Inattivo",
     "charging": "In carica",
-    "returning home": "In rientro alla base"
+    "returning home": "In rientro alla base",
     "docked": "In Base"
   },
   "source": {
@@ -22,7 +22,7 @@
     "pause": "Pausa",
     "stop": "Stop",
     "return_to_base": "Base",
-    "locate": "Trova aspirapolvere"
+    "locate": "Trova aspirapolvere",
     "not_available": "Vacuum non disponibile"
   },
   "error": {
