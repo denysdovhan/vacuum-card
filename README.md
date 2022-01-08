@@ -143,14 +143,15 @@ You can defined service invocations to override default actions behavior. Availa
 
 ### `shortcuts` object
 
-You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `shortcuts` option.
+You can define [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `shortcuts` option by using the `service` and `service_data` options or create a clickable link with the `link` option:
 
 | Name           |   Type   | Default                           | Description                                        |
 | -------------- | :------: | --------------------------------- | -------------------------------------------------- |
 | `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`. |
-| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
 | `icon`         | `string` | Optional                          | Any icon for action button.                        |
-| `service_data` | `object` | `service_data` for `service` call |
+| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
+| `service_data` | `object` | `service_data` for `service` call |                                                    |
+| `link`         | `string` | Optional                          | Creates a web link, i.e. `https://vacuum.webui`    |
 
 ## Animations
 
