@@ -187,15 +187,15 @@ class VacuumCard extends LitElement {
     );
   }
 
-  handleSpeed(e) {
+  handleSpeed(e, context) {
     const fan_speed = e.target.getAttribute('value');
-    this.callService('set_fan_speed', { isRequest: false }, { fan_speed });
+    context.callService('set_fan_speed', { isRequest: false }, { fan_speed });
   }
 
-  handleSelect(e) {
+  handleSelect(e, context) {
     const value = e.target.getAttribute('value');
-    this.hass.callService('select', 'select_option', {
-      entity_id: this.waterLevel.entity_id,
+    context.hass.callService('select', 'select_option', {
+      entity_id: context.waterLevel.entity_id,
       option: value,
     });
   }
@@ -343,7 +343,7 @@ class VacuumCard extends LitElement {
                 <mwc-list-item
                   ?activated=${selected === index}
                   value=${item}
-                  @click=${(e) => onSelected(e)}"
+                  @click=${(e) => onSelected(e, this)}"
                 >
                   ${localize(`source.${item}`) || item}
                 </mwc-list-item>
