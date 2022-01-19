@@ -12,9 +12,13 @@
   },
   "source": {
     "silent": "Leise",
-    "standard": "Normal",
+    "standard": "Standard",
     "medium": "Mittel",
-    "turbo": "Max."
+    "turbo": "Max",
+    "quiet": "Leise",
+    "max": "Maximal",
+    "max+": "Maximal+",
+    "gentle": "Schonend"
   },
   "water_level": {
     "low": "Niedrig",

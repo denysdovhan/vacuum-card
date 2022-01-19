@@ -1,10 +1,32 @@
 {
   "status": {
     "cleaning": "Sprzątanie",
+    "auto": "Automatyczne sprzątanie",
+    "spot": "Sprzątanie miejscowe",
+    "edge": "Sprzątanie krawędziowe",
+    "single_room": "Sprzątanie pojedyńczego pokoju",
     "paused": "Wstrzymany",
     "idle": "Bezczynny",
+    "stop": "Zatrzymany",
     "charging": "Ładowanie",
-    "returning home": "Powrót do bazy"
+    "returning home": "Powrót do bazy",
+    "returning": "Powrót do bazy",
+    "docked": "Zadokowany",
+    "unknown": "Nieznany",
+    "offline": "Offline",
+    "error": "Błąd"
+  },
+  "source": {
+    "gentle": "Delikatne",
+    "low": "Ciche",
+    "silent": "Ciche",
+    "standard": "Standardowe",
+    "medium": "Średnie",
+    "turbo": "Turbo",
+    "normal": "Normalne",
+    "high": "Wysokie",
+    "max": "Wysokie",
+    "strong": "Mocne"
   },
   "common": {
     "name": "Vacuum Card",
@@ -13,25 +35,29 @@
     "continue": "Kontynuuj",
     "pause": "Wstrzymaj",
     "stop": "Zatrzymaj",
-    "return_to_base": "Powrót",
-    "locate": "Zlokalizuj odkurzacz"
+    "return_to_base": "Powrót do bazy",
+    "locate": "Zlokalizuj odkurzacz",
+    "not_available": "Odkurzacz jest niedostępny"
   },
   "error": {
     "missing_entity": "Ustawienie encji jest wymagane!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "OSTRZEŻENIE: 'actions' jest zarezerwowane dla zmiany zachowania domyślnych akcji przycisków. Jeśli chcesz dodać dodatkowe akcje, użyj w zamian opcji 'shortcuts'."
   },
   "editor": {
     "entity": "Encja (wymagane)",
-    "map": "Kamera (opcjonalne)",
-    "image": "Obrazek (opcjonalne)",
+    "map": "Kamera z mapą (opcjonalna)",
+    "image": "Obraz (opcjonalny)",
     "compact_view": "Widok kompaktowy",
     "compact_view_aria_label_on": "Włącz widok kompaktowy",
     "compact_view_aria_label_off": "Wyłącz widok kompaktowy",
     "show_name": "Pokaż nazwę",
     "show_name_aria_label_on": "Włącz widok nazwy",
     "show_name_aria_label_off": "Wyłącz widok nazwy",
+    "show_status": "Pokaż pasek statusu",
+    "show_status_aria_label_on": "Włącz widok paska statusu",
+    "show_status_aria_label_off": "Wyłącz widok paska statusu",
     "show_toolbar": "Pasek narzędzi",
     "show_toolbar_aria_label_on": "Włącz pasek narzędzi",
     "show_toolbar_aria_label_off": "Wyłącz pasek narzędzi",
