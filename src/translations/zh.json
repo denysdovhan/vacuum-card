@@ -1,0 +1,67 @@
+{
+  "status": {
+    "cleaning": "清扫中",
+    "auto": "自动清扫",
+    "spot": "Spot Cleaning",
+    "edge": "Edge Cleaning",
+    "single_room": "Single Room Cleaning",
+    "paused": "暂停中",
+    "idle": "休息中zzZ",
+    "stop": "停止清扫",
+    "charging": "充电中",
+    "returning home": "正在返回充电",
+    "returning": "Returning Home",
+    "docked": "返回充电",
+    "unknown": "Unknown",
+    "offline": "Offline",
+    "error": "错误"
+  },
+  "source": {
+    "gentle": "拖地",
+    "silent": "静音",
+    "standard": "标准",
+    "medium": "强劲",
+    "turbo": "超强",
+    "normal": "Normal",
+    "high": "High",
+    "strong": "Strong",
+    "quiet": "Quiet",
+    "max": "Max",
+    "max+": "Max+"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum Card 可以让您控制扫地机器人",
+    "start": "开始清扫",
+    "continue": "继续清扫",
+    "pause": "暂停清扫",
+    "stop": "停止清扫",
+    "return_to_base": "返回充电座",
+    "locate": "定位扫地机器人",
+    "not_available": "Vacuum is not available"
+  },
+  "error": {
+    "missing_entity": "请指定你的扫地机器人 实体ID"
+  },
+  "warning": {
+    "actions_array": "WARNING: 'actions' is reserved to override default actions for existing buttons. If your intention was to add additional actions, use the 'shortcuts' option instead."
+  },
+  "editor": {
+    "entity": "Entity (Required)",
+    "map": "Map Camera (Optional)",
+    "image": "Image (Optional)",
+    "compact_view": "Compact View",
+    "compact_view_aria_label_on": "Toggle compact view on",
+    "compact_view_aria_label_off": "Toggle compact view off",
+    "show_name": "名称 是否显示",
+    "show_name_aria_label_on": "显示名称",
+    "show_name_aria_label_off": "隐藏名称",
+    "show_status": "状态 是否显示",
+    "show_status_aria_label_on": "显示状态",
+    "show_status_aria_label_off": "隐藏状态",
+    "show_toolbar": "快捷栏 是否显示",
+    "show_toolbar_aria_label_on": "显示快捷栏",
+    "show_toolbar_aria_label_off": "隐藏快捷栏",
+    "code_only_note": "注意：设置操作和统计选项仅在使用代码编辑器时可用。"
+  }
+}
