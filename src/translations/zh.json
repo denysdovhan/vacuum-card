@@ -41,15 +41,15 @@
     "not_available": "Vacuum is not available"
   },
   "error": {
-    "missing_entity": "请指定你的扫地机器人 实体ID"
+    "missing_entity": "请指定你的扫地机器人实体"
   },
   "warning": {
     "actions_array": "WARNING: 'actions' is reserved to override default actions for existing buttons. If your intention was to add additional actions, use the 'shortcuts' option instead."
   },
   "editor": {
-    "entity": "Entity (Required)",
-    "map": "Map Camera (Optional)",
-    "image": "Image (Optional)",
+    "entity": "实体 (必填)",
+    "map": "地图 (可选)",
+    "image": "图片 (可选)",
     "compact_view": "Compact View",
     "compact_view_aria_label_on": "Toggle compact view on",
     "compact_view_aria_label_off": "Toggle compact view off",
