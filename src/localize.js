@@ -20,6 +20,7 @@ import * as da from './translations/da.json';
 import * as ko from './translations/ko.json';
 import * as fi from './translations/fi.json';
 import * as ca from './translations/ca.json';
+import * as zh from './translations/zh.json';
 import * as tw from './translations/tw.json';
 import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
@@ -46,6 +47,7 @@ var languages = {
   ko,
   fi,
   ca,
+  zh,
   tw,
   vi,
   lt,
