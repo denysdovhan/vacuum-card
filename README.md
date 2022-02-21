@@ -177,6 +177,7 @@ This card supports translations. Please, help to add more translations and impro
 - Magyar (Hungarian)
 - עִבְרִית (Hebrew)
 - Português (Portuguese)
+- Português Brasileiro (Brazilian Portuguese)
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
 - Norsk nynorsk (Norwegian)
@@ -189,6 +190,7 @@ This card supports translations. Please, help to add more translations and impro
 - Lietuvių (Lithuanian)
 - Română (Romanian)
 - 简体中文 (Simplified Chinese)
+- KaBum! Smart 500
 - [_Your language?_][add-translation]
 
 ## Supported models
