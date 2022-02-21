@@ -25,6 +25,7 @@ import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
 import * as ro from './translations/ro.json';
 import * as pt from './translations/pt.json';
+import * as cn from './translations/cn.json';
 import * as pt_br from './translations/pt_br.json';
 
 var languages = {
@@ -52,6 +53,7 @@ var languages = {
   lt,
   ro,
   pt,
+  cn,
   pt_br,
 };
 
