@@ -188,6 +188,7 @@ This card supports translations. Please, help to add more translations and impro
 - Việt Nam (Vietnamese)
 - Lietuvių (Lithuanian)
 - Română (Romanian)
+- 简体中文 (Simplified Chinese)
 - [_Your language?_][add-translation]
 
 ## Supported models
