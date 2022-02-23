@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import { nothing } from 'lit-html';
 import { fireEvent } from 'custom-card-helpers';
 import localize from './localize';
 
@@ -84,7 +85,7 @@ export class VacuumCardEditor extends LitElement {
 
   render() {
     if (!this.hass) {
-      return html``;
+      return nothing;
     }
 
     const vacuumEntities = this.getEntitiesByType('vacuum');
