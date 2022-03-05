@@ -279,33 +279,24 @@ class VacuumCard extends LitElement {
     const selected = sources.indexOf(source);
 
     return html`
-      <paper-menu-button
-        slot="dropdown-trigger"
-        .horizontalAlign=${'right'}
-        .verticalAlign=${'top'}
-        .verticalOffset=${40}
-        .noAnimations=${true}
-        @click="${(e) => e.stopPropagation()}"
-      >
-        <paper-button slot="dropdown-trigger">
+      <ha-button-menu @click="${(e) => e.stopPropagation()}">
+        <mmp-icon-button slot="trigger">
           <ha-icon icon="mdi:fan"></ha-icon>
-          <span show=${true}>
+          <span>
             ${localize(`source.${source}`) || source}
           </span>
-        </paper-button>
-        <paper-listbox
-          slot="dropdown-content"
-          selected=${selected}
-          @click="${(e) => this.handleSpeed(e)}"
-        >
-          ${sources.map(
-            (item) =>
-              html`<paper-item value=${item}
-                >${localize(`source.${item}`) || item}</paper-item
-              >`
-          )}
-        </paper-listbox>
-      </paper-menu-button>
+        </mmp-icon-button>
+        ${sources.map(
+          (item, index) =>
+            html`<mwc-list-item
+              ?activated=${selected === index}
+              value=${item}
+              @click=${(e) => this.handleSpeed(e)}
+            >
+              ${localize(`source.${item}`) || item}
+            </mwc-list-item>`
+        )}
+      </ha-button-menu>
     `;
   }
 
