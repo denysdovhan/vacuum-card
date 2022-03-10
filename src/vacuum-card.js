@@ -282,7 +282,7 @@ class VacuumCard extends LitElement {
       <ha-button-menu @click="${(e) => e.stopPropagation()}">
         <mmp-icon-button slot="trigger">
           <ha-icon icon="mdi:fan"></ha-icon>
-          <span>
+          <span class="icon-title">
             ${localize(`source.${source}`) || source}
           </span>
         </mmp-icon-button>
@@ -514,7 +514,8 @@ class VacuumCard extends LitElement {
               ${this.renderSource()}
             </div>
             <div class="battery">
-              ${battery_level}% <ha-icon icon="${battery_icon}"></ha-icon>
+              <span class="icon-title">${battery_level}%</span>
+              <ha-icon icon="${battery_icon}"></ha-icon>
             </div>
           </div>
 
