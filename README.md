@@ -1,3 +1,5 @@
+[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua/)
+
 # Vacuum Card
 
 [![npm version][npm-image]][npm-url]
@@ -190,6 +192,7 @@ This card supports translations. Please, help to add more translations and impro
 - Việt Nam (Vietnamese)
 - Lietuvių (Lithuanian)
 - Română (Romanian)
+- 简体中文 (Simplified Chinese)
 - [_Your language?_][add-translation]
 
 ## Supported models
@@ -225,6 +228,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Roomba S9
 - Braava M6
 - Roomba s9+
+- Roomba j7
 - Dyson 360 Eye
 - Neato D7
 - Neato D6

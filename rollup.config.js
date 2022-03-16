@@ -4,7 +4,11 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import image from '@rollup/plugin-image';
+import postcss from 'rollup-plugin-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
+import postcssLit from 'rollup-plugin-postcss-lit';
 import { terser } from 'rollup-plugin-terser';
+import minifyLiterals from 'rollup-plugin-minify-html-literals';
 import serve from 'rollup-plugin-serve';
 
 const IS_DEV = process.env.ROLLUP_WATCH;
@@ -30,10 +34,24 @@ export default {
     commonjs(),
     json(),
     babel({
+      babelHelpers: 'bundled',
       exclude: 'node_modules/**',
+    }),
+    postcss({
+      plugins: [postcssPresetEnv()],
+      extract: false,
+    }),
+    postcssLit({
+      importPackage: 'lit-element',
     }),
     image(),
     IS_DEV && serve(serverOptions),
-    !IS_DEV && terser(),
+    !IS_DEV && minifyLiterals(),
+    !IS_DEV &&
+      terser({
+        output: {
+          comments: false,
+        },
+      }),
   ],
 };

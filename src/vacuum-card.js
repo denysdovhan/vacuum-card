@@ -1,10 +1,11 @@
 import { LitElement, html } from 'lit-element';
+import { nothing } from 'lit-html';
 import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
 import get from 'lodash.get';
 import './vacuum-card-editor';
 import localize from './localize';
-import styles from './styles';
-import defaultImage from './vacuum.png';
+import styles from './styles.css';
+import defaultImage from './vacuum.svg';
 import { version } from '../package.json';
 
 console.info(
@@ -288,45 +289,36 @@ class VacuumCard extends LitElement {
     );
 
     if (!sources) {
-      return html``;
+      return nothing;
     }
 
     const selected = sources.indexOf(source);
 
     return html`
-      <paper-menu-button
-        slot="dropdown-trigger"
-        .horizontalAlign=${'right'}
-        .verticalAlign=${'top'}
-        .verticalOffset=${40}
-        .noAnimations=${true}
-        @click="${(e) => e.stopPropagation()}"
-      >
-        <paper-button slot="dropdown-trigger">
+      <ha-button-menu @click="${(e) => e.stopPropagation()}">
+        <mmp-icon-button slot="trigger">
           <ha-icon icon="mdi:fan"></ha-icon>
-          <span show=${true}>
+          <span class="icon-title">
             ${localize(`source.${source}`) || source}
           </span>
-        </paper-button>
-        <paper-listbox
-          slot="dropdown-content"
-          selected=${selected}
-          @click="${(e) => this.handleSpeed(e)}"
-        >
-          ${sources.map(
-            (item) =>
-              html`<paper-item value=${item}
-                >${localize(`source.${item}`) || item}</paper-item
-              >`
-          )}
-        </paper-listbox>
-      </paper-menu-button>
+        </mmp-icon-button>
+        ${sources.map(
+          (item, index) =>
+            html`<mwc-list-item
+              ?activated=${selected === index}
+              value=${item}
+              @click=${(e) => this.handleSpeed(e)}
+            >
+              ${localize(`source.${item}`) || item}
+            </mwc-list-item>`
+        )}
+      </ha-button-menu>
     `;
   }
 
   renderMapOrImage(state) {
     if (this.compactView) {
-      return html``;
+      return nothing;
     }
 
     if (this.map) {
@@ -337,14 +329,14 @@ class VacuumCard extends LitElement {
             src="${this.hass.states[this.config.map].attributes
               .entity_picture}&v=${+new Date()}"
           />`
-        : html``;
+        : nothing;
     }
 
     if (this.image) {
       return html`<img class="vacuum ${state}" src="${this.image}" />`;
     }
 
-    return html``;
+    return nothing;
   }
 
   renderStats(state) {
@@ -354,7 +346,7 @@ class VacuumCard extends LitElement {
 
     return statsList.map(({ entity_id, attribute, unit, subtitle }) => {
       if (!entity_id && !attribute) {
-        return html``;
+        return nothing;
       }
 
       const value = entity_id
@@ -375,7 +367,7 @@ class VacuumCard extends LitElement {
     const { friendly_name } = this.getAttributes(this.entity);
 
     if (!this.showName) {
-      return html``;
+      return nothing;
     }
 
     return html`
@@ -390,7 +382,7 @@ class VacuumCard extends LitElement {
     const localizedStatus = localize(`status.${status}`) || status;
 
     if (!this.showStatus) {
-      return html``;
+      return nothing;
     }
 
     return html`
@@ -408,7 +400,7 @@ class VacuumCard extends LitElement {
 
   renderToolbar(state) {
     if (!this.showToolbar) {
-      return html``;
+      return nothing;
     }
 
     switch (state) {
@@ -546,7 +538,8 @@ class VacuumCard extends LitElement {
               ${this.renderSource()}
             </div>
             <div class="battery">
-              ${battery_level}% <ha-icon icon="${battery_icon}"></ha-icon>
+              <span class="icon-title">${battery_level}%</span>
+              <ha-icon icon="${battery_icon}"></ha-icon>
             </div>
           </div>
 
