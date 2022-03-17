@@ -447,13 +447,19 @@ class VacuumCard extends LitElement {
         const { shortcuts = [] } = this.config;
 
         const buttons = shortcuts.map(
-          ({ name, service, icon, service_data }) => {
-            const execute = () => {
-              this.callAction({ service, service_data });
-            };
-            return html`<ha-icon-button title="${name}" @click="${execute}"
-              ><ha-icon icon="${icon}"></ha-icon
-            ></ha-icon-button>`;
+          ({ name, service, icon, service_data, link }) => {
+            if (link) {
+              return html`<ha-icon-button title="${name}"
+                ><a rel="noreferrer" href="${link}" target="_blank"><ha-icon icon="${icon}"></ha-icon
+              ></ha-icon-button>`;
+            } else {
+              const execute = () => {
+                this.callAction({ service, service_data });
+              };
+              return html`<ha-icon-button title="${name}" @click="${execute}"
+                ><ha-icon icon="${icon}"></ha-icon
+              ></ha-icon-button>`;
+            }
           }
         );
 
