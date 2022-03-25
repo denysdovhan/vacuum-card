@@ -133,6 +133,8 @@ You can use any attribute of vacuum or even any entity by `entity_id` to display
 | `attribute` | `string` | Optional | Attribute name of the stat, i.e. `filter_left`. |
 | `unit`      | `string` | Optional | Unit of measure, i.e. `hours`.                  |
 | `subtitle`  | `string` | Optional | Friendly name of the stat, i.e. `Filter`.       |
+| `conversion`| `number` | Optional | A factor to divide the current value by when displaying. (Can be `3600` if the platform provides times in seconds and we need them displayed in hours)|
+| `rounding`| `number` | Optional | The number of decimal points used when displaying the value|
 
 ### `actions` object
 

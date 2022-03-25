@@ -323,12 +323,24 @@ class VacuumCard extends LitElement {
     return nothing;
   }
 
+  formatValue(value, conversion, rounding){
+    if (conversion && !isNaN(conversion)) {          
+      value = value / conversion;
+    }
+
+    if (!isNaN(rounding)) {      
+      return value.toFixed(rounding)
+    }
+
+    return value;
+  }
+
   renderStats(state) {
     const { stats = {} } = this.config;
 
     const statsList = stats[state] || stats.default || [];
 
-    return statsList.map(({ entity_id, attribute, unit, subtitle }) => {
+    return statsList.map(({ entity_id, attribute, unit, subtitle, conversion, rounding }) => {
       if (!entity_id && !attribute) {
         return nothing;
       }
@@ -336,10 +348,12 @@ class VacuumCard extends LitElement {
       const value = entity_id
         ? this.hass.states[entity_id].state
         : get(this.entity.attributes, attribute);
+        
+   
 
       return html`
         <div class="stats-block">
-          <span class="stats-value">${value}</span>
+          <span class="stats-value">${this.formatValue(value, conversion, rounding)}</span>
           ${unit}
           <div class="stats-subtitle">${subtitle}</div>
         </div>
