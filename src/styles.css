@@ -181,16 +181,11 @@ ha-card {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-left: calc(20px + 9px); /* size + margin of spinner */
+  margin-left: calc(28px + 9px); /* size + margin of spinner */
 }
 
-.status ha-circular-progress {
-  --mdc-theme-primary: var(
-    --card-background-color
-  ); /* hack to override the color */
-  min-width: 24px;
-  width: 24px;
-  height: 24px;
+.status mwc-circular-progress {
+  --mdc-theme-primary: var(--vc-secondary-text-color);
   margin-left: 9px;
 }
 
