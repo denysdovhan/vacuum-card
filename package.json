@@ -64,6 +64,9 @@
     "*.js": "eslint --fix",
     "*.{js,json,css,yml,md}": "prettier --write"
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
