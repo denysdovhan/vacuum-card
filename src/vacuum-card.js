@@ -169,76 +169,31 @@ class VacuumCard extends LitElement {
 
   handleSpeed(e) {
     const fan_speed = e.target.getAttribute('value');
-    this.callService('set_fan_speed', false, { fan_speed });
+    this.callService('set_fan_speed', { isRequest: false }, { fan_speed });
   }
 
-  handleStart() {
-    const actions = this.config.actions;
-    if (!actions || !actions.start) {
-      this.callService('start', true);
-      return;
-    }
+  handleAction(action, params = { isRequest: true }) {
+    const actions = this.config.actions || {};
 
-    this.callAction(actions.start);
+    return () => {
+      if (!actions[action]) {
+        this.callService(params.defaultService || action, {
+          isRequest: params.isRequest,
+        });
+        return;
+      }
+
+      this.callAction(actions[action]);
+    };
   }
 
-  handlePause() {
-    const actions = this.config.actions;
-    if (!actions || !actions.pause) {
-      this.callService('pause');
-      return;
-    }
-
-    this.callAction(actions.pause);
-  }
-
-  handleResume() {
-    const actions = this.config.actions;
-    if (!actions || !actions.resume) {
-      this.callService('start');
-      return;
-    }
-
-    this.callAction(actions.resume);
-  }
-
-  handleStop() {
-    const actions = this.config.actions;
-    if (!actions || !actions.stop) {
-      this.callService('stop');
-      return;
-    }
-
-    this.callAction(actions.stop);
-  }
-
-  handleLocate() {
-    const actions = this.config.actions;
-    if (!actions || !actions.locate) {
-      this.callService('locate', false);
-      return;
-    }
-
-    this.callAction(actions.locate);
-  }
-
-  handleReturnToBase() {
-    const actions = this.config.actions;
-    if (!actions || !actions.return_to_base) {
-      this.callService('return_to_base');
-      return;
-    }
-
-    this.callAction(actions.return_to_base);
-  }
-
-  callService(service, isRequest = true, options = {}) {
+  callService(service, params = { isRequest: true }, options = {}) {
     this.hass.callService('vacuum', service, {
       entity_id: this.config.entity,
       ...options,
     });
 
-    if (isRequest) {
+    if (params.isRequest) {
       this.requestInProgress = true;
       this.requestUpdate();
     }
@@ -284,21 +239,23 @@ class VacuumCard extends LitElement {
 
     return html`
       <ha-button-menu @click="${(e) => e.stopPropagation()}">
-        <mmp-icon-button slot="trigger">
+        <div slot="trigger">
           <ha-icon icon="mdi:fan"></ha-icon>
           <span class="icon-title">
             ${localize(`source.${source}`) || source}
           </span>
-        </mmp-icon-button>
+        </div>
         ${sources.map(
           (item, index) =>
-            html`<mwc-list-item
-              ?activated=${selected === index}
-              value=${item}
-              @click=${(e) => this.handleSpeed(e)}
-            >
-              ${localize(`source.${item}`) || item}
-            </mwc-list-item>`
+            html`
+              <mwc-list-item
+                ?activated=${selected === index}
+                value=${item}
+                @click=${(e) => this.handleSpeed(e)}
+              >
+                ${localize(`source.${item}`) || item}
+              </mwc-list-item>
+            `
         )}
       </ha-button-menu>
     `;
@@ -310,14 +267,15 @@ class VacuumCard extends LitElement {
     }
 
     if (this.map) {
-      return this.hass.states[this.config.map] &&
-        this.hass.states[this.config.map].attributes.entity_picture
-        ? html` <img
-            class="map"
-            src="${this.hass.states[this.config.map].attributes
-              .entity_picture}&v=${+new Date()}"
-            @click=${() => this.handleMore(this.config.map)}
-          />`
+      const map = this.hass.states[this.config.map];
+      return map && map.attributes.entity_picture
+        ? html`
+            <img
+              class="map"
+              src="${map.attributes.entity_picture}&v=${Date.now()}"
+              @click=${() => this.handleMore(this.config.map)}
+            />
+          `
         : nothing;
     }
 
@@ -421,15 +379,15 @@ class VacuumCard extends LitElement {
       case 'cleaning': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${this.handlePause}">
+            <paper-button @click="${this.handleAction('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
               ${localize('common.pause')}
             </paper-button>
-            <paper-button @click="${this.handleStop}">
+            <paper-button @click="${this.handleAction('stop')}">
               <ha-icon icon="hass:stop"></ha-icon>
               ${localize('common.stop')}
             </paper-button>
-            <paper-button @click="${this.handleReturnToBase}">
+            <paper-button @click="${this.handleAction('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
               ${localize('common.return_to_base')}
             </paper-button>
@@ -440,11 +398,15 @@ class VacuumCard extends LitElement {
       case 'paused': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${this.handleResume}">
+            <paper-button
+              @click="${this.handleAction('resume', {
+                defaultService: 'start',
+              })}"
+            >
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
-            <paper-button @click="${this.handleReturnToBase}">
+            <paper-button @click="${this.handleAction('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
               ${localize('common.return_to_base')}
             </paper-button>
@@ -455,11 +417,15 @@ class VacuumCard extends LitElement {
       case 'returning': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${this.handleResume}">
+            <paper-button
+              @click="${this.handleAction('resume', {
+                defaultService: 'start',
+              })}"
+            >
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
-            <paper-button @click="${this.handlePause}">
+            <paper-button @click="${this.handleAction('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
               ${localize('common.pause')}
             </paper-button>
@@ -485,7 +451,7 @@ class VacuumCard extends LitElement {
         const dockButton = html`
           <ha-icon-button
             title="${localize('common.return_to_base')}"
-            @click="${this.handleReturnToBase}"
+            @click="${this.handleAction('return_to_base')}"
             ><ha-icon icon="hass:home-map-marker"></ha-icon>
           </ha-icon-button>
         `;
@@ -494,13 +460,13 @@ class VacuumCard extends LitElement {
           <div class="toolbar">
             <ha-icon-button
               title="${localize('common.start')}"
-              @click="${this.handleStart}"
+              @click="${this.handleAction('start')}"
               ><ha-icon icon="hass:play"></ha-icon>
             </ha-icon-button>
 
             <ha-icon-button
               title="${localize('common.locate')}"
-              @click="${this.handleLocate}"
+              @click="${this.handleAction('locate', { isRequest: false })}"
               ><ha-icon icon="mdi:map-marker"></ha-icon>
             </ha-icon-button>
 
