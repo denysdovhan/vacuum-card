@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "custom-card-helpers": "^1.6.4",
-    "lit-element": "^2.3.1",
+    "lit": "^2.0.0",
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {

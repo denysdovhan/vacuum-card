@@ -1,5 +1,4 @@
-import { LitElement, html } from 'lit-element';
-import { nothing } from 'lit-html';
+import { LitElement, html, nothing } from 'lit';
 import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
 import get from 'lodash.get';
 import './vacuum-card-editor';
@@ -7,6 +6,9 @@ import localize from './localize';
 import styles from './styles.css';
 import defaultImage from './vacuum.svg';
 import { version } from '../package.json';
+import './vacuum-card-editor';
+
+// todo: rework request and actions
 
 console.info(
   `%c VACUUM-CARD %c ${version} `,
@@ -308,10 +310,11 @@ class VacuumCard extends LitElement {
     if (this.map) {
       return this.hass.states[this.config.map] &&
         this.hass.states[this.config.map].attributes.entity_picture
-        ? html`<img
+        ? html` <img
             class="map"
             src="${this.hass.states[this.config.map].attributes
               .entity_picture}&v=${+new Date()}"
+            @click=${() => this.handleMore(this.config.map)}
           />`
         : nothing;
     }
