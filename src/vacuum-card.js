@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit';
 import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
+import registerTemplates from 'ha-template';
 import get from 'lodash.get';
-import './vacuum-card-editor';
 import localize from './localize';
 import styles from './styles.css';
 import defaultImage from './vacuum.svg';
@@ -9,6 +9,8 @@ import { version } from '../package.json';
 import './vacuum-card-editor';
 
 // todo: rework request and actions
+
+registerTemplates();
 
 console.info(
   `%c VACUUM-CARD %c ${version} `,
@@ -151,15 +153,15 @@ class VacuumCard extends LitElement {
     }
   }
 
-  handleMore() {
+  handleMore(entityId = this.entity.entity_id) {
     fireEvent(
       this,
       'hass-more-info',
       {
-        entityId: this.entity.entity_id,
+        entityId,
       },
       {
-        bubbles: true,
+        bubbles: false,
         composed: true,
       }
     );
@@ -173,7 +175,7 @@ class VacuumCard extends LitElement {
   handleStart() {
     const actions = this.config.actions;
     if (!actions || !actions.start) {
-      this.callService('start');
+      this.callService('start', true);
       return;
     }
 
@@ -320,7 +322,13 @@ class VacuumCard extends LitElement {
     }
 
     if (this.image) {
-      return html`<img class="vacuum ${state}" src="${this.image}" />`;
+      return html`
+        <img
+          class="vacuum ${state}"
+          src="${this.image}"
+          @click="${() => this.handleMore()}"
+        />
+      `;
     }
 
     return nothing;
@@ -331,23 +339,37 @@ class VacuumCard extends LitElement {
 
     const statsList = stats[state] || stats.default || [];
 
-    return statsList.map(({ entity_id, attribute, unit, subtitle }) => {
-      if (!entity_id && !attribute) {
-        return nothing;
+    return statsList.map(
+      ({ entity_id, attribute, value_template, unit, subtitle }) => {
+        if (!entity_id && !attribute && !value_template) {
+          return nothing;
+        }
+
+        const state = entity_id
+          ? this.hass.states[entity_id].state
+          : get(this.entity.attributes, attribute);
+
+        const value = html`
+          <ha-template
+            hass=${this.hass}
+            template=${value_template}
+            value=${state}
+          ></ha-template>
+        `;
+
+        return html`
+          <div
+            class="stats-block"
+            @click="${() =>
+              this.handleMore(entity_id || this.entity.entity_id)}"
+          >
+            <span class="stats-value">${value}</span>
+            ${unit}
+            <div class="stats-subtitle">${subtitle}</div>
+          </div>
+        `;
       }
-
-      const value = entity_id
-        ? this.hass.states[entity_id].state
-        : get(this.entity.attributes, attribute);
-
-      return html`
-        <div class="stats-block">
-          <span class="stats-value">${value}</span>
-          ${unit}
-          <div class="stats-subtitle">${subtitle}</div>
-        </div>
-      `;
-    });
+    );
   }
 
   renderName() {
@@ -511,16 +533,23 @@ class VacuumCard extends LitElement {
 
     return html`
       <ha-card>
-        <div class="preview" @click="${this.handleMore}" ?more-info="true">
+        <div class="preview">
           <div class="header">
-            <div class="source">
+            <div class="header-tip">
               ${this.renderSource()}
             </div>
-            <div class="battery">
+            <div class="header-tips">
               <span class="icon-title">${battery_level}%</span>
               <ha-icon icon="${battery_icon}"></ha-icon>
             </div>
           </div>
+          <ha-icon-button
+            class="more-info"
+            icon="mdi:dots-vertical"
+            ?more-info="true"
+            @click="${() => this.handleMore()}"
+            ><ha-icon icon="mdi:dots-vertical"></ha-icon
+          ></ha-icon-button>
 
           ${this.renderMapOrImage(state)}
 
