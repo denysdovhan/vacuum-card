@@ -1,4 +1,17 @@
 :host {
+  --vc-background: var(
+    --ha-card-background,
+    var(--card-background-color, white)
+  );
+  --vc-primary-text-color: var(--primary-text-color);
+  --vc-secondary-text-color: var(--secondary-text-color);
+  --vc-icon-color: var(--secondary-text-color);
+  --vc-toolbar-background: var(--vc-background);
+  --vc-toolbar-text-color: var(--secondary-text-color);
+  --vc-toolbar-icon-color: var(--secondary-text-color);
+  --vc-divider-color: var(--entities-divider-color, var(--divider-color));
+  --vc-spacing: 10px;
+
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -8,25 +21,41 @@ ha-card {
   flex-direction: column;
   flex: 1;
   position: relative;
-  padding: 0px;
-  border-radius: 4px;
+  overflow: hidden;
 }
 
 .preview {
-  background: var(--primary-color);
-  cursor: pointer;
+  background: var(--vc-background);
+  overflow: hidden;
   position: relative;
   text-align: center;
-  border-radius: 4px 4px 0 0;
+
+  &.not-available {
+    filter: grayscale(1);
+  }
 }
 
-.preview.not-available {
-  filter: grayscale(1);
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tips {
+  display: flex;
+  gap: var(--vc-spacing);
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding: var(--vc-spacing);
+
+  & .tip {
+    cursor: pointer;
+  }
 }
 
 .map {
   max-width: 95%;
   image-rendering: crisp-edges;
+  cursor: pointer;
 }
 
 @keyframes cleaning {
@@ -103,7 +132,9 @@ ha-card {
   max-width: 90%;
   max-height: 200px;
   image-rendering: crisp-edges;
-  margin: 30px auto 20px auto;
+  margin: var(--vc-spacing) auto;
+  cursor: pointer;
+  filter: brightness(0.9);
 }
 
 .vacuum.on,
@@ -131,24 +162,8 @@ ha-card {
   flex-grow: 1;
 }
 
-.header {
-  height: 40px;
+.more-info ha-icon {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--text-primary-color);
-}
-
-.battery {
-  text-align: right;
-  font-weight: bold;
-  padding: 8px;
-}
-
-.source {
-  padding-left: 7px;
-  text-align: center;
 }
 
 .status {
@@ -159,117 +174,100 @@ ha-card {
 }
 
 .status-text {
-  color: var(--text-primary-color);
+  color: var(--vc-secondary-text-color);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-left: calc(20px + 9px); /* size + margin of spinner */
+  margin-left: calc(28px + var(--vc-spacing)); /* size + margin of spinner */
 }
 
-.status ha-circular-progress {
-  --mdc-theme-primary: var(
-    --card-background-color
-  ); /* hack to override the color */
-  min-width: 24px;
-  width: 24px;
-  height: 24px;
-  margin-left: 9px;
+.status mwc-circular-progress {
+  --mdc-theme-primary: var(--vc-secondary-text-color) !important;
+  margin-left: var(--vc-spacing);
 }
 
 .vacuum-name {
   text-align: center;
   font-weight: bold;
-  color: var(--text-primary-color);
+  color: var(--vc-primary-text-color);
   font-size: 16px;
 }
 
 .not-available .offline {
   text-align: center;
-  color: var(--text-primary-color);
+  color: var(--vc-primary-text-color);
   font-size: 16px;
 }
 
 .metadata {
-  margin: 10px auto;
+  margin: var(--vc-spacing) auto;
 }
 
 .stats {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid var(--vc-divider-color);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  color: var(--text-primary-color);
+  color: var(--vc-secondary-text-color);
 }
 
 .stats-block {
-  margin: 10px 0px;
+  cursor: pointer;
+  margin: var(--vc-spacing) 0px;
   text-align: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid var(--vc-divider-color);
   flex-grow: 1;
-}
 
-.stats-block:last-child {
-  border: 0px;
+  &:last-of-type {
+    border-right: 0px;
+  }
 }
 
 .stats-value {
   font-size: 20px;
-  font-weight: bold;
+  color: var(--vc-primary-text-color);
 }
 
 ha-icon {
-  color: #fff;
+  color: var(--vc-icon-color);
 }
 
 .toolbar {
-  background: var(--lovelace-background, var(--primary-background-color));
-  border-radius: 0 0 4px 4px;
+  background: var(--vc-toolbar-background);
   min-height: 30px;
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 5px;
+  border-top: 1px solid var(--vc-divider-color);
 }
 
 .toolbar ha-icon-button {
-  color: var(--primary-color);
+  color: var(--vc-toolbar-text-color);
   flex-direction: column;
   width: 44px;
   height: 44px;
   --mdc-icon-button-size: 44px;
-  margin: 5px 0;
-}
-
-.toolbar ha-icon-button:first-child {
-  margin-left: 5px;
-}
-
-.toolbar ha-icon-button:last-child {
-  margin-right: 5px;
 }
 
 .toolbar paper-button {
-  color: var(--primary-color);
-  flex-direction: column;
+  color: var(--vc-toolbar-text-color);
+  display: flex;
+  align-items: center;
   margin-right: 10px;
   padding: 15px 10px;
   cursor: pointer;
-}
 
-.toolbar ha-icon-button:active,
-.toolbar paper-button:active {
-  opacity: 0.4;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.toolbar paper-button {
-  color: var(--primary-color);
-  flex-direction: row;
+  & ha-icon {
+    margin-right: 5px;
+    color: var(--vc-toolbar-icon-color);
+  }
 }
 
 .toolbar ha-icon {
-  color: var(--primary-color);
+  color: var(--vc-toolbar-icon-color);
   display: flex;
 }
 

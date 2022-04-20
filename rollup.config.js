@@ -38,7 +38,14 @@ export default {
       exclude: 'node_modules/**',
     }),
     postcss({
-      plugins: [postcssPresetEnv()],
+      plugins: [
+        postcssPresetEnv({
+          stage: 1,
+          features: {
+            'nesting-rules': true,
+          },
+        }),
+      ],
       extract: false,
     }),
     postcssLit({

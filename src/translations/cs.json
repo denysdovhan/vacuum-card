@@ -1,59 +1,59 @@
 {
-    "status": {
-      "cleaning": "Vysává se",
-      "auto": "Automatické vysávání",
-      "spot": "Vysávání na místě",
-      "edge": "Vysávání při okraji",
-      "single_room": "Vysávání jedné místnosti",
-      "paused": "Pozastaveno",
-      "idle": "Nečinný",
-      "stop": "Stopped",
-      "charging": "Nabíjí se",
-      "returning home": "Vrací se do stanice",
-      "returning": "Vrací se",
-      "docked": "Ve stanici",
-      "unknown": "Neznámý",
-      "offline": "Vypnuto",
-      "error": "Chyba"
-    },
-    "source": {
-      "gentle": "Mírný",
-      "silent": "Tichý",
-      "standard": "Standardní",
-      "medium": "Střední",
-      "turbo": "Turbo",
-      "normal": "Normální",
-      "high": "Vysoký",
-      "strong": "Silný",
-      "quiet": "Tichý",
-      "max": "Max",
-      "max+": "Max+"
-    },
-    "common": {
-      "name": "Karta vysavače",
-      "description": "Karta vysavače vám dovolí ovládat svůj vysavač.",
-      "start": "Začni vysávat",
-      "continue": "Pokračuj",
-      "pause": "Pozastav",
-      "stop": "Zastav",
-      "return_to_base": "Vrať se domů",
-      "locate": "Lokalizuj",
-      "not_available": "Vysavač není dostupný"
-    },
-    "error": {
-      "missing_entity": "Je vyžadováno specifikování entity!"
-    },
-    "warning": {
-      "actions_array": "VAROVÁNÍ: 'actions' jsou rezervovány pro přepsání původních akcí u existujících tlačítek. Pokud jste chtěli měli v plánu přidat další akce, použijte namísto toho možnost 'shortcuts'."
-    },
-    "editor": {
-      "entity": "Entita (Povinný)",
-      "map": "Mapa (Nepovinný)",
-      "image": "Fotka (Nepovinný)",
-      "compact_view": "Kompaktní zobrazení",
-      "compact_view_aria_label_on": "Zapni kompaktní zobrazení",
-      "compact_view_aria_label_off": "Vypni kompaktní zobrazení",
-      "show_name": "Zobraz název",
+  "status": {
+    "cleaning": "Vysává se",
+    "auto": "Automatické vysávání",
+    "spot": "Vysávání na místě",
+    "edge": "Vysávání při okraji",
+    "single_room": "Vysávání jedné místnosti",
+    "paused": "Pozastaveno",
+    "idle": "Nečinný",
+    "stop": "Stopped",
+    "charging": "Nabíjí se",
+    "returning home": "Vrací se do stanice",
+    "returning": "Vrací se",
+    "docked": "Ve stanici",
+    "unknown": "Neznámý",
+    "offline": "Vypnuto",
+    "error": "Chyba"
+  },
+  "source": {
+    "gentle": "Mírný",
+    "silent": "Tichý",
+    "standard": "Standardní",
+    "medium": "Střední",
+    "turbo": "Turbo",
+    "normal": "Normální",
+    "high": "Vysoký",
+    "strong": "Silný",
+    "quiet": "Tichý",
+    "max": "Max",
+    "max+": "Max+"
+  },
+  "common": {
+    "name": "Karta vysavače",
+    "description": "Karta vysavače vám dovolí ovládat svůj vysavač.",
+    "start": "Začni vysávat",
+    "continue": "Pokračuj",
+    "pause": "Pozastav",
+    "stop": "Zastav",
+    "return_to_base": "Vrať se domů",
+    "locate": "Lokalizuj",
+    "not_available": "Vysavač není dostupný"
+  },
+  "error": {
+    "missing_entity": "Je vyžadováno specifikování entity!"
+  },
+  "warning": {
+    "actions_array": "VAROVÁNÍ: 'actions' jsou rezervovány pro přepsání původních akcí u existujících tlačítek. Pokud jste chtěli měli v plánu přidat další akce, použijte namísto toho možnost 'shortcuts'."
+  },
+  "editor": {
+    "entity": "Entita (Povinný)",
+    "map": "Mapa (Nepovinný)",
+    "image": "Fotka (Nepovinný)",
+    "compact_view": "Kompaktní zobrazení",
+    "compact_view_aria_label_on": "Zapni kompaktní zobrazení",
+    "compact_view_aria_label_off": "Vypni kompaktní zobrazení",
+    "show_name": "Zobraz název",
     "show_name_aria_label_on": "Zapni zobrazení názvu",
     "show_name_aria_label_off": "Vypni zobrazení názvu",
     "show_status": "Zobraz status",
@@ -63,5 +63,5 @@
     "show_toolbar_aria_label_on": "Zapni zobrazení lišty",
     "show_toolbar_aria_label_off": "Vypni zobrazení lišty",
     "code_only_note": "Poznámka: Nastavení akcí a infa je dostupné pouze v editoru kódu."
-    }
   }
+}

@@ -1,5 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
-import { nothing } from 'lit-html';
+import { LitElement, html, css, nothing } from 'lit';
 import { fireEvent } from 'custom-card-helpers';
 import localize from './localize';
 
