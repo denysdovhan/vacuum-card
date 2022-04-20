@@ -369,7 +369,6 @@ class VacuumCard extends LitElement {
           ${localizedStatus}
         </span>
         <mwc-circular-progress
-          class="spinner"
           .indeterminate=${this.requestInProgress}
           density="-5"
         ></mwc-circular-progress>

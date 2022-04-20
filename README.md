@@ -169,7 +169,6 @@ This card can be styled by changing the values of these CSS properties (globally
 | `--vc-toolbar-background`   | `var(--vc-background)`                                           | Background of the toolbar            |
 | `--vc-toolbar-text-color`   | `var(--secondary-text-color)`                                    | Color of the toolbar texts           |
 | `--vc-toolbar-icon-color`   | `var(--secondary-text-color)`                                    | Color of the toolbar icons           |
-| `--vc-border-radius`        | `var(--ha-card-border-radius, 4px)`                              | Size of rounded corners of the card  |
 | `--vc-divider-color`        | `var(--entities-divider-color, var(--divider-color))`            | Color of dividers                    |
 | `--vc-spacing`              | `10px`                                                           | Paddings and margins inside the card |
 
