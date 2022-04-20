@@ -11,6 +11,7 @@
   --vc-toolbar-icon-color: var(--secondary-text-color);
   --vc-border-radius: var(--ha-card-border-radius, 4px);
   --vc-divider-color: var(--entities-divider-color, var(--divider-color));
+  --vc-spacing: 10px;
 
   display: flex;
   flex: 1;
@@ -42,10 +43,10 @@ ha-card {
 
 .tips {
   display: flex;
-  gap: 12px;
+  gap: var(--vc-spacing);
   flex-grow: 1;
   flex-wrap: wrap;
-  padding: 12px;
+  padding: var(--vc-spacing);
 
   & .tip {
     cursor: pointer;
@@ -132,8 +133,9 @@ ha-card {
   max-width: 90%;
   max-height: 200px;
   image-rendering: crisp-edges;
-  margin: 30px auto 20px auto;
+  margin: var(--vc-spacing) auto;
   cursor: pointer;
+  filter: brightness(0.9);
 }
 
 .vacuum.on,
@@ -177,12 +179,12 @@ ha-card {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-left: calc(28px + 9px); /* size + margin of spinner */
+  margin-left: calc(28px + var(--vc-spacing)); /* size + margin of spinner */
 }
 
 .status mwc-circular-progress {
   --mdc-theme-primary: var(--vc-secondary-text-color) !important;
-  margin-left: 9px;
+  margin-left: var(--vc-spacing);
 }
 
 .vacuum-name {
@@ -199,7 +201,7 @@ ha-card {
 }
 
 .metadata {
-  margin: 10px auto;
+  margin: var(--vc-spacing) auto;
 }
 
 .stats {
@@ -212,7 +214,7 @@ ha-card {
 
 .stats-block {
   cursor: pointer;
-  margin: 10px 0px;
+  margin: var(--vc-spacing) 0px;
   text-align: center;
   border-right: 1px solid var(--vc-divider-color);
   flex-grow: 1;
@@ -239,6 +241,7 @@ ha-icon {
   flex-flow: row wrap;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 5px;
   border-top: 1px solid var(--vc-divider-color);
 }
 
@@ -248,15 +251,6 @@ ha-icon {
   width: 44px;
   height: 44px;
   --mdc-icon-button-size: 44px;
-  margin: 5px 0;
-
-  &:first-child {
-    margin-left: 5px;
-  }
-
-  &:last-child {
-    margin-right: 5px;
-  }
 }
 
 .toolbar paper-button {
