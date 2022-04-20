@@ -35,6 +35,23 @@ ha-card {
   }
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tips {
+  display: flex;
+  gap: 12px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding: 12px;
+
+  & .tip {
+    cursor: pointer;
+  }
+}
+
 .map {
   max-width: 95%;
   image-rendering: crisp-edges;
@@ -144,30 +161,9 @@ ha-card {
   flex-grow: 1;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: var(--vc-primary-text-color);
-}
-
 .more-info ha-icon {
   display: flex;
 }
-
-/* .header-tip ha-icon {
-  display: inline-block;
-} */
-/* .battkery {
-  text-align: right;
-  font-weight: bold;
-  padding: 8px;
-}
-
-.source {
-  padding-left: 7px;
-  text-align: center;
-} */
 
 .status {
   display: flex;
@@ -185,7 +181,7 @@ ha-card {
 }
 
 .status mwc-circular-progress {
-  --mdc-theme-primary: var(--vc-secondary-text-color);
+  --mdc-theme-primary: var(--vc-secondary-text-color) !important;
   margin-left: 9px;
 }
 

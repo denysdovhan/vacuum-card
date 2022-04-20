@@ -8,8 +8,6 @@ import defaultImage from './vacuum.svg';
 import { version } from '../package.json';
 import './vacuum-card-editor';
 
-// todo: rework request and actions
-
 registerTemplates();
 
 console.info(
@@ -238,26 +236,39 @@ class VacuumCard extends LitElement {
     const selected = sources.indexOf(source);
 
     return html`
-      <ha-button-menu @click="${(e) => e.stopPropagation()}">
-        <div slot="trigger">
-          <ha-icon icon="mdi:fan"></ha-icon>
-          <span class="icon-title">
-            ${localize(`source.${source}`) || source}
-          </span>
-        </div>
-        ${sources.map(
-          (item, index) =>
-            html`
-              <mwc-list-item
-                ?activated=${selected === index}
-                value=${item}
-                @click=${(e) => this.handleSpeed(e)}
-              >
-                ${localize(`source.${item}`) || item}
-              </mwc-list-item>
-            `
-        )}
-      </ha-button-menu>
+      <div class="tip">
+        <ha-button-menu @click="${(e) => e.stopPropagation()}">
+          <div slot="trigger">
+            <ha-icon icon="mdi:fan"></ha-icon>
+            <span class="icon-title">
+              ${localize(`source.${source}`) || source}
+            </span>
+          </div>
+          ${sources.map(
+            (item, index) =>
+              html`
+                <mwc-list-item
+                  ?activated=${selected === index}
+                  value=${item}
+                  @click=${(e) => this.handleSpeed(e)}
+                >
+                  ${localize(`source.${item}`) || item}
+                </mwc-list-item>
+              `
+          )}
+        </ha-button-menu>
+      </div>
+    `;
+  }
+
+  renderBattery() {
+    const { battery_level, battery_icon } = this.getAttributes(this.entity);
+
+    return html`
+      <div class="tip" @click="${() => this.handleMore()}">
+        <ha-icon icon="${battery_icon}"></ha-icon>
+        <span class="icon-title">${battery_level}%</span>
+      </div>
     `;
   }
 
@@ -443,9 +454,11 @@ class VacuumCard extends LitElement {
             const execute = () => {
               this.callAction({ service, service_data });
             };
-            return html`<ha-icon-button title="${name}" @click="${execute}"
-              ><ha-icon icon="${icon}"></ha-icon
-            ></ha-icon-button>`;
+            return html`
+              <ha-icon-button title="${name}" @click="${execute}">
+                <ha-icon icon="${icon}"></ha-icon>
+              </ha-icon-button>
+            `;
           }
         );
 
@@ -496,27 +509,22 @@ class VacuumCard extends LitElement {
     }
 
     const { state } = this.entity;
-    const { battery_level, battery_icon } = this.getAttributes(this.entity);
 
     return html`
       <ha-card>
         <div class="preview">
           <div class="header">
-            <div class="header-tip">
-              ${this.renderSource()}
+            <div class="tips">
+              ${this.renderSource()} ${this.renderBattery()}
             </div>
-            <div class="header-tips">
-              <span class="icon-title">${battery_level}%</span>
-              <ha-icon icon="${battery_icon}"></ha-icon>
-            </div>
+            <ha-icon-button
+              class="more-info"
+              icon="mdi:dots-vertical"
+              ?more-info="true"
+              @click="${() => this.handleMore()}"
+              ><ha-icon icon="mdi:dots-vertical"></ha-icon
+            ></ha-icon-button>
           </div>
-          <ha-icon-button
-            class="more-info"
-            icon="mdi:dots-vertical"
-            ?more-info="true"
-            @click="${() => this.handleMore()}"
-            ><ha-icon icon="mdi:dots-vertical"></ha-icon
-          ></ha-icon-button>
 
           ${this.renderMapOrImage(state)}
 
