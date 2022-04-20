@@ -21,12 +21,10 @@ ha-card {
   flex-direction: column;
   flex: 1;
   position: relative;
-  overflow: hidden;
 }
 
 .preview {
   background: var(--vc-background);
-  overflow: hidden;
   position: relative;
   text-align: center;
 
