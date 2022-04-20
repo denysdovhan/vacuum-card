@@ -21,17 +21,13 @@ import * as nl from './translations/nl.json';
 import * as nn from './translations/nn.json';
 import * as pl from './translations/pl.json';
 import * as pt from './translations/pt.json';
+import * as pt_br from './translations/pt-BR.json';
 import * as ro from './translations/ro.json';
 import * as ru from './translations/ru.json';
 import * as sv from './translations/sv.json';
 import * as tw from './translations/tw.json';
 import * as uk from './translations/uk.json';
 import * as vi from './translations/vi.json';
-import * as lt from './translations/lt.json';
-import * as ro from './translations/ro.json';
-import * as pt from './translations/pt.json';
-import * as pt_br from './translations/pt-BR.json';
-import * as cn from './translations/cn.json';
 
 var languages = {
   ca,
@@ -53,17 +49,13 @@ var languages = {
   nn,
   pl,
   pt,
+  pt_br,
   ro,
   ru,
   sv,
   tw,
   uk,
   vi,
-  lt,
-  ro,
-  pt,
-  pt_br,
-  cn,
 };
 
 const DEFAULT_LANG = 'en';
