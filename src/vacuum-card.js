@@ -327,11 +327,7 @@ class VacuumCard extends LitElement {
         `;
 
         return html`
-          <div
-            class="stats-block"
-            @click="${() =>
-              this.handleMore(entity_id || this.entity.entity_id)}"
-          >
+          <div class="stats-block" @click="${() => this.handleMore(entity_id)}">
             <span class="stats-value">${value}</span>
             ${unit}
             <div class="stats-subtitle">${subtitle}</div>
