@@ -1,17 +1,33 @@
 {
   "status": {
     "cleaning": "Vysává se",
+    "auto": "Automatické vysávání",
+    "spot": "Vysávání na místě",
+    "edge": "Vysávání při okraji",
+    "single_room": "Vysávání jedné místnosti",
     "paused": "Pozastaveno",
     "idle": "Nečinný",
+    "stop": "Stopped",
     "charging": "Nabíjí se",
-    "returning home": "Vrací se domů"
+    "returning home": "Vrací se do stanice",
+    "returning": "Vrací se",
+    "docked": "Ve stanici",
+    "unknown": "Neznámý",
+    "offline": "Vypnuto",
+    "error": "Chyba"
   },
   "source": {
     "gentle": "Mírný",
     "silent": "Tichý",
     "standard": "Standardní",
     "medium": "Střední",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normální",
+    "high": "Vysoký",
+    "strong": "Silný",
+    "quiet": "Tichý",
+    "max": "Max",
+    "max+": "Max+"
   },
   "common": {
     "name": "Karta vysavače",
@@ -28,7 +44,7 @@
     "missing_entity": "Je vyžadováno specifikování entity!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "VAROVÁNÍ: 'actions' jsou rezervovány pro přepsání původních akcí u existujících tlačítek. Pokud jste chtěli měli v plánu přidat další akce, použijte namísto toho možnost 'shortcuts'."
   },
   "editor": {
     "entity": "Entita (Povinný)",

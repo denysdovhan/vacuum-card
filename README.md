@@ -1,3 +1,5 @@
+[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua/)
+
 # Vacuum Card
 
 [![npm version][npm-image]][npm-url]
@@ -47,7 +49,7 @@ Just search for `Vacuum Card` in plugins tab.
       ```
 4. Add `custom:vacuum-card` to Lovelace UI as any other card (using either editor or YAML configuration).
 
-## Using the card
+## Usage
 
 This card can be configured using Lovelace UI editor.
 
@@ -86,9 +88,10 @@ stats:
       unit: hours
       subtitle: Sensors
   cleaning:
-    - attribute: cleaned_area
-      unit: m2
-      subtitle: Cleaning area
+    - value_template: >-
+        {{ (states('sensor.vacuum_main_brush_left') | float(0) / 3600) | round(1) }}
+      subtitle: Main brush
+      unit: hours
     - attribute: cleaning_time
       unit: minutes
       subtitle: Cleaning time
@@ -125,12 +128,13 @@ Here is what every option means:
 
 You can use any attribute of vacuum or even any entity by `entity_id` to display by stats section:
 
-| Name        |   Type   | Default  | Description                                     |
-| ----------- | :------: | -------- | ----------------------------------------------- |
-| `entity_id` | `string` | Optional | An entity_id with state, i.e. `sensor.vacuum`.  |
-| `attribute` | `string` | Optional | Attribute name of the stat, i.e. `filter_left`. |
-| `unit`      | `string` | Optional | Unit of measure, i.e. `hours`.                  |
-| `subtitle`  | `string` | Optional | Friendly name of the stat, i.e. `Filter`.       |
+| Name             |   Type   | Default  | Description                                     |
+| ---------------- | :------: | -------- | ----------------------------------------------- |
+| `entity_id`      | `string` | Optional | An entity_id with state, i.e. `sensor.vacuum`.  |
+| `attribute`      | `string` | Optional | Attribute name of the stat, i.e. `filter_left`. |
+| `value_template` | `string` | Optional | Jinja2 template returning a value.              |
+| `unit`           | `string` | Optional | Unit of measure, i.e. `hours`.                  |
+| `subtitle`       | `string` | Optional | Friendly name of the stat, i.e. `Filter`.       |
 
 ### `actions` object
 
@@ -151,6 +155,46 @@ You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning spe
 | `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
 | `icon`         | `string` | Optional                          | Any icon for action button.                        |
 | `service_data` | `object` | `service_data` for `service` call |
+
+## Theming
+
+This card can be styled by changing the values of these CSS properties (globally or per-card via [`card-mod`][card-mod]):
+
+| Variable                    | Default value                                                    | Description                          |
+| --------------------------- | ---------------------------------------------------------------- | ------------------------------------ |
+| `--vc-background`           | `var(--ha-card-background, var(--card-background-color, white))` | Background of the card               |
+| `--vc-primary-text-color`   | `var(--primary-text-color)`                                      | Vacuum name, stats values, etc       |
+| `--vc-secondary-text-color` | `var(--secondary-text-color)`                                    | Status, stats units and titles, etc  |
+| `--vc-icon-color`           | `var(--secondary-text-color)`                                    | Colors of icons                      |
+| `--vc-toolbar-background`   | `var(--vc-background)`                                           | Background of the toolbar            |
+| `--vc-toolbar-text-color`   | `var(--secondary-text-color)`                                    | Color of the toolbar texts           |
+| `--vc-toolbar-icon-color`   | `var(--secondary-text-color)`                                    | Color of the toolbar icons           |
+| `--vc-divider-color`        | `var(--entities-divider-color, var(--divider-color))`            | Color of dividers                    |
+| `--vc-spacing`              | `10px`                                                           | Paddings and margins inside the card |
+
+### Styling via theme
+
+Here is an example of customization via theme. Read more in the [Frontend documentation](https://www.home-assistant.io/integrations/frontend/).
+
+```yaml
+my-custom-theme:
+  vc-background: '#17A8F4'
+  vc-spacing: 5px
+```
+
+### Styling via card-mod
+
+You can use [`card-mod`][card-mod] to customize the card on per-card basis, like this:
+
+```yaml
+type: 'custom:vacuum-card'
+style: |
+  ha-card {
+    --vc-background: #17A8F4;
+    --vc-spacing: 5px;
+  }
+  ...
+```
 
 ## Animations
 
@@ -189,6 +233,7 @@ This card supports translations. Please, help to add more translations and impro
 - Việt Nam (Vietnamese)
 - Lietuvių (Lithuanian)
 - Română (Romanian)
+- 简体中文 (Simplified Chinese)
 - [_Your language?_][add-translation]
 
 ## Supported models
@@ -197,51 +242,18 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
-- Roborock S7
-- Roborock S6 MaxV
-- Roborock S6
-- Roborock S6 Pure
-- Roborock S5
-- Roborock S5 Max
-- Roborock S50
-- Roborock S4
-- Roborock S4 Max
-- Roborock E25
-- Roborock E4
-- Mijia Robot Vacuum Cleaner 1C (STYTJ01ZHM)
-- Xiaomi Mi Robot (STYJ02YM)
-- Xiaomi Mi Robot 1S
-- Xiaomi Mi Roborock V1 (SDJQR02RR)
-- Xiaomi Mijia 1C
-- Roomba 675
-- Roomba 676
-- Roomba 960
-- Roomba 980
-- Roomba 981
-- Roomba i3
-- Roomba i7+
-- Roomba e5
-- Roomba S9
-- Braava M6
-- Roomba s9+
-- Dyson 360 Eye
-- Neato D7
-- Neato D6
-- Neato D4
-- Shark IQ
-- Ecovacs Deebot 950
-- EcoVacs Deebot OZMO T8 AIVI
-- EcoVacs Deebot N79
-- EcoVacs Deebot N8
-- EcoVacs Deebot N8+
-- Eufy Robovac 30c
-- Eufy Robovac 15C Max
-- Mi Robot Vacuum-Mop P
-- EcoVacs T9 AIVI
-- Dreame Z10 Pro
-- Dreame L10 Pro
-- Dreame D9
-- Dreame F9
+- **Roborock** S7, S6 (MaxV, Pure), S5 (Max), S50, S4 (Max), E25, E4
+- **Mijia** Robot Vacuum Cleaner 1C (STYTJ01ZHM)
+- **Xiaomi** Mi Robot (STYJ02YM), Mi Robot 1S, Mi Roborock V1 (SDJQR02RR), Mijia 1C, Mi Robot Vacuum-Mop P
+- **Roomba** 675, 676, 960980, 981, i3, i7+, e5, S9, s9+, j7
+- **Braava** M6
+- **Dyson** 360 Eye
+- **Neato** D7, D6, D4
+- **Shark** IQ
+- **Ecova**cs Deebot 950, Deebot OZMO T8 AIVI, Deebot N79, Deebot N8, Deebot N8+, T9 AIVI
+- **Eufy** Robovac 30c, Robovac 15C Max
+- **EcoVacs** T9 AIVI
+- **Dreame** Z10 Pro, L10 Pro, D9, F9
 - 360 S7 Pro
 - [_Your vacuum?_][edit-readme]
 
@@ -281,12 +293,13 @@ MIT © [Denys Dovhan][denysdovhan]
 
 [home-assistant]: https://www.home-assistant.io/
 [hacs]: https://hacs.xyz
-[preview-image]: https://user-images.githubusercontent.com/3459374/83282788-c9e30280-a1e2-11ea-8e13-6208169ddc0a.png
+[preview-image]: https://user-images.githubusercontent.com/3459374/164231294-d2c26bbd-ae34-4b41-b909-3a0ae259259e.png
 [cleaning-gif]: https://user-images.githubusercontent.com/3459374/81119202-fa60b500-8f32-11ea-9b23-325efa93d7ab.gif
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest
 [ha-scripts]: https://www.home-assistant.io/docs/scripts/
 [edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/master/README.md
+[card-mod]: https://github.com/thomasloven/lovelace-card-mod
 [add-translation]: https://github.com/denysdovhan/vacuum-card/blob/master/CONTRIBUTING.md#how-to-add-translation
 [macbury-smart-house]: https://macbury.github.io/SmartHouse/HomeAssistant/Vacuum/
 [bbbenji-card]: https://gist.github.com/bbbenji/24372e423f8669b2e6713638d8f8ceb2

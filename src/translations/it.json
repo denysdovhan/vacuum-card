@@ -4,7 +4,15 @@
     "paused": "In pausa",
     "idle": "Inattivo",
     "charging": "In carica",
-    "returning home": "In rientro alla base"
+    "returning home": "In rientro alla base",
+    "docked": "In Base"
+  },
+  "source": {
+    "gentle": "Gentile",
+    "silent": "Silenzioso",
+    "standard": "Normale",
+    "medium": "Medio",
+    "turbo": "Turbo"
   },
   "common": {
     "name": "Vacuum Card",
@@ -14,7 +22,8 @@
     "pause": "Pausa",
     "stop": "Stop",
     "return_to_base": "Base",
-    "locate": "Trova aspirapolvere"
+    "locate": "Trova aspirapolvere",
+    "not_available": "Vacuum non disponibile"
   },
   "error": {
     "missing_entity": "È necessario specificare l'entità!"
@@ -32,6 +41,9 @@
     "show_name": "Mostra Nome",
     "show_name_aria_label_on": "Attiva nome",
     "show_name_aria_label_off": "Disattiva nome",
+    "show_status": "Mostra Stato",
+    "show_status_aria_label_on": "Attiva stato",
+    "show_status_aria_label_off": "Disattiva stato",    
     "show_toolbar": "Mostra barra degli strumenti",
     "show_toolbar_aria_label_on": "Attiva barra degli strumenti",
     "show_toolbar_aria_label_off": "Disattiva barra degli strumenti",

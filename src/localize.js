@@ -1,26 +1,31 @@
 // Borrowed from:
 // https://github.com/custom-cards/boilerplate-card/blob/master/src/localize/localize.ts
 
-import * as en from './translations/en.json';
-import * as uk from './translations/uk.json';
-import * as nl from './translations/nl.json';
-import * as de from './translations/de.json';
-import * as fr from './translations/fr.json';
-import * as pl from './translations/pl.json';
-import * as it from './translations/it.json';
-import * as ru from './translations/ru.json';
-import * as es from './translations/es.json';
-import * as cs from './translations/cs.json';
-import * as hu from './translations/hu.json';
-import * as he from './translations/he.json';
-import * as sv from './translations/sv.json';
-import * as nb from './translations/nb.json';
-import * as nn from './translations/nn.json';
-import * as da from './translations/da.json';
-import * as ko from './translations/ko.json';
-import * as fi from './translations/fi.json';
+// Sorted alphabetically
 import * as ca from './translations/ca.json';
+import * as cn from './translations/cn.json';
+import * as cs from './translations/cs.json';
+import * as da from './translations/da.json';
+import * as de from './translations/de.json';
+import * as en from './translations/en.json';
+import * as es from './translations/es.json';
+import * as fi from './translations/fi.json';
+import * as fr from './translations/fr.json';
+import * as he from './translations/he.json';
+import * as hu from './translations/hu.json';
+import * as it from './translations/it.json';
+import * as ko from './translations/ko.json';
+import * as lt from './translations/lt.json';
+import * as nb from './translations/nb.json';
+import * as nl from './translations/nl.json';
+import * as nn from './translations/nn.json';
+import * as pl from './translations/pl.json';
+import * as pt from './translations/pt.json';
+import * as ro from './translations/ro.json';
+import * as ru from './translations/ru.json';
+import * as sv from './translations/sv.json';
 import * as tw from './translations/tw.json';
+import * as uk from './translations/uk.json';
 import * as vi from './translations/vi.json';
 import * as lt from './translations/lt.json';
 import * as ro from './translations/ro.json';
@@ -28,26 +33,30 @@ import * as pt from './translations/pt.json';
 import * as pt_br from './translations/pt_br.json';
 
 var languages = {
-  en,
-  uk,
-  nl,
-  de,
-  fr,
-  pl,
-  it,
-  ru,
-  es,
-  cs,
-  hu,
-  he,
-  sv,
-  nb,
-  nn,
-  da,
-  ko,
-  fi,
   ca,
+  cn,
+  cs,
+  da,
+  de,
+  en,
+  es,
+  fi,
+  fr,
+  he,
+  hu,
+  it,
+  ko,
+  lt,
+  nb,
+  nl,
+  nn,
+  pl,
+  pt,
+  ro,
+  ru,
+  sv,
   tw,
+  uk,
   vi,
   lt,
   ro,
@@ -72,25 +81,25 @@ export default function localize(string, search, replace) {
     .replace(/['"]+/g, '')
     .replace('-', '_');
 
-  let tranlated;
+  let translated;
 
   try {
-    tranlated = languages[lang][section][key];
+    translated = languages[lang][section][key];
   } catch (e) {
-    tranlated = languages[DEFAULT_LANG][section][key];
+    translated = languages[DEFAULT_LANG][section][key];
   }
 
-  if (tranlated === undefined) {
-    tranlated = languages[DEFAULT_LANG][section][key];
+  if (translated === undefined) {
+    translated = languages[DEFAULT_LANG][section][key];
   }
 
-  if (tranlated === undefined) {
+  if (translated === undefined) {
     return;
   }
 
   if (search !== '' && replace !== '') {
-    tranlated = tranlated.replace(search, replace);
+    translated = translated.replace(search, replace);
   }
 
-  return tranlated;
+  return translated;
 }
