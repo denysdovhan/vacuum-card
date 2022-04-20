@@ -221,6 +221,7 @@ This card supports translations. Please, help to add more translations and impro
 - Magyar (Hungarian)
 - עִבְרִית (Hebrew)
 - Português (Portuguese)
+- Português Brasileiro (Brazilian Portuguese)
 - Svenska (Swedish)
 - Norsk bokmål (Norwegian)
 - Norsk nynorsk (Norwegian)
@@ -254,6 +255,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - **EcoVacs** T9 AIVI
 - **Dreame** Z10 Pro, L10 Pro, D9, F9
 - 360 S7 Pro
+- KaBum! Smart 500
 - [_Your vacuum?_][edit-readme]
 
 ## Development
