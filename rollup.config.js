@@ -48,9 +48,7 @@ export default {
       ],
       extract: false,
     }),
-    postcssLit({
-      importPackage: 'lit-element',
-    }),
+    postcssLit(),
     image(),
     IS_DEV && serve(serverOptions),
     !IS_DEV && minifyLiterals(),
