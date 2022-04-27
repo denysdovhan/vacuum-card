@@ -25,12 +25,13 @@
   "license": "MIT",
   "dependencies": {
     "custom-card-helpers": "^1.6.4",
-    "ha-template": "^1.0.4",
+    "ha-template": "^1.0.5",
     "lit": "^2.0.0",
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.16.11",
     "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-image": "^2.0.4",
