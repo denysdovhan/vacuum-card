@@ -9,7 +9,8 @@
     "lint:fix": "eslint src --fix",
     "format": "prettier --write .",
     "build": "rollup -c",
-    "test": "npm run lint && npm run build"
+    "test": "npm run lint && npm run build",
+    "prepare": "husky install"
   },
   "keywords": [
     "home-assistant",
@@ -56,14 +57,9 @@
     "last 2 versions",
     "not dead"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": "eslint --fix",
-    "*.{js,json,css,yml,md}": "prettier --write"
+    "**/*": "prettier --write --ignore-unknown"
   },
   "prettier": {
     "singleQuote": true
