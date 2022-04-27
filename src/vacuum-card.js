@@ -451,7 +451,7 @@ class VacuumCard extends LitElement {
               this.callAction({ service, service_data });
             };
             return html`
-              <ha-icon-button title="${name}" @click="${execute}">
+              <ha-icon-button label="${name}" @click="${execute}">
                 <ha-icon icon="${icon}"></ha-icon>
               </ha-icon-button>
             `;
@@ -460,7 +460,7 @@ class VacuumCard extends LitElement {
 
         const dockButton = html`
           <ha-icon-button
-            title="${localize('common.return_to_base')}"
+            label="${localize('common.return_to_base')}"
             @click="${this.handleAction('return_to_base')}"
             ><ha-icon icon="hass:home-map-marker"></ha-icon>
           </ha-icon-button>
@@ -469,13 +469,13 @@ class VacuumCard extends LitElement {
         return html`
           <div class="toolbar">
             <ha-icon-button
-              title="${localize('common.start')}"
+              label="${localize('common.start')}"
               @click="${this.handleAction('start')}"
               ><ha-icon icon="hass:play"></ha-icon>
             </ha-icon-button>
 
             <ha-icon-button
-              title="${localize('common.locate')}"
+              label="${localize('common.locate')}"
               @click="${this.handleAction('locate', { isRequest: false })}"
               ><ha-icon icon="mdi:map-marker"></ha-icon>
             </ha-icon-button>
