@@ -147,9 +147,10 @@ class VacuumCard extends LitElement {
 
   hasWaterLevelChanged(changedProps) {
     return (
-      this.hass && !this.config.water_level &&
+      this.hass &&
+      !this.config.water_level &&
       changedProps.get('hass').states[this.waterLevelEntity].state !==
-      this.waterLevel.state
+        this.waterLevel.state
     );
   }
 
@@ -349,10 +350,11 @@ class VacuumCard extends LitElement {
           <div slot="trigger">
             <ha-icon icon="${icon}"></ha-icon>
             <span class="icon-title">
-              ${localize(`${localizePrefix}${selectedObject}`) || selectedObject}
+              ${localize(`${localizePrefix}${selectedObject}`) ||
+              selectedObject}
             </span>
           </div>
-          ${sources.map(
+          ${objects.map(
             (item, index) =>
               html`
                 <mwc-list-item
@@ -453,11 +455,7 @@ class VacuumCard extends LitElement {
       return nothing;
     }
 
-    return html`
-      <div class="vacuum-name">
-        ${friendly_name}
-      </div>
-    `;
+    return html` <div class="vacuum-name">${friendly_name}</div> `;
   }
 
   renderStatus() {
@@ -619,7 +617,8 @@ class VacuumCard extends LitElement {
         <div class="preview">
           <div class="header">
             <div class="tips">
-              ${this.renderSource()} ${this.renderWaterLevel()} ${this.renderBattery()}
+              ${this.renderSource()} ${this.renderWaterLevel()}
+              ${this.renderBattery()}
             </div>
             <ha-icon-button
               class="more-info"
@@ -636,9 +635,7 @@ class VacuumCard extends LitElement {
             ${this.renderName()} ${this.renderStatus()}
           </div>
 
-          <div class="stats">
-            ${this.renderStats(state)}
-          </div>
+          <div class="stats">${this.renderStats(state)}</div>
         </div>
 
         ${this.renderToolbar(state)}

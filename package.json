@@ -27,7 +27,8 @@
     "custom-card-helpers": "^1.6.4",
     "ha-template": "^1.0.5",
     "lit": "^2.0.0",
-    "lodash.get": "^4.4.2"
+    "lodash.get": "^4.4.2",
+    "typescript-string-operations": "^1.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
