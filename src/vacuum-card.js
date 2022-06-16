@@ -148,7 +148,7 @@ class VacuumCard extends LitElement {
   hasWaterLevelChanged(changedProps) {
     return (
       this.hass &&
-      !this.config.water_level &&
+      this.config.water_level &&
       changedProps.get('hass').states[this.waterLevelEntity].state !==
         this.waterLevel.state
     );
@@ -360,7 +360,7 @@ class VacuumCard extends LitElement {
                 <mwc-list-item
                   ?activated=${selected === index}
                   value=${item}
-                  @click=${(e) => onSelected(e, this)}"
+                  @click="${(e) => onSelected(e, this)}"
                 >
                   ${localize(`source.${item}`) || item}
                 </mwc-list-item>
