@@ -147,6 +147,7 @@ class VacuumCard extends LitElement {
 
   hasWaterLevelChanged(changedProps) {
     return (
+      this.hass && !this.config.water_level &&
       changedProps.get('hass').states[this.waterLevelEntity].state !==
       this.waterLevel.state
     );
