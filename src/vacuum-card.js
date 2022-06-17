@@ -322,7 +322,7 @@ class VacuumCard extends LitElement {
         entity.attributes.options,
         'mdi:water',
         this.handleSelect,
-        'water_level'
+        'source'
       );
     }
   }
@@ -362,7 +362,7 @@ class VacuumCard extends LitElement {
                   value=${item}
                   @click="${(e) => onSelected(e, this)}"
                 >
-                  ${localize(`source.${item}`) || item}
+                  ${localize(`${localizePrefix}${item}`) || item}
                 </mwc-list-item>
               `
           )}
