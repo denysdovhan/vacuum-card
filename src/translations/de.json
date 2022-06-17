@@ -28,7 +28,10 @@
     "gentle": "Schonend",
     "silent": "Leise",
     "standard": "Standard",
+    "low": "Niedrig",
     "medium": "Mittel",
+    "high": "Hoch",
+    "ultrahigh": "Sehr hoch",
     "turbo": "Max",
     "normal": "Normal",
     "max": "Maximal",
@@ -40,12 +43,6 @@
     "balanced": "Ausgeglichen",
     "custom": "Benutzerdefiniert",
     "off": "Aus"
-  },
-  "water_level": {
-    "low": "Niedrig",
-    "medium": "Mittel",
-    "high": "Hoch",
-    "ultrahigh": "Sehr hoch"
   },
   "common": {
     "name": "Vacuum Card",
