@@ -34,7 +34,7 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@rollup/plugin-babel": "^5.0.0",
-    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-image": "^2.0.4",
     "@rollup/plugin-json": "^4.0.3",
     "@rollup/plugin-node-resolve": "^13.3.0",
