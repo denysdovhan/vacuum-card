@@ -1,64 +1,67 @@
 {
-    "status": {
-      "cleaning": "Limpando",
-      "auto": "Limpeza automatica",
-      "spot": "Limpando local",
-      "edge": "Limpando borda",
-      "single_room": "Limpando um quarto",
-      "paused": "Em pausa",
-      "idle": "Ocioso",
-      "stop": "Parado",
-      "charging": "Carregando",
-      "returning home": "Voltando à base",
-      "returning": "Voltando",
-      "docked": "Na base",
-      "unknown": "Desconhecido",
-      "offline": "Offline",
-      "error": "Erro"
-    },
-    "source": {
-      "gentle": "Delicado",
-      "silent": "Silencioso",
-      "standard": "Padrão",
-      "medium": "Médio",
-      "turbo": "Turbo",
-      "normal": "Normal",
-      "high": "Alto",
-      "strong": "Forte"
-    },
-    "common": {
-      "name": "Vacuum Card",
-      "description": "Vacuum card para controlar seu robô aspirador.",
-      "start": "Limpar",
-      "continue": "Continuar",
-      "pause": "Pausa",
-      "stop": "Parar",
-      "return_to_base": "Retornar à base",
-      "locate": "Localizar aspirador",
-      "not_available": "Aspirador indisponível"
-    },
-    "error": {
-      "missing_entity": "Entidade obrigatória"
-    },
-    "warning": {
-      "actions_array": "AVISO: 'actions' são reservadas para substituir as ações padrões para botões existentes. Se sua intenção era adicionar ações adicionais, use a opção 'shortcuts'."
-    },
-    "editor": {
-      "entity": "Entidade (Obrigatória)",
-      "map": "Mapa (Opcional)",
-      "image": "Imagem (Opcional)",
-      "compact_view": "Vista Compacta",
-      "compact_view_aria_label_on": "Ativar visualização compacta",
-      "compact_view_aria_label_off": "Desativar visualização compacta",
-      "show_name": "Mostrar nome",
-      "show_name_aria_label_on": "Mostrar nome",
-      "show_name_aria_label_off": "Ocultar nome",
-      "show_status": "Mostrar estado",
-      "show_status_aria_label_on": "Mostrar estado",
-      "show_status_aria_label_off": "Ocultar estado",
-      "show_toolbar": "Mostrar barra de ferramentas",
-      "show_toolbar_aria_label_on": "Mostrar barra de ferramentas",
-      "show_toolbar_aria_label_off": "Ocultar barra de ferramentas",
-      "code_only_note": "Nota: Ações e estatísticas estão disponiveis exclusivamente usando o editor de código."
-    }
+  "status": {
+    "cleaning": "Limpeza",
+    "auto": "Limpeza Automática",
+    "spot": "Limpeza de manchas",
+    "edge": "Limpeza de Bordas",
+    "single_room": "Limpeza de Quarto Individual",
+    "paused": "Pausado",
+    "idle": "Parado",
+    "stop": "Parou",
+    "charging": "Carregando",
+    "returning home": "Voltando para a dock",
+    "returning": "Retornando",
+    "docked": "Na dock",
+    "unknown": "Desconhecido",
+    "offline": "Desligado",
+    "error": "Erro"
+  },
+  "source": {
+    "gentle": "Suave",
+    "silent": "Silencioso",
+    "standard": "Padrão",
+    "medium": "Médio",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "high": "Alto",
+    "strong": "Forte",
+    "quiet": "Tranquilo",
+    "max": "Máximo",
+    "max+": "Máximo+"
+  },
+  "common": {
+    "name": "Cartão de robô aspirador",
+    "description": "O cartão de robô aspirador permite controlar o robô aspirador.",
+    "start": "Começar",
+    "continue": "Continue",
+    "pause": "Pausar",
+    "stop": "Parar",
+    "return_to_base": "Dock",
+    "locate": "Localizar o robô aspirador",
+    "not_available": "O robô aspirador não está disponível"
+  },
+  "error": {
+    "missing_entity": "A especificação da entidade é obrigatória!"
+  },
+  "warning": {
+    "actions_array": "AVISO: 'actions' é reservado para substituir as ações padrão dos botões existentes. Se sua intenção era adicionar ações adicionais, use a opção 'atalhos'."
+  },
+  "editor": {
+    "entity": "Entidade (Obrigatório)",
+    "map": "Câmera do mapa (opcional)",
+    "image": "Imagem (opcional)",
+    "compact_view": "Visualização compacta",
+    "compact_view_aria_label_on": "Ativar a visualização compacta",
+    "compact_view_aria_label_off": "Desativar a visualização compacta",
+    "show_name": "Mostrar nome",
+    "show_name_aria_label_on": "Ativar nome de exibição",
+    "show_name_aria_label_off": "Desativar nome de exibição",
+    "show_status": "Mostrar status",
+    "show_status_aria_label_on": "Ativar o status de exibição",
+    "show_status_aria_label_off": "Desativar o status de exibição",
+    "show_toolbar": "Mostrar barra de ferramentas",
+    "show_toolbar_aria_label_on": "Ativar a barra de ferramentas de exibição",
+    "show_toolbar_aria_label_off": "Desativar a barra de ferramentas de exibição",
+    "code_only_note": "Observação: Ações de configuração e opções de estatísticas estão disponíveis exclusivamente usando o Editor de código."
   }
+}
