@@ -20,10 +20,12 @@
     "gentle": "Gentle",
     "silent": "Silent",
     "standard": "Standard",
+    "low": "Low",
     "medium": "Medium",
     "turbo": "Turbo",
     "normal": "Normal",
     "high": "High",
+    "ultrahigh": "Ultrahigh",
     "strong": "Strong",
     "quiet": "Quiet",
     "max": "Max",
@@ -41,7 +43,8 @@
     "not_available": "Vacuum is not available"
   },
   "error": {
-    "missing_entity": "Specifying entity is required!"
+    "missing_entity": "Specifying entity is required!",
+    "domain_not_supported": "Domain not supported! Required is {0}, but you specified {1}!"
   },
   "warning": {
     "actions_array": "WARNING: 'actions' is reserved to override default actions for existing buttons. If your intention was to add additional actions, use the 'shortcuts' option instead."
@@ -49,6 +52,7 @@
   "editor": {
     "entity": "Entity (Required)",
     "map": "Map Camera (Optional)",
+    "water_level": "Water Level Select (Optional)",
     "image": "Image (Optional)",
     "compact_view": "Compact View",
     "compact_view_aria_label_on": "Toggle compact view on",
