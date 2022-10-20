@@ -13,7 +13,15 @@
     "returning": "Retour à la base",
     "docked": "A la base",
     "unknown": "Inconnu",
-    "offline": "Déconnecté"
+    "offline": "Déconnecté",
+    "Stopped": "Arrêté",
+    "Running": "Nettoyage",
+    "Cancelled": "Annulation",
+    "New Mission": "Nouvelle Mission",
+    "Docking": "Retour à la base",
+    "User Docking": "Retour à la base",
+    "End Mission": "Fin de Mission",
+    "Docking - End Mission": "Retour à la base - Fin de Mission"
   },
   "source": {
     "gentle": "Doux",
