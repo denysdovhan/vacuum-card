@@ -257,6 +257,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - 360 S7 Pro
 - KaBum! Smart 500
 - Neabot NoMo N1 Plus
+- Kyvol E31
 - [_Your vacuum?_][edit-readme]
 
 ## Development
