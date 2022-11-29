@@ -256,6 +256,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - **Dreame** Z10 Pro, L10 Pro, D9, F9
 - 360 S7 Pro
 - KaBum! Smart 500
+- Honiture Q6 Lite
 - Neabot NoMo N1 Plus
 - Kyvol E31
 - [_Your vacuum?_][edit-readme]
