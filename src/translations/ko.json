@@ -1,43 +1,59 @@
 {
   "status": {
-    "cleaning": "청소중",
-    "paused": "일시정지",
-    "idle": "대기중",
-    "charging": "충전중",
-    "returning home": "복귀중"
+    "cleaning": "청소 중",
+    "auto": "자동 청소",
+    "spot": "부분 청소",
+    "edge": "가장자리 청소",
+    "single_room": "방 청소",
+    "paused": "일시 정지",
+    "idle": "유휴 중",
+    "stop": "중지됨",
+    "charging": "충전 중",
+    "returning home": "충전대로 복귀 중",
+    "returning": "충전대로 복귀 중",
+    "docked": "도킹됨",
+    "unknown": "알수 없음",
+    "offline": "오프라인",
+    "error": "오류"
   },
   "source": {
-    "gentle": "물걸레",
+    "gentle": "저속",
     "silent": "저소음",
-    "standard": "밸런스",
-    "medium": "터보",
-    "turbo": "최강"
+    "standard": "표준",
+    "medium": "중간",
+    "turbo": "터보",
+    "normal": "보통",
+    "high": "높음",
+    "strong": "강함",
+    "quiet": "조용함",
+    "max": "맥스",
+    "max+": "맥스+"
   },
   "common": {
     "name": "청소기 카드",
-    "description": "청소기 카드는 로봇 청소기를 제어합니다.",
+    "description": "청소기 카드를 사용하면 로봇 청소기를 제어할 수 있습니다.",
     "start": "청소 시작",
     "continue": "청소 재개",
-    "pause": "일시정지",
-    "stop": "정지",
-    "return_to_base": "복귀",
+    "pause": "일시 정지",
+    "stop": "중지",
+    "return_to_base": "충전대로 복귀",
     "locate": "청소기 위치",
     "not_available": "청소기 사용 불가"
   },
   "error": {
-    "missing_entity": "구성요소를 선택해주세요."
+    "missing_entity": "구성요소 지정이 필요합니다!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "경고: '동작'은 기존 버튼에 대한 기본 동작을 재정의하도록 예약되어 있습니다. 다른 동작을 추가하려는 경우 '바로가기' 옵션을 대신 사용하십시오."
   },
   "editor": {
-    "entity": "구성요소 (필수 요소)",
-    "map": "지도 (선택 사항)",
-    "image": "이미지 (선택 사항)",
+    "entity": "구성요소 (필수)",
+    "map": "도면 (선택)",
+    "image": "이미지 (선택)",
     "compact_view": "간단히 보기",
     "compact_view_aria_label_on": "간단히 보기 켜기",
     "compact_view_aria_label_off": "간단히 보기 끄기",
-    "show_name": "이름 표시",
+    "show_name": "Show Name",
     "show_name_aria_label_on": "이름 표시 켜기",
     "show_name_aria_label_off": "이름 표시 끄기",
     "show_status": "상태 표시",
@@ -46,6 +62,6 @@
     "show_toolbar": "툴바 표시",
     "show_toolbar_aria_label_on": "툴바 표시 켜기",
     "show_toolbar_aria_label_off": "툴바 표시 끄기",
-    "code_only_note": "동작과 상태 설정은 코드 에디터에서 수정할 수 있습니다."
+    "code_only_note": "참고: 동작 및 상태 옵션 설정은 코드 편집기에서만 사용할 수 있습니다."
   }
 }
