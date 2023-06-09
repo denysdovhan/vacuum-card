@@ -34,6 +34,8 @@ jobs:
           days-before-issue-close: 30
           days-before-pr-close: 30
           exempt-all-milestones: true
+          stale-issue-label: stale
+          stale-pr-label: stale
           exempt-issue-labels: no-stale
           exempt-pr-labels: no-stale
           exempt-draft-pr: true
