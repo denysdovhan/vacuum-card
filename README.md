@@ -124,7 +124,7 @@ Here is what every option means:
 
 ### `stats` object
 
-You can use any attribute of vacuum or even any entity by `entity_id` to display by stats section:
+You can use any attribute of vacuum or even any entity by `entity_id` to display by stats section. You can also combine `attribute` with `entity_id` to extract an attribute value of specific entity:
 
 | Name             |   Type   | Default  | Description                                                                                          |
 | ---------------- | :------: | -------- | ---------------------------------------------------------------------------------------------------- |

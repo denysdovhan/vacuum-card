@@ -267,9 +267,17 @@ export class VacuumCard extends LitElement {
           return nothing;
         }
 
-        const state = entity_id
-          ? this.hass.states[entity_id].state
-          : get(this.entity.attributes, attribute ?? '');
+        let state = '';
+
+        if (entity_id && attribute) {
+          state = get(this.hass.states[entity_id].attributes, attribute);
+        } else if (attribute) {
+          state = get(this.entity.attributes, attribute);
+        } else if (entity_id) {
+          state = this.hass.states[entity_id].state;
+        } else {
+          return nothing;
+        }
 
         const value = html`
           <ha-template
