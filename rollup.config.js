@@ -69,6 +69,7 @@ export default {
   output: {
     dir: 'dist',
     format: 'es',
+    inlineDynamicImports: true,
   },
   context: 'window',
   plugins,

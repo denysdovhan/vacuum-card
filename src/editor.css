@@ -1,0 +1,19 @@
+.card-config {
+  flex-direction: column;
+  display: flex;
+  gap: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+}
+
+.option ha-switch {
+  margin-right: 10px;
+}
+
+.option ha-select,
+.option paper-input {
+  width: 100%;
+}
