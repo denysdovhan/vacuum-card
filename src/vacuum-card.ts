@@ -6,7 +6,6 @@ import {
   HomeAssistant,
   ServiceCallRequest,
 } from 'custom-card-helpers';
-// @ts-ignore
 import registerTemplates from 'ha-template';
 import get from 'lodash/get';
 import localize from './localize';
