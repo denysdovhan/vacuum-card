@@ -13,8 +13,8 @@
 
 By default, Home Assistant does not provide any card for controlling vacuum cleaners. This card displays the state and allows to control your robot.
 
-![Preview of vacuum-card][preview-image-light]
-![Preview of vacuum-card][preview-image-dark]
+![Preview of vacuum-card](https://github.com/denysdovhan/vacuum-card/assets/3459374/43808d3d-65a4-4e65-9531-4f248fa8861c#gh-light-mode-only)
+![Preview of vacuum-card](https://github.com/denysdovhan/vacuum-card/assets/3459374/cc4900de-a3d4-4959-a0c8-cf9dee5cd825#gh-dark-mode-only)
 
 ## Installing
 
@@ -298,8 +298,6 @@ MIT © [Denys Dovhan][denysdovhan]
 
 [home-assistant]: https://www.home-assistant.io/
 [hacs]: https://hacs.xyz
-[preview-image-light]: https://github.com/denysdovhan/vacuum-card/assets/3459374/43808d3d-65a4-4e65-9531-4f248fa8861c#gh-light-mode-only
-[preview-image-dark]: https://github.com/denysdovhan/vacuum-card/assets/3459374/cc4900de-a3d4-4959-a0c8-cf9dee5cd825#gh-dark-mode-only
 [cleaning-gif]: https://user-images.githubusercontent.com/3459374/81119202-fa60b500-8f32-11ea-9b23-325efa93d7ab.gif
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest
