@@ -17,7 +17,7 @@ By default, Home Assistant does not provide any card for controlling vacuum clea
 
 ## Installing
 
-**💡 Tip:** If you like this project ~~and want to get some stickers and postcards~~, consider giving me a tip for the time I spent building this project:
+**💡 Tip:** If you like this project, consider giving me a tip for the time I spent building this project:
 
 <a href="https://www.buymeacoffee.com/denysdovhan" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" width="150px">
