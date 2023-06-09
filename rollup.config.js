@@ -32,7 +32,7 @@ const plugins = [
   json(),
   replace({
     values: {
-      PKG_VERSION: IS_DEV ? JSON.stringify('DEVELOPMENT') : pkg.version,
+      PKG_VERSION_VALUE: IS_DEV ? 'DEVELOPMENT' : pkg.version,
     },
     preventAssignment: true,
   }),
