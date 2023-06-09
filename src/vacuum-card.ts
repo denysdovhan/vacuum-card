@@ -10,8 +10,7 @@ import registerTemplates from 'ha-template';
 import get from 'lodash/get';
 import localize from './localize';
 import styles from './styles.css';
-import defaultImage from './vacuum.svg';
-import './vacuum-card-editor';
+import buildConfig from './config';
 import {
   Template,
   VacuumCardAction,
@@ -22,11 +21,12 @@ import {
   VacuumServiceCallParams,
   VacuumActionParams,
 } from './types';
+import DEFAULT_IMAGE from './vacuum.svg';
 
 registerTemplates();
 
 // String in the right side will be replaced by Rollup
-const PKG_VERSION = 'PKG_VERSION';
+const PKG_VERSION = 'PKG_VERSION_VALUE';
 
 console.info(
   `%c VACUUM-CARD %c ${PKG_VERSION}`,
@@ -41,37 +41,6 @@ if (!customElements.get('ha-icon-button')) {
   );
 }
 
-function buildConfig(config?: Partial<VacuumCardConfig>): VacuumCardConfig {
-  if (!config) {
-    throw new Error(localize('error.invalid_config'));
-  }
-
-  if (!config.entity) {
-    throw new Error(localize('error.missing_entity'));
-  }
-
-  const actions = config.actions;
-  if (actions && Array.isArray(actions)) {
-    console.warn(localize('warning.actions_array'));
-  }
-
-  return {
-    entity: config.entity,
-    map: config.map ?? '',
-    map_refresh: config.map_refresh ?? 5,
-    image:
-      (config.image === 'default' ? defaultImage : config.image) ??
-      defaultImage,
-    show_name: config.show_name ?? true,
-    show_status: config.show_status ?? true,
-    show_toolbar: config.show_toolbar ?? true,
-    compact_view: config.compact_view ?? false,
-    stats: config.stats ?? {},
-    actions: config.actions ?? {},
-    shortcuts: config.shortcuts ?? [],
-  };
-}
-
 @customElement('vacuum-card')
 export class VacuumCard extends LitElement {
   @property({ attribute: false }) public hass!: HomeAssistant;
@@ -84,15 +53,13 @@ export class VacuumCard extends LitElement {
     return styles;
   }
 
-  // TODO: Migrate editor to TS
   public static async getConfigElement() {
-    // public static async getConfigElement(): Promise<LovelaceCardEditor> {
+    await import('./editor');
     return document.createElement('vacuum-card-editor');
   }
 
-  // TODO: Add type for entities
-  static getStubConfig(_, entities: string[]) {
-    const [vacuumEntity] = entities.filter((eid) => eid.startsWith('vacuum.'));
+  static getStubConfig(_: unknown, entities: string[]) {
+    const [vacuumEntity] = entities.filter((eid) => eid.startsWith('vacuum'));
 
     return {
       entity: vacuumEntity ?? '',
@@ -278,20 +245,23 @@ export class VacuumCard extends LitElement {
         : nothing;
     }
 
+    const src =
+      this.config.image === 'default' ? DEFAULT_IMAGE : this.config.image;
+
     return html`
       <img
         class="vacuum ${state}"
-        src="${this.config.image}"
+        src="${src}"
         @click="${() => this.handleMore()}"
       />
     `;
   }
 
-  private renderStats(state: VacuumEntityState): Template[] {
+  private renderStats(state: VacuumEntityState): Template {
     const statsList =
       this.config.stats[state] || this.config.stats.default || [];
 
-    return statsList.map(
+    const stats = statsList.map(
       ({ entity_id, attribute, value_template, unit, subtitle }) => {
         if (!entity_id && !attribute) {
           return nothing;
@@ -319,6 +289,12 @@ export class VacuumCard extends LitElement {
         `;
       }
     );
+
+    if (!stats.length) {
+      return nothing;
+    }
+
+    return html`<div class="stats">${stats}</div>`;
   }
 
   private renderName(): Template {
@@ -511,7 +487,7 @@ export class VacuumCard extends LitElement {
             ${this.renderName()} ${this.renderStatus()}
           </div>
 
-          <div class="stats">${this.renderStats(this.entity.state)}</div>
+          ${this.renderStats(this.entity.state)}
         </div>
 
         ${this.renderToolbar(this.entity.state)}
