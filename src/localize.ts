@@ -29,7 +29,13 @@ import * as tw from './translations/tw.json';
 import * as uk from './translations/uk.json';
 import * as vi from './translations/vi.json';
 
-const languages = {
+type Translations = {
+  [key: string]: {
+    [key: string]: string;
+  };
+};
+
+const languages: Record<string, Translations> = {
   ca,
   cn,
   cs,

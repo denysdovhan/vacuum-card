@@ -6,6 +6,7 @@ import {
   HomeAssistant,
   ServiceCallRequest,
 } from 'custom-card-helpers';
+// @ts-ignore
 import registerTemplates from 'ha-template';
 import get from 'lodash/get';
 import localize from './localize';
@@ -197,7 +198,7 @@ export class VacuumCard extends LitElement {
           <div slot="trigger">
             <ha-icon icon="mdi:fan"></ha-icon>
             <span class="icon-title">
-              ${localize(`source.${source}`) || source}
+              ${localize(`source.${source.toLowerCase()}`) || source}
             </span>
           </div>
           ${sources.map(
@@ -208,7 +209,7 @@ export class VacuumCard extends LitElement {
                   value=${item}
                   @click=${this.handleSpeed}
                 >
-                  ${localize(`source.${item}`) || item}
+                  ${localize(`source.${item.toLowerCase()}`) || item}
                 </mwc-list-item>
               `
           )}
@@ -317,7 +318,8 @@ export class VacuumCard extends LitElement {
 
   private renderStatus(): Template {
     const { status } = this.getAttributes(this.entity);
-    const localizedStatus = localize(`status.${status}`) || status;
+    const localizedStatus =
+      localize(`status.${status.toLowerCase()}`) || status;
 
     if (!this.config.show_status) {
       return nothing;

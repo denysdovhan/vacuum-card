@@ -11,7 +11,7 @@ import { Template, VacuumCardConfig } from './types';
 import styles from './editor.css';
 
 type ConfigElement = HTMLInputElement & {
-  configValue?: string;
+  configValue?: keyof VacuumCardConfig;
 };
 
 @customElement('vacuum-card-editor')
@@ -58,7 +58,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
             @selected=${this.valueChanged}
             .configValue=${'entity'}
             .value=${this.config.entity}
-            @closed=${(e) => e.stopPropagation()}
+            @closed=${(e: Event) => e.stopPropagation()}
             fixedMenuPosition
             naturalMenuWidth
             required
@@ -78,7 +78,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
             @selected=${this.valueChanged}
             .configValue=${'map'}
             .value=${this.config.map}
-            @closed=${(e) => e.stopPropagation()}
+            @closed=${(e: Event) => e.stopPropagation()}
             fixedMenuPosition
             naturalMenuWidth
           >
@@ -169,7 +169,10 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
       return;
     }
     const target = event.target as ConfigElement;
-    if (!target.configValue || this[target.configValue] === target?.value) {
+    if (
+      !target.configValue ||
+      this.config[target.configValue] === target?.value
+    ) {
       return;
     }
     if (target.configValue) {
@@ -183,7 +186,6 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
         };
       }
     }
-    console.log('new config', this.config);
     fireEvent(this, 'config-changed', { config: this.config });
   }
 
