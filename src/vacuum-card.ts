@@ -73,7 +73,7 @@ function buildConfig(config?: Partial<VacuumCardConfig>): VacuumCardConfig {
 }
 
 @customElement('vacuum-card')
-class VacuumCard extends LitElement {
+export class VacuumCard extends LitElement {
   @property({ attribute: false }) public hass!: HomeAssistant;
 
   @state() private config!: VacuumCardConfig;
@@ -520,12 +520,14 @@ class VacuumCard extends LitElement {
   }
 }
 
-customElements.define('vacuum-card', VacuumCard);
+declare global {
+  interface Window {
+    customCards?: unknown[];
+  }
+}
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-(window as any).customCards = (window as any).customCards || [];
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-(window as any).customCards.push({
+window.customCards = window.customCards || [];
+window.customCards.push({
   preview: true,
   type: 'vacuum-card',
   name: localize('common.name'),
