@@ -41,6 +41,7 @@
     "not_available": "Vacuum is not available"
   },
   "error": {
+    "invalid_config": "Invalid configuration",
     "missing_entity": "Specifying entity is required!"
   },
   "warning": {

@@ -212,7 +212,7 @@ ha-card {
 
 .stats-block {
   cursor: pointer;
-  margin: var(--vc-spacing) 0px;
+  padding: var(--vc-spacing) 0px;
   text-align: center;
   border-right: 1px solid var(--vc-divider-color);
   flex-grow: 1;
