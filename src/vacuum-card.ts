@@ -1,17 +1,35 @@
-import { LitElement, html, nothing } from 'lit';
-import { hasConfigOrEntityChanged, fireEvent } from 'custom-card-helpers';
+import { CSSResultGroup, LitElement, PropertyValues, html, nothing } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
+import {
+  hasConfigOrEntityChanged,
+  fireEvent,
+  HomeAssistant,
+  ServiceCallRequest,
+} from 'custom-card-helpers';
 import registerTemplates from 'ha-template';
-import get from 'lodash.get';
+import get from 'lodash/get';
 import localize from './localize';
 import styles from './styles.css';
-import defaultImage from './vacuum.svg';
-import { version } from '../package.json';
-import './vacuum-card-editor';
+import buildConfig from './config';
+import {
+  Template,
+  VacuumCardAction,
+  VacuumCardConfig,
+  VacuumEntity,
+  HassEntity,
+  VacuumEntityState,
+  VacuumServiceCallParams,
+  VacuumActionParams,
+} from './types';
+import DEFAULT_IMAGE from './vacuum.svg';
 
 registerTemplates();
 
+// String in the right side will be replaced by Rollup
+const PKG_VERSION = 'PKG_VERSION_VALUE';
+
 console.info(
-  `%c VACUUM-CARD %c ${version} `,
+  `%c VACUUM-CARD %c ${PKG_VERSION}`,
   'color: white; background: blue; font-weight: 700;',
   'color: blue; background: white; font-weight: 700;'
 );
@@ -19,111 +37,59 @@ console.info(
 if (!customElements.get('ha-icon-button')) {
   customElements.define(
     'ha-icon-button',
-    class extends customElements.get('paper-icon-button') {}
+    class extends (customElements.get('paper-icon-button') ?? HTMLElement) {}
   );
 }
 
-class VacuumCard extends LitElement {
-  static get properties() {
-    return {
-      hass: Object,
-      config: Object,
-      requestInProgress: Boolean,
-    };
-  }
+@customElement('vacuum-card')
+export class VacuumCard extends LitElement {
+  @property({ attribute: false }) public hass!: HomeAssistant;
 
-  static get styles() {
+  @state() private config!: VacuumCardConfig;
+  @state() private requestInProgress = false;
+  @state() private thumbUpdater: ReturnType<typeof setInterval> | null = null;
+
+  static get styles(): CSSResultGroup {
     return styles;
   }
 
-  static async getConfigElement() {
+  public static async getConfigElement() {
+    await import('./editor');
     return document.createElement('vacuum-card-editor');
   }
 
-  static getStubConfig(hass, entities) {
-    const [vacuumEntity] = entities.filter(
-      (eid) => eid.substr(0, eid.indexOf('.')) === 'vacuum'
-    );
+  static getStubConfig(_: unknown, entities: string[]) {
+    const [vacuumEntity] = entities.filter((eid) => eid.startsWith('vacuum'));
 
     return {
-      entity: vacuumEntity || '',
-      image: 'default',
+      entity: vacuumEntity ?? '',
     };
   }
 
-  get entity() {
-    return this.hass.states[this.config.entity];
+  get entity(): VacuumEntity {
+    return this.hass.states[this.config.entity] as VacuumEntity;
   }
 
-  get map() {
-    if (!this.hass) {
+  get map(): HassEntity | null {
+    if (!this.hass || !this.config.map) {
       return null;
     }
     return this.hass.states[this.config.map];
   }
 
-  get image() {
-    if (this.config.image === 'default') {
-      return defaultImage;
-    }
-
-    return this.config.image || defaultImage;
+  public setConfig(config: VacuumCardConfig): void {
+    this.config = buildConfig(config);
   }
 
-  get showName() {
-    if (this.config.show_name === undefined) {
-      return true;
-    }
-
-    return this.config.show_name;
+  public getCardSize(): number {
+    return this.config.compact_view ? 3 : 8;
   }
 
-  get showStatus() {
-    if (this.config.show_status === undefined) {
-      return true;
-    }
-
-    return this.config.show_status;
+  public shouldUpdate(changedProps: PropertyValues): boolean {
+    return hasConfigOrEntityChanged(this, changedProps, false);
   }
 
-  get showToolbar() {
-    if (this.config.show_toolbar === undefined) {
-      return true;
-    }
-
-    return this.config.show_toolbar;
-  }
-
-  get compactView() {
-    if (this.config.compact_view === undefined) {
-      return false;
-    }
-
-    return this.config.compact_view;
-  }
-
-  setConfig(config) {
-    if (!config.entity) {
-      throw new Error(localize('error.missing_entity'));
-    }
-
-    const actions = config.actions;
-    if (actions && Array.isArray(actions)) {
-      console.warn(localize('warning.actions_array'));
-    }
-
-    this.config = config;
-  }
-
-  getCardSize() {
-    return this.config.compact_view || false ? 3 : 8;
-  }
-
-  shouldUpdate(changedProps) {
-    return hasConfigOrEntityChanged(this, changedProps);
-  }
-
-  updated(changedProps) {
+  protected updated(changedProps: PropertyValues) {
     if (
       changedProps.get('hass') &&
       changedProps.get('hass').states[this.config.entity].state !==
@@ -133,25 +99,25 @@ class VacuumCard extends LitElement {
     }
   }
 
-  connectedCallback() {
+  public connectedCallback() {
     super.connectedCallback();
-    if (!this.compactView && this.map) {
+    if (!this.config.compact_view && this.map) {
       this.requestUpdate();
       this.thumbUpdater = setInterval(
         () => this.requestUpdate(),
-        (this.config.map_refresh || 5) * 1000
+        this.config.map_refresh * 1000
       );
     }
   }
 
-  disconnectedCallback() {
+  public disconnectedCallback() {
     super.disconnectedCallback();
-    if (this.map) {
+    if (this.map && this.thumbUpdater) {
       clearInterval(this.thumbUpdater);
     }
   }
 
-  handleMore(entityId = this.entity.entity_id) {
+  private handleMore(entityId: string = this.entity.entity_id): void {
     fireEvent(
       this,
       'hass-more-info',
@@ -165,71 +131,61 @@ class VacuumCard extends LitElement {
     );
   }
 
-  handleSpeed(e) {
-    const fan_speed = e.target.getAttribute('value');
-    this.callService('set_fan_speed', { isRequest: false }, { fan_speed });
-  }
-
-  handleAction(action, params = { isRequest: true }) {
-    const actions = this.config.actions || {};
-
-    return () => {
-      if (!actions[action]) {
-        this.callService(params.defaultService || action, {
-          isRequest: params.isRequest,
-        });
-        return;
-      }
-
-      this.callAction(actions[action]);
-    };
-  }
-
-  callService(service, params = { isRequest: true }, options = {}) {
-    this.hass.callService('vacuum', service, {
-      entity_id: this.config.entity,
-      ...options,
-    });
-
-    if (params.isRequest) {
-      this.requestInProgress = true;
-      this.requestUpdate();
-    }
-  }
-
-  callAction(action) {
+  private callService(action: VacuumCardAction) {
     const { service, service_data } = action;
     const [domain, name] = service.split('.');
     this.hass.callService(domain, name, service_data);
   }
 
-  getAttributes(entity) {
-    const {
-      status,
-      state,
-      fan_speed,
-      fan_speed_list,
-      battery_level,
-      battery_icon,
-      friendly_name,
-    } = entity.attributes;
+  private callVacuumService(
+    service: ServiceCallRequest['service'],
+    params: VacuumServiceCallParams = { request: true },
+    options: ServiceCallRequest['serviceData'] = {}
+  ) {
+    this.hass.callService('vacuum', service, {
+      entity_id: this.config.entity,
+      ...options,
+    });
 
-    return {
-      status: status || state || entity.state,
-      fan_speed,
-      fan_speed_list,
-      battery_level,
-      battery_icon,
-      friendly_name,
+    if (params.request) {
+      this.requestInProgress = true;
+      this.requestUpdate();
+    }
+  }
+
+  private handleSpeed(e: PointerEvent): void {
+    const fan_speed = (<HTMLDivElement>e.target).getAttribute('value');
+    this.callVacuumService('set_fan_speed', { request: false }, { fan_speed });
+  }
+
+  private handleVacuumAction(
+    action: string,
+    params: VacuumActionParams = { request: true }
+  ) {
+    return () => {
+      if (!this.config.actions[action]) {
+        return this.callVacuumService(params.defaultService || action, params);
+      }
+
+      this.callService(this.config.actions[action]);
     };
   }
 
-  renderSource() {
+  private getAttributes(entity: VacuumEntity) {
+    const { status, state } = entity.attributes;
+
+    return {
+      status: status || state || entity.state,
+      ...entity.attributes,
+    };
+  }
+
+  private renderSource(): Template {
     const { fan_speed: source, fan_speed_list: sources } = this.getAttributes(
       this.entity
     );
 
-    if (!sources) {
+    if (!sources || !source) {
       return nothing;
     }
 
@@ -237,7 +193,7 @@ class VacuumCard extends LitElement {
 
     return html`
       <div class="tip">
-        <ha-button-menu @click="${(e) => e.stopPropagation()}">
+        <ha-button-menu @click="${(e: Event) => e.stopPropagation()}">
           <div slot="trigger">
             <ha-icon icon="mdi:fan"></ha-icon>
             <span class="icon-title">
@@ -250,7 +206,7 @@ class VacuumCard extends LitElement {
                 <mwc-list-item
                   ?activated=${selected === index}
                   value=${item}
-                  @click=${(e) => this.handleSpeed(e)}
+                  @click=${this.handleSpeed}
                 >
                   ${localize(`source.${item}`) || item}
                 </mwc-list-item>
@@ -261,7 +217,7 @@ class VacuumCard extends LitElement {
     `;
   }
 
-  renderBattery() {
+  private renderBattery(): Template {
     const { battery_level, battery_icon } = this.getAttributes(this.entity);
 
     return html`
@@ -272,51 +228,48 @@ class VacuumCard extends LitElement {
     `;
   }
 
-  renderMapOrImage(state) {
-    if (this.compactView) {
+  private renderMapOrImage(state: VacuumEntityState): Template {
+    if (this.config.compact_view) {
       return nothing;
     }
 
     if (this.map) {
-      const map = this.hass.states[this.config.map];
-      return map && map.attributes.entity_picture
+      return this.map && this.map.attributes.entity_picture
         ? html`
             <img
               class="map"
-              src="${map.attributes.entity_picture}&v=${Date.now()}"
+              src="${this.map.attributes.entity_picture}&v=${Date.now()}"
               @click=${() => this.handleMore(this.config.map)}
             />
           `
         : nothing;
     }
 
-    if (this.image) {
-      return html`
-        <img
-          class="vacuum ${state}"
-          src="${this.image}"
-          @click="${() => this.handleMore()}"
-        />
-      `;
-    }
+    const src =
+      this.config.image === 'default' ? DEFAULT_IMAGE : this.config.image;
 
-    return nothing;
+    return html`
+      <img
+        class="vacuum ${state}"
+        src="${src}"
+        @click="${() => this.handleMore()}"
+      />
+    `;
   }
 
-  renderStats(state) {
-    const { stats = {} } = this.config;
+  private renderStats(state: VacuumEntityState): Template {
+    const statsList =
+      this.config.stats[state] || this.config.stats.default || [];
 
-    const statsList = stats[state] || stats.default || [];
-
-    return statsList.map(
+    const stats = statsList.map(
       ({ entity_id, attribute, value_template, unit, subtitle }) => {
-        if (!entity_id && !attribute && !value_template) {
+        if (!entity_id && !attribute) {
           return nothing;
         }
 
         const state = entity_id
           ? this.hass.states[entity_id].state
-          : get(this.entity.attributes, attribute);
+          : get(this.entity.attributes, attribute ?? '');
 
         const value = html`
           <ha-template
@@ -336,27 +289,29 @@ class VacuumCard extends LitElement {
         `;
       }
     );
-  }
 
-  renderName() {
-    const { friendly_name } = this.getAttributes(this.entity);
-
-    if (!this.showName) {
+    if (!stats.length) {
       return nothing;
     }
 
-    return html`
-      <div class="vacuum-name">
-        ${friendly_name}
-      </div>
-    `;
+    return html`<div class="stats">${stats}</div>`;
   }
 
-  renderStatus() {
+  private renderName(): Template {
+    const { friendly_name } = this.getAttributes(this.entity);
+
+    if (!this.config.show_name) {
+      return nothing;
+    }
+
+    return html` <div class="vacuum-name">${friendly_name}</div> `;
+  }
+
+  private renderStatus(): Template {
     const { status } = this.getAttributes(this.entity);
     const localizedStatus = localize(`status.${status}`) || status;
 
-    if (!this.showStatus) {
+    if (!this.config.show_status) {
       return nothing;
     }
 
@@ -373,8 +328,8 @@ class VacuumCard extends LitElement {
     `;
   }
 
-  renderToolbar(state) {
-    if (!this.showToolbar) {
+  private renderToolbar(state: VacuumEntityState): Template {
+    if (!this.config.show_toolbar) {
       return nothing;
     }
 
@@ -387,15 +342,15 @@ class VacuumCard extends LitElement {
       case 'cleaning': {
         return html`
           <div class="toolbar">
-            <paper-button @click="${this.handleAction('pause')}">
+            <paper-button @click="${this.handleVacuumAction('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
               ${localize('common.pause')}
             </paper-button>
-            <paper-button @click="${this.handleAction('stop')}">
+            <paper-button @click="${this.handleVacuumAction('stop')}">
               <ha-icon icon="hass:stop"></ha-icon>
               ${localize('common.stop')}
             </paper-button>
-            <paper-button @click="${this.handleAction('return_to_base')}">
+            <paper-button @click="${this.handleVacuumAction('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
               ${localize('common.return_to_base')}
             </paper-button>
@@ -407,14 +362,15 @@ class VacuumCard extends LitElement {
         return html`
           <div class="toolbar">
             <paper-button
-              @click="${this.handleAction('resume', {
+              @click="${this.handleVacuumAction('resume', {
                 defaultService: 'start',
+                request: true,
               })}"
             >
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
-            <paper-button @click="${this.handleAction('return_to_base')}">
+            <paper-button @click="${this.handleVacuumAction('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
               ${localize('common.return_to_base')}
             </paper-button>
@@ -426,14 +382,15 @@ class VacuumCard extends LitElement {
         return html`
           <div class="toolbar">
             <paper-button
-              @click="${this.handleAction('resume', {
+              @click="${this.handleVacuumAction('resume', {
                 defaultService: 'start',
+                request: true,
               })}"
             >
               <ha-icon icon="hass:play"></ha-icon>
               ${localize('common.continue')}
             </paper-button>
-            <paper-button @click="${this.handleAction('pause')}">
+            <paper-button @click="${this.handleVacuumAction('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
               ${localize('common.pause')}
             </paper-button>
@@ -443,12 +400,12 @@ class VacuumCard extends LitElement {
       case 'docked':
       case 'idle':
       default: {
-        const { shortcuts = [] } = this.config;
-
-        const buttons = shortcuts.map(
+        const buttons = this.config.shortcuts.map(
           ({ name, service, icon, service_data }) => {
             const execute = () => {
-              this.callAction({ service, service_data });
+              if (service) {
+                return this.callService({ service, service_data });
+              }
             };
             return html`
               <ha-icon-button label="${name}" @click="${execute}">
@@ -461,7 +418,7 @@ class VacuumCard extends LitElement {
         const dockButton = html`
           <ha-icon-button
             label="${localize('common.return_to_base')}"
-            @click="${this.handleAction('return_to_base')}"
+            @click="${this.handleVacuumAction('return_to_base')}"
             ><ha-icon icon="hass:home-map-marker"></ha-icon>
           </ha-icon-button>
         `;
@@ -470,13 +427,13 @@ class VacuumCard extends LitElement {
           <div class="toolbar">
             <ha-icon-button
               label="${localize('common.start')}"
-              @click="${this.handleAction('start')}"
+              @click="${this.handleVacuumAction('start')}"
               ><ha-icon icon="hass:play"></ha-icon>
             </ha-icon-button>
 
             <ha-icon-button
               label="${localize('common.locate')}"
-              @click="${this.handleAction('locate', { isRequest: false })}"
+              @click="${this.handleVacuumAction('locate', { request: false })}"
               ><ha-icon icon="mdi:map-marker"></ha-icon>
             </ha-icon-button>
 
@@ -489,22 +446,24 @@ class VacuumCard extends LitElement {
     }
   }
 
-  render() {
-    if (!this.entity) {
-      return html`
-        <ha-card>
-          <div class="preview not-available">
-            <div class="metadata">
-              <div class="not-available">
-                ${localize('common.not_available')}
-              </div>
-            <div>
-          </div>
-        </ha-card>
-      `;
-    }
+  private renderUnavailable(): Template {
+    return html`
+      <ha-card>
+        <div class="preview not-available">
+          <div class="metadata">
+            <div class="not-available">
+              ${localize('common.not_available')}
+            </div>
+          <div>
+        </div>
+      </ha-card>
+    `;
+  }
 
-    const { state } = this.entity;
+  protected render(): Template {
+    if (!this.entity) {
+      return this.renderUnavailable();
+    }
 
     return html`
       <ha-card>
@@ -522,24 +481,26 @@ class VacuumCard extends LitElement {
             ></ha-icon-button>
           </div>
 
-          ${this.renderMapOrImage(state)}
+          ${this.renderMapOrImage(this.entity.state)}
 
           <div class="metadata">
             ${this.renderName()} ${this.renderStatus()}
           </div>
 
-          <div class="stats">
-            ${this.renderStats(state)}
-          </div>
+          ${this.renderStats(this.entity.state)}
         </div>
 
-        ${this.renderToolbar(state)}
+        ${this.renderToolbar(this.entity.state)}
       </ha-card>
     `;
   }
 }
 
-customElements.define('vacuum-card', VacuumCard);
+declare global {
+  interface Window {
+    customCards?: unknown[];
+  }
+}
 
 window.customCards = window.customCards || [];
 window.customCards.push({

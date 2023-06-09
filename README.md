@@ -4,6 +4,7 @@
 
 [![npm version][npm-image]][npm-url]
 [![hacs][hacs-image]][hacs-url]
+[![GitHub Sponsors][gh-sponsors-image]][gh-sponsors-url]
 [![Patreon][patreon-image]][patreon-url]
 [![Buy Me A Coffee][buymeacoffee-image]][buymeacoffee-url]
 [![Twitter][twitter-image]][twitter-url]
@@ -12,17 +13,12 @@
 
 By default, Home Assistant does not provide any card for controlling vacuum cleaners. This card displays the state and allows to control your robot.
 
-![Preview of vacuum-card][preview-image]
+![Preview of vacuum-card][preview-image-light]
+![Preview of vacuum-card][preview-image-dark]
 
 ## Installing
 
-**💡 Tip:** If you like this project ~~and want to get some stickers and postcards~~, consider becoming a patron:
-
-<a href="https://patreon.com/denysdovhan">
-  <img alt="Become a patron" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px">
-</a>
-
-or just buy me a cup of ☕️ or 🥤:
+**💡 Tip:** If you like this project ~~and want to get some stickers and postcards~~, consider giving me a tip for the time I spent building this project:
 
 <a href="https://www.buymeacoffee.com/denysdovhan" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" width="150px">
@@ -39,14 +35,17 @@ Just search for `Vacuum Card` in plugins tab.
 1. Download `vacuum-card.js` file from the [latest-release].
 2. Put `vacuum-card.js` file into your `config/www` folder.
 3. Add reference to `vacuum-card.js` in Lovelace. There's two way to do that:
+
    1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources Tab_ → Click Plus button → Set _Url_ as `/local/vacuum-card.js` → Set _Resource type_ as `JavaScript Module`.
       **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
    2. **Using YAML:** Add following code to `lovelace` section.
+
       ```yaml
       resources:
         - url: /local/vacuum-card.js
           type: module
       ```
+
 4. Add `custom:vacuum-card` to Lovelace UI as any other card (using either editor or YAML configuration).
 
 ## Usage
@@ -122,7 +121,7 @@ Here is what every option means:
 | `compact_view` | `boolean` | `false`      | Compact view without image.                                                                               |
 | `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
 | `actions`      | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
-| `shortcuts`    | `object`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
+| `shortcuts`    |  `array`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
 
 ### `stats` object
 
@@ -286,6 +285,8 @@ MIT © [Denys Dovhan][denysdovhan]
 [npm-image]: https://img.shields.io/npm/v/vacuum-card.svg?style=flat-square
 [hacs-url]: https://github.com/hacs/integration
 [hacs-image]: https://img.shields.io/badge/hacs-default-orange.svg?style=flat-square
+[gh-sponsors-url]: https://github.com/sponsors/denysdovhan
+[gh-sponsors-image]: https://img.shields.io/github/sponsors/denysdovhan?style=flat-square
 [patreon-url]: https://patreon.com/denysdovhan
 [patreon-image]: https://img.shields.io/badge/support-patreon-F96854.svg?style=flat-square
 [buymeacoffee-url]: https://patreon.com/denysdovhan
@@ -297,7 +298,8 @@ MIT © [Denys Dovhan][denysdovhan]
 
 [home-assistant]: https://www.home-assistant.io/
 [hacs]: https://hacs.xyz
-[preview-image]: https://user-images.githubusercontent.com/3459374/164231294-d2c26bbd-ae34-4b41-b909-3a0ae259259e.png
+[preview-image-light]: https://github.com/denysdovhan/vacuum-card/assets/3459374/43808d3d-65a4-4e65-9531-4f248fa8861c#gh-light-mode-only
+[preview-image-dark]: https://github.com/denysdovhan/vacuum-card/assets/3459374/cc4900de-a3d4-4959-a0c8-cf9dee5cd825#gh-dark-mode-only
 [cleaning-gif]: https://user-images.githubusercontent.com/3459374/81119202-fa60b500-8f32-11ea-9b23-325efa93d7ab.gif
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest

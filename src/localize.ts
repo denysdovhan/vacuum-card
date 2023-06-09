@@ -29,7 +29,7 @@ import * as tw from './translations/tw.json';
 import * as uk from './translations/uk.json';
 import * as vi from './translations/vi.json';
 
-var languages = {
+const languages = {
   ca,
   cn,
   cs,
@@ -60,13 +60,17 @@ var languages = {
 
 const DEFAULT_LANG = 'en';
 
-export default function localize(string, search, replace) {
-  const [section, key] = string.toLowerCase().split('.');
+export default function localize(
+  str: string,
+  search?: string,
+  replace?: string
+): string | undefined {
+  const [section, key] = str.toLowerCase().split('.');
 
-  let langStored;
+  let langStored: string | null = null;
 
   try {
-    langStored = JSON.parse(localStorage.getItem('selectedLanguage'));
+    langStored = JSON.parse(localStorage.getItem('selectedLanguage') ?? '');
   } catch (e) {
     langStored = localStorage.getItem('selectedLanguage');
   }
@@ -75,7 +79,7 @@ export default function localize(string, search, replace) {
     .replace(/['"]+/g, '')
     .replace('-', '_');
 
-  let translated;
+  let translated: string | undefined;
 
   try {
     translated = languages[lang][section][key];
@@ -91,8 +95,8 @@ export default function localize(string, search, replace) {
     return;
   }
 
-  if (search !== '' && replace !== '') {
-    translated = translated.replace(search, replace);
+  if (search && replace) {
+    translated = translated?.replace(search, replace);
   }
 
   return translated;
