@@ -81,7 +81,7 @@
           "preset": "angular",
           "releaseRules": [
             {
-              "type": "build",
+              "type": "chore",
               "scope": "deps",
               "release": "patch"
             }
