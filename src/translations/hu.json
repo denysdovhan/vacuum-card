@@ -11,7 +11,17 @@
     "silent": "Csendes",
     "standard": "Alap",
     "medium": "Közepes",
-    "turbo": "Turbo"
+    "turbo": "Turbó",
+    "normal": "Normál",
+    "high": "Magas",
+    "strong": "Erős",
+    "quiet": "Halk",
+    "silence": "Csendes",
+    "stanrd": "Alap",
+    "middle": "Közepes",
+    "enhance": "Turbó",    
+    "max": "Max",
+    "max+": "Max+"
   },
   "common": {
     "name": "Porszívó Kártya",
