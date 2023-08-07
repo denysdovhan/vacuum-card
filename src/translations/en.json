@@ -26,6 +26,10 @@
     "high": "High",
     "strong": "Strong",
     "quiet": "Quiet",
+    "silence": "Silent",
+    "stanrd": "Standard",
+    "middle": "Medium",
+    "enhance": "Turbo",
     "max": "Max",
     "max+": "Max+"
   },
