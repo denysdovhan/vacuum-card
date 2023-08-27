@@ -50,7 +50,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.6",
-    "postcss-preset-env": "^8.0.1",
+    "postcss-preset-env": "^9.1.1",
     "prettier": "^2.0.5",
     "rollup": "^2.7.6",
     "rollup-plugin-minify-html-literals": "^1.2.6",
