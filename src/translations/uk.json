@@ -9,13 +9,13 @@
     "idle": "Очікування",
     "stop": "Зупинений",
     "charging": "Заряджається",
-    "returning home": "Повертається",
+    "returning_home": "Повертається",
     "returning": "Повертається",
     "docked": "На док-станції",
     "unknown": "Невідомо",
     "offline": "Оффлайн",
     "error": "Помилка",
-    "segment cleaning": "Прибирання зони/кімнати"
+    "segment_cleaning": "Прибирання зони/кімнати"
   },
   "source": {
     "low": "Низький",
