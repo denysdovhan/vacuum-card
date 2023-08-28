@@ -15,13 +15,15 @@
     "unknown": "Невідомо",
     "offline": "Оффлайн",
     "error": "Помилка",
-    "segment cleaning": "Прибирання зони/кімнати"
+    "segment_cleaning": "Прибирання зони/кімнати"
   },
   "source": {
     "low": "Низький",
     "gentle": "Делікатний",
+    "quiet": "Тихий",
     "silent": "Тихий",
     "standard": "Стандартний",
+    "balanced": "Збалансований",
     "medium": "Середній",
     "turbo": "Турбо",
     "normal": "Нормальний",
@@ -63,4 +65,50 @@
     "show_toolbar_aria_label_off": "Приховати панель дій",
     "code_only_note": "Увага: Опції actions та stats доступні виключно через редактор коду."
   }
+},
+"vacuum": {
+      "roborock": {
+      "state_attributes": {
+      "fan_speed": {
+      "state": {
+      "auto": "Aвто",
+      "balanced": "Збалансований",
+      "custom": "Регульований",
+      "gentle": "Делікатний",
+      "off": "Вимк.",
+      "max": "Макс.",
+      "max_plus": "Макс.+",
+      "medium": "Середній",
+      "quiet": "Тихий",
+      "silent": "Тихий",
+      "standard": "Стандарт",
+      "turbo": "Турбо"
+  }
+},
+"status": {
+            "state": {
+              "starting": "Початок",
+              "charger_disconnected": "Зарядку не під'єднано",
+              "idle": "Очікування",
+              "remote_control_active": "Ручний режим активовано",
+              "cleaning": "Прибирання",
+              "returning_home": "Повернення на базу",
+              "manual_mode": "Ручний режим",
+              "charging": "Зарядка",
+              "charging_problem": "Проблеми з зарядкою",
+              "paused": "Пауза",
+              "spot_cleaning": "Точкове прибирання",
+              "error": "Помилка",
+              "shutting_down": "Shutting down",
+              "updating": "Оновлення",
+              "docking": "На док станції",
+              "going_to_target": "Going to target",
+              "zoned_cleaning": "Зональне прибирання",
+              "segment_cleaning": "Прибирання зони/кімнати",
+              "emptying_the_bin": "Emptying the bin",
+              "washing_the_mop": "Washing the mop",
+              "going_to_wash_the_mop": "Going to wash the mop",
+              "charging_complete": "Заряджання завершено",
+              "device_offline": "Пилосмок оффлайн"
+            }
 }
