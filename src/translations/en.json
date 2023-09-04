@@ -1,20 +1,28 @@
 {
   "status": {
     "cleaning": "Cleaning",
-    "auto": "Automatic Cleaning",
-    "spot": "Spot Cleaning",
-    "edge": "Edge Cleaning",
-    "single_room": "Single Room Cleaning",
+    "auto": "Automatic cleaning",
+    "spot": "Spot cleaning",
+    "edge": "Edge cleaning",
+    "single_room": "Single room cleaning",
     "paused": "Paused",
     "idle": "Idle",
     "stop": "Stopped",
     "charging": "Charging",
-    "returning home": "Returning Home",
-    "returning": "Returning Home",
+    "returning": "Returning home",
+    "returning_home": "Returning home",
     "docked": "Docked",
     "unknown": "Unknown",
     "offline": "Offline",
-    "error": "Error"
+    "error": "Error",
+    "charger_disconnected": "Charger disconnected",
+    "remote_control_active": "Remote control active",
+    "manual_mode": "Manual mode",
+    "shutting_down": "Shutting down",
+    "updating": "Updating",
+    "going_to_target": "Going to target",
+    "zoned_cleaning": "Zoned cleaning",
+    "segment_cleaning": "Segment cleaning"
   },
   "source": {
     "gentle": "Gentle",
@@ -23,11 +31,15 @@
     "medium": "Medium",
     "turbo": "Turbo",
     "normal": "Normal",
+    "max": "Max",
+    "max_plus": "Max+",
     "high": "High",
     "strong": "Strong",
     "quiet": "Quiet",
-    "max": "Max",
-    "max+": "Max+"
+    "auto": "Auto",
+    "balanced": "Balanced",
+    "custom": "Custom",
+    "off": "Off"
   },
   "common": {
     "name": "Vacuum Card",

@@ -13,9 +13,17 @@
     "returning": "Повертається",
     "docked": "На док-станції",
     "unknown": "Невідомо",
-    "offline": "Оффлайн",
+    "offline": "Офлайн",
     "error": "Помилка",
-    "segment cleaning": "Прибирання зони/кімнати"
+    "charger_disconnected": "Зарядку не під'єднано",
+    "remote_control_active": "Ручний режим активовано",
+    "returning_home": "Повернення на базу",
+    "manual_mode": "Ручний режим",
+    "shutting_down": "Вимкнення",
+    "updating": "Оновлення",
+    "going_to_target": "Рух до цілі",
+    "zoned_cleaning": "Зональне прибирання",
+    "segment_cleaning": "Прибирання сегменту"
   },
   "source": {
     "low": "Низький",
@@ -26,7 +34,14 @@
     "turbo": "Турбо",
     "normal": "Нормальний",
     "max": "Максимальний",
-    "high": "Високий"
+    "max_plus": "Максимальний+",
+    "high": "Високий",
+    "strong": "Сильний",
+    "quiet": "Тихий",
+    "auto": "Aвто",
+    "balanced": "Збалансований",
+    "custom": "Власний",
+    "off": "Вимкнено"
   },
   "common": {
     "name": "Пилосос",
