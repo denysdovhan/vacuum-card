@@ -12,13 +12,17 @@
   },
   "source": {
     "silent": "Leise",
-    "standard": "Standard",
     "medium": "Mittel",
     "turbo": "Max",
     "quiet": "Leise",
     "max": "Maximal",
-    "max+": "Maximal+",
-    "gentle": "Schonend"
+    "max_plus": "Maximal+",
+    "gentle": "Schonend",
+    "high": "Hoch",
+    "strong": "Stark",
+    "balanced": "Ausgeglichen",
+    "custom": "Benutzerdefiniert",
+    "off": "Aus"
   },
   "common": {
     "name": "Vacuum Card",
@@ -28,10 +32,12 @@
     "pause": "Pause",
     "stop": "Stop",
     "return_to_base": "Dock",
-    "locate": "Staubsauger lokalisieren"
+    "locate": "Staubsauger lokalisieren",
+    "not_available": "Staubsauger nicht verfügbar"
   },
   "error": {
-    "missing_entity": "Angabe der Entität ist erforderlich!"
+    "missing_entity": "Angabe der Entität ist erforderlich!",
+    "invalid_config": "Invalide Konfiguration"
   },
   "warning": {
     "actions_array": ""
@@ -46,6 +52,9 @@
     "show_name": "Zeige Namen",
     "show_name_aria_label_on": "Schalte 'Zeige Namen' ein",
     "show_name_aria_label_off": "Schalte 'Zeige Namen' aus",
+    "show_status": "Zeige Status",
+    "show_status_aria_label_on": "Schalte 'Zeige Status' ein",
+    "show_status_aria_label_off": "Schalte 'Zeige Status' aus",
     "show_toolbar": "Zeige Toolbar",
     "show_toolbar_aria_label_on": "Schalte 'Zeige Toolbar' ein",
     "show_toolbar_aria_label_off": "Schalte 'Zeige Toolbar' aus",
