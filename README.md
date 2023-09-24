@@ -1,6 +1,6 @@
 [![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua/)
 
-Updated Finnish (fi) translation. Added missing strings and corrected some of the old one.
+
 
 # Vacuum Card
 
@@ -11,6 +11,7 @@ Updated Finnish (fi) translation. Added missing strings and corrected some of th
 [![Buy Me A Coffee][buymeacoffee-image]][buymeacoffee-url]
 [![Twitter][twitter-image]][twitter-url]
 
+Updated Finnish (fi) translation. Added missing strings and corrected some of the old one.
 > Vacuum cleaner card for [Home Assistant][home-assistant] Lovelace UI
 
 By default, Home Assistant does not provide any card for controlling vacuum cleaners. This card displays the state and allows to control your robot.
