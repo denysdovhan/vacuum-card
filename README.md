@@ -1,5 +1,7 @@
 [![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://stand-with-ukraine.pp.ua/)
 
+Updated Finnish (fi) translation. Added missing strings and corrected some of the old one.
+
 # Vacuum Card
 
 [![npm version][npm-image]][npm-url]
