@@ -240,7 +240,7 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
-- **Roborock** S7, S6 (MaxV, Pure), S5 (Max), S50, S4 (Max), E25, E4
+- **Roborock** S7, S6 (MaxV, Pure), S5 (Max), S50, S4 (Max), E25, E4, Q5 Pro
 - **Mijia** Robot Vacuum Cleaner 1C (STYTJ01ZHM)
 - **Xiaomi** Mi Robot (STYJ02YM), Mi Robot 1S, Mi Roborock V1 (SDJQR02RR), Mijia 1C, Mi Robot Vacuum-Mop P
 - **Roomba** 670, 675, 676, 960980, 981, i3, i7+, e5, S9, s9+, j7
