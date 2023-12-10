@@ -48,7 +48,10 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
 
     const vacuumEntities = this.getEntitiesByType('vacuum');
-    const cameraEntities = this.getEntitiesByType('camera');
+    const cameraEntities = [
+      ...this.getEntitiesByType('camera'),
+      ...this.getEntitiesByType('image'),
+    ];
 
     return html`
       <div class="card-config">
