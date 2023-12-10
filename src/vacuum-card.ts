@@ -329,10 +329,10 @@ export class VacuumCard extends LitElement {
         <span class="status-text" alt=${localizedStatus}>
           ${localizedStatus}
         </span>
-        <mwc-circular-progress
+        <ha-circular-progress
           .indeterminate=${this.requestInProgress}
-          density="-5"
-        ></mwc-circular-progress>
+          size="small"
+        ></ha-circular-progress>
       </div>
     `;
   }
