@@ -1,51 +1,80 @@
 {
   "status": {
-    "cleaning": "Tisztítás",
-    "paused": "Szünet",
+    "cleaning": "Takarítás",
+    "auto": "Automatikus takarítás",
+    "spot": "Célzott takarítás",
+    "edge": "Széltakarítás",
+    "single_room": "Egyetlen szoba takarítás",
+    "paused": "Szüneteltetve",
     "idle": "Tétlen",
+    "stop": "Megállítva",
     "charging": "Töltés",
-    "returning home": "Hazatérés"
+    "returning": "Hazatérés",
+    "returning_home": "Hazatérés",
+    "docked": "Dokkolva",
+    "unknown": "Ismeretlen",
+    "offline": "Offline",
+    "error": "Hiba",
+    "charger_disconnected": "Töltő leválasztva",
+    "remote_control_active": "Távirányítás aktív",
+    "manual_mode": "Kézi üzemmód",
+    "shutting_down": "Kikapcsolás",
+    "updating": "Frissítés",
+    "going_to_target": "Cél felé halad",
+    "zoned_cleaning": "Zóna takarítás",
+    "segment_cleaning": "Szegmens takarítás"
   },
   "source": {
     "gentle": "Gyengéd",
     "silent": "Csendes",
     "standard": "Alap",
     "medium": "Közepes",
-    "turbo": "Turbo"
+    "turbo": "Turbó",
+    "normal": "Normál",
+    "max": "Maximum",
+    "max_plus": "Maximum+",
+    "high": "Magas",
+    "strong": "Erős",
+    "quiet": "Csendes",
+    "auto": "Automatikus",
+    "balanced": "Kiegyensúlyozott",
+    "custom": "Egyedi",
+    "off": "Kikapcsolva"
   },
   "common": {
-    "name": "Porszívó Kártya",
-    "description": "Ez a kártya lehetővé teszi, hogy robot porszívódat irányítsd.",
-    "start": "Tisztítás",
+    "name": "Porszívó kártya",
+    "description": "A porszívó kártya lehetővé teszi a robotporszívó vezérlését.",
+    "start": "Indítás",
     "continue": "Folytatás",
     "pause": "Szünet",
-    "stop": "Megszakítás",
-    "return_to_base": "Hazatérés",
-    "locate": "Porszívó megkeresése",
+    "stop": "Megállás",
+    "return_to_base": "Dokkolás",
+    "locate": "Porszívó keresése",
     "not_available": "A porszívó nem elérhető"
   },
   "error": {
+    "invalid_config": "Érvénytelen konfiguráció",
     "missing_entity": "Entitás megadása kötelező!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "FIGYELEM: A 'actions' a meglévő gombok alapértelmezett műveleteinek felülbírálására szolgál. Ha további műveleteket szeretne hozzáadni, használja inkább a 'shortcuts' lehetőséget."
   },
   "editor": {
-    "entity": "Entitás (Kötelező)",
-    "map": "Térkép kamera (Opcionális)",
-    "image": "Kép (Opcionális)",
+    "entity": "Entitás (kötelező)",
+    "map": "Térkép kamera (opcionális)",
+    "image": "Kép (opcionális)",
     "compact_view": "Kompakt nézet",
     "compact_view_aria_label_on": "Kompakt nézet bekapcsolása",
     "compact_view_aria_label_off": "Kompakt nézet kikapcsolása",
     "show_name": "Név megjelenítése",
-    "show_name_aria_label_on": "Név megjelenítése",
-    "show_name_aria_label_off": "Név elrejtése",
+    "show_name_aria_label_on": "Név megjelenítésének bekapcsolása",
+    "show_name_aria_label_off": "Név megjelenítésének kikapcsolása",
     "show_status": "Állapot megjelenítése",
-    "show_status_aria_label_on": "Állapot megjelenítése",
-    "show_status_aria_label_off": "Állapot elrejtése",
+    "show_status_aria_label_on": "Állapot megjelenítésének bekapcsolása",
+    "show_status_aria_label_off": "Állapot megjelenítésének kikapcsolása",
     "show_toolbar": "Eszköztár megjelenítése",
-    "show_toolbar_aria_label_on": "Eszköztár megjelenítése",
-    "show_toolbar_aria_label_off": "Eszköztár elrejtése",
-    "code_only_note": "Megjegyzés: Parancsok és statisztikák beállítása csak a kódszerkesztőben elérhetőek."
+    "show_toolbar_aria_label_on": "Eszköztár megjelenítésének bekapcsolása",
+    "show_toolbar_aria_label_off": "Eszköztár megjelenítésének kikapcsolása",
+    "code_only_note": "Megjegyzés: A műveletek és statisztika beállítások kizárólag a kód szerkesztő használatával érhetők el."
   }
 }
