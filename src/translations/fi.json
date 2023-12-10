@@ -1,48 +1,80 @@
 {
   "status": {
-    "Cleaning": "Siivoaa",
-    "Paused": "Pysäytetty",
-    "Idle": "Toimeton",
-    "Charging": "Latauksessa",
-    "Returning home": "Palaa kotiin"
+    "cleaning": "Siivoaa",
+    "auto": "Automaattisiivous",
+    "spot": "Kohdesiivous",
+    "edge": "Reunasiivous",
+    "single_room": "Huonesiivous",
+    "paused": "Tauotettu",
+    "idle": "Toimeton",
+    "stop": "Pysäytetty",
+    "charging": "Lataa",
+    "returning": "Palaamassa",
+    "returning_home": "Palaamassa latausasemaan",
+    "docked": "Telakoitu",
+    "unknown": "Tuntematon",
+    "offline": "Poissa linjalta",
+    "error": "Virhe",
+    "charger_disconnected": "Laturi ei ole kytketty",
+    "remote_control_active": "Etäohjaus päällä",
+    "manual_mode": "Manuaalinen tila",
+    "shutting_down": "Sammutetaan",
+    "updating": "Päivitetään",
+    "going_to_target": "Menossa kohteeseen",
+    "zoned_cleaning": "Aluesiivous",
+    "segment_cleaning": "Lohkosiivous"
   },
   "source": {
-    "Gentle": "Hellävarainen",
-    "Silent": "Hiljainen",
-    "Standard": "Normaali",
-    "Medium": "Keskitaso",
-    "Turbo": "Turbo"
+    "gentle": "Hellävarainen",
+    "silent": "Hiljainen",
+    "standard": "Perustaso",
+    "medium": "Keskitaso",
+    "turbo": "Turbo",
+    "normal": "Normaali",
+    "max": "Max",
+    "max_plus": "Max+",
+    "high": "High",
+    "strong": "Voimakas",
+    "quiet": "Quiet",
+    "auto": "Automaattinen",
+    "balanced": "Tasapainoinen",
+    "custom": "Mukautettu",
+    "off": "Pois päältä"
   },
   "common": {
-    "name": "Pölynimurikortti",
-    "description": "Pölynimurikortti sallii robotti imurin ohjauksen.",
-    "start": "Siivoa",
+    "name": "Imurikortti",
+    "description": "Imurikortti mahdollistaa robotti-imurin ohjauksen.",
+    "start": "Käynnistä",
     "continue": "Jatka",
     "pause": "Tauko",
     "stop": "Pysähdy",
     "return_to_base": "Latausasemaan",
     "locate": "Paikanna imuri",
-    "not_available": "Imuri ei saatavilla"
+    "not_available": "Ei saatavilla"
   },
   "error": {
+    "invalid_config": "Virheellinen konfiguraatio",
     "missing_entity": "Entiteetti puuttuu!"
   },
+  "warning": {
+    "actions_array": "VAROITUS: 'actions' on varattu oletustoimintojen ylikirjoittamiseen olemassaolevissa painikkeissa. Jos tarkoituksesi on lisätä toimintoja, käytä 'shortcuts' -toimintoa."
+  },
   "editor": {
-    "entity": "Entiteetti (Vaaditaan)",
-    "map": "Kartan kamera (Valinnainen)",
-    "image": "Kuva (Valinnainen)",
+    "entity": "Entiteetti (vaaditaan)",
+    "map": "Karttakamera (valinnainen)",
+    "image": "Kuva (valinnainen)",
     "compact_view": "Kompakti näkymä",
     "compact_view_aria_label_on": "Kompakti näkymä päälle",
     "compact_view_aria_label_off": "Kompakti näkymä pois",
-    "show_name": "Näytä Nimi",
+    "show_name": "Näytä nimi",
     "show_name_aria_label_on": "Näyttönimi päälle",
     "show_name_aria_label_off": "Näyttönimi pois",
-    "show_status": "Näytä Tila",
-    "show_status_aria_label_on": "Tilanäyttö päälle",
-    "show_status_aria_label_off": "Tilanäyttö pois",
+    "show_status": "Näytä tila",
+    "show_status_aria_label_on": "Näyttönimi päällä",
+    "show_status_aria_label_off": "Näyttönimi pois",
     "show_toolbar": "Näytä työkalurivi",
     "show_toolbar_aria_label_on": "Työkalurivi päälle",
     "show_toolbar_aria_label_off": "Työkalurivi pois",
-    "code_only_note": "Huom: Toimintojen ja tilastojen optiot ovat saatavilla ainoastaan koodieditorissa"
+    "code_only_note": "Huomaa: toimintojen ja tilastojen asetukset saatavilla ainoastaan koodieditorissa."
   }
 }
