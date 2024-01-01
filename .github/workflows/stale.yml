@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🧹 Clean stale issues and pull requests
-        uses: actions/stale@v8
+        uses: actions/stale@v9
         with:
           stale-issue-message: >
             There hasn't been any activity on this issue recently.
