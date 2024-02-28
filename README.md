@@ -260,6 +260,8 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - Setti+ RV800
 - [_Your vacuum?_][edit-readme]
 
+- Proscenic????
+
 ## Development
 
 Want to contribute to the project?
