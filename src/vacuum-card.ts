@@ -175,8 +175,8 @@ export class VacuumCard extends LitElement {
     const { status, state } = entity.attributes;
 
     return {
-      status: status || state || entity.state,
       ...entity.attributes,
+      status: status ?? state ?? entity.state,
     };
   }
 
