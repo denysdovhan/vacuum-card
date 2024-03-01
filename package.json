@@ -47,7 +47,7 @@
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "husky": "^8.0.1",
+    "husky": "^9.0.11",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.6",
     "postcss-preset-env": "^9.1.3",
