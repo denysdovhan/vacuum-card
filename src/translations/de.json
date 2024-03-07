@@ -7,7 +7,7 @@
     "single_room": "Zimmerreinigung",
     "paused": "Pausiert",
     "idle": "Untätig",
-    "stop": "Stopped",
+    "stop": "Angehalten",
     "charging": "Aufladen",
     "returning": "Rückkehr zu Dockingstation",
     "returning_home": "Rückkehr zu Dockingstation",
@@ -57,7 +57,7 @@
     "missing_entity": "Angabe der Entität ist erforderlich!"
   },
   "warning": {
-    "actions_array": "WARNUNG: 'actions' ist dafür vorgesehen, die Standardaktionen für vorhandene Schaltflächen zu überschreiben. Wenn Sie zusätzliche Aktionen hinzufügen möchten, verwenden Sie stattdessen die Option 'Shortcuts'."
+    "actions_array": "WARNUNG: 'actions' ist dafür vorgesehen, die Standardaktionen für vorhandene Schaltflächen zu überschreiben. Wenn Sie zusätzliche Aktionen hinzufügen möchten, verwenden Sie stattdessen die Option 'shortcuts'."
   },
   "editor": {
     "entity": "Entität (Erforderlich)",
