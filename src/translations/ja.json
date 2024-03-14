@@ -1,0 +1,80 @@
+{
+  "status": {
+    "cleaning": "掃除中",
+    "auto": "自動",
+    "spot": "スポット",
+    "edge": "エッジ清掃",
+    "single_room": "シングルルームモード",
+    "paused": "一時停止",
+    "idle": "アイドル",
+    "stop": "停止",
+    "charging": "充電中",
+    "returning": "ホームに戻っています",
+    "returning_home": "ホームに戻る",
+    "docked": "ドックに接続中",
+    "unknown": "不明",
+    "offline": "オフライン",
+    "error": "エラー",
+    "charger_disconnected": "充電器が接続されていません",
+    "remote_control_active": "リモート操作有効",
+    "manual_mode": "マニュアルモード",
+    "shutting_down": "シャットダウン",
+    "updating": "更新中",
+    "going_to_target": "目的地へ移動中",
+    "zoned_cleaning": "ゾーン清掃",
+    "segment_cleaning": "セグメント清掃"
+  },
+  "source": {
+    "gentle": "やさしく",
+    "silent": "無音",
+    "standard": "標準",
+    "medium": "中",
+    "turbo": "ターボ",
+    "normal": "通常",
+    "max": "最大",
+    "max_plus": "最大+",
+    "high": "高",
+    "strong": "最強",
+    "quiet": "静音",
+    "auto": "自動",
+    "balanced": "バランス",
+    "custom": "カスタム",
+    "off": "オフ"
+  },
+  "common": {
+    "name": "掃除機カード",
+    "description": "掃除機かーどはロボット掃除機の操作に使用します。",
+    "start": "開始",
+    "continue": "続ける",
+    "pause": "一時停止",
+    "stop": "中止",
+    "return_to_base": "ドック",
+    "locate": "掃除機の場所",
+    "not_available": "掃除機は利用できません"
+  },
+  "error": {
+    "invalid_config": "設定が無効です",
+    "missing_entity": "エンティティを選択してください。"
+  },
+  "warning": {
+    "actions_array": "警告：'actions'は既存のボタンのデフォルトアクションを上書きするために使用されています。アクションを追加したい場合は、'shortcuts' オプションを使用してください。"
+  },
+  "editor": {
+    "entity": "エンティティ（必須）",
+    "map": "マップカメラ（オプション）",
+    "image": "イメージ（オプション）",
+    "compact_view": "コンパクトビュー",
+    "compact_view_aria_label_on": "コンパクトビューをオンにする",
+    "compact_view_aria_label_off": "コンパクトビューをオフにする",
+    "show_name": "名前を表示",
+    "show_name_aria_label_on": "名前の表示をオンにする",
+    "show_name_aria_label_off": "名前の表示をオフにする",
+    "show_status": "ステータスを表示",
+    "show_status_aria_label_on": "ステータスの表示をオンにする",
+    "show_status_aria_label_off": "ステータスの表示をオフにする",
+    "show_toolbar": "ツールバーを表示",
+    "show_toolbar_aria_label_on": "ツールバーの表示をオンにする",
+    "show_toolbar_aria_label_off": "ツールバーの表示をオフにする",
+    "code_only_note": "注：actionとstatsのオプション設定は、コードエディターで行ってください。"
+  }
+}
