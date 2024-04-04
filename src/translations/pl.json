@@ -1,66 +1,82 @@
 {
-  "status": {
-    "cleaning": "Sprzątanie",
-    "auto": "Automatyczne sprzątanie",
-    "spot": "Sprzątanie miejscowe",
-    "edge": "Sprzątanie krawędziowe",
-    "single_room": "Sprzątanie pojedyńczego pokoju",
-    "paused": "Wstrzymany",
-    "idle": "Bezczynny",
-    "stop": "Zatrzymany",
-    "charging": "Ładowanie",
-    "returning home": "Powrót do bazy",
-    "returning": "Powrót do bazy",
-    "docked": "Zadokowany",
-    "unknown": "Nieznany",
-    "offline": "Offline",
-    "error": "Błąd"
-  },
-  "source": {
-    "gentle": "Delikatne",
-    "low": "Niskie",
-    "silent": "Ciche",
-    "standard": "Standardowe",
-    "medium": "Średnie",
-    "turbo": "Turbo",
-    "normal": "Normalne",
-    "high": "Wysokie",
-    "max": "Maksymalne",
-    "strong": "Mocne"
-  },
-  "common": {
-    "name": "Vacuum Card",
-    "description": "Vacuum card pozwala zdalnie kontrolować odkurzacz.",
-    "start": "Sprzątaj",
-    "continue": "Kontynuuj",
-    "pause": "Wstrzymaj",
-    "stop": "Zatrzymaj",
-    "return_to_base": "Powrót do bazy",
-    "locate": "Zlokalizuj odkurzacz",
-    "not_available": "Odkurzacz jest niedostępny"
-  },
-  "error": {
-    "missing_entity": "Ustawienie encji jest wymagane!"
-  },
-  "warning": {
-    "actions_array": "OSTRZEŻENIE: 'actions' jest zarezerwowane dla zmiany zachowania domyślnych akcji przycisków. Jeśli chcesz dodać dodatkowe akcje, użyj w zamian opcji 'shortcuts'."
-  },
-  "editor": {
-    "entity": "Encja (wymagane)",
-    "map": "Kamera z mapą (opcjonalna)",
-    "image": "Obraz (opcjonalny)",
-    "compact_view": "Widok kompaktowy",
-    "compact_view_aria_label_on": "Włącz widok kompaktowy",
-    "compact_view_aria_label_off": "Wyłącz widok kompaktowy",
-    "show_name": "Pokaż nazwę",
-    "show_name_aria_label_on": "Włącz widok nazwy",
-    "show_name_aria_label_off": "Wyłącz widok nazwy",
-    "show_status": "Pokaż pasek statusu",
-    "show_status_aria_label_on": "Włącz widok paska statusu",
-    "show_status_aria_label_off": "Wyłącz widok paska statusu",
-    "show_toolbar": "Pasek narzędzi",
-    "show_toolbar_aria_label_on": "Włącz pasek narzędzi",
-    "show_toolbar_aria_label_off": "Wyłącz pasek narzędzi",
-    "code_only_note": "Uwaga: Ustawianie opcji i informacji statystyk jest dostępne tylko poprzez edytor kodu YAML."
-  }
+    "status": {
+        "cleaning": "Sprzątanie",
+        "auto": "Automatyczne sprzątanie",
+        "spot": "Sprzątanie miejscowe",
+        "edge": "Sprzątanie krawędziowe",
+        "single_room": "Sprzątanie pojedyńczego pokoju",
+        "paused": "Wstrzymany",
+        "idle": "Bezczynny",
+        "stop": "Zatrzymany",
+        "charging": "Ładowanie",
+        "returning": "Powracanie",
+        "returning_home": "Powrót do bazy",
+        "docked": "Zadokowany",
+        "unknown": "Nieznany",
+        "offline": "Offline",
+        "error": "Błąd",
+        "charger_disconnected": "Ładowarka odłączona",
+        "remote_control_active": "Zdalne sterowanie",
+        "manual_mode": "Tryb manualny",
+        "shutting_down": "Wyłączanie",
+        "updating": "Aktualizowanie",
+        "going_to_target": "Podróż do celu",
+        "zoned_cleaning": "Sprzątanie obszaru",
+        "segment_cleaning": "Sprzątanie segmentu",
+        "returning home": "Powrót do bazy"
+    },
+    "source": {
+        "gentle": "Delikatne",
+        "silent": "Ciche",
+        "standard": "Standardowe",
+        "medium": "Średnie",
+        "turbo": "Turbo",
+        "normal": "Normalne",
+        "max": "Maksymalne",
+        "max_plus": "Max+",
+        "high": "Wysokie",
+        "strong": "Mocne",
+        "quiet": "Ciche",
+        "auto": "Auto",
+        "balanced": "Zbalansowane",
+        "custom": "Własne",
+        "off": "Wyłączone",
+        "low": "Niskie"
+    },
+    "common": {
+        "name": "Vacuum Card",
+        "description": "Vacuum Card pozwala zdalnie kontrolować odkurzacz.",
+        "start": "Sprzątaj",
+        "continue": "Kontynuuj",
+        "pause": "Wstrzymaj",
+        "stop": "Zatrzymaj",
+        "return_to_base": "Powrót do bazy",
+        "locate": "Zlokalizuj odkurzacz",
+        "not_available": "Odkurzacz jest niedostępny"
+    },
+    "error": {
+        "invalid_config": "Nieprawidłowa konfiguracja",
+        "missing_entity": "Ustawienie encji jest wymagane!"
+    },
+    "warning": {
+        "actions_array": "OSTRZEŻENIE: 'actions' jest zarezerwowane dla zmiany zachowania domyślnych akcji przycisków. Jeśli chcesz dodać dodatkowe akcje, użyj w zamian opcji 'shortcuts'."
+    },
+    "editor": {
+        "entity": "Encja (wymagane)",
+        "map": "Kamera z mapą (opcjonalna)",
+        "image": "Obraz (opcjonalny)",
+        "compact_view": "Widok kompaktowy",
+        "compact_view_aria_label_on": "Włącz widok kompaktowy",
+        "compact_view_aria_label_off": "Wyłącz widok kompaktowy",
+        "show_name": "Pokaż nazwę",
+        "show_name_aria_label_on": "Włącz widok nazwy",
+        "show_name_aria_label_off": "Wyłącz widok nazwy",
+        "show_status": "Pokaż pasek statusu",
+        "show_status_aria_label_on": "Włącz widok paska statusu",
+        "show_status_aria_label_off": "Wyłącz widok paska statusu",
+        "show_toolbar": "Pasek narzędzi",
+        "show_toolbar_aria_label_on": "Włącz pasek narzędzi",
+        "show_toolbar_aria_label_off": "Wyłącz pasek narzędzi",
+        "code_only_note": "Uwaga: Ustawianie opcji i informacji statystyk jest dostępne tylko poprzez edytor kodu YAML."
+    }
 }
