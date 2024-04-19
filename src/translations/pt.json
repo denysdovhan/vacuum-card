@@ -1,34 +1,63 @@
 {
   "status": {
     "cleaning": "A Limpar",
+    "auto": "Limpeza automática",
+    "spot": "Limpeza localizada",
+    "edge": "Limpeza de bordas",
+    "single_room": "Limpeza de um único quarto",
     "paused": "Pausado",
-    "idle": "Parado",
+    "idle": "Inativo",
+    "stop": "Parado",
     "charging": "A Carregar",
-    "returning home": "Voltar para a Base"
+    "returning": "A regressar",
+    "returning home": "A regressar à base",
+    "docked": "Na base",
+    "unknown": "Desconhecido",
+    "offline": "Offline",
+    "error": "Erro",
+    "charger_disconnected": "Carregador desconectado",
+    "remote_control_active": "Controlo remoto ativo",
+    "manual_mode": "Modo manual",
+    "shutting_down": "A desligar",
+    "updating": "A atualizar",
+    "going_to_target": "A caminho do destino",
+    "zoned_cleaning": "Limpeza por zonas",
+    "segment_cleaning": "Limpeza por segmentos"
   },
   "source": {
     "gentle": "Delicado",
     "silent": "Silencioso",
-    "standard": "Standard",
-    "medium": "Medio",
-    "turbo": "Turbo"
+    "standard": "Padrão",
+    "medium": "Médio",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Máximo",
+    "max_plus": "Máximo+",
+    "high": "Alto",
+    "strong": "Forte",
+    "quiet": "Silencioso",
+    "auto": "Automático",
+    "balanced": "Equilibrado",
+    "custom": "Personalizado",
+    "off": "Desligado"
   },
   "common": {
     "name": "Vacuum Card",
-    "description": "Vacuum card permite controlar o robô aspirador.",
-    "start": "Começar",
+    "description": "Vacuum card permite controlar o seu robô aspirador.",
+    "start": "Limpar",
     "continue": "Continuar",
-    "pause": "Pausa",
+    "pause": "Pausar",
     "stop": "Parar",
     "return_to_base": "Base",
-    "locate": "Localizar aspirador",
+    "locate": "Localizar Aspirador",
     "not_available": "Aspirador indisponível"
   },
   "error": {
-    "missing_entity": "Entidade obrigatória!"
+    "invalid_config": "Configuração inválida",
+    "missing_entity": "Entidade especificada obrigatória!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "AVISO: 'actions' está reservado para substituir ações padrão de botões existentes. Se a sua intenção era adicionar ações adicionais, utilize a opção 'shortcuts'."
   },
   "editor": {
     "entity": "Entidade (Obrigatório)",
@@ -46,6 +75,6 @@
     "show_toolbar": "Mostrar barra de ferramentas",
     "show_toolbar_aria_label_on": "Mostrar barra de ferramentas",
     "show_toolbar_aria_label_off": "Ocultar barra de ferramentas",
-    "code_only_note": "Nota: Ações e estatísticas estão disponiveis exclusivamente usando o editor de código."
+    "code_only_note": "Nota: Ações e estatísticas estão disponiveis exclusivamente usando o Editor de Código."
   }
 }

@@ -1,24 +1,45 @@
 {
   "status": {
     "cleaning": "Reinigen",
+    "auto": "Automatisches Reinigen",
+    "spot": "Punktreinigung",
+    "edge": "Kantenreinigung",
+    "single_room": "Zimmerreinigung",
     "paused": "Pausiert",
     "idle": "Untätig",
+    "stop": "Angehalten",
     "charging": "Aufladen",
-    "returning home": "Rückkehr zu Dockingstation",
     "returning": "Rückkehr zu Dockingstation",
-    "segment cleaning": "Zimmerreinigung",
+    "returning_home": "Rückkehr zu Dockingstation",
     "docked": "Angedockt",
-    "error": "Fehler"
+    "unknown": "Unbekannt",
+    "offline": "Offline",
+    "error": "Fehler",
+    "charger_disconnected": "Ladestation nicht angeschlossen",
+    "remote_control_active": "Fernsteuerung aktiv",
+    "manual_mode": "Manueller Modus",
+    "shutting_down": "Herunterfahren",
+    "updating": "Aktualisierung",
+    "going_to_target": "Fahrt zum Zielpunkt",
+    "zoned_cleaning": "Zonenreinigung",
+    "segment_cleaning": "Zimmerreinigung"
   },
   "source": {
+    "gentle": "Schonend",
     "silent": "Leise",
     "standard": "Standard",
     "medium": "Mittel",
     "turbo": "Max",
-    "quiet": "Leise",
+    "normal": "Normal",
     "max": "Maximal",
-    "max+": "Maximal+",
-    "gentle": "Schonend"
+    "max_plus": "Maximal+",
+    "high": "Hoch",
+    "strong": "Stark",
+    "quiet": "Leise",
+    "auto": "Auto",
+    "balanced": "Ausgeglichen",
+    "custom": "Benutzerdefiniert",
+    "off": "Aus"
   },
   "common": {
     "name": "Vacuum Card",
@@ -28,13 +49,15 @@
     "pause": "Pause",
     "stop": "Stop",
     "return_to_base": "Dock",
-    "locate": "Staubsauger lokalisieren"
+    "locate": "Staubsauger lokalisieren",
+    "not_available": "Staubsaugerroboter ist nicht verfügbar"
   },
   "error": {
+    "invalid_config": "Ungeültige Konfiguration",
     "missing_entity": "Angabe der Entität ist erforderlich!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "WARNUNG: 'actions' ist dafür vorgesehen, die Standardaktionen für vorhandene Schaltflächen zu überschreiben. Wenn Sie zusätzliche Aktionen hinzufügen möchten, verwenden Sie stattdessen die Option 'shortcuts'."
   },
   "editor": {
     "entity": "Entität (Erforderlich)",
@@ -46,6 +69,9 @@
     "show_name": "Zeige Namen",
     "show_name_aria_label_on": "Schalte 'Zeige Namen' ein",
     "show_name_aria_label_off": "Schalte 'Zeige Namen' aus",
+    "show_status": "Zeige Status",
+    "show_status_aria_label_on": "Schalte 'Zeige Status' ein",
+    "show_status_aria_label_off": "Schalte 'Zeige Status' aus",
     "show_toolbar": "Zeige Toolbar",
     "show_toolbar_aria_label_on": "Schalte 'Zeige Toolbar' ein",
     "show_toolbar_aria_label_off": "Schalte 'Zeige Toolbar' aus",
