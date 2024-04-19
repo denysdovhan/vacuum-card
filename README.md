@@ -248,7 +248,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - **Dyson** 360 Eye
 - **Neato** D7, D6, D4
 - **Shark** IQ
-- **Ecova**cs Deebot 950, Deebot OZMO T8 AIVI, Deebot N79, Deebot N8, Deebot N8+, T9 AIVI
+- **Ecova**cs Deebot 950, Deebot OZMO T8 AIVI, Deebot N79, Deebot N8, Deebot N8+, T9 AIVI, Deebot T20 Ombi
 - **Eufy** Robovac 30c, Robovac 15C Max, Robovac X8 Hybrid
 - **EcoVacs** T9 AIVI
 - **Dreame** Z10 Pro, L10 Pro, D9, F9
