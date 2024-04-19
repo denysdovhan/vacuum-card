@@ -9,28 +9,43 @@
     "idle": "Bezczynny",
     "stop": "Zatrzymany",
     "charging": "Ładowanie",
-    "returning home": "Powrót do bazy",
-    "returning": "Powrót do bazy",
+    "returning": "Powracanie",
+    "returning_home": "Powrót do bazy",
     "docked": "Zadokowany",
     "unknown": "Nieznany",
     "offline": "Offline",
-    "error": "Błąd"
+    "error": "Błąd",
+    "charger_disconnected": "Ładowarka odłączona",
+    "remote_control_active": "Zdalne sterowanie",
+    "manual_mode": "Tryb manualny",
+    "shutting_down": "Wyłączanie",
+    "updating": "Aktualizowanie",
+    "going_to_target": "Podróż do celu",
+    "zoned_cleaning": "Sprzątanie obszaru",
+    "segment_cleaning": "Sprzątanie segmentu",
+    "returning home": "Powrót do bazy"
   },
   "source": {
     "gentle": "Delikatne",
-    "low": "Niskie",
     "silent": "Ciche",
     "standard": "Standardowe",
     "medium": "Średnie",
     "turbo": "Turbo",
     "normal": "Normalne",
-    "high": "Wysokie",
     "max": "Maksymalne",
-    "strong": "Mocne"
+    "max_plus": "Max+",
+    "high": "Wysokie",
+    "strong": "Mocne",
+    "quiet": "Ciche",
+    "auto": "Auto",
+    "balanced": "Zbalansowane",
+    "custom": "Własne",
+    "off": "Wyłączone",
+    "low": "Niskie"
   },
   "common": {
     "name": "Vacuum Card",
-    "description": "Vacuum card pozwala zdalnie kontrolować odkurzacz.",
+    "description": "Vacuum Card pozwala zdalnie kontrolować odkurzacz.",
     "start": "Sprzątaj",
     "continue": "Kontynuuj",
     "pause": "Wstrzymaj",
@@ -40,6 +55,7 @@
     "not_available": "Odkurzacz jest niedostępny"
   },
   "error": {
+    "invalid_config": "Nieprawidłowa konfiguracja",
     "missing_entity": "Ustawienie encji jest wymagane!"
   },
   "warning": {
