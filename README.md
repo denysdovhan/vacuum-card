@@ -232,6 +232,7 @@ This card supports translations. Please, help to add more translations and impro
 - Lietuvių (Lithuanian)
 - Română (Romanian)
 - 简体中文 (Simplified Chinese)
+- 日本語 (Japanese)
 - [_Your language?_][add-translation]
 
 ## Supported models
@@ -240,7 +241,7 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
-- **Roborock** S7 (MaxV), S6 (MaxV, Pure), S5 (Max), S50, S4 (Max), E25, E4, Q5 Pro
+- **Roborock** S8 (Ultra Pro), S7 (MaxV), S6 (MaxV, Pure), S5 (Max), S50, S4 (Max), E25, E4, Q5 Pro
 - **Mijia** Robot Vacuum Cleaner 1C (STYTJ01ZHM)
 - **Xiaomi** Mi Robot (STYJ02YM), Mi Robot 1S, Mi Roborock V1 (SDJQR02RR), Mijia 1C, Mi Robot Vacuum-Mop P, Robot Vacuum E10
 - **Roomba** 670, 675, 676, 960980, 981, i3, i7+, e5, S9, s9+, j7
@@ -248,8 +249,8 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - **Dyson** 360 Eye
 - **Neato** D7, D6, D4
 - **Shark** IQ
-- **Ecova**cs Deebot 950, Deebot OZMO T8 AIVI, Deebot N79, Deebot N8, Deebot N8+, T9 AIVI
-- **Eufy** Robovac 30c, Robovac 15C Max, Robovac X8 Hybrid
+- **Ecova**cs Deebot 950, Deebot OZMO T8 AIVI, Deebot N79, Deebot N8, Deebot N8+, T9 AIVI, Deebot T20 Ombi
+- **Eufy** Robovac 30c, Robovac 15C Max, Robovac X8 Hybrid, Robovac G40
 - **EcoVacs** T9 AIVI
 - **Dreame** Z10 Pro, L10 Pro, D9, F9
 - 360 S7 Pro
