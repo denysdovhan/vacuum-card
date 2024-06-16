@@ -147,11 +147,12 @@ You can defined service invocations to override default actions behavior. Availa
 
 You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `shortcuts` option.
 
-| Name           |   Type   | Default                           | Description                                        |
-| -------------- | :------: | --------------------------------- | -------------------------------------------------- |
-| `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`. |
-| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.    |
-| `icon`         | `string` | Optional                          | Any icon for action button.                        |
+| Name           |   Type   | Default                           | Description                                                             |
+| -------------- | :------: | --------------------------------- | ----------------------------------------------------------------------- |
+| `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`.                      |
+| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.                         |
+| `target`       | `object` | Optional                          | A `HassServiceTarget`, to define a target for the current service call. |
+| `icon`         | `string` | Optional                          | Any icon for action button.                                             |
 | `service_data` | `object` | `service_data` for `service` call |
 
 ## Theming

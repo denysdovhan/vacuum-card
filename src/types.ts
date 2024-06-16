@@ -1,6 +1,7 @@
 import {
   HassEntityAttributeBase,
   HassEntityBase,
+  HassServiceTarget,
 } from 'home-assistant-js-websocket';
 import { TemplateResult, nothing } from 'lit';
 
@@ -44,6 +45,7 @@ export interface VacuumCardStat {
 export interface VacuumCardAction {
   service: string;
   service_data?: Record<string, unknown>;
+  target?: HassServiceTarget;
 }
 
 export interface VacuumCardShortcut {
@@ -51,6 +53,7 @@ export interface VacuumCardShortcut {
   icon?: string;
   service?: string;
   service_data?: Record<string, unknown>;
+  target?: HassServiceTarget;
 }
 
 export interface VacuumCardConfig {
