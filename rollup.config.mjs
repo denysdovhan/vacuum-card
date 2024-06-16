@@ -1,5 +1,5 @@
 /*  eslint-env node */
-import pkg from './package.json';
+import { createRequire } from 'node:module';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
@@ -10,9 +10,12 @@ import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssLit from 'rollup-plugin-postcss-lit';
 import { terser } from 'rollup-plugin-terser';
-import minifyLiterals from 'rollup-plugin-minify-html-literals';
+import minifyLiterals from 'rollup-plugin-html-literals';
 import replace from '@rollup/plugin-replace';
 import serve from 'rollup-plugin-serve';
+
+const require = createRequire(import.meta.url);
+const pkg = require('./package.json');
 
 const IS_DEV = process.env.ROLLUP_WATCH;
 

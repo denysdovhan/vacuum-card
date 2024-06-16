@@ -1,6 +1,7 @@
 {
   "name": "vacuum-card",
   "version": "2.9.3",
+  "type": "module",
   "description": "Vacuum cleaner card for Home Assistant Lovelace UI",
   "main": "dist/vacuum-card.js",
   "scripts": {
@@ -10,7 +11,7 @@
     "format": "prettier --write .",
     "build": "rollup -c",
     "test": "npm run lint && npm run build",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "keywords": [
     "home-assistant",
@@ -53,7 +54,7 @@
     "postcss-preset-env": "^9.1.3",
     "prettier": "^3.0.3",
     "rollup": "^2.7.6",
-    "rollup-plugin-minify-html-literals": "^1.2.6",
+    "rollup-plugin-html-literals": "^1.1.8",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-postcss-lit": "^2.0.0",
     "rollup-plugin-serve": "^2.0.1",
