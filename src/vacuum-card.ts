@@ -219,10 +219,12 @@ export class VacuumCard extends LitElement {
   private renderBattery(): Template {
     const { battery_level, battery_icon } = this.getAttributes(this.entity);
 
+    const battery_level_string = battery_level ? `${battery_level}%` : '';
+
     return html`
       <div class="tip" @click="${() => this.handleMore()}">
         <ha-icon icon="${battery_icon}"></ha-icon>
-        <span class="icon-title">${battery_level}%</span>
+        <span class="icon-title">${battery_level_string}</span>
       </div>
     `;
   }
