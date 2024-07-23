@@ -4,8 +4,8 @@
     "paused": "In pausa",
     "idle": "Inattivo",
     "charging": "In carica",
-    "returning home": "In rientro alla base",
-    "docked": "In Base"
+    "returning_home": "In rientro alla base",
+    "docked": "Alla Base"
   },
   "source": {
     "gentle": "Gentile",
@@ -23,7 +23,7 @@
     "stop": "Stop",
     "return_to_base": "Base",
     "locate": "Trova aspirapolvere",
-    "not_available": "Vacuum non disponibile"
+    "not_available": "Aspirapolvere non disponibile"
   },
   "error": {
     "missing_entity": "È necessario specificare l'entità!"
