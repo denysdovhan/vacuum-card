@@ -1,0 +1,80 @@
+{
+  "status": {
+    "cleaning": "Membersihkan",
+    "auto": "Pembersihan otomatis",
+    "spot": "Pembersihan titik",
+    "edge": "Pembersihan tepi",
+    "single_room": "Pembersihan kamar tunggal",
+    "paused": "Berhenti",
+    "idle": "Menganggur",
+    "stop": "Berhenti",
+    "charging": "Mengisi baterai",
+    "returning": "Balik ke dok",
+    "returning_home": "Balik ke dok",
+    "docked": "Dalam dok",
+    "unknown": "Tidak diketahui",
+    "offline": "Offline",
+    "error": "Error",
+    "charger_disconnected": "Pengisi daya terputus",
+    "remote_control_active": "Kendali jarak jauh aktif",
+    "manual_mode": "Modus manual",
+    "shutting_down": "Mematikan diri",
+    "updating": "Memperbarui",
+    "going_to_target": "Menuju target",
+    "zoned_cleaning": "Pembersihan zona",
+    "segment_cleaning": "Pembersihan segmen"
+  },
+  "source": {
+    "gentle": "Lembut",
+    "silent": "Diam-diam",
+    "standard": "Standar",
+    "medium": "Sedang",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Maks",
+    "max_plus": "Maks+",
+    "high": "Tinggi",
+    "strong": "Kuat",
+    "quiet": "Tenang",
+    "auto": "Otomatis",
+    "balanced": "Seimbang",
+    "custom": "Setelan kustom",
+    "off": "Mati"
+  },
+  "common": {
+    "name": "Kartu mesin vakum",
+    "description": "Kartu vakum memungkinkan Anda untuk mengontrol robot vakum Anda.",
+    "start": "Mulai membersihkan",
+    "continue": "Lanjutkan",
+    "pause": "Istirahatkan",
+    "stop": "Berhentikan",
+    "return_to_base": "Balik ke dok",
+    "locate": "Carikan robot vakum",
+    "not_available": "Robot vakum tidak tersedia"
+  },
+  "error": {
+    "invalid_config": "Konfigurasi tidak valid",
+    "missing_entity": "Menentukan entitas diperlukan!"
+  },
+  "warning": {
+    "actions_array": "PERHATIAN: 'actions' diperuntukkan untuk menggantikan tindakan default untuk tombol yang ada. Jika Anda ingin menambahkan tindakan tambahan, gunakan opsi 'shortcuts'."
+  },
+  "editor": {
+    "entity": "Entitas (Wajib)",
+    "map": "Kamera peta (Opsional)",
+    "image": "Gambar (Opsional)",
+    "compact_view": "Tampilan Ringkas",
+    "compact_view_aria_label_on": "Aktifkan tampilan Ringkas",
+    "compact_view_aria_label_off": "Matikan tampilan Ringkas",
+    "show_name": "Tampilkan nama",
+    "show_name_aria_label_on": "Aktifkan nama tampilan",
+    "show_name_aria_label_off": "Matikan nama tampilan",
+    "show_status": "Tampilkan status",
+    "show_status_aria_label_on": "Aktifkan status tampilan",
+    "show_status_aria_label_off": "Matikan status tampilan",
+    "show_toolbar": "Tampilkan toolbar",
+    "show_toolbar_aria_label_on": "Aktifkan tampilan toolbar",
+    "show_toolbar_aria_label_off": "Matikan tampilan toolbar",
+    "code_only_note": "Catatan: Pengaturan tindakan dan pilihan statistik tersedia secara eksklusif menggunakan Code Editor."
+  }
+}
