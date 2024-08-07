@@ -13,6 +13,7 @@ import * as fi from './translations/fi.json';
 import * as fr from './translations/fr.json';
 import * as he from './translations/he.json';
 import * as hu from './translations/hu.json';
+import * as id from './translations/id.json';
 import * as it from './translations/it.json';
 import * as ja from './translations/ja.json';
 import * as ko from './translations/ko.json';
@@ -48,6 +49,7 @@ const languages: Record<string, Translations> = {
   fr,
   he,
   hu,
+  id,
   it,
   ja,
   ko,
