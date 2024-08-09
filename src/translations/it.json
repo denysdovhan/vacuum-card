@@ -1,11 +1,28 @@
 {
   "status": {
-    "cleaning": "In pulizia",
-    "paused": "In pausa",
+    "cleaning": "In Pulizia",
+    "paused": "In Pausa",
     "idle": "Inattivo",
-    "charging": "In carica",
-    "returning_home": "In rientro alla base",
-    "docked": "Alla Base"
+    "charging": "In Carica",
+    "returning_home": "In Rientro alla Base",
+    "docked": "Alla Base"	
+    "auto": "Pulizia Automatica",
+    "spot": "Pulizia Localizzata",
+    "edge": "Pulizia Bordi",
+    "single_room": "Pulizia Stanza Singola",
+    "stop": "Interrotto",
+    "returning": "In Rientro alla Base",
+    "unknown": "Sconociuto",
+    "offline": "Offline",
+    "error": "Errore",
+    "charger_disconnected": "Caricatore Disconnesso",
+    "remote_control_active": "Controllo Remoto Attivo",
+    "manual_mode": "Modalità Manuale",
+    "shutting_down": "In Spegnimento",
+    "updating": "In Aggiornamento",
+    "going_to_target": "Verso l'Obiettivo",
+    "zoned_cleaning": "Pulizia a Zone",
+    "segment_cleaning": "Pulizia a Segmenti"
   },
   "source": {
     "gentle": "Gentile",
@@ -13,6 +30,16 @@
     "standard": "Normale",
     "medium": "Medio",
     "turbo": "Turbo"
+    "normal": "Normale",
+    "max": "Max",
+    "max_plus": "Max+",	
+    "high": "Alto",
+    "strong": "Forte",
+    "quiet": "Silenzioso",
+    "auto": "Auto",
+    "balanced": "Bilanciato",
+    "custom": "Personalizzato",
+    "off": "Spento"
   },
   "common": {
     "name": "Vacuum Card",
@@ -26,10 +53,11 @@
     "not_available": "Aspirapolvere non disponibile"
   },
   "error": {
+	"invalid_config": "Configurazione non valida",
     "missing_entity": "È necessario specificare l'entità!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "ATTENZIONE: 'actions' è riservato per sovrascrivere azioni predefinite per i pulsanti già esistenti. Se la tua intenzione è quella di inserire azioni aggiuntive, utilizza l'opzione 'shortcuts'."
   },
   "editor": {
     "entity": "Entità (Richiesto)",
@@ -47,6 +75,6 @@
     "show_toolbar": "Mostra barra degli strumenti",
     "show_toolbar_aria_label_on": "Attiva barra degli strumenti",
     "show_toolbar_aria_label_off": "Disattiva barra degli strumenti",
-    "code_only_note": "NB: La configurazione di azioni e statistiche sono disponibili soltanto nell'editor di codice."
+    "code_only_note": "NB: La configurazione di azioni e statistiche è disponibile soltanto nell'editor di codice."
   }
 }
