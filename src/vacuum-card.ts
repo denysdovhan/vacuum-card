@@ -316,18 +316,32 @@ export class VacuumCard extends LitElement {
 
   private renderStatus(): Template {
     const { status } = this.getAttributes(this.entity);
-    const localizedStatus =
-      localize(`status.${status.toLowerCase()}`) || status;
-
     if (!this.config.show_status) {
       return nothing;
+    }
+    let s;
+    if (this.config.value_template === undefined) {
+      const localizedStatus =
+        localize(`status.${status.toLowerCase()}`) || status;
+      s = html`
+        <span class="status-text" alt=${localizedStatus}>
+          ${localizedStatus}
+        </span>
+      `;
+    } else {
+      s = html`
+        <ha-template
+          hass=${this.hass}
+          template=${this.config.value_template}
+          value=${status}
+          variables=${{ value: status }}
+        ></ha-template>
+      `;
     }
 
     return html`
       <div class="status">
-        <span class="status-text" alt=${localizedStatus}>
-          ${localizedStatus}
-        </span>
+        ${s}
         <ha-circular-progress
           .indeterminate=${this.requestInProgress}
           size="small"

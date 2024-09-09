@@ -107,20 +107,21 @@ shortcuts:
 
 Here is what every option means:
 
-| Name           |   Type    | Default      | Description                                                                                               |
-| -------------- | :-------: | ------------ | --------------------------------------------------------------------------------------------------------- |
-| `type`         | `string`  | **Required** | `custom:vacuum-card`                                                                                      |
-| `entity`       | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                  |
-| `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
-| `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
-| `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
-| `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
-| `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                                                                |
-| `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                                                                |
-| `compact_view` | `boolean` | `false`      | Compact view without image.                                                                               |
-| `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
-| `actions`      | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
-| `shortcuts`    |  `array`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
+| Name             |   Type    | Default      | Description                                                                                               |
+| ---------------- | :-------: | ------------ | --------------------------------------------------------------------------------------------------------- |
+| `type`           | `string`  | **Required** | `custom:vacuum-card`                                                                                      |
+| `entity`         | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                  |
+| `value_template` | `string`  | Optional     | Jinja2 template returning a value. `value` variable represents the `entity_id` state.                     |
+| `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
+| `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
+| `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
+| `show_name`      | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
+| `show_status`    | `boolean` | `true`       | Show status of the vacuum.                                                                                |
+| `show_toolbar`   | `boolean` | `true`       | Show toolbar with actions.                                                                                |
+| `compact_view`   | `boolean` | `false`      | Compact view without image.                                                                               |
+| `stats`          | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
+| `actions`        | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
+| `shortcuts`      |  `array`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
 
 ### `stats` object
 
