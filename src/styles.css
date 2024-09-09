@@ -136,16 +136,16 @@ ha-card {
   filter: brightness(0.9);
 }
 
-.vacuum.on,
-.vacuum.cleaning,
-.vacuum.auto,
-.vacuum.spot,
-.vacuum.edge,
-.vacuum.single_room {
+.vacuum.animated.on,
+.vacuum.animated.cleaning,
+.vacuum.animated.auto,
+.vacuum.animated.spot,
+.vacuum.animated.edge,
+.vacuum.animated.single_room {
   animation: cleaning 5s linear infinite;
 }
 
-.vacuum.returning {
+.vacuum.animated.returning {
   animation: returning 2s linear infinite;
 }
 
