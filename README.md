@@ -305,7 +305,7 @@ MIT © [Denys Dovhan][denysdovhan]
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest
 [ha-scripts]: https://www.home-assistant.io/docs/scripts/
-[edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/master/README.md
+[edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/main/README.md
 [card-mod]: https://github.com/thomasloven/lovelace-card-mod
 [add-translation]: https://github.com/denysdovhan/vacuum-card/blob/master/CONTRIBUTING.md#how-to-add-translation
 [macbury-smart-house]: https://macbury.github.io/SmartHouse/HomeAssistant/Vacuum/
