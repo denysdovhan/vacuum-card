@@ -1,17 +1,45 @@
 {
   "status": {
     "cleaning": "Støvsuger",
+    "auto": "Automatisk rengøring",
+    "spot": "Pletrengøring",
+    "edge": "Rengøring af kanter",
+    "single_room": "Rengøring af et enkelt rum",
     "paused": "Pauset",
     "idle": "Inaktiv",
+    "stop": "Stoppet",
     "charging": "Lader",
-    "returning home": "Returnerer til dock"
+    "returning": "Vender hjem",
+    "returning_home": "Vender hjem",
+    "docked": "Docker",
+    "unknown": "Ukendt",
+    "offline": "Offline",
+    "error": "Fejl",
+    "charger_disconnected": "Oplader frakoblet",
+    "remote_control_active": "Fjernbetjening aktiv",
+    "manual_mode": "Manuel tilstand",
+    "shutting_down": "Lukker ned",
+    "updating": "Opdaterer",
+    "going_to_target": "Går til mål",
+    "zoned_cleaning": "Zonerengøring",
+    "segment_cleaning": "Segmentrengøring"
   },
   "source": {
     "gentle": "Mild",
     "silent": "Stille",
     "standard": "Standard",
     "medium": "Medium",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Max",
+    "max_plus": "Max+",
+    "high": "Høj",
+    "strong": "Stærk",
+    "quiet": "Stille",
+    "auto": "Auto",
+    "balanced": "Balanceret",
+    "custom": "Brugerdefineret",
+    "off": "Slukket"
   },
   "common": {
     "name": "Vacuum Card",
@@ -25,10 +53,11 @@
     "not_available": "Støvsuger er ikke tilgængelig"
   },
   "error": {
+    "invalid_config": "Ugyldig konfiguration",
     "missing_entity": "En enhed skal specificeres!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "ADVARSEL: 'actions' er reserveret til at overskrive standardhandlinger for eksisterende knapper. Hvis du ønsker at tilføje yderligere handlinger, skal du i stedet bruge 'shortcuts'-indstillingen."
   },
   "editor": {
     "entity": "Enhed (Påkrævet)",
