@@ -36,7 +36,6 @@
     "normal": "Normal",
     "max": "Maximal",
     "max_plus": "Maximal+",
-    "high": "Hoch",
     "strong": "Stark",
     "quiet": "Leise",
     "auto": "Auto",
@@ -57,7 +56,7 @@
   },
   "error": {
     "invalid_config": "Ungeültige Konfiguration",
-    "missing_entity": "Angabe der Entität ist erforderlich!"
+    "missing_entity": "Angabe der Entität ist erforderlich!",
     "domain_not_supported": "Domain nicht unterstützt!  Erfoderlich ist {0}, aber Sie haben {1} angegeben!"
   },
   "warning": {
