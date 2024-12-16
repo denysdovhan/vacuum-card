@@ -22,6 +22,7 @@ import {
   VacuumActionParams,
 } from './types';
 import DEFAULT_IMAGE from './vacuum.svg';
+import { String } from 'typescript-string-operations';
 
 registerTemplates();
 
@@ -77,6 +78,33 @@ export class VacuumCard extends LitElement {
     return this.hass.states[this.config.map];
   }
 
+  get waterLevelEntity(): string | null {
+    if (!this.hass || !this.config.water_level) {
+      return null;
+    }
+
+    const entity_type = 'select';
+    const waterLevel = this.config.water_level;
+    if (!waterLevel.startsWith(entity_type)) {
+      throw new Error(
+        String.Format(
+          localize('error.domain_not_supported') || '',
+          entity_type,
+          waterLevel.split('.')[0],
+        ),
+      );
+    }
+
+    return waterLevel;
+  }
+
+  get waterLevel(): HassEntity | null {
+    if (this.waterLevelEntity) {
+      return this.hass.states[this.waterLevelEntity];
+    }
+    return null;
+  }
+
   public setConfig(config: VacuumCardConfig): void {
     this.config = buildConfig(config);
   }
@@ -85,8 +113,24 @@ export class VacuumCard extends LitElement {
     return this.config.compact_view ? 3 : 8;
   }
 
+  public hasWaterLevelChanged(changedProps: PropertyValues): boolean {
+    if (this.waterLevelEntity === null || this.waterLevel === null) {
+      return false;
+    }
+
+    return (
+      this.hass &&
+      !!this.config.water_level &&
+      changedProps.get('hass').states[this.waterLevelEntity].state !==
+        this.waterLevel.state
+    );
+  }
+
   public shouldUpdate(changedProps: PropertyValues): boolean {
-    return hasConfigOrEntityChanged(this, changedProps, false);
+    return (
+      hasConfigOrEntityChanged(this, changedProps, false) ||
+      this.hasWaterLevelChanged(changedProps)
+    );
   }
 
   protected updated(changedProps: PropertyValues) {
@@ -158,6 +202,14 @@ export class VacuumCard extends LitElement {
     this.callVacuumService('set_fan_speed', { request: false }, { fan_speed });
   }
 
+  private handleSelect(e: PointerEvent): void {
+    const value = (<HTMLDivElement>e.target).getAttribute('value');
+    this.hass.callService('select', 'select_option', {
+      entity_id: this.waterLevel ? this.waterLevel.entity_id : '',
+      option: value,
+    });
+  }
+
   private handleVacuumAction(
     action: string,
     params: VacuumActionParams = { request: true },
@@ -206,6 +258,41 @@ export class VacuumCard extends LitElement {
                 ?activated=${selected === index}
                 value=${item}
                 @click=${this.handleSpeed}
+              >
+                ${localize(`source.${item.toLowerCase()}`) || item}
+              </mwc-list-item>
+            `,
+          )}
+        </ha-button-menu>
+      </div>
+    `;
+  }
+
+  private renderWaterLevel(): Template {
+    const entity = this.waterLevel;
+
+    if (!entity) {
+      return nothing;
+    }
+
+    const selected = entity.attributes.options.indexOf(entity.state);
+
+    return html`
+      <div class="tip">
+        <ha-button-menu @click="${(e: Event) => e.stopPropagation()}">
+          <div slot="trigger">
+            <ha-icon icon="mdi:water"></ha-icon>
+            <span class="icon-title">
+              ${localize(`source.${entity.state.toLowerCase()}`) ||
+              entity.state}
+            </span>
+          </div>
+          ${entity.attributes.options.map(
+            (item: string, index: number) => html`
+              <mwc-list-item
+                ?activated=${selected === index}
+                value=${item}
+                @click=${this.handleSelect}
               >
                 ${localize(`source.${item.toLowerCase()}`) || item}
               </mwc-list-item>
@@ -478,7 +565,8 @@ export class VacuumCard extends LitElement {
         <div class="preview">
           <div class="header">
             <div class="tips">
-              ${this.renderSource()} ${this.renderBattery()}
+              ${this.renderSource()} ${this.renderWaterLevel()}
+              ${this.renderBattery()}
             </div>
             <ha-icon-button
               class="more-info"
