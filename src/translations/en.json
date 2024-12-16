@@ -56,7 +56,7 @@
   },
   "error": {
     "invalid_config": "Invalid configuration",
-    "missing_entity": "Specifying entity is required!"
+    "missing_entity": "Specifying entity is required!",
     "domain_not_supported": "Domain not supported! Required is {0}, but you specified {1}!"
   },
   "warning": {
