@@ -52,6 +52,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
     ];
+    const selectEntities = [this.getEntitiesByType('select')][0];
 
     return html`
       <div class="card-config">
@@ -87,6 +88,25 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
             naturalMenuWidth
           >
             ${cameraEntities.map(
+              (entity) =>
+                html` <mwc-list-item .value=${entity}
+                  >${entity}</mwc-list-item
+                >`,
+            )}
+          </ha-select>
+        </div>
+
+        <div class="option">
+          <ha-select
+            .label=${localize('editor.water_level')}
+            @selected=${this.valueChanged}
+            .configValue=${'water_level'}
+            .value=${this.config.water_level}
+            @closed=${(e: Event) => e.stopPropagation()}
+            fixedMenuPosition
+            naturalMenuWidth
+          >
+            ${selectEntities.map(
               (entity) =>
                 html` <mwc-list-item .value=${entity}
                   >${entity}</mwc-list-item
