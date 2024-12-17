@@ -241,31 +241,7 @@ export class VacuumCard extends LitElement {
       return nothing;
     }
 
-    const selected = sources.indexOf(source);
-
-    return html`
-      <div class="tip">
-        <ha-button-menu @click="${(e: Event) => e.stopPropagation()}">
-          <div slot="trigger">
-            <ha-icon icon="mdi:fan"></ha-icon>
-            <span class="icon-title">
-              ${localize(`source.${source.toLowerCase()}`) || source}
-            </span>
-          </div>
-          ${sources.map(
-            (item, index) => html`
-              <mwc-list-item
-                ?activated=${selected === index}
-                value=${item}
-                @click=${this.handleSpeed}
-              >
-                ${localize(`source.${item.toLowerCase()}`) || item}
-              </mwc-list-item>
-            `,
-          )}
-        </ha-button-menu>
-      </div>
-    `;
+    return this.renderDropDown(source, sources, 'mdi:fan', this.handleSpeed);
   }
 
   private renderWaterLevel(): Template {
@@ -275,24 +251,38 @@ export class VacuumCard extends LitElement {
       return nothing;
     }
 
-    const selected = entity.attributes.options.indexOf(entity.state);
+    return this.renderDropDown(
+      entity.state,
+      entity.attributes.options,
+      'mdi:water',
+      this.handleSelect,
+    );
+  }
+
+  private renderDropDown(
+    selectedObject: string,
+    objects: any,
+    icon: string,
+    onSelected: Function,
+  ): Template {
+    const selected = objects.indexOf(selectedObject);
 
     return html`
       <div class="tip">
         <ha-button-menu @click="${(e: Event) => e.stopPropagation()}">
           <div slot="trigger">
-            <ha-icon icon="mdi:water"></ha-icon>
+            <ha-icon icon="${icon}"></ha-icon>
             <span class="icon-title">
-              ${localize(`source.${entity.state.toLowerCase()}`) ||
-              entity.state}
+              ${localize(`source.${selectedObject.toLowerCase()}`) ||
+              selectedObject}
             </span>
           </div>
-          ${entity.attributes.options.map(
+          ${objects.map(
             (item: string, index: number) => html`
               <mwc-list-item
                 ?activated=${selected === index}
                 value=${item}
-                @click=${this.handleSelect}
+                @click=${onSelected}
               >
                 ${localize(`source.${item.toLowerCase()}`) || item}
               </mwc-list-item>
