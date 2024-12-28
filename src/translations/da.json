@@ -1,17 +1,45 @@
 {
   "status": {
     "cleaning": "Støvsuger",
+    "auto": "Automatisk rengøring",
+    "spot": "Spot rengøring",
+    "edge": "Kant rengøring cleaning",
+    "single_room": "Rengører udvalgt rum",
     "paused": "Pauset",
     "idle": "Inaktiv",
+    "stop": "Stoppet",
     "charging": "Lader",
-    "returning home": "Returnerer til dock"
+    "returning": "Returnerer til dock",
+    "returning_home": "Returnerer til dock",
+    "docked": "I dock",
+    "unknown": "Ukendt",
+    "offline": "Offline",
+    "error": "Fejl",
+    "charger_disconnected": "Oplader er frakoblet",
+    "remote_control_active": "Fjernstyring er aktiveret",
+    "manual_mode": "Manuel tilstand",
+    "shutting_down": "Lukker ned",
+    "updating": "Opdaterer",
+    "going_to_target": "Kører til punkt",
+    "zoned_cleaning": "Zone rengøring",
+    "segment_cleaning": "Rum rengøring"    
   },
   "source": {
     "gentle": "Mild",
     "silent": "Stille",
     "standard": "Standard",
     "medium": "Medium",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Max",
+    "max_plus": "Max+",
+    "high": "Høj",
+    "strong": "Kraftig",
+    "quiet": "Stille",
+    "auto": "Auto",
+    "balanced": "Balanceret",
+    "custom": "Brugerdefineret",
+    "off": "Fra"    
   },
   "common": {
     "name": "Vacuum Card",
@@ -25,14 +53,15 @@
     "not_available": "Støvsuger er ikke tilgængelig"
   },
   "error": {
+    "invalid_config": "Ugyldig konfiguration",
     "missing_entity": "En enhed skal specificeres!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "ADVARSEL: 'actions' bruges til at overskrive handlinger for eksisterende knapper. Hvis du vil tilføje yderligere handlinger skal du i stedet bruge 'shortcuts'."
   },
   "editor": {
     "entity": "Enhed (Påkrævet)",
-    "map": "Map Camera (Valgfrit)",
+    "map": "Entitet med kamera til kortvisning (Valgfrit)",
     "image": "Billede (Valgfrit)",
     "compact_view": "Kompakt visning",
     "compact_view_aria_label_on": "Slå kompakt visning til",
