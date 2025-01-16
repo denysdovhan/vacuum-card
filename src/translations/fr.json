@@ -13,16 +13,35 @@
     "returning": "Retour à la base",
     "docked": "A la base",
     "unknown": "Inconnu",
-    "offline": "Déconnecté"
+    "offline": "Déconnecté",
+    "error": "Erreur",
+    "charger_disconnected": "Chargement Déconnecté",
+    "remote_control_active": "Contrôle à distance activé",
+    "manual_mode": "Mode Manuelle",
+    "shutting_down": "Arrêt du système",
+    "updating": "Mise à jour",
+    "going_to_target": "aller_vers_la_cible",
+    "zoned_cleaning": "Nettoyage de zone",
+    "segment_cleaning": "Nettoyage du périmètre"
   },
   "source": {
     "gentle": "Doux",
     "silent": "Silencieux",
     "standard": "Standard",
+    "low": "Bas",
     "medium": "Moyen",
+    "high": "Intense",
+    "ultrahigh": "Très Intense",
     "turbo": "Turbo",
     "normal": "Normal",
-    "high": "Intense"
+    "max": "Maximale",
+    "max_plus": "Maximale+",
+    "strong": "Fort",
+    "quiet": "Silencieux",
+    "auto": "Auto",
+    "balanced": "Équilibré",
+    "custom": "Personnalisé",
+    "off": "Arrêter"
   },
   "common": {
     "name": "Vacuum Carte",
@@ -32,14 +51,16 @@
     "pause": "Pause",
     "stop": "Stop",
     "return_to_base": "Retour base",
-    "locate": "Localiser aspirateur",
+    "locate": "Localiser l'aspirateur",
     "not_available": "L'aspirateur n'est pas disponible"
   },
   "error": {
-    "missing_entity": "La spécification de l'entité est requise !"
+    "invalid_config": "Configuration invalide",
+    "missing_entity": "Champs requis!",
+    "domain_not_supported": "Domaine non supporté ! Requise est {0}, mais utiliser {1}!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "ATTENTION: les 'actions' sont reservées pour écraser l'action par défaut des boutons existants. If besoin d'ajouter des actions, utiliser l'option 'shortcuts' à la place."
   },
   "editor": {
     "entity": "Entité (obligatoire)",
