@@ -261,7 +261,9 @@ export class VacuumCard extends LitElement {
 
   private renderDropDown(
     selectedObject: string,
-    objects: any,
+    objects: {
+      [key: string]: any;
+    },
     icon: string,
     onSelected: Function,
   ): Template {
