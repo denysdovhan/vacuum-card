@@ -248,13 +248,11 @@ export class VacuumCard extends LitElement {
 
   private renderDropDown(
     selectedObject: string,
-    objects: {
-      [key: string]: any;
-    },
+    items: Record<string, any>,
     icon: string,
     onSelected: Function,
   ): Template {
-    const selected = objects.indexOf(selectedObject);
+    const selected = items.indexOf(selectedObject);
 
     return html`
       <div class="tip">
@@ -266,7 +264,7 @@ export class VacuumCard extends LitElement {
               selectedObject}
             </span>
           </div>
-          ${objects.map(
+          ${items.map(
             (item: string, index: number) => html`
               <mwc-list-item
                 ?activated=${selected === index}
