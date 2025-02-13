@@ -47,22 +47,24 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     selectedEntity: string | undefined,
     entities: string[],
   ) {
-    return html` <div class="option">
-      <ha-select
-        .label=${localize('editor.' + configValue)}
-        @selected=${this.valueChanged}
-        .configValue=${configValue}
-        .value=${selectedEntity}
-        @closed=${(e: Event) => e.stopPropagation()}
-        fixedMenuPosition
-        naturalMenuWidth
-      >
-        ${entities.map(
-          (entity) =>
-            html` <mwc-list-item .value=${entity}>${entity}</mwc-list-item>`,
-        )}
-      </ha-select>
-    </div>`;
+    return html`
+      <div class="option">
+        <ha-select
+          .label=${localize('editor.' + configValue)}
+          @selected=${this.valueChanged}
+          .configValue=${configValue}
+          .value=${selectedEntity}
+          @closed=${(e: Event) => e.stopPropagation()}
+          fixedMenuPosition
+          naturalMenuWidth
+        >
+          ${entities.map(
+            (entity) =>
+              html` <mwc-list-item .value=${entity}>${entity}</mwc-list-item>`,
+          )}
+        </ha-select>
+      </div>
+    `;
   }
 
   protected render(): Template {
@@ -75,7 +77,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
     ];
-    const selectEntities = [this.getEntitiesByType('select')][0];
+    const selectEntities = this.getEntitiesByType('select');
 
     return html`
       <div class="card-config">
