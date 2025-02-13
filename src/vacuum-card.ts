@@ -22,7 +22,6 @@ import {
   VacuumActionParams,
 } from './types';
 import DEFAULT_IMAGE from './vacuum.svg';
-import { String } from 'typescript-string-operations';
 
 registerTemplates();
 
@@ -83,19 +82,7 @@ export class VacuumCard extends LitElement {
       return null;
     }
 
-    const entity_type = 'select';
-    const waterLevel = this.config.water_level;
-    if (!waterLevel.startsWith(entity_type)) {
-      throw new Error(
-        String.Format(
-          localize('error.domain_not_supported') || '',
-          entity_type,
-          waterLevel.split('.')[0],
-        ),
-      );
-    }
-
-    return waterLevel;
+    return this.config.water_level;
   }
 
   get waterLevel(): HassEntity | null {
