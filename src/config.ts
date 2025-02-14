@@ -19,6 +19,7 @@ export default function buildConfig(
 
   return {
     entity: config.entity,
+    value_template: config.status_template,
     map: config.map ?? '',
     map_refresh: config.map_refresh ?? 5,
     image: config.image ?? 'default',
