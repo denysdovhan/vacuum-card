@@ -29,5 +29,6 @@ export default function buildConfig(
     stats: config.stats ?? {},
     actions: config.actions ?? {},
     shortcuts: config.shortcuts ?? [],
+    mop_drying: config.mop_drying ?? {},
   };
 }
