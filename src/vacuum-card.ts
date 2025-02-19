@@ -20,6 +20,7 @@ import {
   VacuumEntityState,
   VacuumServiceCallParams,
   VacuumActionParams,
+  VacuumCardStat,
 } from './types';
 import DEFAULT_IMAGE from './vacuum.svg';
 
@@ -257,6 +258,35 @@ export class VacuumCard extends LitElement {
   }
 
   private renderStats(state: VacuumEntityState): Template {
+    const mop_drying = this.config.mop_drying;
+
+    if (mop_drying.entity_id) {
+      const remaining = parseFloat(
+        this.hass.states[mop_drying.entity_id].state,
+      );
+      if (remaining !== 0) {
+        const value = html`
+          <ha-template
+            hass=${this.hass}
+            template=${mop_drying.value_template}
+            value=${remaining}
+            variables=${{ value: remaining }}
+          ></ha-template>
+        `;
+
+        return html`
+          <div
+            class="stats-block"
+            @click="${() => this.handleMore(mop_drying.entity_id)}"
+          >
+            <span class="stats-value">${value}</span>
+            ${mop_drying.unit}
+            <div class="stats-subtitle">${mop_drying.subtitle}</div>
+          </div>
+        `;
+      }
+    }
+
     const statsList =
       this.config.stats[state] || this.config.stats.default || [];
 
