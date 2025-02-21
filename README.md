@@ -121,6 +121,7 @@ Here is what every option means:
 | `stats`        | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
 | `actions`      | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
 | `shortcuts`    |  `array`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
+| `mop_drying`   | `object`  | Optional     | A `stats` Object with an entity or attribute for the duration of remaining mop drying.                    |
 
 ### `stats` object
 
