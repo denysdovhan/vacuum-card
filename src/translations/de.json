@@ -75,6 +75,6 @@
     "show_toolbar": "Zeige Toolbar",
     "show_toolbar_aria_label_on": "Schalte 'Zeige Toolbar' ein",
     "show_toolbar_aria_label_off": "Schalte 'Zeige Toolbar' aus",
-    "code_only_note": "Hinweis: Das Festlegen von Aktionen und Statistikoptionen ist ausschließlich mit dem Code-Editor möglich."
+    "code_only_note": "Hinweis: Das Festlegen von Aktionen, Statistikoptionen und Mop Trocknung ist ausschließlich mit dem Code-Editor möglich."
   }
 }

@@ -75,6 +75,6 @@
     "show_toolbar": "Show Toolbar",
     "show_toolbar_aria_label_on": "Toggle display toolbar on",
     "show_toolbar_aria_label_off": "Toggle display toolbar off",
-    "code_only_note": "Note: Setting actions and stats options are available exclusively using Code Editor."
+    "code_only_note": "Note: Setting actions, stats and mop drying options are available exclusively using Code Editor."
   }
 }
