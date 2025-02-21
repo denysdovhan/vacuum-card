@@ -20,7 +20,6 @@ import {
   VacuumEntityState,
   VacuumServiceCallParams,
   VacuumActionParams,
-  VacuumCardStat,
 } from './types';
 import DEFAULT_IMAGE from './vacuum.svg';
 
@@ -260,30 +259,43 @@ export class VacuumCard extends LitElement {
   private renderStats(state: VacuumEntityState): Template {
     const mop_drying = this.config.mop_drying;
 
+    const renderStatBlock = (
+      entity_id: string | undefined,
+      value_template: string | undefined,
+      value: string | number,
+      unit: string | undefined,
+      subtitle: string | undefined,
+    ) => {
+      const valueHtml = html`
+        <ha-template
+          hass=${this.hass}
+          template=${value_template}
+          value=${value}
+          variables=${{ value: value }}
+        ></ha-template>
+      `;
+
+      return html`
+        <div class="stats-block" @click="${() => this.handleMore(entity_id)}">
+          <span class="stats-value">${valueHtml}</span>
+          ${unit}
+          <div class="stats-subtitle">${subtitle}</div>
+        </div>
+      `;
+    };
+
     if (mop_drying.entity_id) {
       const remaining = parseFloat(
         this.hass.states[mop_drying.entity_id].state,
       );
       if (remaining !== 0) {
-        const value = html`
-          <ha-template
-            hass=${this.hass}
-            template=${mop_drying.value_template}
-            value=${remaining}
-            variables=${{ value: remaining }}
-          ></ha-template>
-        `;
-
-        return html`
-          <div
-            class="stats-block"
-            @click="${() => this.handleMore(mop_drying.entity_id)}"
-          >
-            <span class="stats-value">${value}</span>
-            ${mop_drying.unit}
-            <div class="stats-subtitle">${mop_drying.subtitle}</div>
-          </div>
-        `;
+        return renderStatBlock(
+          mop_drying.entity_id,
+          mop_drying.value_template,
+          remaining,
+          mop_drying.unit,
+          mop_drying.subtitle,
+        );
       }
     }
 
@@ -308,22 +320,13 @@ export class VacuumCard extends LitElement {
           return nothing;
         }
 
-        const value = html`
-          <ha-template
-            hass=${this.hass}
-            template=${value_template}
-            value=${state}
-            variables=${{ value: state }}
-          ></ha-template>
-        `;
-
-        return html`
-          <div class="stats-block" @click="${() => this.handleMore(entity_id)}">
-            <span class="stats-value">${value}</span>
-            ${unit}
-            <div class="stats-subtitle">${subtitle}</div>
-          </div>
-        `;
+        return renderStatBlock(
+          entity_id,
+          value_template,
+          state,
+          unit,
+          subtitle,
+        );
       },
     );
 
