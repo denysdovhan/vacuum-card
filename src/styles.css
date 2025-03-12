@@ -1,8 +1,7 @@
 :host {
-  --vc-background: var(
-    --ha-card-background,
-    var(--card-background-color, white)
-  );
+  --vc-background: var(--vc-background, 
+    var(--ha-card-background,
+    var(--card-background-color, white)));
   --vc-primary-text-color: var(--primary-text-color);
   --vc-secondary-text-color: var(--secondary-text-color);
   --vc-icon-color: var(--secondary-text-color);
