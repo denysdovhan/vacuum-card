@@ -1,12 +1,8 @@
 :host {
-  --vc-background: var(
-    --ha-card-background,
-    var(--card-background-color, white)
-  );
   --vc-primary-text-color: var(--primary-text-color);
   --vc-secondary-text-color: var(--secondary-text-color);
   --vc-icon-color: var(--secondary-text-color);
-  --vc-toolbar-background: var(--vc-background);
+  --vc-toolbar-background: var(--vc-background, var(--ha-card-background, var(--card-background-color, white)));
   --vc-toolbar-text-color: var(--secondary-text-color);
   --vc-toolbar-icon-color: var(--secondary-text-color);
   --vc-divider-color: var(--entities-divider-color, var(--divider-color));
@@ -25,7 +21,7 @@ ha-card {
 }
 
 .preview {
-  background: var(--vc-background);
+  background: var(--vc-background, var(--ha-card-background, var(--card-background-color, white)));
   position: relative;
   text-align: center;
 
