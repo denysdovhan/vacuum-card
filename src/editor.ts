@@ -35,11 +35,22 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
   }
 
-  private getEntitiesByType(type: string): string[] {
+  private getEntitiesByType(type: string, deviceClass?: string): string[] {
     if (!this.hass) {
       return [];
     }
-    return Object.keys(this.hass.states).filter((id) => id.startsWith(type));
+
+    const entities = Object.keys(this.hass.states).filter((id) =>
+      id.startsWith(type),
+    );
+
+    if (deviceClass) {
+      return entities.filter(
+        (id) => this.hass?.states[id]?.attributes?.device_class === deviceClass,
+      );
+    }
+
+    return entities;
   }
 
   private renderDropdownMenu(
@@ -73,6 +84,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
 
     const vacuumEntities = this.getEntitiesByType('vacuum');
+    const batteryEntities = this.getEntitiesByType('sensor', 'battery');
     const cameraEntities = [
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
@@ -107,6 +119,11 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           'water_level',
           this.config.water_level,
           selectEntities,
+        )}
+        ${this.renderDropdownMenu(
+          'battery',
+          this.config.battery,
+          batteryEntities,
         )}
 
         <div class="option">

@@ -64,6 +64,7 @@
   },
   "editor": {
     "entity": "Entity (Required)",
+    "battery": "Battery Sensor (Optional)",
     "map": "Map Camera (Optional)",
     "water_level": "Water Level Select (Optional)",
     "image": "Image (Optional)",

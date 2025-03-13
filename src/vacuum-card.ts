@@ -5,6 +5,7 @@ import {
   fireEvent,
   HomeAssistant,
   ServiceCallRequest,
+  stateIcon,
 } from 'custom-card-helpers';
 import registerTemplates from 'ha-template';
 import get from 'lodash/get';
@@ -67,7 +68,8 @@ export class VacuumCard extends LitElement {
   }
 
   get entity(): VacuumEntity {
-    return this.hass.states[this.config.entity] as VacuumEntity;
+    const vacuum = this.hass.states[this.config.entity] as VacuumEntity;
+    return vacuum;
   }
 
   get map(): HassEntity | null {
@@ -75,6 +77,13 @@ export class VacuumCard extends LitElement {
       return null;
     }
     return this.hass.states[this.config.map];
+  }
+
+  get battery(): HassEntity | null {
+    if (!this.hass || !this.config.battery) {
+      return null;
+    }
+    return this.hass.states[this.config.battery];
   }
 
   get waterLevelEntity(): string | null {
@@ -282,13 +291,18 @@ export class VacuumCard extends LitElement {
 
   private renderBattery(): Template {
     const { battery_level, battery_icon } = this.getAttributes(this.entity);
+    const batteryLevel = this.battery?.state || battery_level;
+    const batteryIcon = this?.battery ? stateIcon(this.battery) : battery_icon;
 
-    return html`
-      <div class="tip" @click="${() => this.handleMore()}">
-        <ha-icon icon="${battery_icon}"></ha-icon>
-        <span class="icon-title">${battery_level}%</span>
-      </div>
-    `;
+    if (batteryLevel && batteryIcon) {
+      return html`
+        <div class="tip" @click="${() => this.handleMore()}">
+          <ha-icon icon="${batteryIcon}"></ha-icon>
+          <span class="icon-title">${batteryLevel}%</span>
+        </div>
+      `;
+    }
+    return nothing;
   }
 
   private renderMapOrImage(state: VacuumEntityState): Template {
