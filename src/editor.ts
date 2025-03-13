@@ -42,6 +42,31 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     return Object.keys(this.hass.states).filter((id) => id.startsWith(type));
   }
 
+  private renderDropdownMenu(
+    configValue: string,
+    selectedEntity: string | undefined,
+    entities: string[],
+  ) {
+    return html`
+      <div class="option">
+        <ha-select
+          .label=${localize('editor.' + configValue)}
+          @selected=${this.valueChanged}
+          .configValue=${configValue}
+          .value=${selectedEntity}
+          @closed=${(e: Event) => e.stopPropagation()}
+          fixedMenuPosition
+          naturalMenuWidth
+        ><mwc-list-item .value=''></mwc-list-item>
+          ${entities.map(
+            (entity) =>
+              html` <mwc-list-item .value=${entity}>${entity}</mwc-list-item>`,
+          )}
+        </ha-select>
+      </div>
+    `;
+  }
+
   protected render(): Template {
     if (!this.hass) {
       return nothing;
@@ -52,6 +77,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
     ];
+    const selectEntities = this.getEntitiesByType('select');
 
     return html`
       <div class="card-config">
@@ -76,24 +102,12 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           </ha-select>
         </div>
 
-        <div class="option">
-          <ha-select
-            .label=${localize('editor.map')}
-            @selected=${this.valueChanged}
-            .configValue=${'map'}
-            .value=${this.config.map}
-            @closed=${(e: Event) => e.stopPropagation()}
-            fixedMenuPosition
-            naturalMenuWidth
-          >
-            ${cameraEntities.map(
-              (entity) =>
-                html` <mwc-list-item .value=${entity}
-                  >${entity}</mwc-list-item
-                >`,
-            )}
-          </ha-select>
-        </div>
+        ${this.renderDropdownMenu('map', this.config.map, cameraEntities)}
+        ${this.renderDropdownMenu(
+          'water_level',
+          this.config.water_level,
+          selectEntities,
+        )}
 
         <div class="option">
           <paper-input
