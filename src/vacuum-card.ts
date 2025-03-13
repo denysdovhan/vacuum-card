@@ -409,17 +409,26 @@ export class VacuumCard extends LitElement {
       case 'idle':
       default: {
         const buttons = this.config.shortcuts.map(
-          ({ name, service, icon, service_data, target }) => {
-            const execute = () => {
-              if (service) {
-                return this.callService({ service, service_data, target });
-              }
-            };
-            return html`
-              <ha-icon-button label="${name}" @click="${execute}">
-                <ha-icon icon="${icon}"></ha-icon>
-              </ha-icon-button>
-            `;
+          ({ name, service, icon, service_data, target, link }) => {
+            if (link) {
+              return html`
+                <ha-icon-button label="${name}">
+                  <a rel="noreferrer" href="${link}" target="_blank" style="--icon-primary-color: var(--vc-toolbar-icon-color); color: var(--vc-toolbar-icon-color);">
+                    <ha-icon icon="${icon}" style="--icon-primary-color: var(--vc-toolbar-icon-color); color: var(--vc-toolbar-icon-color);"></ha-icon>
+                  </a>
+                </ha-icon-button>`;
+            } else {
+              const execute = () => {
+                if (service) {
+                  return this.callService({ service, service_data, target });
+                }
+              };
+              return html`
+                <ha-icon-button label="${name}" @click="${execute}">
+                  <ha-icon icon="${icon}"></ha-icon>
+                </ha-icon-button>
+              `;
+            }
           },
         );
 

@@ -54,6 +54,7 @@ export interface VacuumCardShortcut {
   service?: string;
   service_data?: Record<string, unknown>;
   target?: HassServiceTarget;
+  link?: string;
 }
 
 export interface VacuumCardConfig {

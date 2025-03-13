@@ -153,6 +153,7 @@ You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning spe
 | `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.                         |
 | `target`       | `object` | Optional                          | A `HassServiceTarget`, to define a target for the current service call. |
 | `icon`         | `string` | Optional                          | Any icon for action button.                                             |
+| `link`         | `string` | Optional                          | A link to navigate to instead of an action.                             |
 | `service_data` | `object` | `service_data` for `service` call |
 
 ## Theming
