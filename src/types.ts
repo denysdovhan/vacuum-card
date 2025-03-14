@@ -59,6 +59,7 @@ export interface VacuumCardShortcut {
 
 export interface VacuumCardConfig {
   entity: string;
+  status_template: string;
   battery: string;
   map: string;
   map_refresh: number;

@@ -7,7 +7,7 @@ import {
   ServiceCallRequest,
   stateIcon,
 } from 'custom-card-helpers';
-import registerTemplates from 'ha-template';
+import registerTemplates from './ha-template';
 import get from 'lodash/get';
 import localize from './localize';
 import styles from './styles.css';
@@ -395,18 +395,32 @@ export class VacuumCard extends LitElement {
 
   private renderStatus(): Template {
     const { status } = this.getAttributes(this.entity);
-    const localizedStatus =
-      localize(`status.${status.toLowerCase()}`) || status;
-
     if (!this.config.show_status) {
       return nothing;
+    }
+    let s;
+    if (this.config.status_template === undefined) {
+      const localizedStatus =
+        localize(`status.${status.toLowerCase()}`) || status;
+      s = html`
+        <span class="status-text" alt=${localizedStatus}>
+          ${localizedStatus}
+        </span>
+      `;
+    } else {
+      s = html`
+        <ha-template
+          hass=${this.hass}
+          template=${this.config.status_template}
+          value=${status}
+          variables=${{ value: status }}
+        ></ha-template>
+      `;
     }
 
     return html`
       <div class="status">
-        <span class="status-text" alt=${localizedStatus}>
-          ${localizedStatus}
-        </span>
+        ${s}
         <ha-circular-progress
           .indeterminate=${this?.requestInProgress}
           size="small"

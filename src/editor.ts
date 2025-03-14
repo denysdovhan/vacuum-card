@@ -20,7 +20,6 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
 
   @state() private config!: Partial<VacuumCardConfig>;
 
-  @state() private image? = undefined;
   @state() private compact_view = false;
   @state() private show_name = true;
   @state() private show_status = true;
@@ -128,12 +127,21 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
         )}
 
         <div class="option">
-          <paper-input
-            label="${localize('editor.image')}"
-            .value=${this.image}
+          <ha-textfield style="width: 100%;"
+            .label=${localize('editor.image')}
             .configValue=${'image'}
-            @value-changed=${this.valueChanged}
-          ></paper-input>
+            @input=${this.valueChanged}
+            .value=${this.config.image ?? []}
+          ></ha-textfield>
+        </div>
+
+        <div class="option">
+          <ha-textfield style="width: 100%;"
+            .label=${localize('editor.status_template')}
+            .configValue=${'status_template'}
+            @input=${this.valueChanged}
+            .value=${this.config.status_template ?? []}
+          ></ha-textfield>
         </div>
 
         <div class="option">
