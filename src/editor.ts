@@ -25,6 +25,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
   @state() private show_name = true;
   @state() private show_status = true;
   @state() private show_toolbar = true;
+  @state() private animated = true;
 
   setConfig(config: LovelaceCardConfig & VacuumCardConfig): void {
     this.config = config;
@@ -142,7 +143,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.compact_view_aria_label_off'
                 : 'editor.compact_view_aria_label_on',
             )}
-            .checked=${Boolean(this.config.compact_view)}
+            .checked=${Boolean(this.config.compact_view ?? this.compact_view)}
             .configValue=${'compact_view'}
             @change=${this.valueChanged}
           >
@@ -157,7 +158,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.show_name_aria_label_off'
                 : 'editor.show_name_aria_label_on',
             )}
-            .checked=${Boolean(this.config.show_name)}
+            .checked=${Boolean(this.config.show_name ?? this.show_name)}
             .configValue=${'show_name'}
             @change=${this.valueChanged}
           >
@@ -172,7 +173,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.show_status_aria_label_off'
                 : 'editor.show_status_aria_label_on',
             )}
-            .checked=${Boolean(this.config.show_status)}
+            .checked=${Boolean(this.config.show_status ?? this.show_status)}
             .configValue=${'show_status'}
             @change=${this.valueChanged}
           >
@@ -187,12 +188,27 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.show_toolbar_aria_label_off'
                 : 'editor.show_toolbar_aria_label_on',
             )}
-            .checked=${Boolean(this.config.show_toolbar)}
+            .checked=${Boolean(this.config.show_toolbar ?? this.show_toolbar)}
             .configValue=${'show_toolbar'}
             @change=${this.valueChanged}
           >
           </ha-switch>
           ${localize('editor.show_toolbar')}
+        </div>
+
+        <div class="option">
+          <ha-switch
+            aria-label=${localize(
+              this.animated
+                ? 'editor.animated_aria_label_off'
+                : 'editor.animated_aria_label_on',
+            )}
+            .checked=${Boolean(this.config.animated ?? this.animated)}
+            .configValue=${'animated'}
+            @change=${this.valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.animated')}
         </div>
 
         <strong>${localize('editor.code_only_note')}</strong>

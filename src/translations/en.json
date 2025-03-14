@@ -80,6 +80,9 @@
     "show_toolbar": "Show Toolbar",
     "show_toolbar_aria_label_on": "Toggle display toolbar on",
     "show_toolbar_aria_label_off": "Toggle display toolbar off",
+    "animated": "Animated",
+    "animated_aria_label_on": "Toggle animated on",
+    "animated_aria_label_off": "Toggle animated off",
     "code_only_note": "Note: Setting actions and stats options are available exclusively using Code Editor."
   }
 }

@@ -114,6 +114,7 @@ Here is what every option means:
 | `map`          | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
 | `map_refresh`  | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
 | `image`        | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
+| `animated`     | `boolean` | `true`       | Animate the image when cleaning or returning to base.                                                     |
 | `show_name`    | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
 | `show_status`  | `boolean` | `true`       | Show status of the vacuum.                                                                                |
 | `show_toolbar` | `boolean` | `true`       | Show toolbar with actions.                                                                                |
@@ -204,6 +205,8 @@ I've added some animations for this card to make it alive. Animations are applie
 |              Cleaning               |                Docking                |
 | :---------------------------------: | :-----------------------------------: |
 | ![Cleaning anumation][cleaning-gif] | ![Returning anumation][returning-gif] |
+
+This can be disabled by using the "animated" attribute.
 
 ## Supported languages
 
