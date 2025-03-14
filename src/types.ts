@@ -54,13 +54,17 @@ export interface VacuumCardShortcut {
   service?: string;
   service_data?: Record<string, unknown>;
   target?: HassServiceTarget;
+  link?: string;
 }
 
 export interface VacuumCardConfig {
   entity: string;
+  status_template: string;
+  battery: string;
   map: string;
   map_refresh: number;
   image: string;
+  animated: boolean;
   show_name: boolean;
   show_status: boolean;
   show_toolbar: boolean;
@@ -68,6 +72,7 @@ export interface VacuumCardConfig {
   stats: Record<string, VacuumCardStat[]>;
   actions: Record<string, VacuumCardAction>;
   shortcuts: VacuumCardShortcut[];
+  water_level: string;
 }
 
 export interface VacuumServiceCallParams {

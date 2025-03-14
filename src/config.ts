@@ -19,9 +19,12 @@ export default function buildConfig(
 
   return {
     entity: config.entity,
+    status_template: config.status_template ?? '',
     map: config.map ?? '',
     map_refresh: config.map_refresh ?? 5,
+    battery: config.battery ?? '',
     image: config.image ?? 'default',
+    animated: config.animated ?? true,
     show_name: config.show_name ?? true,
     show_status: config.show_status ?? true,
     show_toolbar: config.show_toolbar ?? true,
@@ -29,5 +32,6 @@ export default function buildConfig(
     stats: config.stats ?? {},
     actions: config.actions ?? {},
     shortcuts: config.shortcuts ?? [],
+    water_level: config.water_level ?? '',
   };
 }
