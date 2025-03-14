@@ -20,11 +20,11 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
 
   @state() private config!: Partial<VacuumCardConfig>;
 
-  @state() private image? = undefined;
   @state() private compact_view = false;
   @state() private show_name = true;
   @state() private show_status = true;
   @state() private show_toolbar = true;
+  @state() private animated = true;
 
   setConfig(config: LovelaceCardConfig & VacuumCardConfig): void {
     this.config = config;
@@ -35,11 +35,47 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
   }
 
-  private getEntitiesByType(type: string): string[] {
+  private getEntitiesByType(type: string, deviceClass?: string): string[] {
     if (!this.hass) {
       return [];
     }
-    return Object.keys(this.hass.states).filter((id) => id.startsWith(type));
+
+    const entities = Object.keys(this.hass.states).filter((id) =>
+      id.startsWith(type),
+    );
+
+    if (deviceClass) {
+      return entities.filter(
+        (id) => this.hass?.states[id]?.attributes?.device_class === deviceClass,
+      );
+    }
+
+    return entities;
+  }
+
+  private renderDropdownMenu(
+    configValue: string,
+    selectedEntity: string | undefined,
+    entities: string[],
+  ) {
+    return html`
+      <div class="option">
+        <ha-select
+          .label=${localize('editor.' + configValue)}
+          @selected=${this.valueChanged}
+          .configValue=${configValue}
+          .value=${selectedEntity}
+          @closed=${(e: Event) => e.stopPropagation()}
+          fixedMenuPosition
+          naturalMenuWidth
+        ><mwc-list-item .value=''></mwc-list-item>
+          ${entities.map(
+            (entity) =>
+              html` <mwc-list-item .value=${entity}>${entity}</mwc-list-item>`,
+          )}
+        </ha-select>
+      </div>
+    `;
   }
 
   protected render(): Template {
@@ -48,10 +84,12 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
 
     const vacuumEntities = this.getEntitiesByType('vacuum');
+    const batteryEntities = this.getEntitiesByType('sensor', 'battery');
     const cameraEntities = [
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
     ];
+    const selectEntities = this.getEntitiesByType('select');
 
     return html`
       <div class="card-config">
@@ -76,32 +114,34 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           </ha-select>
         </div>
 
+        ${this.renderDropdownMenu('map', this.config.map, cameraEntities)}
+        ${this.renderDropdownMenu(
+          'water_level',
+          this.config.water_level,
+          selectEntities,
+        )}
+        ${this.renderDropdownMenu(
+          'battery',
+          this.config.battery,
+          batteryEntities,
+        )}
+
         <div class="option">
-          <ha-select
-            .label=${localize('editor.map')}
-            @selected=${this.valueChanged}
-            .configValue=${'map'}
-            .value=${this.config.map}
-            @closed=${(e: Event) => e.stopPropagation()}
-            fixedMenuPosition
-            naturalMenuWidth
-          >
-            ${cameraEntities.map(
-              (entity) =>
-                html` <mwc-list-item .value=${entity}
-                  >${entity}</mwc-list-item
-                >`,
-            )}
-          </ha-select>
+          <ha-textfield style="width: 100%;"
+            .label=${localize('editor.image')}
+            .configValue=${'image'}
+            @input=${this.valueChanged}
+            .value=${this.config.image ?? []}
+          ></ha-textfield>
         </div>
 
         <div class="option">
-          <paper-input
-            label="${localize('editor.image')}"
-            .value=${this.image}
-            .configValue=${'image'}
-            @value-changed=${this.valueChanged}
-          ></paper-input>
+          <ha-textfield style="width: 100%;"
+            .label=${localize('editor.status_template')}
+            .configValue=${'status_template'}
+            @input=${this.valueChanged}
+            .value=${this.config.status_template ?? []}
+          ></ha-textfield>
         </div>
 
         <div class="option">
@@ -111,7 +151,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.compact_view_aria_label_off'
                 : 'editor.compact_view_aria_label_on',
             )}
-            .checked=${Boolean(this.compact_view)}
+            .checked=${Boolean(this.config.compact_view ?? this.compact_view)}
             .configValue=${'compact_view'}
             @change=${this.valueChanged}
           >
@@ -126,7 +166,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.show_name_aria_label_off'
                 : 'editor.show_name_aria_label_on',
             )}
-            .checked=${Boolean(this.show_name)}
+            .checked=${Boolean(this.config.show_name ?? this.show_name)}
             .configValue=${'show_name'}
             @change=${this.valueChanged}
           >
@@ -141,7 +181,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.show_status_aria_label_off'
                 : 'editor.show_status_aria_label_on',
             )}
-            .checked=${Boolean(this.show_status)}
+            .checked=${Boolean(this.config.show_status ?? this.show_status)}
             .configValue=${'show_status'}
             @change=${this.valueChanged}
           >
@@ -156,12 +196,27 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
                 ? 'editor.show_toolbar_aria_label_off'
                 : 'editor.show_toolbar_aria_label_on',
             )}
-            .checked=${Boolean(this.show_toolbar)}
+            .checked=${Boolean(this.config.show_toolbar ?? this.show_toolbar)}
             .configValue=${'show_toolbar'}
             @change=${this.valueChanged}
           >
           </ha-switch>
           ${localize('editor.show_toolbar')}
+        </div>
+
+        <div class="option">
+          <ha-switch
+            aria-label=${localize(
+              this.animated
+                ? 'editor.animated_aria_label_off'
+                : 'editor.animated_aria_label_on',
+            )}
+            .checked=${Boolean(this.config.animated ?? this.animated)}
+            .configValue=${'animated'}
+            @change=${this.valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.animated')}
         </div>
 
         <strong>${localize('editor.code_only_note')}</strong>
@@ -176,7 +231,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     const target = event.target as ConfigElement;
     if (
       !target.configValue ||
-      this.config[target.configValue] === target?.value
+      (this.config[target.configValue] && this.config[target.configValue] === target?.value)
     ) {
       return;
     }

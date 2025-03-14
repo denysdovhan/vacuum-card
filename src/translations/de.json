@@ -28,7 +28,10 @@
     "gentle": "Schonend",
     "silent": "Leise",
     "standard": "Standard",
+    "low": "Niedrig",
     "medium": "Mittel",
+    "high": "Hoch",
+    "ultrahigh": "Sehr hoch",
     "turbo": "Max",
     "normal": "Normal",
     "max": "Maximal",
@@ -54,7 +57,8 @@
   },
   "error": {
     "invalid_config": "Ungeültige Konfiguration",
-    "missing_entity": "Angabe der Entität ist erforderlich!"
+    "missing_entity": "Angabe der Entität ist erforderlich!",
+    "domain_not_supported": "Domain nicht unterstützt!  Erfoderlich ist {0}, aber Sie haben {1} angegeben!"
   },
   "warning": {
     "actions_array": "WARNUNG: 'actions' ist dafür vorgesehen, die Standardaktionen für vorhandene Schaltflächen zu überschreiben. Wenn Sie zusätzliche Aktionen hinzufügen möchten, verwenden Sie stattdessen die Option 'shortcuts'."
@@ -62,6 +66,7 @@
   "editor": {
     "entity": "Entität (Erforderlich)",
     "map": "Map Camera (Optional)",
+    "water_level": "Wasser Level Select (Optional)",
     "image": "Bild (Optional)",
     "compact_view": "kompakte Ansicht",
     "compact_view_aria_label_on": "Schalte kompakte Ansicht ein",

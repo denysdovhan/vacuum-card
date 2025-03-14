@@ -1,12 +1,8 @@
 :host {
-  --vc-background: var(
-    --ha-card-background,
-    var(--card-background-color, white)
-  );
   --vc-primary-text-color: var(--primary-text-color);
   --vc-secondary-text-color: var(--secondary-text-color);
   --vc-icon-color: var(--secondary-text-color);
-  --vc-toolbar-background: var(--vc-background);
+  --vc-toolbar-background: var(--vc-background, var(--ha-card-background, var(--card-background-color, white)));
   --vc-toolbar-text-color: var(--secondary-text-color);
   --vc-toolbar-icon-color: var(--secondary-text-color);
   --vc-divider-color: var(--entities-divider-color, var(--divider-color));
@@ -25,7 +21,7 @@ ha-card {
 }
 
 .preview {
-  background: var(--vc-background);
+  background: var(--vc-background, var(--ha-card-background, var(--card-background-color, white)));
   position: relative;
   text-align: center;
 
@@ -136,16 +132,18 @@ ha-card {
   filter: brightness(0.9);
 }
 
-.vacuum.on,
-.vacuum.cleaning,
-.vacuum.auto,
-.vacuum.spot,
-.vacuum.edge,
-.vacuum.single_room {
+.vacuum.animated.on,
+.vacuum.animated.cleaning,
+.vacuum.animated.mowing,
+.vacuum.animated.edgecut,
+.vacuum.animated.auto,
+.vacuum.animated.spot,
+.vacuum.animated.edge,
+.vacuum.animated.single_room {
   animation: cleaning 5s linear infinite;
 }
 
-.vacuum.returning {
+.vacuum.animated.returning {
   animation: returning 2s linear infinite;
 }
 
@@ -177,11 +175,13 @@ ha-card {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-left: calc(28px + var(--vc-spacing)); /* size + margin of spinner */
+  gap: var(--vc-spacing);
 }
 
-.status mwc-circular-progress {
+.status ha-circular-progress {
   --mdc-theme-primary: var(--vc-secondary-text-color) !important;
+  --md-circular-progress-size: var(--body1-line-height, 20px);
+  --md-circular-progress-active-indicator-width: 20;
   margin-left: var(--vc-spacing);
 }
 

@@ -28,12 +28,14 @@
     "gentle": "Gentle",
     "silent": "Silent",
     "standard": "Standard",
+    "low": "Low",
     "medium": "Medium",
     "turbo": "Turbo",
     "normal": "Normal",
     "max": "Max",
     "max_plus": "Max+",
     "high": "High",
+    "ultrahigh": "Ultrahigh",
     "strong": "Strong",
     "quiet": "Quiet",
     "auto": "Auto",
@@ -54,14 +56,17 @@
   },
   "error": {
     "invalid_config": "Invalid configuration",
-    "missing_entity": "Specifying entity is required!"
+    "missing_entity": "Specifying entity is required!",
+    "domain_not_supported": "Domain not supported! Required is {0}, but you specified {1}!"
   },
   "warning": {
     "actions_array": "WARNING: 'actions' is reserved to override default actions for existing buttons. If your intention was to add additional actions, use the 'shortcuts' option instead."
   },
   "editor": {
     "entity": "Entity (Required)",
+    "battery": "Battery Sensor (Optional)",
     "map": "Map Camera (Optional)",
+    "water_level": "Water Level Select (Optional)",
     "image": "Image (Optional)",
     "compact_view": "Compact View",
     "compact_view_aria_label_on": "Toggle compact view on",
@@ -75,6 +80,10 @@
     "show_toolbar": "Show Toolbar",
     "show_toolbar_aria_label_on": "Toggle display toolbar on",
     "show_toolbar_aria_label_off": "Toggle display toolbar off",
+    "animated": "Animated",
+    "animated_aria_label_on": "Toggle animated on",
+    "animated_aria_label_off": "Toggle animated off",
+    "status_template": "Status Template (Optional)",
     "code_only_note": "Note: Setting actions and stats options are available exclusively using Code Editor."
   }
 }
