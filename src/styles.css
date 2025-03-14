@@ -178,8 +178,10 @@ ha-card {
   gap: var(--vc-spacing);
 }
 
-.status mwc-circular-progress {
+.status ha-circular-progress {
   --mdc-theme-primary: var(--vc-secondary-text-color) !important;
+  --md-circular-progress-size: var(--body1-line-height, 20px);
+  --md-circular-progress-active-indicator-width: 20;
   margin-left: var(--vc-spacing);
 }
 
