@@ -50,7 +50,7 @@
     "@types/lodash": "^4.14.202",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
-    "eslint": "^8.56.0",
+    "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.29.1",
     "husky": "^9.0.11",
