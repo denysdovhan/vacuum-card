@@ -22,11 +22,15 @@
     "custom-cards",
     "vacuum"
   ],
-  "author": "Denys Dovhan <denysdovhan@gmail.com> (http://denysdovhan.com/)",
+  "author": {
+    "name": "Denys Dovhan",
+    "email": "denysdovhan@gmail.com",
+    "url": "http://denysdovhan.com"
+  },
   "license": "MIT",
   "dependencies": {
     "custom-card-helpers": "^1.6.4",
-    "ha-template": "^1.2.2",
+    "ha-template": "^1.2.4",
     "home-assistant-js-websocket": "^9.2.1",
     "lit": "^2.0.0",
     "lodash": "^4.17.21"
