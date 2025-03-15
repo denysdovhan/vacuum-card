@@ -475,6 +475,7 @@ export class VacuumCard extends LitElement {
 
     return html`
       <ha-card>
+        <ha-ripple></ha-ripple>
         <div class="preview">
           <div class="header">
             <div class="tips">
