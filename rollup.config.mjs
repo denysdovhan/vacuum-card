@@ -9,8 +9,8 @@ import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssLit from 'rollup-plugin-postcss-lit';
-import { terser } from 'rollup-plugin-terser';
-import minifyLiterals from 'rollup-plugin-html-literals';
+import terser from '@rollup/plugin-terser';
+import minifyLiterals from 'rollup-plugin-minify-html-literals-v3';
 import replace from '@rollup/plugin-replace';
 import serve from 'rollup-plugin-serve';
 
@@ -61,11 +61,11 @@ const plugins = [
   !IS_DEV && minifyLiterals(),
   !IS_DEV &&
     terser({
-      output: {
+      format: {
         comments: false,
       },
     }),
-];
+].filter(Boolean);
 
 export default {
   input: 'src/vacuum-card.ts',
