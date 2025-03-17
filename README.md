@@ -159,17 +159,17 @@ You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning spe
 
 This card can be styled by changing the values of these CSS properties (globally or per-card via [`card-mod`][card-mod]):
 
-| Variable                    | Default value                                                    | Description                          |
-| --------------------------- | ---------------------------------------------------------------- | ------------------------------------ |
-| `--vc-background`           | `var(--ha-card-background, var(--card-background-color, white))` | Background of the card               |
-| `--vc-primary-text-color`   | `var(--primary-text-color)`                                      | Vacuum name, stats values, etc       |
-| `--vc-secondary-text-color` | `var(--secondary-text-color)`                                    | Status, stats units and titles, etc  |
-| `--vc-icon-color`           | `var(--secondary-text-color)`                                    | Colors of icons                      |
-| `--vc-toolbar-background`   | `var(--vc-background)`                                           | Background of the toolbar            |
-| `--vc-toolbar-text-color`   | `var(--secondary-text-color)`                                    | Color of the toolbar texts           |
-| `--vc-toolbar-icon-color`   | `var(--secondary-text-color)`                                    | Color of the toolbar icons           |
-| `--vc-divider-color`        | `var(--entities-divider-color, var(--divider-color))`            | Color of dividers                    |
-| `--vc-spacing`              | `10px`                                                           | Paddings and margins inside the card |
+| Variable                    | Default value                                         | Description                          |
+| --------------------------- | ----------------------------------------------------- | ------------------------------------ |
+| `--vc-background`           | `transparent`                                         | Background of the card               |
+| `--vc-primary-text-color`   | `var(--primary-text-color)`                           | Vacuum name, stats values, etc       |
+| `--vc-secondary-text-color` | `var(--secondary-text-color)`                         | Status, stats units and titles, etc  |
+| `--vc-icon-color`           | `var(--secondary-text-color)`                         | Colors of icons                      |
+| `--vc-toolbar-background`   | `var(--vc-background)`                                | Background of the toolbar            |
+| `--vc-toolbar-text-color`   | `var(--secondary-text-color)`                         | Color of the toolbar texts           |
+| `--vc-toolbar-icon-color`   | `var(--secondary-text-color)`                         | Color of the toolbar icons           |
+| `--vc-divider-color`        | `var(--entities-divider-color, var(--divider-color))` | Color of dividers                    |
+| `--vc-spacing`              | `10px`                                                | Paddings and margins inside the card |
 
 ### Styling via theme
 
