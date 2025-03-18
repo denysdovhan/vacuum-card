@@ -61,6 +61,7 @@ export interface VacuumCardConfig {
   map: string;
   map_refresh: number;
   image: string;
+  animated: boolean;
   show_name: boolean;
   show_status: boolean;
   show_toolbar: boolean;
