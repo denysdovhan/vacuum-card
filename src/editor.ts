@@ -35,11 +35,22 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
   }
 
-  private getEntitiesByType(type: string): string[] {
+  private getEntitiesByType(type: string, deviceClass?: string): string[] {
     if (!this.hass) {
       return [];
     }
-    return Object.keys(this.hass.states).filter((id) => id.startsWith(type));
+
+    const entities = Object.keys(this.hass.states).filter((id) =>
+      id.startsWith(type),
+    );
+
+    if (deviceClass) {
+      return entities.filter(
+        (id) => this.hass?.states[id]?.attributes?.device_class === deviceClass,
+      );
+    }
+
+    return entities;
   }
 
   protected render(): Template {
@@ -48,6 +59,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
 
     const vacuumEntities = this.getEntitiesByType('vacuum');
+    const batteryEntities = this.getEntitiesByType('sensor', 'battery');
     const cameraEntities = [
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
@@ -68,6 +80,25 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
             validationMessage=${localize('error.missing_entity')}
           >
             ${vacuumEntities.map(
+              (entity) =>
+                html` <mwc-list-item .value=${entity}
+                  >${entity}</mwc-list-item
+                >`,
+            )}
+          </ha-select>
+        </div>
+
+        <div class="option">
+          <ha-select
+            .label=${localize('editor.battery')}
+            @selected=${this.valueChanged}
+            .configValue=${'battery'}
+            .value=${this.config.battery}
+            @closed=${(e: Event) => e.stopPropagation()}
+            fixedMenuPosition
+            naturalMenuWidth
+          >
+            ${batteryEntities.map(
               (entity) =>
                 html` <mwc-list-item .value=${entity}
                   >${entity}</mwc-list-item
