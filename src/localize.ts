@@ -29,6 +29,7 @@ import * as sv from './translations/sv.json';
 import * as tw from './translations/tw.json';
 import * as uk from './translations/uk.json';
 import * as vi from './translations/vi.json';
+import * as zh from './translations/cn.json';
 
 type Translations = {
   [key: string]: {
@@ -64,6 +65,7 @@ const languages: Record<string, Translations> = {
   tw,
   uk,
   vi,
+  zh,
 };
 
 const DEFAULT_LANG = 'en';
