@@ -14,7 +14,16 @@
     "docked": "A la base",
     "unknown": "Inconnu",
     "offline": "Déconnecté"
-  },
+    "error": "Erreur",
+    "charger_disconnected": "Chargeur déconnecté",
+    "remote_control_active": "Télécommande active",
+    "manual_mode": "Mode Manuel",
+    "shutting_down": "Arrêt",
+    "updating": "Mise à joru",
+    "going_to_target": "Déplacement vers la cible",
+    "zoned_cleaning": "Nettoyage des zones",
+    "segment_cleaning": "Nettoyage des segments"
+	},
   "source": {
     "gentle": "Doux",
     "silent": "Silencieux",
@@ -22,7 +31,15 @@
     "medium": "Moyen",
     "turbo": "Turbo",
     "normal": "Normal",
-    "high": "Intense"
+    "max": "Max",
+    "max_plus": "Max+",
+    "high": "Intense",
+    "strong": "Fort",
+    "quiet": "calme",
+    "auto": "Auto",
+    "balanced": "Équilibré",
+    "custom": "Personnalisé",
+    "off": "Off"
   },
   "common": {
     "name": "Vacuum Carte",
@@ -36,10 +53,11 @@
     "not_available": "L'aspirateur n'est pas disponible"
   },
   "error": {
+    "invalid_config": "Configuration invalide",
     "missing_entity": "La spécification de l'entité est requise !"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "AVERTISSEMENT : « Actions » est réservé à la substitution des actions par défaut des boutons existants. Si vous souhaitez ajouter des actions supplémentaires, utilisez plutôt l'option « Raccourcis »."
   },
   "editor": {
     "entity": "Entité (obligatoire)",
