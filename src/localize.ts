@@ -85,7 +85,8 @@ export default function localize(
 
   const lang = (langStored || navigator.language.split('-')[0] || DEFAULT_LANG)
     .replace(/['"]+/g, '')
-    .replace('-', '_');
+    .replace('-', '_')
+    .toLowerCase();
 
   let translated: string | undefined;
 
