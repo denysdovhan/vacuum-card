@@ -20,6 +20,7 @@ import {
   VacuumEntityState,
   VacuumServiceCallParams,
   VacuumActionParams,
+  VacuumBatteryEntity,
 } from './types';
 import DEFAULT_IMAGE from './vacuum.svg';
 
@@ -60,14 +61,25 @@ export class VacuumCard extends LitElement {
 
   static getStubConfig(_: unknown, entities: string[]) {
     const [vacuumEntity] = entities.filter((eid) => eid.startsWith('vacuum'));
+    const [vacuumBatteryEntity] = entities.filter(
+      (eid) =>
+        eid.startsWith('sensor') &&
+        eid.includes('battery') &&
+        eid.includes('vacuum'),
+    );
 
     return {
       entity: vacuumEntity ?? '',
+      battery_entity: vacuumBatteryEntity ?? '',
     };
   }
 
   get entity(): VacuumEntity {
     return this.hass.states[this.config.entity] as VacuumEntity;
+  }
+
+  get batteryEntity(): VacuumBatteryEntity {
+    return this.hass.states[this.config.battery_entity] as VacuumBatteryEntity;
   }
 
   get map(): HassEntity | null {
@@ -217,8 +229,12 @@ export class VacuumCard extends LitElement {
   }
 
   private renderBattery(): Template {
-    const { battery_level, battery_icon } = this.getAttributes(this.entity);
-
+    const { battery_level, battery_icon } = this.batteryEntity
+      ? (({ status, icon }) => ({
+          battery_level: Number(status),
+          battery_icon: icon,
+        }))(this.getAttributes(this.batteryEntity))
+      : this.getAttributes(this.entity);
     return html`
       <div class="tip" @click="${() => this.handleMore()}">
         <ha-icon icon="${battery_icon}"></ha-icon>

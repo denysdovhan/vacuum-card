@@ -19,6 +19,7 @@ export default function buildConfig(
 
   return {
     entity: config.entity,
+    battery_entity: config.battery_entity ?? '',
     map: config.map ?? '',
     map_refresh: config.map_refresh ?? 5,
     image: config.image ?? 'default',
