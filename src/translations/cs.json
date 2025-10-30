@@ -49,6 +49,7 @@
   "editor": {
     "entity": "Entita (Povinný)",
     "map": "Mapa (Nepovinný)",
+    "battery_entity": "Entita baterie (Nepovinný)",
     "image": "Fotka (Nepovinný)",
     "compact_view": "Kompaktní zobrazení",
     "compact_view_aria_label_on": "Zapni kompaktní zobrazení",

@@ -47,6 +47,7 @@
   "editor": {
     "entity": "ישות (נדרש)",
     "map": "מצלמת מפה (אפשרי)",
+    "battery_entity": "ישות סוללה (אפשרי)",
     "image": "תמונה (אפשרי)",
     "compact_view": "תצוגה קומפקטית",
     "compact_view_aria_label_on": "החלף תצוגה קומפקטית",
