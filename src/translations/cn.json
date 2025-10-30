@@ -63,6 +63,7 @@
   "editor": {
     "entity": "实体 (必填)",
     "map": "地图 (选填)",
+    "battery_entity": "电池实体（选填）",
     "image": "图片 (选填)",
     "compact_view": "紧凑视图",
     "compact_view_aria_label_on": "开启紧凑视图",

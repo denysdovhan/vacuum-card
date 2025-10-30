@@ -42,6 +42,7 @@
   "editor": {
     "entity": "Entitate (Necesar)",
     "map": "Camera Harta (Optional)",
+    "battery_entity": "Entitate baterie (Opțional)",
     "image": "Imagine (Optional)",
     "compact_view": "Vizualizare compactă",
     "compact_view_aria_label_on": "Pornește vizualizare compactă",

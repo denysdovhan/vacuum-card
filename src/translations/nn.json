@@ -30,6 +30,7 @@
   "editor": {
     "entity": "Oppføring (påkravd)",
     "map": "Kartkamera (valfritt)",
+    "battery_entity": "Batteri-entitet (valfritt)",
     "image": "Bilde (valfritt)",
     "compact_view": "Kompakt vising",
     "compact_view_aria_label_on": "Slå på kompakt vising",
