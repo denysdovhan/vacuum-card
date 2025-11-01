@@ -64,7 +64,7 @@
     "rollup-plugin-postcss-lit": "^2.0.0",
     "rollup-plugin-serve": "^3.0.0",
     "rollup-plugin-typescript2": "^0.36.0",
-    "semantic-release": "^23.0.0",
+    "semantic-release": "^25.0.1",
     "typescript": "^5.3.3"
   },
   "browserslist": [
