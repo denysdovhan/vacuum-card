@@ -81,7 +81,7 @@ export default function localize(
 
   try {
     langStored = JSON.parse(localStorage.getItem('selectedLanguage') ?? '');
-  } catch (e) {
+  } catch {
     langStored = localStorage.getItem('selectedLanguage');
   }
 
@@ -94,7 +94,7 @@ export default function localize(
 
   try {
     translated = languages[lang][section][key];
-  } catch (e) {
+  } catch {
     translated = languages[DEFAULT_LANG][section][key];
   }
 
