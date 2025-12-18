@@ -14,7 +14,16 @@
     "docked": "充电中",
     "unknown": "未知",
     "offline": "离线",
-    "error": "错误"
+    "error": "错误",
+    "charger_disconnected": "充电器已断开",
+    "remote_control_active": "正在遥控",
+    "manual_mode": "手动模式",
+    "shutting_down": "关机",
+    "updating": "更新中",
+    "going_to_target": "前往目标",
+    "zoned_cleaning": "区域清洁",
+    "segment_cleaning": "分区清洁",
+    "sleeping": "休眠中"
   },
   "source": {
     "gentle": "轻柔",
@@ -26,6 +35,10 @@
     "high": "高",
     "strong": "强力",
     "quiet": "安静",
+    "auto": "自动",
+    "balanced": "均衡",
+    "custom": "自定义",
+    "off": "关闭",
     "max": "Max",
     "max+": "Max+"
   },
@@ -41,6 +54,7 @@
     "not_available": "扫地机器人不可用"
   },
   "error": {
+    "invalid_config": "错误的设置",
     "missing_entity": "必须指定一个实体!"
   },
   "warning": {

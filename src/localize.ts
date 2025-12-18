@@ -29,6 +29,7 @@ import * as sv from './translations/sv.json';
 import * as tw from './translations/tw.json';
 import * as uk from './translations/uk.json';
 import * as vi from './translations/vi.json';
+import * as zh from './translations/cn.json';
 
 type Translations = {
   [key: string]: {
@@ -64,6 +65,7 @@ const languages: Record<string, Translations> = {
   tw,
   uk,
   vi,
+  zh,
 };
 
 const DEFAULT_LANG = 'en';
@@ -85,7 +87,8 @@ export default function localize(
 
   const lang = (langStored || navigator.language.split('-')[0] || DEFAULT_LANG)
     .replace(/['"]+/g, '')
-    .replace('-', '_');
+    .replace('-', '_')
+    .toLowerCase();
 
   let translated: string | undefined;
 

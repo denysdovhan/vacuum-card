@@ -242,16 +242,16 @@ This card relies on basic vacuum services, like `pause`, `start`, `stop`, `retur
 
 If this card works with your vacuum cleaner, please open a PR and your model to the list.
 
-- **Roborock** S8 (MaxV Ultra, Ultra Pro), S7 (MaxV), S6 (MaxV, Pure), S5 (Max), S50, S4 (Max), E25, E4, Q5 Pro
+- **Roborock** S8 (MaxV Ultra, Ultra Pro), S7 (MaxV), S6 (MaxV, Pure), S5 (Max), S50, S4 (Max), E25, E4, Q5 Pro, Qrevo S
 - **Mijia** Robot Vacuum Cleaner 1C (STYTJ01ZHM)
 - **Xiaomi** Mi Robot (STYJ02YM), Mi Robot 1S, Mi Roborock V1 (SDJQR02RR), Mijia 1C, Mi Robot Vacuum-Mop P, Robot Vacuum E10
-- **Roomba** 670, 675, 676, 960980, 981, i3, i7+, e5, S9, s9+, j7
+- **Roomba** 670, 675, 676, 697, 960, 980, 981, i3, i7+, e5, S9, s9+, j7
 - **Braava** M6
 - **Dyson** 360 Eye
 - **Neato** D7, D6, D4
 - **Shark** IQ
 - **Ecova**cs Deebot 950, Deebot OZMO T8 AIVI, Deebot N79, Deebot N8, Deebot N8+, T9 AIVI, Deebot T20 Ombi
-- **Eufy** Robovac 30c, Robovac 15C Max, Robovac X8 Hybrid, Robovac G40
+- **Eufy** Robovac 30c, Robovac 35c, Robovac 15C Max, Robovac L70 Hybrid, Robovac X8, Robovac X8 Hybrid, Robovac G40
 - **EcoVacs** T9 AIVI
 - **Dreame** Z10 Pro, L10 Pro, D9, F9
 - 360 S7 Pro
@@ -305,7 +305,7 @@ MIT © [Denys Dovhan][denysdovhan]
 [returning-gif]: https://user-images.githubusercontent.com/3459374/81119452-765afd00-8f33-11ea-9dc5-9c26ba3f8c45.gif
 [latest-release]: https://github.com/denysdovhan/vacuum-card/releases/latest
 [ha-scripts]: https://www.home-assistant.io/docs/scripts/
-[edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/master/README.md
+[edit-readme]: https://github.com/denysdovhan/vacuum-card/edit/main/README.md
 [card-mod]: https://github.com/thomasloven/lovelace-card-mod
 [add-translation]: https://github.com/denysdovhan/vacuum-card/blob/master/CONTRIBUTING.md#how-to-add-translation
 [macbury-smart-house]: https://macbury.github.io/SmartHouse/HomeAssistant/Vacuum/
