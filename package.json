@@ -1,6 +1,6 @@
 {
   "name": "vacuum-card",
-  "version": "2.11.0",
+  "version": "2.11.1",
   "type": "module",
   "description": "Vacuum cleaner card for Home Assistant Lovelace UI",
   "main": "dist/vacuum-card.js",
