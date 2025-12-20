@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: ⬢ Setup Node.js
         uses: actions/setup-node@v4
@@ -39,7 +39,7 @@ jobs:
     if: github.ref_name == 'main' && (github.event_name == 'push' || github.event.pull_request.merged)
     steps:
       - name: ⬇️ Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: ⬢ Setup Node.js
         uses: actions/setup-node@v4
