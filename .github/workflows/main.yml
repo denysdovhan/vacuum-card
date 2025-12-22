@@ -23,7 +23,7 @@ jobs:
       - name: ⬢ Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '*'
+          node-version: latest
           cache: npm
 
       - name: 📦 Install Packages
@@ -44,7 +44,8 @@ jobs:
       - name: ⬢ Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '*'
+          registry-url: https://registry.npmjs.org
+          node-version: latest
           cache: npm
 
       - name: 📦 Install Packages
