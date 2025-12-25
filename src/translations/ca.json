@@ -31,6 +31,7 @@
   "editor": {
     "entity": "Entitat (Requerit)",
     "map": "Càmera de mapa (Opcional)",
+    "battery_entity": "Entitat de bateria (Opcional)",
     "image": "Imatge (Opcional)",
     "compact_view": "Visualització compacta",
     "compact_view_aria_label_on": "Activar visualització compacta",

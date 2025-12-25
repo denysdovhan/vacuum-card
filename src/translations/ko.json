@@ -49,6 +49,7 @@
   "editor": {
     "entity": "구성요소 (필수)",
     "map": "도면 (선택)",
+    "battery_entity": "배터리 엔터티(선택)",
     "image": "이미지 (선택)",
     "compact_view": "간단히 보기",
     "compact_view_aria_label_on": "간단히 보기 켜기",

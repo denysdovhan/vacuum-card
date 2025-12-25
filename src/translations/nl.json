@@ -25,6 +25,7 @@
   "editor": {
     "entity": "Entiteit (Verplicht)",
     "map": "Kaart Camera (Optioneel)",
+    "battery_entity": "Batterij-entiteit (Optioneel)",
     "image": "Afbeelding (Optioneel)",
     "compact_view": "Compacte weergave",
     "compact_view_aria_label_on": "Zet compacte weergave aan",

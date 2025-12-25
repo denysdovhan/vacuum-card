@@ -31,6 +31,7 @@
   "editor": {
     "entity": "Entity (Būtina)",
     "map": "Žemėlapio kamera (Neprivaloma)",
+    "battery_entity": "Baterijos objektas (Neprivaloma)",
     "image": "Paveikslėlis (Neprivaloma)",
     "compact_view": "Glaustas vaizdas",
     "compact_view_aria_label_on": "Įjungti glaustą vaizdą",

@@ -34,6 +34,15 @@ export interface VacuumEntity extends HassEntityBase {
   state: VacuumEntityState;
 }
 
+export interface VacuumBatteryEntityAttributes extends HassEntityAttributeBase {
+  icon?: string;
+}
+
+export interface VacuumBatteryEntity extends HassEntityBase {
+  attributes: VacuumBatteryEntityAttributes;
+  state: string;
+}
+
 export interface VacuumCardStat {
   entity_id?: string;
   attribute?: string;
@@ -58,6 +67,7 @@ export interface VacuumCardShortcut {
 
 export interface VacuumCardConfig {
   entity: string;
+  battery_entity: string;
   map: string;
   map_refresh: number;
   image: string;

@@ -32,6 +32,7 @@
   "editor": {
     "entity": "實體 (必填)",
     "map": "地圖 (選填)",
+    "battery_entity": "電池實體（選填）",
     "image": "圖片 (選填)",
     "compact_view": "精簡檢視",
     "compact_view_aria_label_on": "開啟精簡檢視",

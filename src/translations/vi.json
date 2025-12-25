@@ -31,6 +31,7 @@
   "editor": {
     "entity": "Entity (Yêu cầu)",
     "map": "Hiển thị sơ đồ   (Tuỳ chọn)",
+    "battery_entity": "Thực thể pin (Tùy chọn)",
     "image": "Image (Tuỳ chọn)",
     "compact_view": "Thu gọn",
     "compact_view_aria_label_on": "Xem thu gọn",

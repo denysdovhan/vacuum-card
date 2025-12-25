@@ -64,6 +64,7 @@
   "editor": {
     "entity": "Encja (wymagane)",
     "map": "Kamera z mapą (opcjonalna)",
+    "battery_entity": "Encja baterii (opcjonalna)",
     "image": "Obraz (opcjonalny)",
     "compact_view": "Widok kompaktowy",
     "compact_view_aria_label_on": "Włącz widok kompaktowy",

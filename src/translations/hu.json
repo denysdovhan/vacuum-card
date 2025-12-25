@@ -62,6 +62,7 @@
   "editor": {
     "entity": "Entitás (kötelező)",
     "map": "Térkép kamera (opcionális)",
+    "battery_entity": "Akkumulátor-entitás (opcionális)",
     "image": "Kép (opcionális)",
     "compact_view": "Kompakt nézet",
     "compact_view_aria_label_on": "Kompakt nézet bekapcsolása",
