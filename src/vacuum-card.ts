@@ -15,6 +15,7 @@ import {
   Template,
   VacuumCardAction,
   VacuumCardConfig,
+  VacuumCardBatterySensor,
   VacuumEntity,
   HassEntity,
   VacuumEntityState,
@@ -216,13 +217,52 @@ export class VacuumCard extends LitElement {
     `;
   }
 
+  private getBatteryValue(): {
+    level: number;
+    icon: string;
+    entity_id?: string;
+  } {
+    let batteryEntity: HassEntity | null = null;
+    let entityId: string = this.config.entity;
+
+    if (this.config.battery_sensor) {
+      entityId = this.config.battery_sensor.entity_id;
+      batteryEntity = this.hass.states[entityId];
+    }
+
+    // Use vacuum entity's battery_level attribute if a battery_sensor value is not defined/not found
+    if (!batteryEntity) {
+      const { battery_level, battery_icon } = this.getAttributes(this.entity);
+      return {
+        level: battery_level || 0,
+        icon: battery_icon || 'mdi:battery-unknown',
+        entity_id: this.config.entity,
+      };
+    }
+
+    const batteryLevel = parseFloat(batteryEntity.state) || 0;
+    let icon = 'mdi:battery-unknown';
+
+    if (batteryLevel <= 5) {
+      icon = 'mdi:battery-alert';
+    } else if (batteryLevel >= 95) {
+      icon = 'mdi:battery';
+    } else {
+      // Round to nearest 10 between 6-94
+      const rounded = Math.round(batteryLevel / 10) * 10;
+      icon = `mdi:battery-${rounded}`;
+    }
+
+    return { level: batteryLevel, icon, entity_id: entityId };
+  }
+
   private renderBattery(): Template {
-    const { battery_level, battery_icon } = this.getAttributes(this.entity);
+    const { level, icon, entity_id } = this.getBatteryValue();
 
     return html`
-      <div class="tip" @click="${() => this.handleMore()}">
-        <ha-icon icon="${battery_icon}"></ha-icon>
-        <span class="icon-title">${battery_level}%</span>
+      <div class="tip" @click="${() => this.handleMore(entity_id)}">
+        <ha-icon icon="${icon}"></ha-icon>
+        <span class="icon-title">${level}%</span>
       </div>
     `;
   }
