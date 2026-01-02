@@ -62,6 +62,7 @@
   "editor": {
     "entity": "Entiteetti (vaaditaan)",
     "map": "Karttakamera (valinnainen)",
+    "battery_entity": "Akkuyksikkö (valinnainen)",
     "image": "Kuva (valinnainen)",
     "compact_view": "Kompakti näkymä",
     "compact_view_aria_label_on": "Kompakti näkymä päälle",

@@ -33,6 +33,7 @@
   "editor": {
     "entity": "Enhet (påkrevd)",
     "map": "Kartkamera (valgfritt)",
+    "battery_entity": "Batteri-entitet (valgfritt)",
     "image": "Bilde (Valgfritt)",
     "compact_view": "Kompakt visning",
     "compact_view_aria_label_on": "Slå på kompakt visning",
