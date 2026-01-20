@@ -1,20 +1,28 @@
 {
   "status": {
     "cleaning": "Limpando",
-    "auto": "Limpeza automatica",
-    "spot": "Limpando local",
-    "edge": "Limpando borda",
-    "single_room": "Limpando um quarto",
+    "auto": "Limpeza automática",
+    "spot": "Limpeza localizada",
+    "edge": "Limpeza de bordas",
+    "single_room": "Limpeza de um único cômodo",
     "paused": "Em pausa",
     "idle": "Ocioso",
     "stop": "Parado",
     "charging": "Carregando",
-    "returning home": "Voltando à base",
-    "returning": "Voltando",
+    "returning": "Retornando à base",
+    "returning_home": "Retornando à base",
     "docked": "Na base",
     "unknown": "Desconhecido",
-    "offline": "Offline",
-    "error": "Erro"
+    "offline": "Fora de linha",
+    "error": "Erro",
+    "charger_disconnected": "Carregador desconectado",
+    "remote_control_active": "Controle remoto ativo",
+    "manual_mode": "Modo manual",
+    "shutting_down": "Desligando",
+    "updating": "Atualizando",
+    "going_to_target": "Indo ao destino",
+    "zoned_cleaning": "Limpeza por zonas",
+    "segment_cleaning": "Limpeza por segmentos"
   },
   "source": {
     "gentle": "Delicado",
@@ -23,21 +31,29 @@
     "medium": "Médio",
     "turbo": "Turbo",
     "normal": "Normal",
+    "max": "Máx.",
+    "max_plus": "Máx.+",
     "high": "Alto",
-    "strong": "Forte"
+    "strong": "Forte",
+    "quiet": "Silencioso",
+    "auto": "Automático",
+    "balanced": "Equilibrado",
+    "custom": "Personalizado",
+    "off": "Desligado"
   },
   "common": {
-    "name": "Vacuum Card",
-    "description": "Vacuum card para controlar seu robô aspirador.",
+    "name": "Cartão do aspirador",
+    "description": "O cartão do aspirador permite controlar o robô aspirador.",
     "start": "Limpar",
     "continue": "Continuar",
     "pause": "Pausa",
     "stop": "Parar",
     "return_to_base": "Retornar à base",
     "locate": "Localizar aspirador",
-    "not_available": "Aspirador indisponível"
+    "not_available": "O aspirador não está disponível"
   },
   "error": {
+    "invalid_config": "Configuração inválida",
     "missing_entity": "Entidade obrigatória"
   },
   "warning": {

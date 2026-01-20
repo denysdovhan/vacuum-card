@@ -1,34 +1,63 @@
 {
   "status": {
     "cleaning": "Rengjøring",
+    "auto": "Automatisk rengjøring",
+    "spot": "Punkt-rengjøring",
+    "edge": "Kant-rengjøring",
+    "single_room": "Rengjøring av ett rom",
     "paused": "Pauset",
     "idle": "Tomgang",
+    "stop": "Stoppet",
     "charging": "Lader",
-    "returning home": "Returnerer hjem"
+    "returning": "Returnerer til basen",
+    "returning_home": "Returnerer til basen",
+    "docked": "Dokket",
+    "unknown": "Ukjent",
+    "offline": "Frakoblet",
+    "error": "Feil",
+    "charger_disconnected": "Laderen er frakoblet",
+    "remote_control_active": "Fjernkontroll aktiv",
+    "manual_mode": "Manuell modus",
+    "shutting_down": "Slår seg av",
+    "updating": "Oppdaterer",
+    "going_to_target": "Går til mål",
+    "zoned_cleaning": "Sone-rengjøring",
+    "segment_cleaning": "Segment-rengjøring"
   },
   "source": {
     "gentle": "Skånsom",
     "silent": "Stille",
     "standard": "Standard",
-    "medium": "Medium",
-    "turbo": "Turbo"
+    "medium": "Middels",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Maks",
+    "max_plus": "Maks+",
+    "high": "Høy",
+    "strong": "Sterk",
+    "quiet": "Stille",
+    "auto": "Automatisk",
+    "balanced": "Balansert",
+    "custom": "Tilpasset",
+    "off": "Av"
   },
   "common": {
     "name": "Støvsuger kort",
     "description": "Støvsugerkortet lar deg kontrollere robotstøvsugeren din",
     "start": "Rengjør",
     "continue": "fortsett",
-    "pause": "Pause",
-    "stop": "Stop",
-    "return_to_base": "Dock",
+    "pause": "Paus",
+    "stop": "Stopp",
+    "return_to_base": "Til basen",
     "locate": "Lokaliser støvsuger",
     "not_available": "Støvsugeren er ikke tilgjengelig"
   },
   "error": {
+    "invalid_config": "Ugyldig konfigurasjon",
     "missing_entity": "Spesifiserende enhet kreves!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "ADVARSEL: 'actions' er reservert for å overstyre standardhandlinger for eksisterende knapper. Hvis hensikten var å legge til flere handlinger, bruk heller alternativet 'shortcuts'."
   },
   "editor": {
     "entity": "Enhet (påkrevd)",

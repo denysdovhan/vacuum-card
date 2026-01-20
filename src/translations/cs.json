@@ -9,12 +9,20 @@
     "idle": "Nečinný",
     "stop": "Zastavený",
     "charging": "Nabíjí se",
-    "returning home": "Vrací se do stanice",
     "returning": "Vrací se",
+    "returning_home": "Návrat na základnu",
     "docked": "Ve stanici",
     "unknown": "Neznámý",
     "offline": "Vypnuto",
-    "error": "Chyba"
+    "error": "Chyba",
+    "charger_disconnected": "Nabíječka odpojena",
+    "remote_control_active": "Dálkové ovládání aktivní",
+    "manual_mode": "Manuální režim",
+    "shutting_down": "Vypínání",
+    "updating": "Aktualizace",
+    "going_to_target": "Směřuje k cíli",
+    "zoned_cleaning": "Zónové čištění",
+    "segment_cleaning": "Čištění segmentu"
   },
   "source": {
     "gentle": "Mírný",
@@ -23,11 +31,15 @@
     "medium": "Střední",
     "turbo": "Turbo",
     "normal": "Normální",
+    "max": "Maximální",
+    "max_plus": "Maximální+",
     "high": "Vysoký",
     "strong": "Silný",
     "quiet": "Tichý",
-    "max": "Max",
-    "max+": "Max+"
+    "auto": "Automatický",
+    "balanced": "Vyvážený",
+    "custom": "Vlastní",
+    "off": "Vypnuto"
   },
   "common": {
     "name": "Karta vysavače",
@@ -41,6 +53,7 @@
     "not_available": "Vysavač není dostupný"
   },
   "error": {
+    "invalid_config": "Neplatná konfigurace",
     "missing_entity": "Je vyžadováno specifikování entity!"
   },
   "warning": {

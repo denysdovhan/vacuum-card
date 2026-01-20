@@ -1,17 +1,45 @@
 {
   "status": {
     "cleaning": "Städar",
+    "auto": "Automatisk rengöring",
+    "spot": "Punktstädning",
+    "edge": "Kantstädning",
+    "single_room": "Rengöring av ett rum",
     "paused": "Pausad",
     "idle": "Inaktiv",
+    "stop": "Stoppad",
     "charging": "Laddar",
-    "returning home": "Återvänder hem"
+    "returning": "Återvänder till basen",
+    "returning_home": "Återvänder till basen",
+    "docked": "Dockad",
+    "unknown": "Okänd",
+    "offline": "Frånkopplad",
+    "error": "Fel",
+    "charger_disconnected": "Laddaren är frånkopplad",
+    "remote_control_active": "Fjärrkontroll aktiv",
+    "manual_mode": "Manuellt läge",
+    "shutting_down": "Stänger av",
+    "updating": "Uppdaterar",
+    "going_to_target": "Går till mål",
+    "zoned_cleaning": "Zonstädning",
+    "segment_cleaning": "Segmentstädning"
   },
   "source": {
     "gentle": "Extra försiktig",
     "silent": "Eco - tyst",
     "standard": "Standard",
-    "medium": "Medium",
-    "turbo": "Turbo"
+    "medium": "Mellan",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Maximal",
+    "max_plus": "Maximal+",
+    "high": "Hög",
+    "strong": "Stark",
+    "quiet": "Tyst",
+    "auto": "Automatisk",
+    "balanced": "Balanserad",
+    "custom": "Anpassad",
+    "off": "Av"
   },
   "common": {
     "name": "Dammsugarkort",
@@ -25,10 +53,11 @@
     "not_available": "Dammsugare är inte tillgänglig"
   },
   "error": {
+    "invalid_config": "Ogiltig konfiguration",
     "missing_entity": "Specificera entitet är obligatoriskt!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "VARNING: 'actions' är reserverat för att skriva över standardåtgärder för befintliga knappar. Om avsikten var att lägga till ytterligare åtgärder, använd i stället alternativet 'shortcuts'."
   },
   "editor": {
     "entity": "Entitet (Obligatoriskt)",

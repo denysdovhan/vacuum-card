@@ -9,9 +9,9 @@
     "idle": "闲置中",
     "stop": "已停止",
     "charging": "充电中",
-    "returning home": "回充",
-    "returning": "回充",
-    "docked": "充电中",
+    "returning": "返回基座",
+    "returning_home": "返回基座",
+    "docked": "已在基座",
     "unknown": "未知",
     "offline": "离线",
     "error": "错误",
@@ -22,8 +22,7 @@
     "updating": "更新中",
     "going_to_target": "前往目标",
     "zoned_cleaning": "区域清洁",
-    "segment_cleaning": "分区清洁",
-    "sleeping": "休眠中"
+    "segment_cleaning": "分区清洁"
   },
   "source": {
     "gentle": "轻柔",
@@ -32,18 +31,18 @@
     "medium": "中等",
     "turbo": "强力",
     "normal": "正常",
+    "max": "最大",
+    "max_plus": "最大+",
     "high": "高",
     "strong": "强力",
     "quiet": "安静",
     "auto": "自动",
     "balanced": "均衡",
     "custom": "自定义",
-    "off": "关闭",
-    "max": "Max",
-    "max+": "Max+"
+    "off": "关闭"
   },
   "common": {
-    "name": "Vacuum Card",
+    "name": "吸尘器卡片",
     "description": "Vacuum Card 允许您控制您的扫地机器人。",
     "start": "清扫",
     "continue": "继续",

@@ -1,7 +1,6 @@
 {
   "status": {
     "cleaning": "מנקה",
-    "segment cleaning": "ניקוי מקטע",
     "auto": "ניקוי אוטומטי",
     "spot": "ניקוי אזור",
     "edge": "ניקוי פינה",
@@ -10,12 +9,20 @@
     "idle": "ממתין",
     "stop": "נעצר",
     "charging": "בטעינה",
-    "returning home": "בחזרה הביתה",
     "returning": "חוזר",
+    "returning_home": "חוזר לעמדה",
     "docked": "בתחנה",
     "unknown": "לא ידוע",
     "offline": "מנותק",
-    "error": "שגיאה"
+    "error": "שגיאה",
+    "charger_disconnected": "המטען מנותק",
+    "remote_control_active": "שליטה מרחוק פעילה",
+    "manual_mode": "מצב ידני",
+    "shutting_down": "כיבוי",
+    "updating": "עדכון",
+    "going_to_target": "נוסע ליעד",
+    "zoned_cleaning": "ניקוי אזורי",
+    "segment_cleaning": "ניקוי מקטע"
   },
   "source": {
     "gentle": "עדין",
@@ -24,8 +31,15 @@
     "medium": "בינוני",
     "turbo": "טורבו",
     "normal": "נורמלי",
+    "max": "מקסימום",
+    "max_plus": "מקסימום+",
     "high": "גבוה",
-    "auto": "אוטומטי"
+    "strong": "חזק",
+    "quiet": "שקט",
+    "auto": "אוטומטי",
+    "balanced": "מאוזן",
+    "custom": "מותאם אישית",
+    "off": "כבוי"
   },
   "common": {
     "name": "כרטיס שואב",
@@ -39,10 +53,11 @@
     "not_available": "השואב אינו זמין"
   },
   "error": {
+    "invalid_config": "תצורה לא תקינה",
     "missing_entity": "יש צורך לציין ישות!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "אזהרה: 'actions' שמור להחלפת פעולות ברירת המחדל של הכפתורים הקיימים. אם כוונתכם הייתה להוסיף פעולות נוספות, השתמשו באפשרות 'shortcuts' במקום זאת."
   },
   "editor": {
     "entity": "ישות (נדרש)",
