@@ -1,22 +1,49 @@
 {
   "status": {
     "cleaning": "Netejant",
+    "auto": "Neteja automàtica",
+    "spot": "Neteja puntual",
+    "edge": "Neteja de vores",
+    "single_room": "Neteja d'una sola habitació",
     "paused": "En pausa",
     "idle": "Inactiu",
+    "stop": "Aturat",
     "charging": "Carregant",
-    "returning home": "Tornant a la base",
-    "docked": "A la base"
+    "returning": "Tornant a la base",
+    "returning_home": "Tornant a la base",
+    "docked": "A la base",
+    "unknown": "Desconegut",
+    "offline": "Fora de línia",
+    "error": "Errada",
+    "charger_disconnected": "Carregador desconnectat",
+    "remote_control_active": "Control remot actiu",
+    "manual_mode": "Mode manual",
+    "shutting_down": "S'està apagant",
+    "updating": "S'està actualitzant",
+    "going_to_target": "Anant a l'objectiu",
+    "zoned_cleaning": "Neteja per zones",
+    "segment_cleaning": "Neteja per segments"
   },
   "source": {
     "gentle": "Delicat",
     "silent": "Silenciós",
     "standard": "Estàndard",
     "medium": "Mitjà",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Màxim",
+    "max_plus": "Màxim+",
+    "high": "Alt",
+    "strong": "Fort",
+    "quiet": "Silenciós",
+    "auto": "Automàtic",
+    "balanced": "Equilibrat",
+    "custom": "Personalitzat",
+    "off": "Apagat"
   },
   "common": {
-    "name": "Vacuum Card",
-    "description": "Vacuum card us permet controlar el robot aspirador.",
+    "name": "Targeta d'aspiradora",
+    "description": "La targeta d'aspiradora permet controlar el robot aspirador.",
     "start": "Neteja",
     "continue": "Continua",
     "pause": "Pausa",
@@ -26,7 +53,11 @@
     "not_available": "No disponible"
   },
   "error": {
+    "invalid_config": "Configuració no vàlida",
     "missing_entity": "Cal especificar una entitat."
+  },
+  "warning": {
+    "actions_array": "AVÍS: 'actions' està reservat per sobreescriure les accions per defecte dels botons existents. Si la vostra intenció era afegir accions addicionals, utilitzeu l'opció 'shortcuts' en el seu lloc."
   },
   "editor": {
     "entity": "Entitat (Requerit)",

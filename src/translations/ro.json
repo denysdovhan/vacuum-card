@@ -9,12 +9,20 @@
     "idle": "Inactiv",
     "stop": "Oprit",
     "charging": "Încărcare",
-    "returning home": "Revenire Acasă",
     "returning": "Revenire Acasă",
+    "returning_home": "Se întoarce la bază",
     "docked": "Parcat",
     "unknown": "Necunoscut",
     "offline": "Deconectat",
-    "error": "Eroare"
+    "error": "Eroare",
+    "charger_disconnected": "Încărcător deconectat",
+    "remote_control_active": "Control la distanță activ",
+    "manual_mode": "Mod manual",
+    "shutting_down": "Se oprește",
+    "updating": "Se actualizează",
+    "going_to_target": "Se îndreaptă către țintă",
+    "zoned_cleaning": "Curățare pe zone",
+    "segment_cleaning": "Curățare pe segmente"
   },
   "source": {
     "gentle": "Blând",
@@ -23,7 +31,15 @@
     "medium": "Mediu",
     "turbo": "Turbo",
     "normal": "Normal",
-    "high": "Ridicat"
+    "max": "Maxim",
+    "max_plus": "Maxim+",
+    "high": "Ridicat",
+    "strong": "Puternic",
+    "quiet": "Silențios",
+    "auto": "Automat",
+    "balanced": "Echilibrat",
+    "custom": "Personalizat",
+    "off": "Oprit"
   },
   "common": {
     "name": "Card de vid.",
@@ -31,13 +47,17 @@
     "start": "Curat",
     "continue": "Continuă",
     "pause": "Repauz",
-    "stop": "Stop",
+    "stop": "Oprire",
     "return_to_base": "Parchează",
     "locate": "Găsește Aspirator",
     "not_available": "Aspiratorul nu este disponibil"
   },
   "error": {
+    "invalid_config": "Configurație invalidă",
     "missing_entity": "Este necesară specificarea entității!"
+  },
+  "warning": {
+    "actions_array": "AVERTISMENT: 'actions' este rezervat pentru suprascrierea acțiunilor implicite ale butoanelor existente. Dacă intenția dvs. a fost să adăugați acțiuni suplimentare, folosiți în schimb opțiunea 'shortcuts'."
   },
   "editor": {
     "entity": "Entitate (Necesar)",

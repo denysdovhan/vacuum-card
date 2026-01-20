@@ -1,18 +1,45 @@
 {
   "status": {
     "cleaning": "Valo",
+    "auto": "Automatinis valymas",
+    "spot": "Vietinis valymas",
+    "edge": "Kraštų valymas",
+    "single_room": "Vieno kambario valymas",
     "paused": "Pristabdytas",
     "idle": "Neturi darbo",
+    "stop": "Sustabdytas",
     "charging": "Kraunasi",
-    "returning home": "Grįžtą namo",
-    "docked": "Doke"
+    "returning": "Grįžta į bazę",
+    "returning_home": "Grįžta į bazę",
+    "docked": "Doke",
+    "unknown": "Nežinoma",
+    "offline": "Neprisijungęs",
+    "error": "Klaida",
+    "charger_disconnected": "Įkroviklis atjungtas",
+    "remote_control_active": "Nuotolinis valdymas aktyvus",
+    "manual_mode": "Rankinis režimas",
+    "shutting_down": "Išjungimas",
+    "updating": "Atnaujinama",
+    "going_to_target": "Vyksta į tikslą",
+    "zoned_cleaning": "Zoninis valymas",
+    "segment_cleaning": "Segmentų valymas"
   },
   "source": {
     "gentle": "Švelnus",
     "silent": "Tylus",
     "standard": "Standartinis",
     "medium": "Vidutinis",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normalus",
+    "max": "Maksimalus",
+    "max_plus": "Maksimalus+",
+    "high": "Aukštas",
+    "strong": "Stiprus",
+    "quiet": "Tylus",
+    "auto": "Automatinis",
+    "balanced": "Subalansuotas",
+    "custom": "Pasirinktinis",
+    "off": "Išjungta"
   },
   "common": {
     "name": "Siurblio kortelė",
@@ -26,7 +53,11 @@
     "not_available": "Siurblys yra nepasiekiamas"
   },
   "error": {
+    "invalid_config": "Neteisinga konfigūracija",
     "missing_entity": "Būtina nurodyti entity!"
+  },
+  "warning": {
+    "actions_array": "ĮSPĖJIMAS: 'actions' skirtas esamų mygtukų numatytiesiems veiksmams perrašyti. Jei norėjote pridėti papildomų veiksmų, vietoje to naudokite parinktį 'shortcuts'."
   },
   "editor": {
     "entity": "Entity (Būtina)",

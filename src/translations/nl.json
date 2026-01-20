@@ -1,10 +1,45 @@
 {
   "status": {
     "cleaning": "Aan het schoonmaken",
+    "auto": "Automatische reiniging",
+    "spot": "Plaatselijke reiniging",
+    "edge": "Randreiniging",
+    "single_room": "Reiniging van één kamer",
     "paused": "Gepauzeerd",
     "idle": "Inactief",
+    "stop": "Gestopt",
     "charging": "Aan het opladen",
-    "returning home": "Keert terug naar dock"
+    "returning": "Keert terug naar het basisstation",
+    "returning_home": "Keert terug naar het basisstation",
+    "docked": "Gedockt",
+    "unknown": "Onbekend",
+    "offline": "Niet verbonden",
+    "error": "Fout",
+    "charger_disconnected": "Lader losgekoppeld",
+    "remote_control_active": "Afstandsbediening actief",
+    "manual_mode": "Handmatige modus",
+    "shutting_down": "Uitschakelen",
+    "updating": "Bijwerken",
+    "going_to_target": "Onderweg naar doel",
+    "zoned_cleaning": "Zonereiniging",
+    "segment_cleaning": "Segmentreiniging"
+  },
+  "source": {
+    "gentle": "Zacht",
+    "silent": "Stil",
+    "standard": "Standaard",
+    "medium": "Middel",
+    "turbo": "Turbo",
+    "normal": "Normaal",
+    "max": "Maximaal",
+    "max_plus": "Maximaal+",
+    "high": "Hoog",
+    "strong": "Sterk",
+    "quiet": "Stil",
+    "auto": "Automatisch",
+    "balanced": "Gebalanceerd",
+    "custom": "Aangepast",
+    "off": "Uit"
   },
   "common": {
     "name": "Stofzuiger kaart",
@@ -12,15 +47,17 @@
     "start": "Start",
     "continue": "Doorgaan",
     "pause": "Pauze",
-    "stop": "Stop",
+    "stop": "Stoppen",
     "return_to_base": "Terugkeren",
-    "locate": "Zoek stofzuiger"
+    "locate": "Zoek stofzuiger",
+    "not_available": "Stofzuiger is niet beschikbaar"
   },
   "error": {
+    "invalid_config": "Ongeldige configuratie",
     "missing_entity": "Het specificeren van een entiteit is verplicht!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "WAARSCHUWING: 'actions' is gereserveerd om standaardacties voor bestaande knoppen te overschrijven. Als uw bedoeling was om extra acties toe te voegen, gebruik dan de optie 'shortcuts' in plaats daarvan."
   },
   "editor": {
     "entity": "Entiteit (Verplicht)",
@@ -32,6 +69,9 @@
     "show_name": "Naam laten zien?",
     "show_name_aria_label_on": "Zet weergavenaam aan",
     "show_name_aria_label_off": "Zet weergavenaam uit",
+    "show_status": "Status tonen",
+    "show_status_aria_label_on": "Statusweergave inschakelen",
+    "show_status_aria_label_off": "Statusweergave uitschakelen",
     "show_toolbar": "Werkbalk laten zien?",
     "show_toolbar_aria_label_on": "Zet werkbalk aan",
     "show_toolbar_aria_label_off": "Zet werkbalk uit",

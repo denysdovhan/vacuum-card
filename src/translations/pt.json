@@ -1,6 +1,6 @@
 {
   "status": {
-    "cleaning": "A Limpar",
+    "cleaning": "A limpar",
     "auto": "Limpeza automática",
     "spot": "Limpeza localizada",
     "edge": "Limpeza de bordas",
@@ -8,12 +8,12 @@
     "paused": "Pausado",
     "idle": "Inativo",
     "stop": "Parado",
-    "charging": "A Carregar",
-    "returning": "A regressar",
-    "returning home": "A regressar à base",
+    "charging": "A carregar",
+    "returning": "A regressar à base",
+    "returning_home": "A regressar à base",
     "docked": "Na base",
     "unknown": "Desconhecido",
-    "offline": "Offline",
+    "offline": "Sem ligação",
     "error": "Erro",
     "charger_disconnected": "Carregador desconectado",
     "remote_control_active": "Controlo remoto ativo",
@@ -42,15 +42,15 @@
     "off": "Desligado"
   },
   "common": {
-    "name": "Vacuum Card",
-    "description": "Vacuum card permite controlar o seu robô aspirador.",
+    "name": "Cartão do aspirador",
+    "description": "O cartão do aspirador permite controlar o robô aspirador.",
     "start": "Limpar",
     "continue": "Continuar",
     "pause": "Pausar",
     "stop": "Parar",
     "return_to_base": "Base",
-    "locate": "Localizar Aspirador",
-    "not_available": "Aspirador indisponível"
+    "locate": "Localizar aspirador",
+    "not_available": "O aspirador não está disponível"
   },
   "error": {
     "invalid_config": "Configuração inválida",

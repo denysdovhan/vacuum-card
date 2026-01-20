@@ -1,22 +1,48 @@
 {
   "status": {
-    "Cleaning": "清掃中",
-    "Paused": "暫停中",
-    "Idle": "閒置中",
-    "Charging": "充電中",
-    "Returning home": "正在返回充電座",
-    "docked": "返回充電座",
-    "segment cleaning": "區域清掃"
+    "cleaning": "清掃中",
+    "auto": "自動清掃",
+    "spot": "局部清掃",
+    "edge": "沿邊清掃",
+    "single_room": "單間清掃",
+    "paused": "已暫停",
+    "idle": "待機",
+    "stop": "已停止",
+    "charging": "充電中",
+    "returning": "返回基座",
+    "returning_home": "返回基座",
+    "docked": "已在充電座",
+    "unknown": "未知",
+    "offline": "離線",
+    "error": "錯誤",
+    "charger_disconnected": "充電器已斷開",
+    "remote_control_active": "遠端控制已啟用",
+    "manual_mode": "手動模式",
+    "shutting_down": "關機中",
+    "updating": "更新中",
+    "going_to_target": "前往目標",
+    "zoned_cleaning": "分區清掃",
+    "segment_cleaning": "分段清掃"
   },
   "source": {
-    "Gentle": "拖地",
-    "Silent": "安靜",
-    "Standard": "標準",
-    "Medium": "強力",
-    "Turbo": "MAX"
+    "gentle": "柔和",
+    "silent": "靜音",
+    "standard": "標準",
+    "medium": "中等",
+    "turbo": "強力",
+    "normal": "正常",
+    "max": "最大",
+    "max_plus": "最大+",
+    "high": "高",
+    "strong": "強勁",
+    "quiet": "安靜",
+    "auto": "自動",
+    "balanced": "平衡",
+    "custom": "自訂",
+    "off": "關閉"
   },
   "common": {
-    "name": "Vacuum Card",
+    "name": "掃地機卡片",
     "description": "Vacuum Card 可以讓您控制掃地機器人",
     "start": "開始清掃",
     "continue": "繼續清掃",
@@ -27,7 +53,11 @@
     "not_available": "掃地機器人並不支援"
   },
   "error": {
+    "invalid_config": "設定無效",
     "missing_entity": "必須指定一個實體!"
+  },
+  "warning": {
+    "actions_array": "警告：'actions' 保留用於覆寫現有按鈕的預設動作。若您的意圖是新增額外動作，請改用 'shortcuts' 選項。"
   },
   "editor": {
     "entity": "實體 (必填)",

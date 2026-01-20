@@ -1,13 +1,28 @@
 {
   "status": {
     "cleaning": "Limpiando",
+    "auto": "Limpieza automática",
+    "spot": "Limpieza puntual",
+    "edge": "Limpieza de bordes",
+    "single_room": "Limpieza de una habitación",
     "paused": "En pausa",
     "idle": "Inactivo",
+    "stop": "Detenido",
     "charging": "Cargando",
-    "returning home": "Volviendo a la base",
+    "returning": "Volviendo a la base",
+    "returning_home": "Volviendo a la base",
     "docked": "En la base",
-    "segment cleaning": "Limpiando zona",
-    "returning": "Volviendo a la base"
+    "unknown": "Desconocido",
+    "offline": "Sin conexión",
+    "error": "Fallo",
+    "charger_disconnected": "Cargador desconectado",
+    "remote_control_active": "Control remoto activo",
+    "manual_mode": "Modo manual",
+    "shutting_down": "Apagándose",
+    "updating": "Actualizando",
+    "going_to_target": "Dirigiéndose al objetivo",
+    "zoned_cleaning": "Limpieza por zonas",
+    "segment_cleaning": "Limpieza por segmentos"
   },
   "source": {
     "gentle": "Delicado",
@@ -15,20 +30,30 @@
     "standard": "Estándar",
     "medium": "Medio",
     "turbo": "Turbo",
-    "strong": "Fuerte"
+    "normal": "Normal",
+    "max": "Máx.",
+    "max_plus": "Máx.+",
+    "high": "Alto",
+    "strong": "Fuerte",
+    "quiet": "Silencioso",
+    "auto": "Automático",
+    "balanced": "Equilibrado",
+    "custom": "Personalizado",
+    "off": "Apagado"
   },
   "common": {
-    "name": "Vacuum Card",
-    "description": "Vacuum card te permite controlar tu robot aspirador.",
+    "name": "Tarjeta del aspirador",
+    "description": "La tarjeta del aspirador le permite controlar su robot aspirador.",
     "start": "Comenzar",
     "continue": "Continuar",
     "pause": "Pausar",
     "stop": "Detener",
     "return_to_base": "Volver a la base",
-    "locate": "Localizar",
-    "not_available": "Vacuum no está disponible"
+    "locate": "Localizar aspirador",
+    "not_available": "El aspirador no está disponible"
   },
   "error": {
+    "invalid_config": "Configuración no válida",
     "missing_entity": "¡Se requiere especificar una entidad!"
   },
   "warning": {

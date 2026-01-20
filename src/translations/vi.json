@@ -1,18 +1,45 @@
 {
   "status": {
     "cleaning": "Đang dọn dẹp",
+    "auto": "Làm sạch tự động",
+    "spot": "Làm sạch điểm",
+    "edge": "Làm sạch viền",
+    "single_room": "Làm sạch một phòng",
     "paused": "Dừng",
     "idle": "Nghỉ",
+    "stop": "Đã dừng",
     "charging": "Đang sạc",
-    "returning home": "Đang về Dock",
-    "docked": "Đang ở Dock"
+    "returning": "Đang về đế",
+    "returning_home": "Đang về đế",
+    "docked": "Đang ở Dock",
+    "unknown": "Không rõ",
+    "offline": "Ngoại tuyến",
+    "error": "Lỗi",
+    "charger_disconnected": "Bộ sạc đã ngắt kết nối",
+    "remote_control_active": "Điều khiển từ xa đang hoạt động",
+    "manual_mode": "Chế độ thủ công",
+    "shutting_down": "Đang tắt",
+    "updating": "Đang cập nhật",
+    "going_to_target": "Đang đi đến mục tiêu",
+    "zoned_cleaning": "Làm sạch theo vùng",
+    "segment_cleaning": "Làm sạch theo phân đoạn"
   },
   "source": {
     "gentle": "Nhẹ",
     "silent": "Yên tĩnh",
     "standard": "Tiêu chuẩn",
     "medium": "Vừa phải",
-    "turbo": "Tối đa"
+    "turbo": "Tối đa",
+    "normal": "Bình thường",
+    "max": "Tối đa",
+    "max_plus": "Tối đa+",
+    "high": "Cao",
+    "strong": "Mạnh",
+    "quiet": "Yên tĩnh",
+    "auto": "Tự động",
+    "balanced": "Cân bằng",
+    "custom": "Tùy chỉnh",
+    "off": "Tắt"
   },
   "common": {
     "name": "Robot hút bụi Card",
@@ -26,7 +53,11 @@
     "not_available": "Thiết bị không khả dụng"
   },
   "error": {
+    "invalid_config": "Cấu hình không hợp lệ",
     "missing_entity": "Khai báo thiếu Entity"
+  },
+  "warning": {
+    "actions_array": "CẢNH BÁO: 'actions' được dành riêng để ghi đè các hành động mặc định của các nút hiện có. Nếu quý vị muốn thêm các hành động bổ sung, vui lòng dùng tùy chọn 'shortcuts' thay thế."
   },
   "editor": {
     "entity": "Entity (Yêu cầu)",

@@ -9,12 +9,20 @@
     "idle": "유휴 중",
     "stop": "중지됨",
     "charging": "충전 중",
-    "returning home": "충전대로 복귀 중",
     "returning": "충전대로 복귀 중",
+    "returning_home": "기지로 복귀 중",
     "docked": "도킹됨",
     "unknown": "알수 없음",
     "offline": "오프라인",
-    "error": "오류"
+    "error": "오류",
+    "charger_disconnected": "충전기가 분리됨",
+    "remote_control_active": "원격 제어 활성화",
+    "manual_mode": "수동 모드",
+    "shutting_down": "전원 종료 중",
+    "updating": "업데이트 중",
+    "going_to_target": "목표로 이동 중",
+    "zoned_cleaning": "구역 청소",
+    "segment_cleaning": "구간 청소"
   },
   "source": {
     "gentle": "저속",
@@ -23,11 +31,15 @@
     "medium": "중간",
     "turbo": "터보",
     "normal": "보통",
+    "max": "맥스",
+    "max_plus": "최대+",
     "high": "높음",
     "strong": "강함",
     "quiet": "조용함",
-    "max": "맥스",
-    "max+": "맥스+"
+    "auto": "자동",
+    "balanced": "균형",
+    "custom": "사용자 지정",
+    "off": "꺼짐"
   },
   "common": {
     "name": "청소기 카드",
@@ -41,6 +53,7 @@
     "not_available": "청소기 사용 불가"
   },
   "error": {
+    "invalid_config": "잘못된 구성",
     "missing_entity": "구성요소 지정이 필요합니다!"
   },
   "warning": {
@@ -53,7 +66,7 @@
     "compact_view": "간단히 보기",
     "compact_view_aria_label_on": "간단히 보기 켜기",
     "compact_view_aria_label_off": "간단히 보기 끄기",
-    "show_name": "Show Name",
+    "show_name": "이름 표시",
     "show_name_aria_label_on": "이름 표시 켜기",
     "show_name_aria_label_off": "이름 표시 끄기",
     "show_status": "상태 표시",

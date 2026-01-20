@@ -1,35 +1,63 @@
 {
   "status": {
     "cleaning": "In pulizia",
+    "auto": "Pulizia automatica",
+    "spot": "Pulizia mirata",
+    "edge": "Pulizia dei bordi",
+    "single_room": "Pulizia di una stanza",
     "paused": "In pausa",
     "idle": "Inattivo",
+    "stop": "Fermato",
     "charging": "In carica",
-    "returning_home": "In rientro alla base",
-    "docked": "Alla Base"
+    "returning": "Rientro alla base",
+    "returning_home": "Rientro alla base",
+    "docked": "Alla base",
+    "unknown": "Sconosciuto",
+    "offline": "Non in linea",
+    "error": "Errore",
+    "charger_disconnected": "Caricatore scollegato",
+    "remote_control_active": "Controllo remoto attivo",
+    "manual_mode": "Modalità manuale",
+    "shutting_down": "Spegnimento",
+    "updating": "Aggiornamento",
+    "going_to_target": "In movimento verso la destinazione",
+    "zoned_cleaning": "Pulizia a zone",
+    "segment_cleaning": "Pulizia del segmento"
   },
   "source": {
     "gentle": "Gentile",
     "silent": "Silenzioso",
     "standard": "Normale",
     "medium": "Medio",
-    "turbo": "Turbo"
+    "turbo": "Turbo",
+    "normal": "Normale",
+    "max": "Massimo",
+    "max_plus": "Massimo+",
+    "high": "Alto",
+    "strong": "Forte",
+    "quiet": "Silenzioso",
+    "auto": "Automatico",
+    "balanced": "Bilanciato",
+    "custom": "Personalizzato",
+    "off": "Spento"
   },
   "common": {
-    "name": "Vacuum Card",
-    "description": "Vacuum card consente di controllare il tuo aspirapolvere.",
+    "name": "Scheda aspirapolvere",
+    "description": "La scheda aspirapolvere consente di controllare il robot aspirapolvere.",
     "start": "Pulisci",
     "continue": "Continua",
     "pause": "Pausa",
-    "stop": "Stop",
+    "stop": "Arresta",
     "return_to_base": "Base",
     "locate": "Trova aspirapolvere",
     "not_available": "Aspirapolvere non disponibile"
   },
   "error": {
+    "invalid_config": "Configurazione non valida",
     "missing_entity": "È necessario specificare l'entità!"
   },
   "warning": {
-    "actions_array": ""
+    "actions_array": "AVVISO: 'actions' è riservato per sovrascrivere le azioni predefinite dei pulsanti esistenti. Se la vostra intenzione era aggiungere azioni aggiuntive, usate invece l'opzione 'shortcuts'."
   },
   "editor": {
     "entity": "Entità (Richiesto)",
