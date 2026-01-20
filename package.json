@@ -6,8 +6,10 @@
   "main": "dist/vacuum-card.js",
   "scripts": {
     "start": "rollup -c --watch",
-    "lint": "eslint src",
+    "lint": "npm run lint:src && npm run lint:translations",
     "lint:fix": "eslint src --fix",
+    "lint:src": "eslint src",
+    "lint:translations": "node scripts/lint-translations.mjs",
     "format": "prettier --write .",
     "build": "rollup -c",
     "test": "npm run lint && npm run build",
