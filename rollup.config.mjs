@@ -61,6 +61,7 @@ const plugins = [
   !IS_DEV && minifyLiterals(),
   !IS_DEV &&
     terser({
+      maxWorkers: 1,
       format: {
         comments: false,
       },
