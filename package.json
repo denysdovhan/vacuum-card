@@ -29,6 +29,10 @@
     "email": "denysdovhan@gmail.com",
     "url": "http://denysdovhan.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denysdovhan/vacuum-card.git"
+  },
   "license": "MIT",
   "dependencies": {
     "custom-card-helpers": "^1.9.0",
