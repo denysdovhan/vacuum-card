@@ -1,4 +1,4 @@
-name-template: v$RESOLVED_VERSION ⚡️
+name-template: v$RESOLVED_VERSION 🧹
 tag-template: v$RESOLVED_VERSION
 exclude-contributors:
   - github-actions[bot]
@@ -21,6 +21,7 @@ categories:
     labels:
       - chore
       - dependencies
+      - documentation
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 version-resolver:
