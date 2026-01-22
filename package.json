@@ -53,7 +53,6 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-replace": "^6.0.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@semantic-release/git": "^10.0.1",
     "@types/lodash": "^4.17.21",
     "@typescript-eslint/eslint-plugin": "^8.51.0",
     "@typescript-eslint/parser": "^8.51.0",
@@ -72,7 +71,6 @@
     "rollup-plugin-postcss-lit": "^2.2.0",
     "rollup-plugin-serve": "^3.0.0",
     "rollup-plugin-typescript2": "^0.36.0",
-    "semantic-release": "^25.0.2",
     "typescript": "^5.9.3"
   },
   "browserslist": [
@@ -85,39 +83,5 @@
   },
   "prettier": {
     "singleQuote": true
-  },
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      [
-        "@semantic-release/commit-analyzer",
-        {
-          "preset": "angular",
-          "releaseRules": [
-            {
-              "type": "chore",
-              "scope": "deps",
-              "release": "patch"
-            }
-          ]
-        }
-      ],
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      [
-        "@semantic-release/github",
-        {
-          "assets": [
-            {
-              "path": "dist/vacuum-card.js",
-              "label": "vacuum-card.js"
-            }
-          ]
-        }
-      ],
-      "@semantic-release/git"
-    ]
   }
 }

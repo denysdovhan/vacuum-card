@@ -1,0 +1,44 @@
+name: Release Publish
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v6
+
+      - name: ⬢ Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          registry-url: https://registry.npmjs.org
+          node-version: latest
+          cache: npm
+
+      - name: 📦 Install Packages
+        run: npm ci
+
+      - name: 🧮 Set version from tag
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          npm version --no-git-tag-version "${TAG#v}"
+
+      - name: 🏗 Build
+        run: npm run build
+
+      - name: 🚀 Publish to npm
+        run: npm publish --provenance --access public
+
+      - name: 📦 Upload release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/vacuum-card.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

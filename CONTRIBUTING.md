@@ -34,3 +34,10 @@ Only native speaker can translate to specific language.
 5. Add `http://localhost:5000/vacuum-card.js` to your Lovelace resources.
 
 Now you can make changes to files in `src` folder. Development server will automatically rebuild on changes. Lovelace will load resource from development server. Refresh the browser to see changes. Make sure cache is cleared or disabled.
+
+## Release process
+
+1. Merge PRs into `main`. Release Drafter updates the draft release on each `main` push.
+2. Edit the draft release notes if needed.
+3. Publish the release with a tag like `vX.Y.Z`.
+4. Publishing triggers the release workflow to build the project, publish to npm, and upload `dist/vacuum-card.js` to the GitHub release.
