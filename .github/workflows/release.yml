@@ -1,4 +1,4 @@
-name: Release Publish
+name: Release
 on:
   release:
     types: [published]
@@ -8,8 +8,8 @@ permissions:
   id-token: write
 
 jobs:
-  publish:
-    name: Publish
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout Repo
