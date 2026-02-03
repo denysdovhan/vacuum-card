@@ -167,6 +167,7 @@ ha-card {
   align-items: center;
   justify-content: center;
   direction: ltr;
+  gap: var(--vc-spacing);
 }
 
 .status-text {
@@ -174,12 +175,10 @@ ha-card {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-left: calc(28px + var(--vc-spacing)); /* size + margin of spinner */
 }
 
-.status mwc-circular-progress {
-  --mdc-theme-primary: var(--vc-secondary-text-color) !important;
-  margin-left: var(--vc-spacing);
+.status .status-spinner {
+  --ha-spinner-color: var(--vc-secondary-text-color);
 }
 
 .vacuum-name {
