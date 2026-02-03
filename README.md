@@ -34,7 +34,6 @@ Just search for `Vacuum Card` in plugins tab.
 1. Download `vacuum-card.js` file from the [latest-release].
 2. Put `vacuum-card.js` file into your `config/www` folder.
 3. Add reference to `vacuum-card.js` in Lovelace. There's two way to do that:
-
    1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources Tab_ → Click Plus button → Set _Url_ as `/local/vacuum-card.js` → Set _Resource type_ as `JavaScript Module`.
       **Note:** If you do not see the Resources Tab, you will need to enable _Advanced Mode_ in your _User Profile_
    2. **Using YAML:** Add following code to `lovelace` section.
@@ -138,38 +137,38 @@ You can use any attribute of vacuum or even any entity by `entity_id` to display
 
 You can defined service invocations to override default actions behavior. Available actions to override are `start`, `pause`, `resume`, `stop`, `locate` and `return_to_base`.
 
-| Name           |   Type   | Default                           | Description                                     |
-| -------------- | :------: | --------------------------------- | ----------------------------------------------- |
-| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`. |
-| `service_data` | `object` | `service_data` for `service` call |
+| Name           |   Type   | Default  | Description                                     |
+| -------------- | :------: | -------- | ----------------------------------------------- |
+| `service`      | `string` | Optional | A service to call, i.e. `script.clean_bedroom`. |
+| `service_data` | `object` | Optional | `service_data` for `service` call               |
 
 ### `shortcuts` object
 
 You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning specific room and add them to this card with `shortcuts` option.
 
-| Name           |   Type   | Default                           | Description                                                             |
-| -------------- | :------: | --------------------------------- | ----------------------------------------------------------------------- |
-| `name`         | `string` | Optional                          | Friendly name of the action, i.e. `Clean bedroom`.                      |
-| `service`      | `string` | Optional                          | A service to call, i.e. `script.clean_bedroom`.                         |
-| `target`       | `object` | Optional                          | A `HassServiceTarget`, to define a target for the current service call. |
-| `icon`         | `string` | Optional                          | Any icon for action button.                                             |
-| `service_data` | `object` | `service_data` for `service` call |
+| Name           |   Type   | Default  | Description                                                             |
+| -------------- | :------: | -------- | ----------------------------------------------------------------------- |
+| `name`         | `string` | Optional | Friendly name of the action, i.e. `Clean bedroom`.                      |
+| `service`      | `string` | Optional | A service to call, i.e. `script.clean_bedroom`.                         |
+| `target`       | `object` | Optional | A `HassServiceTarget`, to define a target for the current service call. |
+| `icon`         | `string` | Optional | Any icon for action button.                                             |
+| `service_data` | `object` | Optional | `service_data` for `service` call                                       |
 
 ## Theming
 
 This card can be styled by changing the values of these CSS properties (globally or per-card via [`card-mod`][card-mod]):
 
-| Variable                    | Default value                                         | Description                          |
-| --------------------------- | ----------------------------------------------------- | ------------------------------------ |
-| `--vc-background`           | `transparent`                                         | Background of the card               |
-| `--vc-primary-text-color`   | `var(--primary-text-color)`                           | Vacuum name, stats values, etc       |
-| `--vc-secondary-text-color` | `var(--secondary-text-color)`                         | Status, stats units and titles, etc  |
-| `--vc-icon-color`           | `var(--secondary-text-color)`                         | Colors of icons                      |
-| `--vc-toolbar-background`   | `var(--vc-background)`                                | Background of the toolbar            |
-| `--vc-toolbar-text-color`   | `var(--secondary-text-color)`                         | Color of the toolbar texts           |
-| `--vc-toolbar-icon-color`   | `var(--secondary-text-color)`                         | Color of the toolbar icons           |
-| `--vc-divider-color`        | `var(--entities-divider-color, var(--divider-color))` | Color of dividers                    |
-| `--vc-spacing`              | `10px`                                                | Paddings and margins inside the card |
+| Variable                    | Default value                                                          | Description                                         |
+| --------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------- |
+| `--vc-background`           | `var(--ha-card-background, var(--card-background-color, transparent))` | Card background.                                    |
+| `--vc-primary-text-color`   | `var(--primary-text-color)`                                            | Vacuum name, stats values, etc.                     |
+| `--vc-secondary-text-color` | `var(--secondary-text-color)`                                          | Status, stats units and titles, etc.                |
+| `--vc-icon-color`           | `var(--secondary-text-color)`                                          | Colors of icons.                                    |
+| `--vc-toolbar-background`   | `transparent`                                                          | Toolbar background (transparent to avoid stacking). |
+| `--vc-toolbar-text-color`   | `var(--secondary-text-color)`                                          | Color of the toolbar texts.                         |
+| `--vc-toolbar-icon-color`   | `var(--secondary-text-color)`                                          | Color of the toolbar icons.                         |
+| `--vc-divider-color`        | `var(--entities-divider-color, var(--divider-color))`                  | Color of dividers.                                  |
+| `--vc-spacing`              | `10px`                                                                 | Paddings and margins inside the card.               |
 
 ### Styling via theme
 
