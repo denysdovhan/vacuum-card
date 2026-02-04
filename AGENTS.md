@@ -1,5 +1,10 @@
 # Repository Guidelines
 
+## Instructions
+
+- Always refer to `home-assistant-js-websocket` library for types and functions to interact with the Home Assistant API.
+- When interaction with Home Assistant API is needed, use `custom-card-helpers` library for helper utilities for the card lifecycle and events.
+
 ## Project Structure & Module Organization
 
 - `src/`: TypeScript source for the custom Lovelace card (entry: `src/vacuum-card.ts`).
@@ -36,6 +41,11 @@
 - Production optimizations include HTML literal minification and Terser.
 - Utility helpers include Lodash (`get`).
 - Developer tooling includes ESLint, Prettier, Husky, and lint-staged.
+
+## Documentations
+
+- This card uses the [custom-card-helpers](https://custom-cards.github.io/custom-card-helpers/modules.html) library with helper utilities for the card lifecycle and events. Always refer to the documentation for useful functions and utilities.
+- Use the [home-assistant-js-websocket](https://www.npmjs.com/package/home-assistant-js-websocket) library for types and functions to interact with the Home Assistant API.
 
 ## Testing Guidelines
 
