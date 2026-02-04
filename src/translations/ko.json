@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "구성요소 (필수)",
+    "battery_entity": "배터리 엔티티(선택 사항)",
     "map": "도면 (선택)",
     "image": "이미지 (선택)",
     "compact_view": "간단히 보기",

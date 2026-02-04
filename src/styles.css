@@ -48,6 +48,15 @@ ha-card {
 
   & .tip {
     cursor: pointer;
+
+    & ha-icon {
+      --mdc-icon-size: 18px;
+    }
+  }
+
+  & .tip-title {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
@@ -267,10 +276,4 @@ ha-icon {
 .toolbar ha-icon {
   color: var(--vc-toolbar-icon-color);
   display: flex;
-}
-
-.icon-title {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0 3px;
 }

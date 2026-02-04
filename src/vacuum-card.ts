@@ -1,10 +1,13 @@
-import { CSSResultGroup, LitElement, PropertyValues, html, nothing } from 'lit';
+import { LitElement, html, nothing } from 'lit';
+import type { CSSResultGroup, PropertyValues } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import {
   hasConfigOrEntityChanged,
   fireEvent,
   HomeAssistant,
   ServiceCallRequest,
+  computeStateDisplay,
+  stateIcon,
 } from 'custom-card-helpers';
 import registerTemplates from 'ha-template';
 import get from 'lodash/get';
@@ -17,6 +20,7 @@ import {
   VacuumCardConfig,
   VacuumEntity,
   HassEntity,
+  VacuumBatteryEntity,
   VacuumEntityState,
   VacuumServiceCallParams,
   VacuumActionParams,
@@ -75,6 +79,14 @@ export class VacuumCard extends LitElement {
       return null;
     }
     return this.hass.states[this.config.map];
+  }
+
+  get batteryEntity(): VacuumBatteryEntity | null {
+    const batteryEntityId = this.config.battery_entity;
+    if (!this.hass || !batteryEntityId) {
+      return null;
+    }
+    return (this.hass.states[batteryEntityId] as VacuumBatteryEntity) ?? null;
   }
 
   public setConfig(config: VacuumCardConfig): void {
@@ -196,7 +208,7 @@ export class VacuumCard extends LitElement {
         <ha-button-menu @click="${(e: Event) => e.stopPropagation()}">
           <div slot="trigger">
             <ha-icon icon="mdi:fan"></ha-icon>
-            <span class="icon-title">
+            <span class="tip-title">
               ${localize(`source.${source.toLowerCase()}`) || source}
             </span>
           </div>
@@ -216,13 +228,52 @@ export class VacuumCard extends LitElement {
     `;
   }
 
-  private renderBattery(): Template {
+  private getBatteryDisplay(): {
+    icon: string;
+    value: string;
+    entityId: string;
+  } | null {
+    const batteryEntity = this.batteryEntity;
+
+    if (batteryEntity) {
+      const value = computeStateDisplay(
+        this.hass.localize,
+        batteryEntity,
+        this.hass.locale,
+      );
+      const icon = stateIcon(batteryEntity) ?? 'mdi:battery';
+
+      return {
+        icon,
+        value,
+        entityId: batteryEntity.entity_id,
+      };
+    }
+
     const { battery_level, battery_icon } = this.getAttributes(this.entity);
 
+    if (battery_level == null) {
+      return null;
+    }
+
+    return {
+      icon: battery_icon ?? 'mdi:battery',
+      value: `${battery_level}%`,
+      entityId: this.entity.entity_id,
+    };
+  }
+
+  private renderBattery(): Template {
+    const battery = this.getBatteryDisplay();
+
+    if (!battery) {
+      return nothing;
+    }
+
     return html`
-      <div class="tip" @click="${() => this.handleMore()}">
-        <ha-icon icon="${battery_icon}"></ha-icon>
-        <span class="icon-title">${battery_level}%</span>
+      <div class="tip" @click="${() => this.handleMore(battery.entityId)}">
+        <ha-icon icon="${battery.icon}"></ha-icon>
+        <span class="tip-title">${battery.value}</span>
       </div>
     `;
   }

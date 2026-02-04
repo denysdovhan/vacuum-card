@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entity (Būtina)",
+    "battery_entity": "Baterijos esybė (Pasirinktinai)",
     "map": "Žemėlapio kamera (Neprivaloma)",
     "image": "Paveikslėlis (Neprivaloma)",
     "compact_view": "Glaustas vaizdas",

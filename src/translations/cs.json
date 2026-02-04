@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entita (Povinný)",
+    "battery_entity": "Entita baterie (Volitelné)",
     "map": "Mapa (Nepovinný)",
     "image": "Fotka (Nepovinný)",
     "compact_view": "Kompaktní zobrazení",

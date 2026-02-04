@@ -48,6 +48,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     }
 
     const vacuumEntities = this.getEntitiesByType('vacuum');
+    const batteryEntities = this.getEntitiesByType('sensor');
     const cameraEntities = [
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
@@ -68,6 +69,25 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
             validationMessage=${localize('error.missing_entity')}
           >
             ${vacuumEntities.map(
+              (entity) =>
+                html` <mwc-list-item .value=${entity}
+                  >${entity}</mwc-list-item
+                >`,
+            )}
+          </ha-select>
+        </div>
+
+        <div class="option">
+          <ha-select
+            .label=${localize('editor.battery_entity')}
+            @selected=${this.valueChanged}
+            .configValue=${'battery_entity'}
+            .value=${this.config.battery_entity}
+            @closed=${(e: Event) => e.stopPropagation()}
+            fixedMenuPosition
+            naturalMenuWidth
+          >
+            ${batteryEntities.map(
               (entity) =>
                 html` <mwc-list-item .value=${entity}
                   >${entity}</mwc-list-item

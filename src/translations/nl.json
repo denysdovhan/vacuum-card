@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entiteit (Verplicht)",
+    "battery_entity": "Batterijentiteit (Optioneel)",
     "map": "Kaart Camera (Optioneel)",
     "image": "Afbeelding (Optioneel)",
     "compact_view": "Compacte weergave",

@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "實體 (必填)",
+    "battery_entity": "電池實體（可選）",
     "map": "地圖 (選填)",
     "image": "圖片 (選填)",
     "compact_view": "精簡檢視",

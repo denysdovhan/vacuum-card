@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Enhed (Påkrævet)",
+    "battery_entity": "Batteri-entitet (Valgfri)",
     "map": "Entitet med kamera til kortvisning (Valgfrit)",
     "image": "Billede (Valgfrit)",
     "compact_view": "Kompakt visning",

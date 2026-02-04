@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entité (obligatoire)",
+    "battery_entity": "Entité de batterie (Facultatif)",
     "map": "Caméra de carte (facultatif)",
     "image": "Image (facultatif)",
     "compact_view": "Vue compacte",

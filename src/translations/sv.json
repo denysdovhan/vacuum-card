@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entitet (Obligatoriskt)",
+    "battery_entity": "Batterientitet (Valfritt)",
     "map": "Kartkamera (Valfritt)",
     "image": "Bild (Valfritt)",
     "compact_view": "Kompakt vy",

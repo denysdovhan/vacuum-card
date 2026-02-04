@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entitat (Requerit)",
+    "battery_entity": "Entitat de bateria (Opcional)",
     "map": "Càmera de mapa (Opcional)",
     "image": "Imatge (Opcional)",
     "compact_view": "Visualització compacta",

@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entity (Yêu cầu)",
+    "battery_entity": "Thực thể pin (Tùy chọn)",
     "map": "Hiển thị sơ đồ   (Tuỳ chọn)",
     "image": "Image (Tuỳ chọn)",
     "compact_view": "Thu gọn",

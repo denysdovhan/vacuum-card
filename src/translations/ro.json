@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Entitate (Necesar)",
+    "battery_entity": "Entitate baterie (Opțional)",
     "map": "Camera Harta (Optional)",
     "image": "Imagine (Optional)",
     "compact_view": "Vizualizare compactă",

@@ -61,6 +61,7 @@
   },
   "editor": {
     "entity": "Oppføring (påkravd)",
+    "battery_entity": "Batteri-eining (Valfri)",
     "map": "Kartkamera (valfritt)",
     "image": "Bilde (valfritt)",
     "compact_view": "Kompakt vising",
