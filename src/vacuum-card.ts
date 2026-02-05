@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit';
 import type { CSSResultGroup, PropertyValues } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { repeat } from 'lit/directives/repeat.js';
 import {
   hasConfigOrEntityChanged,
   fireEvent,
@@ -165,9 +166,62 @@ export class VacuumCard extends LitElement {
     }
   }
 
-  private handleSpeed(e: PointerEvent): void {
-    const fan_speed = (<HTMLDivElement>e.target).getAttribute('value');
+  private handleSpeed(e: CustomEvent<{ item?: { value?: string } }>): void {
+    const fan_speed = e.detail.item?.value;
+
+    console.log('Selected fan speed:', fan_speed);
+
+    if (!fan_speed) {
+      return;
+    }
+
     this.callVacuumService('set_fan_speed', { request: false }, { fan_speed });
+  }
+
+  private renderDropdown({
+    icon,
+    value,
+    options,
+    onSelect,
+    formatLabel,
+    ariaLabel,
+  }: {
+    icon: string;
+    value: string;
+    options: string[];
+    onSelect: (e: CustomEvent<{ item?: { value?: string } }>) => void;
+    formatLabel: (value: string) => string;
+    ariaLabel?: string;
+  }): Template {
+    const selectedLabel = formatLabel(value);
+
+    return html`
+      <div class="tip dropdown-tip" @click=${(e: Event) => e.stopPropagation()}>
+        <ha-dropdown placement="bottom" @wa-select=${onSelect}>
+          <button
+            class="dropdown-trigger"
+            slot="trigger"
+            aria-label=${ariaLabel ?? selectedLabel}
+          >
+            <ha-icon icon=${icon}></ha-icon>
+            <span class="tip-title">${selectedLabel}</span>
+            <ha-icon
+              class="dropdown-trigger-arrow"
+              icon="mdi:menu-down"
+            ></ha-icon>
+          </button>
+          ${repeat(
+            options,
+            (item) => item,
+            (item) => html`
+              <ha-dropdown-item .value=${item} ?checked=${item === value}>
+                ${formatLabel(item)}
+              </ha-dropdown-item>
+            `,
+          )}
+        </ha-dropdown>
+      </div>
+    `;
   }
 
   private handleVacuumAction(
@@ -197,35 +251,21 @@ export class VacuumCard extends LitElement {
       this.entity,
     );
 
-    if (!sources || !source) {
+    if (!Array.isArray(sources) || sources.length === 0 || !source) {
       return nothing;
     }
 
-    const selected = sources.indexOf(source);
+    const formatLabel = (value: string) =>
+      localize(`source.${value.toLowerCase()}`) || value;
 
-    return html`
-      <div class="tip">
-        <ha-button-menu @click="${(e: Event) => e.stopPropagation()}">
-          <div slot="trigger">
-            <ha-icon icon="mdi:fan"></ha-icon>
-            <span class="tip-title">
-              ${localize(`source.${source.toLowerCase()}`) || source}
-            </span>
-          </div>
-          ${sources.map(
-            (item, index) => html`
-              <mwc-list-item
-                ?activated=${selected === index}
-                value=${item}
-                @click=${this.handleSpeed}
-              >
-                ${localize(`source.${item.toLowerCase()}`) || item}
-              </mwc-list-item>
-            `,
-          )}
-        </ha-button-menu>
-      </div>
-    `;
+    return this.renderDropdown({
+      icon: 'mdi:fan',
+      value: source,
+      options: sources,
+      onSelect: this.handleSpeed,
+      formatLabel,
+      ariaLabel: 'Fan speed',
+    });
   }
 
   private getBatteryDisplay(): {

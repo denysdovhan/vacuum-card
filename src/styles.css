@@ -54,6 +54,33 @@ ha-card {
     }
   }
 
+  & .dropdown-tip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  & .dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: 0;
+    color: var(--vc-secondary-text-color);
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+  }
+
+  & .dropdown-trigger:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  & .dropdown-trigger-arrow {
+    --mdc-icon-size: 18px;
+  }
+
   & .tip-title {
     display: inline-block;
     vertical-align: middle;
