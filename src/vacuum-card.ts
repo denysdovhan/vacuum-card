@@ -259,7 +259,7 @@ export class VacuumCard extends LitElement {
       icon: 'mdi:fan',
       value: source,
       options: sources,
-      onSelect: (value: string) => this.handleSpeed(value),
+      onSelect: this.handleSpeed,
       formatLabel: (value: string) =>
         localize(`source.${value.toLowerCase()}`) ?? value,
       ariaLabel: localize('source.fan_speed') || 'Fan speed',
