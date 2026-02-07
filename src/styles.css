@@ -44,10 +44,14 @@ ha-card {
   gap: var(--vc-spacing);
   flex-grow: 1;
   flex-wrap: wrap;
+  align-items: center;
   padding: var(--vc-spacing);
 
   & .tip {
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 
     & ha-icon {
       --mdc-icon-size: 18px;
@@ -69,6 +73,7 @@ ha-card {
     color: var(--vc-secondary-text-color);
     cursor: pointer;
     font: inherit;
+    line-height: 1;
     padding: 0;
   }
 
@@ -83,6 +88,7 @@ ha-card {
 
   & .tip-title {
     display: inline-block;
+    line-height: 1;
     vertical-align: middle;
   }
 }
