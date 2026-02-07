@@ -167,15 +167,15 @@ export class VacuumCard extends LitElement {
   }
 
   private handleSpeed(e: CustomEvent<{ item?: { value?: string } }>): void {
-    const fan_speed = e.detail.item?.value;
-
-    console.log('Selected fan speed:', fan_speed);
-
-    if (!fan_speed) {
-      return;
-    }
-
-    this.callVacuumService('set_fan_speed', { request: false }, { fan_speed });
+    this.callVacuumService(
+      'set_fan_speed',
+      {
+        request: false,
+      },
+      {
+        fan_speed: e.detail.item?.value,
+      },
+    );
   }
 
   private renderDropdown({
@@ -255,15 +255,13 @@ export class VacuumCard extends LitElement {
       return nothing;
     }
 
-    const formatLabel = (value: string) =>
-      localize(`source.${value.toLowerCase()}`) || value;
-
     return this.renderDropdown({
       icon: 'mdi:fan',
       value: source,
       options: sources,
       onSelect: this.handleSpeed,
-      formatLabel,
+      formatLabel: (value: string) =>
+        localize(`source.${value.toLowerCase()}`) ?? value,
       ariaLabel: 'Fan speed',
     });
   }
