@@ -41,6 +41,16 @@
     "custom": "Custom",
     "off": "Off"
   },
+  "mode": {
+    "aspirapolvere": "Aspirapolvere",
+    "aspirapolvere e lavapavimenti": "Aspirapolvere e Lavapavimenti",
+    "lavapavimenti": "Lavapavimenti"
+  },
+  "water": {
+    "basso": "Basso",
+    "medio": "Medio",
+    "alto": "Alto"
+  },
   "common": {
     "name": "Vacuum Card",
     "description": "Vacuum card allows you to control your robot vacuum.",

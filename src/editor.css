@@ -17,3 +17,9 @@
 .option paper-input {
   width: 100%;
 }
+h3 {
+  margin: 16px 0 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-text-color);
+}
