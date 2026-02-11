@@ -79,6 +79,7 @@ export class VacuumCard extends LitElement {
     return this.hass.states[this.config.entity] as VacuumEntity;
   }
 
+
   get map(): HassEntity | null {
     if (!this.hass || !this.config.map) {
       return null;
