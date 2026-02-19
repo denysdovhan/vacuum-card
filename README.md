@@ -252,7 +252,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - **Shark** IQ
 - **Ecova**cs Deebot 950, Deebot OZMO T8 AIVI, Deebot N79, Deebot N8, Deebot N8+, T9 AIVI, Deebot T20 Ombi
 - **Eufy** Robovac 30c, Robovac 35c, Robovac 15C Max, Robovac L70 Hybrid, Robovac X8, Robovac X8 Hybrid, Robovac G40
-- **EcoVacs** T9 AIVI
+- **EcoVacs** T9 AIVI, X8 PRO OMNI
 - **Dreame** Z10 Pro, L10 Pro, D9, F9
 - 360 S7 Pro
 - KaBum! Smart 500
