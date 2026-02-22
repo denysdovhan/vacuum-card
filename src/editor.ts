@@ -70,8 +70,8 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           >
             ${vacuumEntities.map(
               (entity) =>
-                html` <mwc-list-item .value=${entity}
-                  >${entity}</mwc-list-item
+                html` <ha-list-item .value=${entity}
+                  >${entity}</ha-list-item
                 >`,
             )}
           </ha-select>
@@ -89,8 +89,8 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           >
             ${batteryEntities.map(
               (entity) =>
-                html` <mwc-list-item .value=${entity}
-                  >${entity}</mwc-list-item
+                html` <ha-list-item .value=${entity}
+                  >${entity}</ha-list-item
                 >`,
             )}
           </ha-select>
@@ -108,20 +108,20 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           >
             ${cameraEntities.map(
               (entity) =>
-                html` <mwc-list-item .value=${entity}
-                  >${entity}</mwc-list-item
+                html` <ha-list-item .value=${entity}
+                  >${entity}</ha-list-item
                 >`,
             )}
           </ha-select>
         </div>
 
         <div class="option">
-          <paper-input
+          <ha-textfield
             label="${localize('editor.image')}"
             .value=${this.image}
             .configValue=${'image'}
-            @value-changed=${this.valueChanged}
-          ></paper-input>
+            @change=${this.valueChanged}
+          ></ha-textfield>
         </div>
 
         <div class="option">

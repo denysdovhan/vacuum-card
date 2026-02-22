@@ -38,12 +38,18 @@ export interface VacuumBatteryEntity extends HassEntityBase {
   attributes: HassEntityAttributeBase;
 }
 
+export interface VacuumCardStatThreshold {
+  value: number;
+  color: string;
+}
+
 export interface VacuumCardStat {
   entity_id?: string;
   attribute?: string;
   value_template?: string;
   unit?: string;
   subtitle?: string;
+  thresholds?: VacuumCardStatThreshold[];
 }
 
 export interface VacuumCardAction {
@@ -66,6 +72,8 @@ export interface VacuumCardConfig {
   map: string;
   map_refresh: number;
   image: string;
+  language: string;
+  ha_ripple: boolean;
   show_name: boolean;
   show_status: boolean;
   show_toolbar: boolean;

@@ -26,6 +26,7 @@ import * as pt_br from './translations/pt-BR.json';
 import * as ro from './translations/ro.json';
 import * as ru from './translations/ru.json';
 import * as sv from './translations/sv.json';
+import * as tr from './translations/tr.json';
 import * as tw from './translations/tw.json';
 import * as uk from './translations/uk.json';
 import * as vi from './translations/vi.json';
@@ -62,6 +63,7 @@ const languages: Record<string, Translations> = {
   ro,
   ru,
   sv,
+  tr,
   tw,
   uk,
   vi,
@@ -74,21 +76,28 @@ export default function localize(
   str: string,
   search?: string,
   replace?: string,
+  forceLang?: string,
 ): string | undefined {
   const [section, key] = str.toLowerCase().split('.');
 
-  let langStored: string | null = null;
+  let lang: string;
 
-  try {
-    langStored = JSON.parse(localStorage.getItem('selectedLanguage') ?? '');
-  } catch {
-    langStored = localStorage.getItem('selectedLanguage');
+  if (forceLang) {
+    lang = forceLang.replace('-', '_').toLowerCase();
+  } else {
+    let langStored: string | null = null;
+
+    try {
+      langStored = JSON.parse(localStorage.getItem('selectedLanguage') ?? '');
+    } catch {
+      langStored = localStorage.getItem('selectedLanguage');
+    }
+
+    lang = (langStored || navigator.language.split('-')[0] || DEFAULT_LANG)
+      .replace(/['"]+/g, '')
+      .replace('-', '_')
+      .toLowerCase();
   }
-
-  const lang = (langStored || navigator.language.split('-')[0] || DEFAULT_LANG)
-    .replace(/['"]+/g, '')
-    .replace('-', '_')
-    .toLowerCase();
 
   let translated: string | undefined;
 

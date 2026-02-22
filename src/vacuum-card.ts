@@ -71,6 +71,10 @@ export class VacuumCard extends LitElement {
     };
   }
 
+  private localize(str: string, search?: string, replace?: string): string | undefined {
+    return localize(str, search, replace, this.config?.language);
+  }
+
   get entity(): VacuumEntity {
     return this.hass.states[this.config.entity] as VacuumEntity;
   }
@@ -261,8 +265,8 @@ export class VacuumCard extends LitElement {
       options: sources,
       onSelect: this.handleSpeed,
       formatLabel: (value: string) =>
-        localize(`source.${value.toLowerCase()}`) ?? value,
-      ariaLabel: localize('source.fan_speed') || 'Fan speed',
+        this.localize(`source.${value.toLowerCase()}`) ?? value,
+      ariaLabel: this.localize('source.fan_speed') || 'Fan speed',
     });
   }
 
@@ -345,12 +349,35 @@ export class VacuumCard extends LitElement {
     `;
   }
 
+  private getThresholdColor(
+    value: string,
+    thresholds?: { value: number; color: string }[],
+  ): string | undefined {
+    if (!thresholds || thresholds.length === 0) {
+      return undefined;
+    }
+
+    const numValue = parseFloat(value);
+    if (isNaN(numValue)) {
+      return undefined;
+    }
+
+    const sorted = [...thresholds].sort((a, b) => a.value - b.value);
+    for (const threshold of sorted) {
+      if (numValue < threshold.value) {
+        return threshold.color;
+      }
+    }
+
+    return undefined;
+  }
+
   private renderStats(state: VacuumEntityState): Template {
     const statsList =
       this.config.stats[state] || this.config.stats.default || [];
 
     const stats = statsList.map(
-      ({ entity_id, attribute, value_template, unit, subtitle }) => {
+      ({ entity_id, attribute, value_template, unit, subtitle, thresholds }) => {
         if (!entity_id && !attribute) {
           return nothing;
         }
@@ -367,6 +394,8 @@ export class VacuumCard extends LitElement {
           return nothing;
         }
 
+        const color = this.getThresholdColor(state, thresholds);
+
         const value = html`
           <ha-template
             hass=${this.hass}
@@ -378,7 +407,9 @@ export class VacuumCard extends LitElement {
 
         return html`
           <div class="stats-block" @click="${() => this.handleMore(entity_id)}">
-            <span class="stats-value">${value}</span>
+            <span class="stats-value" style=${color ? `color: ${color}` : ''}>
+              ${value}
+            </span>
             ${unit}
             <div class="stats-subtitle">${subtitle}</div>
           </div>
@@ -406,7 +437,7 @@ export class VacuumCard extends LitElement {
   private renderStatus(): Template {
     const { status } = this.getAttributes(this.entity);
     const localizedStatus =
-      localize(`status.${status.toLowerCase()}`) || status;
+      this.localize(`status.${status.toLowerCase()}`) || status;
 
     if (!this.config.show_status) {
       return nothing;
@@ -440,15 +471,15 @@ export class VacuumCard extends LitElement {
           <div class="toolbar">
             <paper-button @click="${this.handleVacuumAction('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
-              ${localize('common.pause')}
+              ${this.localize('common.pause')}
             </paper-button>
             <paper-button @click="${this.handleVacuumAction('stop')}">
               <ha-icon icon="hass:stop"></ha-icon>
-              ${localize('common.stop')}
+              ${this.localize('common.stop')}
             </paper-button>
             <paper-button @click="${this.handleVacuumAction('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
-              ${localize('common.return_to_base')}
+              ${this.localize('common.return_to_base')}
             </paper-button>
           </div>
         `;
@@ -464,11 +495,11 @@ export class VacuumCard extends LitElement {
               })}"
             >
               <ha-icon icon="hass:play"></ha-icon>
-              ${localize('common.continue')}
+              ${this.localize('common.continue')}
             </paper-button>
             <paper-button @click="${this.handleVacuumAction('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
-              ${localize('common.return_to_base')}
+              ${this.localize('common.return_to_base')}
             </paper-button>
           </div>
         `;
@@ -484,11 +515,11 @@ export class VacuumCard extends LitElement {
               })}"
             >
               <ha-icon icon="hass:play"></ha-icon>
-              ${localize('common.continue')}
+              ${this.localize('common.continue')}
             </paper-button>
             <paper-button @click="${this.handleVacuumAction('pause')}">
               <ha-icon icon="hass:pause"></ha-icon>
-              ${localize('common.pause')}
+              ${this.localize('common.pause')}
             </paper-button>
           </div>
         `;
@@ -513,7 +544,7 @@ export class VacuumCard extends LitElement {
 
         const dockButton = html`
           <ha-icon-button
-            label="${localize('common.return_to_base')}"
+            label="${this.localize('common.return_to_base')}"
             @click="${this.handleVacuumAction('return_to_base')}"
             ><ha-icon icon="hass:home-map-marker"></ha-icon>
           </ha-icon-button>
@@ -522,13 +553,13 @@ export class VacuumCard extends LitElement {
         return html`
           <div class="toolbar">
             <ha-icon-button
-              label="${localize('common.start')}"
+              label="${this.localize('common.start')}"
               @click="${this.handleVacuumAction('start')}"
               ><ha-icon icon="hass:play"></ha-icon>
             </ha-icon-button>
 
             <ha-icon-button
-              label="${localize('common.locate')}"
+              label="${this.localize('common.locate')}"
               @click="${this.handleVacuumAction('locate', { request: false })}"
               ><ha-icon icon="mdi:map-marker"></ha-icon>
             </ha-icon-button>
@@ -548,7 +579,7 @@ export class VacuumCard extends LitElement {
         <div class="preview not-available">
           <div class="metadata">
             <div class="not-available">
-              ${localize('common.not_available')}
+              ${this.localize('common.not_available')}
             </div>
           <div>
         </div>
@@ -563,7 +594,7 @@ export class VacuumCard extends LitElement {
 
     return html`
       <ha-card>
-        <ha-ripple></ha-ripple>
+        ${this.config.ha_ripple ? html`<ha-ripple></ha-ripple>` : nothing}
         <div class="preview">
           <div class="header">
             <div class="tips">

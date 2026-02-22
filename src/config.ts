@@ -23,6 +23,8 @@ export default function buildConfig(
     map: config.map ?? '',
     map_refresh: config.map_refresh ?? 5,
     image: config.image ?? 'default',
+    language: config.language ?? '',
+    ha_ripple: config.ha_ripple ?? false,
     show_name: config.show_name ?? true,
     show_status: config.show_status ?? true,
     show_toolbar: config.show_toolbar ?? true,
