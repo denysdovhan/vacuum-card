@@ -14,3 +14,15 @@ updates:
     open-pull-requests-limit: 25
     cooldown:
       default-days: 21 # 3 weeks
+    groups:
+      eslint:
+        patterns:
+          - 'eslint'
+          - 'eslint-*'
+          - '@eslint/*'
+          - '@typescript-eslint/*'
+      rollup:
+        patterns:
+          - 'rollup'
+          - 'rollup-*'
+          - '@rollup/*'
