@@ -246,7 +246,7 @@ If this card works with your vacuum cleaner, please open a PR and your model to 
 - **Mijia** Robot Vacuum Cleaner 1C (STYTJ01ZHM)
 - **Xiaomi** Mi Robot (STYJ02YM), Mi Robot 1S, Mi Roborock V1 (SDJQR02RR), Mijia 1C, Mi Robot Vacuum-Mop P, Robot Vacuum E10
 - **Roomba** 670, 675, 676, 697, 960, 980, 981, i3, i7+, e5, S9, s9+, j7
-- **Braava** M6
+- **Braava** M6, Jet 240 (via [braava_240_ble](https://github.com/mtheli/braava_240_ble))
 - **Dyson** 360 Eye
 - **Neato** D7, D6, D4
 - **Shark** IQ
