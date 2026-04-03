@@ -16,5 +16,5 @@ jobs:
     steps:
       - name: 📝 Update draft
         uses: release-drafter/release-drafter@v7
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
