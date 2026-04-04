@@ -1,0 +1,82 @@
+{
+  "status": {
+    "cleaning": "Temizliyor",
+    "auto": "Otomatik temizlik",
+    "spot": "Nokta temizliği",
+    "edge": "Kenar temizliği",
+    "single_room": "Tek oda temizliği",
+    "paused": "Duraklatıldı",
+    "idle": "Boşta",
+    "stop": "Durduruldu",
+    "charging": "Şarj Oluyor",
+    "returning": "İstasyona Dönüyor",
+    "returning_home": "İstasyona Dönüyor",
+    "docked": "İstasyonda",
+    "unknown": "Bilinmiyor",
+    "offline": "Çevrimdışı",
+    "error": "Hata",
+    "charger_disconnected": "Şarj bağlantısı kesildi",
+    "remote_control_active": "Uzaktan kontrol aktif",
+    "manual_mode": "Manuel mod",
+    "shutting_down": "Kapatılıyor",
+    "updating": "Güncelleniyor",
+    "waiting": "Bekliyor",
+    "going_to_target": "Hedefe Gidiyor",
+    "zoned_cleaning": "Bölge temizliği",
+    "segment_cleaning": "Oda Temizliği"
+  },
+  "source": {
+    "gentle": "Nazik",
+    "silent": "Sessiz",
+    "standard": "Standart",
+    "medium": "Orta",
+    "turbo": "Turbo",
+    "normal": "Normal",
+    "max": "Maksimum",
+    "max_plus": "Maksimum+",
+    "high": "Yüksek",
+    "strong": "Güçlü",
+    "quiet": "Sessiz",
+    "auto": "Otomatik",
+    "balanced": "Dengeli",
+    "custom": "Özel",
+    "off": "Kapalı"
+  },
+  "common": {
+    "name": "Süpürge Kartı",
+    "description": "Süpürge kartı, robot süpürgenizi kontrol etmenizi sağlar.",
+    "start": "Temizle",
+    "continue": "Devam et",
+    "pause": "Duraklat",
+    "stop": "Durdur",
+    "return_to_base": "İstasyona dön",
+    "locate": "Süpürgeyi bul",
+    "not_available": "Süpürge kullanılamıyor"
+  },
+  "error": {
+    "invalid_config": "Geçersiz yapılandırma",
+    "missing_entity": "Varlık belirtmek zorunludur!"
+  },
+  "warning": {
+    "actions_array": "UYARI: 'actions' mevcut düğmeler için varsayılan eylemleri geçersiz kılmak üzere ayrılmıştır. Amacınız ek eylemler eklemekse, bunun yerine 'shortcuts' seçeneğini kullanın."
+  },
+  "editor": {
+    "entity": "Varlık (Zorunlu)",
+    "battery_entity": "Pil Varlığı (İsteğe bağlı)",
+    "map": "Harita Kamerası (İsteğe bağlı)",
+    "image": "Görsel (İsteğe bağlı)",
+    "compact_view": "Kompakt Görünüm",
+    "compact_view_aria_label_on": "Kompakt görünümü aç",
+    "compact_view_aria_label_off": "Kompakt görünümü kapat",
+    "show_name": "Adı Göster",
+    "show_name_aria_label_on": "Ad gösterimini aç",
+    "show_name_aria_label_off": "Ad gösterimini kapat",
+    "show_status": "Durumu Göster",
+    "show_status_aria_label_on": "Durum gösterimini aç",
+    "show_status_aria_label_off": "Durum gösterimini kapat",
+    "show_toolbar": "Araç Çubuğunu Göster",
+    "show_toolbar_aria_label_on": "Araç çubuğu gösterimini aç",
+    "show_toolbar_aria_label_off": "Araç çubuğu gösterimini kapat",
+    "code_only_note": "Not: Eylemler ve istatistik seçenekleri yalnızca Kod Düzenleyici kullanılarak ayarlanabilir."
+  }
+}
