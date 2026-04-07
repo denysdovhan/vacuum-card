@@ -405,11 +405,29 @@ export class VacuumCard extends LitElement {
 
   private renderStatus(): Template {
     const { status } = this.getAttributes(this.entity);
-    const localizedStatus =
-      localize(`status.${status.toLowerCase()}`) || status;
 
     if (!this.config.show_status) {
       return nothing;
+    }
+
+    let s;
+    if (this.config.status_template === undefined) {
+      const localizedStatus =
+        localize(`status.${status.toLowerCase()}`) || status;
+      s = html`
+        <span class="status-text" alt=${localizedStatus}>
+          ${localizedStatus}
+        </span>
+      `;
+    } else {
+      s = html`
+        <ha-template
+          hass=${this.hass}
+          template=${this.config.status_template}
+          value=${status}
+          variables=${{ value: status }}
+        ></ha-template>
+      `;
     }
 
     return html`
@@ -417,9 +435,7 @@ export class VacuumCard extends LitElement {
         ${this.requestInProgress
           ? html`<ha-spinner class="status-spinner" size="tiny"></ha-spinner>`
           : nothing}
-        <span class="status-text" alt=${localizedStatus}>
-          ${localizedStatus}
-        </span>
+        ${s}
       </div>
     `;
   }
