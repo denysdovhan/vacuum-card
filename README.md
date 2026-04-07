@@ -202,7 +202,7 @@ I've added some animations for this card to make it alive. Animations are applie
 
 |              Cleaning               |                Docking                |
 | :---------------------------------: | :-----------------------------------: |
-| ![Cleaning anumation][cleaning-gif] | ![Returning anumation][returning-gif] |
+| ![Cleaning animation][cleaning-gif] | ![Returning animation][returning-gif] |
 
 This can be disabled by using the "animated" attribute.
 
