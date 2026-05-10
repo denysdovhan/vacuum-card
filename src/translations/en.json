@@ -39,7 +39,14 @@
     "auto": "Auto",
     "balanced": "Balanced",
     "custom": "Custom",
-    "off": "Off"
+    "off": "Off",
+    "fan_speed": "Mode",
+    "all": "Regular",
+    "short": "Fast mode",
+    "floor": "Floor only",
+    "water": "Water line",
+    "ultra": "Ultra clean",
+    "pickup": "Pickup"
   },
   "common": {
     "name": "Vacuum Card",
