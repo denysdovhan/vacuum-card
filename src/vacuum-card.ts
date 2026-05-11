@@ -53,7 +53,11 @@ export class VacuumCard extends LitElement {
   @state() private config!: VacuumCardConfig;
   @state() private requestInProgress = false;
   @state() private thumbUpdater: ReturnType<typeof setInterval> | null = null;
-
+  @state() private isLoadingWater: boolean = false;
+  @state() private isLoadingMode: boolean = false;
+  @state() private isLoadingFan: boolean = false;
+  @state() private isSuccess: boolean | null = null;
+  private _config?: VacuumCardConfig; // ⭐ AGGIUNGI QUESTA RIGA
   static get styles(): CSSResultGroup {
     return styles;
   }
@@ -75,6 +79,7 @@ export class VacuumCard extends LitElement {
     return this.hass.states[this.config.entity] as VacuumEntity;
   }
 
+
   get map(): HassEntity | null {
     if (!this.hass || !this.config.map) {
       return null;
@@ -92,6 +97,7 @@ export class VacuumCard extends LitElement {
 
   public setConfig(config: VacuumCardConfig): void {
     this.config = buildConfig(config);
+    this._config = config; // ⭐ Salva anche la config originale per le traduzioni
   }
 
   public getCardSize(): number {
@@ -167,15 +173,237 @@ export class VacuumCard extends LitElement {
   }
 
   private handleSpeed(e: CustomEvent<{ item?: { value?: string } }>): void {
-    this.callVacuumService(
-      'set_fan_speed',
-      {
-        request: false,
-      },
-      {
-        fan_speed: e.detail.item?.value,
-      },
-    );
+    const fan_speed = e.detail.item?.value;
+    if (!fan_speed) return;
+
+    this.isLoadingFan = true;
+    this.callVacuumService('set_fan_speed', { request: false }, { fan_speed });
+
+    setTimeout(() => {
+      console.log('leggo valore post update');
+    }, 5000);
+
+    // ⭐ LEGGI I VALORI DALLA CONFIG (o usa i default)
+    const entity_id =
+      this._config?.xiaomi_miot?.entity_id ?? this._config?.entity;
+    const mapping = this._config?.xiaomi_miot?.fan_speed || {
+      siid: 7,
+      piid: 5,
+    };
+
+    this.hass?.callService('xiaomi_miot', 'get_properties', {
+      update_entity: true,
+      entity_id: entity_id,
+      mapping: [mapping],
+    });
+
+    setTimeout(() => {
+      const updated =
+        this.hass?.states?.['vacuum.xiaomi_b112_fb10_robot_cleaner'];
+      const updatedVal = updated?.attributes?.['sweep.water_state'];
+
+      console.log('✅ Valore aggiornato dopo 10s:', updatedVal);
+
+      if (updatedVal === fan_speed) {
+        console.log("🎉 L'entità è stata aggiornata correttamente!");
+        this.isSuccess = true;
+      } else {
+        this.isSuccess = false;
+        console.warn(
+          "⚠️ L'entità NON è stata aggiornata (o è ancora in attesa di refresh).",
+        );
+      }
+
+      setTimeout(() => {
+        this.isLoadingFan = false;
+        this.isSuccess = null;
+        this.requestUpdate();
+      }, 1000);
+    }, 10000);
+  }
+
+  private getCleaningModeLabel(modeValue: number): string {
+    // ⭐ Prova a leggere dalla configurazione
+    if (this._config?.traduzioni_modalita?.[modeValue]) {
+      return this._config.traduzioni_modalita[modeValue];
+    }
+
+    // ⭐ Valori di default se non configurato
+    const defaultModes: Record<number, string> = {
+      0: 'Aspirapolvere',
+      1: 'Aspirapolvere e Lavapavimenti',
+      2: 'Lavapavimenti',
+    };
+
+    return defaultModes[modeValue] || `Modalità ${modeValue}`;
+  }
+
+  // ⭐ AGGIUNGI QUESTA NUOVA FUNZIONE
+  private getAllCleaningModes(): Record<number, string> {
+    return {
+      0: this.getCleaningModeLabel(0),
+      1: this.getCleaningModeLabel(1),
+      2: this.getCleaningModeLabel(2),
+    };
+  }
+  private handleModeChange(
+    e: CustomEvent<{ item?: { value?: string } }>,
+  ): void {
+    const mode = e.detail.item?.value;
+
+    if (mode !== null && mode !== undefined) {
+      const modeInt = parseInt(mode, 10);
+
+      if (!isNaN(modeInt)) {
+        this.isLoadingMode = true;
+
+        this.hass?.callService('xiaomi_miot', 'set_property', {
+          entity_id: 'vacuum.xiaomi_b112_fb10_robot_cleaner',
+          field: 'vacuum.mode',
+          value: modeInt,
+        });
+
+        setTimeout(() => {
+          console.log('leggo valore post update');
+        }, 5000);
+
+        this.hass?.callService('xiaomi_miot', 'get_properties', {
+          update_entity: true,
+          entity_id: 'vacuum.xiaomi_b112_fb10_robot_cleaner',
+          mapping: [
+            {
+              siid: 2,
+              piid: 4,
+            },
+          ],
+        });
+
+        setTimeout(() => {
+          const updated =
+            this.hass?.states?.['vacuum.xiaomi_b112_fb10_robot_cleaner'];
+          const updatedVal = updated?.attributes?.['vacuum.mode'];
+
+          console.log('✅ Valore aggiornato dopo 10s:', updatedVal);
+
+          if (updatedVal === modeInt) {
+            console.log("🎉 L'entità è stata aggiornata correttamente!");
+            this.isSuccess = true;
+          } else {
+            this.isSuccess = false;
+            console.warn(
+              "⚠️ L'entità NON è stata aggiornata (o è ancora in attesa di refresh).",
+            );
+          }
+
+          setTimeout(() => {
+            this.isLoadingMode = false;
+            this.isSuccess = null;
+            this.requestUpdate();
+          }, 1000);
+        }, 10000);
+      } else {
+        console.error('Invalid mode value:', mode);
+      }
+    } else {
+      console.error('Mode attribute is null');
+    }
+  }
+
+  private handleWaterChange(
+    e: CustomEvent<{ item?: { value?: string } }>,
+  ): void {
+    const mode = e.detail.item?.value;
+    console.log('▶️ Valore selezionato:', mode);
+
+    if (mode !== null && mode !== undefined) {
+      const modeInt = parseInt(mode, 10);
+
+      if (!isNaN(modeInt)) {
+        this.isLoadingWater = true;
+
+        const attributes = this.entity?.attributes as Record<string, any>;
+        const currentVal = attributes?.['sweep.water_state'];
+
+        console.log('📦 Valore attuale prima del cambio:', currentVal);
+
+        this.hass?.callService('xiaomi_miot', 'set_property', {
+          entity_id: 'vacuum.xiaomi_b112_fb10_robot_cleaner',
+          field: 'sweep.water_state',
+          value: modeInt,
+        });
+
+        setTimeout(() => {
+          console.log('leggo valore post update');
+        }, 5000);
+
+        this.hass?.callService('xiaomi_miot', 'get_properties', {
+          update_entity: true,
+          entity_id: 'vacuum.xiaomi_b112_fb10_robot_cleaner',
+          mapping: [
+            {
+              siid: 7,
+              piid: 6,
+            },
+          ],
+        });
+
+        setTimeout(() => {
+          const updated =
+            this.hass?.states?.['vacuum.xiaomi_b112_fb10_robot_cleaner'];
+          const updatedVal = updated?.attributes?.['sweep.water_state'];
+
+          console.log('✅ Valore aggiornato dopo 10s:', updatedVal);
+
+          if (updatedVal === modeInt) {
+            console.log("🎉 L'entità è stata aggiornata correttamente!");
+            this.isSuccess = true;
+          } else {
+            this.isSuccess = false;
+            console.warn(
+              "⚠️ L'entità NON è stata aggiornata (o è ancora in attesa di refresh).",
+            );
+          }
+
+          setTimeout(() => {
+            this.isLoadingWater = false;
+            this.isSuccess = null;
+            this.requestUpdate();
+          }, 1000);
+        }, 10000);
+      } else {
+        console.error('❌ Valore non numerico:', mode);
+      }
+    } else {
+      console.error('❌ Attributo `value` nullo');
+    }
+  }
+
+  private navigateToMapView() {
+    const event = new CustomEvent('hass-navigate', {
+      detail: { path: '/lovelace/mappa' },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(event);
+  }
+
+  private renderLoadingIcon(): Template {
+    if (this.isLoadingFan || this.isLoadingMode || this.isLoadingWater) {
+      if (this.isSuccess === true) {
+        return html`<ha-icon
+          style="color:limegreen"
+          icon="mdi:progress-download"
+        ></ha-icon>`;
+      } else if (this.isSuccess === false) {
+        return html`<ha-icon
+          style="color:crimson"
+          icon="mdi:alert-circle-outline"
+        ></ha-icon>`;
+      } else {
+        return html`<ha-icon icon="mdi:progress-download"></ha-icon>`;
+      }
+    }
+    return nothing;
   }
 
   private renderDropdown({
@@ -185,6 +413,7 @@ export class VacuumCard extends LitElement {
     onSelect,
     formatLabel,
     ariaLabel,
+    isLoading = false,
   }: {
     icon: string;
     value: string;
@@ -192,6 +421,7 @@ export class VacuumCard extends LitElement {
     onSelect: (e: CustomEvent<{ item?: { value?: string } }>) => void;
     formatLabel: (value: string) => string;
     ariaLabel?: string;
+    isLoading?: boolean;
   }): Template {
     const selectedLabel = formatLabel(value);
 
@@ -203,6 +433,7 @@ export class VacuumCard extends LitElement {
             slot="trigger"
             aria-label=${ariaLabel ?? selectedLabel}
           >
+            ${isLoading ? this.renderLoadingIcon() : nothing}
             <ha-icon icon=${icon}></ha-icon>
             <span class="tip-title">${selectedLabel}</span>
             <ha-icon
@@ -230,7 +461,7 @@ export class VacuumCard extends LitElement {
   ) {
     return () => {
       if (!this.config.actions[action]) {
-        return this.callVacuumService(params.defaultService || action, params);
+        return this.callVacuumService(params.defaultService ?? action, params);
       }
 
       this.callService(this.config.actions[action]);
@@ -259,10 +490,73 @@ export class VacuumCard extends LitElement {
       icon: 'mdi:fan',
       value: source,
       options: sources,
-      onSelect: this.handleSpeed,
+      onSelect: this.handleSpeed.bind(this),
       formatLabel: (value: string) =>
         localize(`source.${value.toLowerCase()}`) ?? value,
-      ariaLabel: localize('source.fan_speed') || 'Fan speed',
+      ariaLabel: localize('source.fan_speed') ?? 'Fan speed',
+      isLoading: this.isLoadingFan,
+    });
+  }
+
+  private renderMode(): Template {
+    const attributes = this.getAttributes?.(this.entity) as
+      | Record<string, any>
+      | undefined;
+    const mode = attributes?.['vacuum.mode'] ?? 0;
+
+    // ⭐ Ottieni le modalità disponibili
+    const modeMap = this.getAllCleaningModes();
+
+    const modes = Object.keys(modeMap);
+    const modeValues = Object.values(modeMap);
+    const currentModeLabel = modeMap[mode] ?? modeMap[0];
+
+    return this.renderDropdown({
+      icon: 'mdi:vacuum',
+      value: mode.toString(),
+      options: modes,
+      onSelect: this.handleModeChange.bind(this),
+      formatLabel: (value: string) => {
+        const index = parseInt(value, 10);
+        const modeLabel = modeMap[index];
+        if (!modeLabel) return value;
+        const localized = localize(`mode.${modeLabel.toLowerCase()}`);
+        return localized ?? modeLabel; // Usa modeLabel se localize restituisce undefined
+      },
+      ariaLabel: 'Vacuum mode',
+      isLoading: this.isLoadingMode,
+    });
+  }
+
+  private renderWater(): Template {
+    const attributes = this.getAttributes?.(this.entity) as
+      | Record<string, any>
+      | undefined;
+    const mode = attributes?.['sweep.water_state'] ?? 1;
+
+    const modeMap: Record<number, string> = {
+      1: 'Basso',
+      2: 'Medio',
+      3: 'Alto',
+    };
+
+    const modes = Object.keys(modeMap);
+
+    return this.renderDropdown({
+      icon: 'mdi:water-percent',
+      value: mode.toString(),
+      options: modes,
+      onSelect: this.handleWaterChange.bind(this),
+      formatLabel: (value: string) => {
+        const index = parseInt(value, 10);
+        return (
+          localize(`water.${modeMap[index]?.toLowerCase()}`) ??
+          modeMap[index] ??
+          value
+        );
+      },
+      ariaLabel: 'Water level',
+      isLoading: this.isLoadingWater,
     });
   }
 
@@ -406,7 +700,7 @@ export class VacuumCard extends LitElement {
   private renderStatus(): Template {
     const { status } = this.getAttributes(this.entity);
     const localizedStatus =
-      localize(`status.${status.toLowerCase()}`) || status;
+      localize(`status.${status.toLowerCase()}`) ?? status;
 
     if (!this.config.show_status) {
       return nothing;
@@ -449,6 +743,10 @@ export class VacuumCard extends LitElement {
             <paper-button @click="${this.handleVacuumAction('return_to_base')}">
               <ha-icon icon="hass:home-map-marker"></ha-icon>
               ${localize('common.return_to_base')}
+            </paper-button>
+            <paper-button @click="${this.navigateToMapView}">
+              <ha-icon icon="hass:map"></ha-icon>
+              Mappa
             </paper-button>
           </div>
         `;
@@ -568,6 +866,7 @@ export class VacuumCard extends LitElement {
           <div class="header">
             <div class="tips">
               ${this.renderSource()} ${this.renderBattery()}
+              ${this.renderMode()} ${this.renderWater()}
             </div>
             <ha-icon-button
               class="more-info"

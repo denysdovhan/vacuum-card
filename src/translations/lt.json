@@ -41,6 +41,16 @@
     "custom": "Pasirinktinis",
     "off": "Išjungta"
   },
+  "mode": {
+    "aspirapolvere": "Aspirapolvere",
+    "aspirapolvere e lavapavimenti": "Aspirapolvere e Lavapavimenti",
+    "lavapavimenti": "Lavapavimenti"
+  },
+  "water": {
+    "basso": "Basso",
+    "medio": "Medio",
+    "alto": "Alto"
+  },
   "common": {
     "name": "Siurblio kortelė",
     "description": "Siurblio kortelė leidžia valdyti jūsų robotą siurblį",

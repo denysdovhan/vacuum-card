@@ -1,3 +1,10 @@
 node_modules
 dist
 yarn.lock
+/.idea/.gitignore
+/.idea/aws.xml
+/.idea/git_toolbox_blame.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vacuum-card.iml
+/.idea/vcs.xml

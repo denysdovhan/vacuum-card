@@ -24,6 +24,16 @@
     "zoned_cleaning": "Pulizia a zone",
     "segment_cleaning": "Pulizia del segmento"
   },
+  "mode": {
+    "aspirapolvere": "Aspirapolvere",
+    "aspirapolvere e lavapavimenti": "Aspirapolvere e Lavapavimenti",
+    "lavapavimenti": "Lavapavimenti"
+  },
+  "water": {
+    "basso": "Basso",
+    "medio": "Medio",
+    "alto": "Alto"
+  },
   "source": {
     "gentle": "Gentile",
     "silent": "Silenzioso",

@@ -73,6 +73,14 @@ export interface VacuumCardConfig {
   stats: Record<string, VacuumCardStat[]>;
   actions: Record<string, VacuumCardAction>;
   shortcuts: VacuumCardShortcut[];
+
+  // ⭐ NUOVE RIGHE DA AGGIUNGERE
+  xiaomi_miot?: {
+    entity_id?: string;
+    fan_speed?: XiaomiMiotMapping;
+    cleaning_mode?: XiaomiMiotMapping;
+  };
+  traduzioni_modalita?: Record<number, string>;
 }
 
 export interface VacuumServiceCallParams {
@@ -81,4 +89,9 @@ export interface VacuumServiceCallParams {
 
 export interface VacuumActionParams extends VacuumServiceCallParams {
   defaultService?: string;
+}
+
+export interface XiaomiMiotMapping {
+  siid: number;
+  piid: number;
 }
