@@ -605,4 +605,16 @@ window.customCards.push({
   type: 'vacuum-card',
   name: localize('common.name'),
   description: localize('common.description'),
+  getEntitySuggestion: (hass: HomeAssistant, entityId: string) => {
+    if (entityId.split('.')[0] !== 'vacuum' || !hass.states[entityId]) {
+      return null;
+    }
+
+    return {
+      config: {
+        type: 'custom:vacuum-card',
+        entity: entityId,
+      },
+    };
+  },
 });
