@@ -39,7 +39,10 @@
     "auto": "Auto",
     "balanced": "Balanced",
     "custom": "Custom",
-    "off": "Off"
+    "off": "Off",
+    "fanhalting": "Low",
+    "fannoram": "Auto",
+    "fanmax": "High"
   },
   "common": {
     "name": "Vacuum Card",
