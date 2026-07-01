@@ -99,7 +99,42 @@ export class VacuumCard extends LitElement {
   }
 
   public shouldUpdate(changedProps: PropertyValues): boolean {
-    return hasConfigOrEntityChanged(this, changedProps, false);
+    if (hasConfigOrEntityChanged(this, changedProps, false)) {
+      return true;
+    }
+
+    const oldHass = changedProps.get('hass') as HomeAssistant | undefined;
+    if (!oldHass || !this.config) {
+      return false;
+    }
+
+    const trackedEntities = new Set<string>();
+
+    if (this.config.entity) {
+      trackedEntities.add(this.config.entity);
+    }
+    if (this.config.map) {
+      trackedEntities.add(this.config.map);
+    }
+    if (this.config.battery_entity) {
+      trackedEntities.add(this.config.battery_entity);
+    }
+
+    Object.values(this.config.stats || {}).forEach((statEntries) => {
+      statEntries.forEach(({ entity_id }) => {
+        if (entity_id) {
+          trackedEntities.add(entity_id);
+        }
+      });
+    });
+
+    for (const entityId of trackedEntities) {
+      if (oldHass.states[entityId] !== this.hass.states[entityId]) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   protected updated(changedProps: PropertyValues) {
