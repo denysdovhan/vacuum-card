@@ -64,6 +64,7 @@
   },
   "editor": {
     "entity": "Entity (Required)",
+    "name": "Name (Optional)",
     "battery_entity": "Battery Entity (Optional)",
     "map": "Map Camera (Optional)",
     "image": "Image (Optional)",

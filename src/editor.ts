@@ -117,6 +117,15 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
 
         <div class="option">
           <paper-input
+            label="${localize('editor.name')}"
+            .value=${this.config.name}
+            .configValue=${'name'}
+            @value-changed=${this.valueChanged}
+          ></paper-input>
+        </div>
+
+        <div class="option">
+          <paper-input
             label="${localize('editor.image')}"
             .value=${this.image}
             .configValue=${'image'}
