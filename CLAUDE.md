@@ -42,4 +42,12 @@ Build pipeline (`rollup.config.mjs`): single entry (`src/vacuum-card.ts`) bundle
 
 - Prefer `home-assistant-js-websocket` for HA types/functions and `custom-card-helpers` for card lifecycle/event utilities over hand-rolling equivalents.
 - Kebab-case filenames for components, matching existing `src/` patterns.
-- Commit messages follow Conventional Commits (Angular preset), e.g. `feat: ...`, `fix: ...`, `chore(deps): ...` — dependency bumps use `chore(deps): ...` for semantic-release. Releases are automated via semantic-release on `main`, publishing `dist/vacuum-card.js`.
+- Commit messages follow Conventional Commits (Angular preset), e.g. `feat: ...`, `fix: ...`, `chore(deps): ...` — dependency bumps use `chore(deps): ...`.
+
+## Release process
+
+There is no semantic-release; releases are tag/publish-driven (see `.github/workflows/`):
+
+1. Pushes to `main` trigger `release-drafter.yml`, which keeps a draft GitHub release with auto-generated notes up to date.
+2. A maintainer edits and publishes that draft release with a tag like `vX.Y.Z`.
+3. Publishing the release triggers `release.yml`: it sets `package.json`'s version from the tag, runs `npm run build`, publishes to npm (`npm publish --provenance --access public`), and uploads `dist/vacuum-card.js` as a release asset.
