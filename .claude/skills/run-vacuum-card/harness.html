@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>vacuum-card harness</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 24px;
+        font-family: sans-serif;
+        background: #fff;
+      }
+      vacuum-card {
+        width: 320px;
+        border: 1px solid #ccc;
+      }
+      #output {
+        width: 100%;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>Default (friendly_name)</p>
+      <vacuum-card id="card-default"></vacuum-card>
+    </div>
+    <div>
+      <p>Custom name override</p>
+      <vacuum-card id="card-custom"></vacuum-card>
+    </div>
+    <pre id="output">RUNNING...</pre>
+    <script type="module">
+      // Loaded from the built dist/vacuum-card.js placed alongside this
+      // file by driver.sh. This card is a Home Assistant Lovelace custom
+      // element — it only ever runs inside HA's frontend in production,
+      // so this harness stubs the minimal `hass` object contract it reads
+      // (states/localize/locale/callService) rather than needing a live
+      // Home Assistant instance.
+      import './vacuum-card.js';
+
+      const results = [];
+      function check(label, condition, detail) {
+        results.push(
+          `${condition ? 'PASS' : 'FAIL'}: ${label}${detail ? ' (' + detail + ')' : ''}`,
+        );
+      }
+
+      function fakeHass(extraStates = {}) {
+        return {
+          states: {
+            'vacuum.test': {
+              entity_id: 'vacuum.test',
+              state: 'docked',
+              attributes: { friendly_name: 'Roborock S7' },
+            },
+            ...extraStates,
+          },
+          localize: (key) => key,
+          locale: { number_format: 'language' },
+          language: 'en',
+          callService: () => {},
+        };
+      }
+
+      async function run() {
+        try {
+          const hass = fakeHass();
+
+          // Visible cards, for the screenshot.
+          const defaultCard = document.getElementById('card-default');
+          defaultCard.hass = hass;
+          defaultCard.setConfig({ entity: 'vacuum.test' });
+          await defaultCard.updateComplete;
+
+          const customCard = document.getElementById('card-custom');
+          customCard.hass = hass;
+          customCard.setConfig({ entity: 'vacuum.test', name: 'Custom Label' });
+          await customCard.updateComplete;
+
+          // Headless assertions against a separate, undisplayed card.
+          const card = document.createElement('vacuum-card');
+          card.hass = hass;
+          card.setConfig({ entity: 'vacuum.test' });
+          document.body.appendChild(card);
+          await card.updateComplete;
+
+          let nameEl = card.shadowRoot.querySelector('.vacuum-name');
+          check(
+            'renders with no name configured -> falls back to friendly_name',
+            nameEl && nameEl.textContent.trim() === 'Roborock S7',
+            `got "${nameEl && nameEl.textContent.trim()}"`,
+          );
+
+          card.setConfig({ entity: 'vacuum.test', name: 'Custom Label' });
+          await card.updateComplete;
+          nameEl = card.shadowRoot.querySelector('.vacuum-name');
+          check(
+            'name config overrides displayed name',
+            nameEl && nameEl.textContent.trim() === 'Custom Label',
+            `got "${nameEl && nameEl.textContent.trim()}"`,
+          );
+
+          card.setConfig({
+            entity: 'vacuum.test',
+            name: 'Custom Label',
+            show_name: false,
+          });
+          await card.updateComplete;
+          nameEl = card.shadowRoot.querySelector('.vacuum-name');
+          check('show_name=false hides the name entirely', nameEl === null);
+
+          const editor = document.createElement('vacuum-card-editor');
+          editor.hass = hass;
+          editor.setConfig({ entity: 'vacuum.test' });
+          document.body.appendChild(editor);
+          await editor.updateComplete;
+
+          const optionDivs = [
+            ...editor.shadowRoot.querySelectorAll('.card-config > .option'),
+          ];
+          const order = optionDivs.map(
+            (div) => div.firstElementChild && div.firstElementChild.configValue,
+          );
+          check(
+            'editor field order is entity, battery_entity, map, name, image, ...',
+            JSON.stringify(order.slice(0, 5)) ===
+              JSON.stringify([
+                'entity',
+                'battery_entity',
+                'map',
+                'name',
+                'image',
+              ]),
+            `got ${JSON.stringify(order)}`,
+          );
+
+          const capturedEvents = [];
+          editor.addEventListener('config-changed', (e) => {
+            capturedEvents.push(
+              JSON.parse(JSON.stringify(e.detail.config || {})),
+            );
+          });
+          const nameInput = [
+            ...editor.shadowRoot.querySelectorAll('paper-input'),
+          ].find((el) => el.configValue === 'name');
+
+          nameInput.value = 'Editor Name';
+          nameInput.dispatchEvent(
+            new CustomEvent('value-changed', {
+              bubbles: true,
+              composed: true,
+              detail: { value: 'Editor Name' },
+            }),
+          );
+          check(
+            'typing into editor name field fires config-changed with new name',
+            capturedEvents.length === 1 &&
+              capturedEvents[0].name === 'Editor Name',
+            `captured=${JSON.stringify(capturedEvents)}`,
+          );
+
+          nameInput.value = '';
+          nameInput.dispatchEvent(
+            new CustomEvent('value-changed', {
+              bubbles: true,
+              composed: true,
+              detail: { value: '' },
+            }),
+          );
+          check(
+            'clearing editor name field fires config-changed without name key',
+            capturedEvents.length === 2 && !('name' in capturedEvents[1]),
+            `captured=${JSON.stringify(capturedEvents)}`,
+          );
+        } catch (err) {
+          results.push(`FAIL: uncaught exception - ${err.stack || err}`);
+        }
+
+        document.getElementById('output').textContent = results.join('\n');
+      }
+
+      window.addEventListener('error', (e) => {
+        results.push(`FAIL: window error - ${e.message}`);
+        document.getElementById('output').textContent = results.join('\n');
+      });
+
+      run();
+    </script>
+  </body>
+</html>
