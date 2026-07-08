@@ -112,6 +112,29 @@
           nameEl = card.shadowRoot.querySelector('.vacuum-name');
           check('show_name=false hides the name entirely', nameEl === null);
 
+          // Regression check: Home Assistant's newer "Sections" dashboard
+          // editor sets `.hass` on a freshly created editor element before
+          // calling `.setConfig()`, which can trigger a Lit render pass
+          // while `config` is still undefined. render() must tolerate that
+          // rather than throwing (it previously read `this.config.entity`
+          // unguarded).
+          try {
+            const raceEditor = document.createElement('vacuum-card-editor');
+            raceEditor.hass = hass;
+            document.body.appendChild(raceEditor);
+            await raceEditor.updateComplete;
+            check(
+              'editor render() tolerates hass being set before setConfig()',
+              true,
+            );
+          } catch (err) {
+            check(
+              'editor render() tolerates hass being set before setConfig()',
+              false,
+              err.message,
+            );
+          }
+
           const editor = document.createElement('vacuum-card-editor');
           editor.hass = hass;
           editor.setConfig({ entity: 'vacuum.test' });

@@ -43,7 +43,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
   }
 
   protected render(): Template {
-    if (!this.hass) {
+    if (!this.hass || !this.config) {
       return nothing;
     }
 
