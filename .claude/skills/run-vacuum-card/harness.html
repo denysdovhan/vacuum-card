@@ -167,16 +167,12 @@
             );
           });
           const nameInput = [
-            ...editor.shadowRoot.querySelectorAll('paper-input'),
+            ...editor.shadowRoot.querySelectorAll('ha-textfield'),
           ].find((el) => el.configValue === 'name');
 
           nameInput.value = 'Editor Name';
           nameInput.dispatchEvent(
-            new CustomEvent('value-changed', {
-              bubbles: true,
-              composed: true,
-              detail: { value: 'Editor Name' },
-            }),
+            new Event('input', { bubbles: true, composed: true }),
           );
           check(
             'typing into editor name field fires config-changed with new name',
@@ -187,11 +183,7 @@
 
           nameInput.value = '';
           nameInput.dispatchEvent(
-            new CustomEvent('value-changed', {
-              bubbles: true,
-              composed: true,
-              detail: { value: '' },
-            }),
+            new Event('input', { bubbles: true, composed: true }),
           );
           check(
             'clearing editor name field fires config-changed without name key',
