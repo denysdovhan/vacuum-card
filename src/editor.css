@@ -13,7 +13,33 @@
   margin-right: 10px;
 }
 
-.option ha-select,
-.option ha-textfield {
+.option ha-select {
+  width: 100%;
+}
+
+.option.text-field {
+  align-items: stretch;
+}
+
+.option.text-field label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.text-field-label {
+  color: var(--secondary-text-color);
+  font-size: 12px;
+}
+
+.option.text-field input {
+  background: var(--card-background-color, var(--primary-background-color));
+  border: 1px solid var(--divider-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--primary-text-color);
+  font: inherit;
+  padding: 8px 12px;
   width: 100%;
 }

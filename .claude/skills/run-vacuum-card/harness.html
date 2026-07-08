@@ -144,9 +144,15 @@
           const optionDivs = [
             ...editor.shadowRoot.querySelectorAll('.card-config > .option'),
           ];
-          const order = optionDivs.map(
-            (div) => div.firstElementChild && div.firstElementChild.configValue,
-          );
+          const order = optionDivs.map((div) => {
+            const first = div.firstElementChild;
+            if (!first) return undefined;
+            // ha-select/ha-switch options have the control as the direct
+            // child; text-field options wrap an <input> in a <label>.
+            return (
+              first.configValue ?? first.querySelector('input')?.configValue
+            );
+          });
           check(
             'editor field order is entity, battery_entity, map, name, image, ...',
             JSON.stringify(order.slice(0, 5)) ===
@@ -167,7 +173,7 @@
             );
           });
           const nameInput = [
-            ...editor.shadowRoot.querySelectorAll('ha-textfield'),
+            ...editor.shadowRoot.querySelectorAll('input'),
           ].find((el) => el.configValue === 'name');
 
           nameInput.value = 'Editor Name';
