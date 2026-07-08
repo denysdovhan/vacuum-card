@@ -35,7 +35,7 @@ bash .claude/skills/run-vacuum-card/driver.sh
 This: builds the card (`npm run build`), copies `dist/vacuum-card.js` and `harness.html` into a temp dir, serves that dir on `127.0.0.1:<random port>` (override with `VACUUM_CARD_HARNESS_PORT` to pin a fixed port), then:
 
 1. Runs `google-chrome --headless=new --dump-dom` against the harness and prints its `#output` block — a PASS/FAIL log of: default render falls back to the entity's `friendly_name`, the `name` config overrides it, `show_name: false` hides the name entirely, the visual editor's `name` field is positioned between Map Camera and Image, and typing/clearing that editor field fires `config-changed` with the right config.
-2. Runs `google-chrome --headless=new --screenshot` against the same harness and saves it to `/tmp/vacuum-card-harness-screenshot.png` (override with `VACUUM_CARD_HARNESS_SCREENSHOT`) — two rendered `<vacuum-card>` instances side by side (default name vs. custom name override), so you can visually confirm the card isn't broken, not just check text content.
+2. Runs `google-chrome --headless=new --screenshot` against the same harness and saves it to `docs/screenshots/vacuum-card-harness-screenshot.png` (override with `VACUUM_CARD_HARNESS_SCREENSHOT`) — two rendered `<vacuum-card>` instances side by side (default name vs. custom name override), so you can visually confirm the card isn't broken, not just check text content. `docs/screenshots/` is gitignored — these are throwaway verification artifacts, not committed docs images.
 3. Exits non-zero if any `FAIL` line appears.
 
 Read the screenshot with the Read tool after running — a headless dump-dom pass doesn't catch a broken layout.

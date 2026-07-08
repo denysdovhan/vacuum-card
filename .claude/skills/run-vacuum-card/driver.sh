@@ -13,8 +13,10 @@ ROOT="$(cd "$SKILL_DIR/../../.." && pwd)"
 # VACUUM_CARD_HARNESS_PORT if you need a fixed port.
 PORT="${VACUUM_CARD_HARNESS_PORT:-$((20000 + RANDOM % 20000))}"
 WORKDIR="$(mktemp -d /tmp/vacuum-card-harness.XXXXXX)"
-SCREENSHOT="${VACUUM_CARD_HARNESS_SCREENSHOT:-/tmp/vacuum-card-harness-screenshot.png}"
+SCREENSHOT="${VACUUM_CARD_HARNESS_SCREENSHOT:-$ROOT/docs/screenshots/vacuum-card-harness-screenshot.png}"
 SERVER_PID=""
+
+mkdir -p "$(dirname "$SCREENSHOT")"
 
 cleanup() {
   [ -n "$SERVER_PID" ] && kill "$SERVER_PID" 2>/dev/null || true
