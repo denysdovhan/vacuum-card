@@ -110,6 +110,7 @@ Here is what every option means:
 | ---------------- | :-------: | ------------ | --------------------------------------------------------------------------------------------------------- |
 | `type`           | `string`  | **Required** | `custom:vacuum-card`                                                                                      |
 | `entity`         | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                  |
+| `name`           | `string`  | Optional     | Custom name to display instead of the entity's friendly name.                                             |
 | `battery_entity` | `string`  | Optional     | An entity_id within the `sensor` domain to display battery state and icon.                                |
 | `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
 | `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
