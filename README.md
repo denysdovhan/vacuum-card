@@ -232,6 +232,7 @@ This card supports translations. Please, help to add more translations and impro
 - Việt Nam (Vietnamese)
 - Lietuvių (Lithuanian)
 - Română (Romanian)
+- Slovensky (Slovak)
 - 简体中文 (Simplified Chinese)
 - 日本語 (Japanese)
 - [_Your language?_][add-translation]
