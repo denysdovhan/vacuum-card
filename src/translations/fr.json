@@ -39,7 +39,14 @@
     "auto": "Automatique",
     "balanced": "Équilibré",
     "custom": "Personnalisé",
-    "off": "Arrêt"
+    "off": "Arrêt",
+    "fan_speed": "Vitesse du ventilateur",
+    "all": "Régulier",
+    "short": "Mode rapide",
+    "floor": "Sol uniquement",
+    "water": "Ligne d'eau",
+    "ultra": "Ultra propre",
+    "pickup": "Récupération"
   },
   "common": {
     "name": "Carte aspirateur",
