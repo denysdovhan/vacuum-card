@@ -1,0 +1,81 @@
+{
+  "status": {
+    "cleaning": "Čistí",
+    "auto": "Automatické upratovanie",
+    "spot": "Čistenie miesta",
+    "edge": "Čistenie rohov",
+    "single_room": "Čistenie konkrétnej miestnosti",
+    "paused": "Pauza",
+    "idle": "Nečinný",
+    "stop": "Zastavený",
+    "charging": "Nabíja sa",
+    "returning": "Vracia sa do doku",
+    "returning_home": "Vracia sa do doku",
+    "docked": "V doku",
+    "unknown": "Neznámy",
+    "offline": "Offline",
+    "error": "Chyba",
+    "charger_disconnected": "Nabíjačka odpojená",
+    "remote_control_active": "Diaľkové ovládanie aktívne",
+    "manual_mode": "Manuálny režim",
+    "shutting_down": "Vypína sa",
+    "updating": "Aktualizuje sa",
+    "going_to_target": "Ide k cieľu",
+    "zoned_cleaning": "Upratovanie zóny",
+    "segment_cleaning": "Upratovanie segmentu"
+  },
+  "source": {
+    "gentle": "Nízky",
+    "silent": "Tichý",
+    "standard": "Štandardný",
+    "medium": "Stredný",
+    "turbo": "Turbo",
+    "normal": "Normálny",
+    "max": "Max",
+    "max_plus": "Max+",
+    "high": "Vysoký",
+    "strong": "Silný",
+    "quiet": "Tichý",
+    "auto": "Auto",
+    "balanced": "Vyvážený",
+    "custom": "Vlastný",
+    "off": "Vypnutý"
+  },
+  "common": {
+    "name": "Vacuum Card",
+    "description": "Vacuum card umožňuje ovládať tvoj robotický vysávač.",
+    "start": "Začať",
+    "continue": "Pokračovať",
+    "pause": "Pauza",
+    "stop": "Zastaviť",
+    "return_to_base": "Domov",
+    "locate": "Lokalizovať vysávač",
+    "not_available": "Vysávač je nedostupný"
+  },
+  "error": {
+    "invalid_config": "Nesprávna konfigurácia",
+    "missing_entity": "Je potrebné špecifikovať entitu!"
+  },
+  "warning": {
+    "actions_array": "VAROVANIE: 'Akcie' sú nadradené pôvodným nastaveniam tlačidiel. Ak Vaším cieľom bolo pridať akcie, použite 'Skratky' option instead."
+  },
+  "editor": {
+    "entity": "Entita (povinné)",
+    "battery_entity": "Stav batérie (voliteľné)",
+    "map": "Mapa (voliteľné)",
+    "image": "Obrázok (voliteľné)",
+    "compact_view": "Kompaktné zobrazenie",
+    "compact_view_aria_label_on": "Kompaktné zobrazenie zapnuté",
+    "compact_view_aria_label_off": "Kompaktné zobrazenie vypnuté",
+    "show_name": "Zobrazenie názvu",
+    "show_name_aria_label_on": "Zobrazenie názvu zapnuté",
+    "show_name_aria_label_off": "Zobrazenie názvu vypnuté",
+    "show_status": "Zobrazenie stavu",
+    "show_status_aria_label_on": "Zobrazenie stavu zapnuté",
+    "show_status_aria_label_off": "Zobrazenie stavu vypnuté",
+    "show_toolbar": "Zobrazenie panela",
+    "show_toolbar_aria_label_on": "Zobrazenie panela zapnuté",
+    "show_toolbar_aria_label_off": "Zobrazenie panela vypnuté",
+    "code_only_note": "Poznámka: Nastavenie stavov a akcií je dostupné len pomocou editora kódu."
+  }
+}
