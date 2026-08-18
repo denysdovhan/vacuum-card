@@ -7,38 +7,86 @@ exclude-contributors:
   - dependabot
 categories:
   - title: ❗️ Breaking Changes
-    labels:
-      - breaking
+    when:
+      - conventional:
+          breaking: true
+      - labels:
+          - breaking
   - title: 🚀 Features
-    labels:
-      - feature
-      - enhancement
+    when:
+      - conventional:
+          type: feat
+          breaking: false
+      - labels:
+          - feature
+          - enhancement
   - title: 🐛 Bug Fixes
-    labels:
-      - fix
-      - bug
+    when:
+      - conventional:
+          type: fix
+          breaking: false
+      - labels:
+          - fix
+          - bug
   - title: 🧰 Maintenance
-    labels:
-      - chore
-      - dependencies
-      - documentation
+    when:
+      - conventional:
+          types:
+            - build
+            - chore
+            - ci
+            - docs
+            - perf
+            - refactor
+            - revert
+            - style
+            - test
+          breaking: false
+      - labels:
+          - chore
+          - dependencies
+          - documentation
+  - type: version-resolver
+    semver-increment: major
+    when:
+      - conventional:
+          breaking: true
+      - labels:
+          - major
+          - breaking
+  - type: version-resolver
+    semver-increment: minor
+    when:
+      - conventional:
+          type: feat
+          breaking: false
+      - labels:
+          - minor
+          - feature
+          - enhancement
+  - type: version-resolver
+    semver-increment: patch
+    when:
+      - conventional:
+          types:
+            - build
+            - chore
+            - ci
+            - docs
+            - fix
+            - perf
+            - refactor
+            - revert
+            - style
+            - test
+          breaking: false
+      - labels:
+          - patch
+          - dependencies
+  - type: version-resolver
+    semver-increment: patch
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
-version-resolver:
-  major:
-    labels:
-      - major
-      - breaking
-  minor:
-    labels:
-      - minor
-      - feature
-      - enhancement
-  patch:
-    labels:
-      - patch
-      - dependencies
-  default: patch
 template: |
   ## What's Changed
 
