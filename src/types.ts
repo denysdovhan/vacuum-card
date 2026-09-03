@@ -3,6 +3,7 @@ import {
   HassEntityBase,
   HassServiceTarget,
 } from 'home-assistant-js-websocket';
+import { LovelaceCardConfig } from 'custom-card-helpers';
 import { TemplateResult, nothing } from 'lit';
 
 export * from 'home-assistant-js-websocket';
@@ -73,6 +74,12 @@ export interface VacuumCardConfig {
   stats: Record<string, VacuumCardStat[]>;
   actions: Record<string, VacuumCardAction>;
   shortcuts: VacuumCardShortcut[];
+}
+
+/** Returned by `window.customCards[].getEntitySuggestion`. */
+export interface EntityCardSuggestion {
+  config: LovelaceCardConfig & Partial<VacuumCardConfig>;
+  label?: string;
 }
 
 export interface VacuumServiceCallParams {
