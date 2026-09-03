@@ -57,7 +57,8 @@ This card can be configured using Lovelace UI editor.
 5. Choose `entity`.
 6. Now you should see the preview of the card!
 
-_Sorry, no support for `actions`, `shortcuts` and `stats` in visual config yet._
+`actions`, `shortcuts` and `stats` are configurable in the visual editor too,
+under the collapsible sections at the bottom.
 
 Typical example of using this card in YAML config would look like this:
 
@@ -111,7 +112,7 @@ Here is what every option means:
 | `type`           | `string`  | **Required** | `custom:vacuum-card`                                                                                      |
 | `entity`         | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                  |
 | `battery_entity` | `string`  | Optional     | An entity_id within the `sensor` domain to display battery state and icon.                                |
-| `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
+| `map`            | `string`  | Optional     | An entity_id within the `camera` or `image` domain, for streaming live vacuum map.                        |
 | `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
 | `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
 | `show_name`      | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
