@@ -22,6 +22,15 @@ function supportsEntityNames(hass: HomeAssistant): boolean {
   return atLeastVersion(hass, 2026, 4);
 }
 
+/**
+ * The `entity_name` selector, which lets users compose a name out of registry
+ * parts in the visual editor, was added in HA 2025.11. Older versions get a
+ * plain text field instead.
+ */
+export function nameSelector(hass: HomeAssistant | undefined): object {
+  return hass && atLeastVersion(hass, 2025, 11) ? { entity_name: {} } : { text: {} };
+}
+
 type HassWithEntityNames = HomeAssistant & {
   formatEntityName: (
     stateObj: HassEntity,
@@ -63,13 +72,18 @@ export default function computeEntityName(
   stateObj: HassEntity | undefined,
   name: EntityName | undefined,
 ): string {
-  const configuredName = typeof name === 'string' ? name : '';
-
+  // A string name is the override, exactly as formatEntityName treats it - an
+  // empty string included, so `name: ''` renders empty on every HA version
+  // rather than falling back to the friendly name on older ones.
+  if (typeof name === 'string') {
+    return name;
+  }
   if (!stateObj) {
-    return configuredName;
+    return '';
   }
   if (supportsEntityNames(hass)) {
     return (hass as HassWithEntityNames).formatEntityName(stateObj, name);
   }
-  return configuredName || stateObj.attributes.friendly_name || '';
+  // A structured name cannot be resolved here, so fall back to the friendly name.
+  return stateObj.attributes.friendly_name || '';
 }

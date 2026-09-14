@@ -114,7 +114,7 @@ Here is what every option means:
 | `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
 | `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
 | `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
-| `name`           | `string` / `list` | Optional | Custom name for the vacuum. Accepts a [structured name](#structured-names) on Home Assistant 2026.4+. Defaults to the entity's name. |
+| `name`           | `string` / `list` | Optional | Custom name for the vacuum, also available in the visual editor. Accepts a [structured name](#structured-names) on Home Assistant 2026.4+. Defaults to the entity's name. |
 | `show_name`      | `boolean` | `true`       | Show the name of the vacuum.                                                                              |
 | `show_status`    | `boolean` | `true`       | Show status of the vacuum.                                                                                |
 | `show_toolbar`   | `boolean` | `true`       | Show toolbar with actions.                                                                                |
