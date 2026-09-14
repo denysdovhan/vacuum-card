@@ -29,6 +29,30 @@ type HassWithEntityNames = HomeAssistant & {
   ) => string;
 };
 
+// formatEntityName resolves against the entity/device/area/floor registries, and
+// HA swaps the real formatter in asynchronously once translations load. Neither
+// shows up as an entity state change, so without this a rename (or that swap)
+// leaves a rendered name stale until some unrelated state change forces a render.
+const NAME_SOURCES = [
+  'formatEntityName',
+  'entities',
+  'devices',
+  'areas',
+  'floors',
+] as const;
+
+export function entityNamesChanged(
+  oldHass: HomeAssistant | undefined,
+  newHass: HomeAssistant,
+): boolean {
+  if (!oldHass) {
+    return false;
+  }
+  const before = oldHass as unknown as Record<string, unknown>;
+  const after = newHass as unknown as Record<string, unknown>;
+  return NAME_SOURCES.some((key) => before[key] !== after[key]);
+}
+
 /**
  * Resolves a `name` option against the entity's registry context (entity,
  * device, area, floor). Falls back to the friendly name on Home Assistant
