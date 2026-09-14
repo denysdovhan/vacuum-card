@@ -15,6 +15,7 @@ import get from 'lodash/get';
 import localize from './localize';
 import styles from './styles.css';
 import buildConfig from './config';
+import computeEntityName from './entity-name';
 import {
   Template,
   VacuumCardAction,
@@ -394,13 +395,13 @@ export class VacuumCard extends LitElement {
   }
 
   private renderName(): Template {
-    const { friendly_name } = this.getAttributes(this.entity);
-
     if (!this.config.show_name) {
       return nothing;
     }
 
-    return html` <div class="vacuum-name">${friendly_name}</div> `;
+    const name = computeEntityName(this.hass, this.entity, this.config.name);
+
+    return html` <div class="vacuum-name">${name}</div> `;
   }
 
   private renderStatus(): Template {
