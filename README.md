@@ -114,7 +114,8 @@ Here is what every option means:
 | `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
 | `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
 | `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
-| `show_name`      | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
+| `name`           | `string` / `list` | Optional | Custom name for the vacuum, also available in the visual editor. Accepts a [structured name](#structured-names) on Home Assistant 2026.4+. Defaults to the entity's name. |
+| `show_name`      | `boolean` | `true`       | Show the name of the vacuum.                                                                              |
 | `show_status`    | `boolean` | `true`       | Show status of the vacuum.                                                                                |
 | `show_toolbar`   | `boolean` | `true`       | Show toolbar with actions.                                                                                |
 | `compact_view`   | `boolean` | `false`      | Compact view without image.                                                                               |
@@ -154,6 +155,29 @@ You can defined [custom scripts][ha-scripts] for custom actions i.e cleaning spe
 | `target`       | `object` | Optional | A `HassServiceTarget`, to define a target for the current service call. |
 | `icon`         | `string` | Optional | Any icon for action button.                                             |
 | `service_data` | `object` | Optional | `service_data` for `service` call                                       |
+
+### Structured names
+
+*Requires Home Assistant 2026.4 or later. On earlier versions a structured `name` falls back to the entity's friendly name.*
+
+Home Assistant composes an entity's display name out of its registry context
+(entity, device, area, floor) rather than one `friendly_name` string. `name` can be
+a list of those parts instead of a plain string, so it keeps following renames and
+matches what the built-in cards show:
+
+```yaml
+type: custom:vacuum-card
+entity: vacuum.xiaomi_vacuum_cleaner
+name:
+  - type: area
+  - type: entity
+```
+
+Available part types are `entity`, `device`, `parent_device`, `area`, `floor`, and
+`text` (a literal, written as `{type: text, text: 'Downstairs'}`). Parts that
+resolve to nothing are dropped. Leaving `name` out keeps the previous behaviour.
+
+See the [Home Assistant developer documentation](https://developers.home-assistant.io/docs/frontend/data#hassformatentitynamestateobj-name-options) for details.
 
 ## Theming
 
