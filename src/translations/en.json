@@ -64,6 +64,7 @@
     "battery_entity": "Battery Entity (Optional)",
     "map": "Map Camera (Optional)",
     "image": "Image (Optional)",
+    "name": "Name (Optional)",
     "compact_view": "Compact View",
     "compact_view_aria_label_on": "Toggle compact view on",
     "compact_view_aria_label_off": "Toggle compact view off",
