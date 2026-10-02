@@ -35,6 +35,10 @@
 - UI is a Home Assistant Lovelace custom card implemented as a Web Component with Lit (`LitElement`, decorators, `html` templates).
 - Home Assistant integrations use `custom-card-helpers` for card lifecycle/events and `home-assistant-js-websocket` types for entities/services.
 - Template rendering uses `ha-template` for dynamic text in the card.
+- The visual editor (`src/editor.ts`) is a single `ha-form` schema fed by Home Assistant's own selectors, rather than hand-rolled pickers. Keep it that way: `ha-form` supplies the entity pickers, validation and layout, and it is the only thing that tracks frontend changes on its own. The `actions`, `shortcuts` and `stats` sections add `ha-expansion-panel` repeaters on top, using `ha-service-control` for service calls. Three `ha-expansion-panel` constraints, each learned from a bug:
+  - Use its own `outlined` attribute instead of styling a border and radius on the host. Its inner `.top` rounds to `var(--ha-card-border-radius, var(--ha-border-radius-lg))`, so a hand-picked radius will not line up.
+  - It measures its slotted content when it expands, so render panel contents eagerly rather than behind a conditional. Rendered lazily, the panel stays sized at zero and its children overlap the panels below.
+  - It is uncontrolled and assigns its own `expanded`, so never bind `.expanded` from component state. A bound value fights the panel's own, and because `expanded-changed` bubbles, a nested panel's collapse then closes every panel above it.
 - Localization is handled via JSON translation files in `src/translations/` and the `localize` helper.
 - Build tooling is Rollup with TypeScript (`rollup-plugin-typescript2`), Babel transforms, and asset handling for JSON, images, CSS, and SVG.
 - Styling uses PostCSS (`postcss-preset-env`) and `rollup-plugin-postcss-lit` to process component CSS.

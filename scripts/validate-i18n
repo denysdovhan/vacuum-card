@@ -45,6 +45,7 @@ const main = async () => {
   const sourceKeys = new Set(flattenKeys(sourceData));
 
   let hasErrors = false;
+  const untranslated = new Map();
 
   for (const file of files) {
     if (file === sourceLocale) continue;
@@ -63,13 +64,40 @@ const main = async () => {
         console.error(`  - ${key}`);
       }
     }
+
+    // Missing keys fall back to en.json at runtime, so they only warn.
+    const localeKeySet = new Set(localeKeys);
+    const missingKeys = [...sourceKeys].filter((key) => !localeKeySet.has(key));
+
+    if (missingKeys.length > 0) {
+      untranslated.set(file, missingKeys.sort());
+    }
+  }
+
+  if (untranslated.size > 0) {
+    const total = [...untranslated.values()].reduce(
+      (sum, keys) => sum + keys.length,
+      0,
+    );
+    console.warn(
+      `\nUntranslated keys (falling back to ${sourceLocale}): ${total} across ${untranslated.size} locale(s)`,
+    );
+    for (const [file, keys] of untranslated) {
+      console.warn(`  ${file}: ${keys.length}`);
+      if (process.argv.includes('--verbose')) {
+        for (const key of keys) {
+          console.warn(`    - ${key}`);
+        }
+      }
+    }
+    console.warn('Run with --verbose to list them.');
   }
 
   if (hasErrors) {
     process.exit(1);
   }
 
-  console.log('Translation keys are consistent with en.json.');
+  console.log(`Translation keys are consistent with ${sourceLocale}.`);
 };
 
 main().catch((error) => {
