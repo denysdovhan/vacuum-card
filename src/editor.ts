@@ -43,7 +43,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
   }
 
   protected render(): Template {
-    if (!this.hass) {
+    if (!this.hass || !this.config) {
       return nothing;
     }
 
@@ -115,13 +115,28 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           </ha-select>
         </div>
 
-        <div class="option">
-          <paper-input
-            label="${localize('editor.image')}"
-            .value=${this.image}
-            .configValue=${'image'}
-            @value-changed=${this.valueChanged}
-          ></paper-input>
+        <div class="option text-field">
+          <label>
+            <span class="text-field-label">${localize('editor.name')}</span>
+            <input
+              type="text"
+              .value=${this.config.name}
+              .configValue=${'name'}
+              @input=${this.valueChanged}
+            />
+          </label>
+        </div>
+
+        <div class="option text-field">
+          <label>
+            <span class="text-field-label">${localize('editor.image')}</span>
+            <input
+              type="text"
+              .value=${this.image}
+              .configValue=${'image'}
+              @input=${this.valueChanged}
+            />
+          </label>
         </div>
 
         <div class="option">
@@ -207,7 +222,9 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
         this.config = {
           ...this.config,
           [target.configValue]:
-            target.checked !== undefined ? target.checked : target.value,
+            target.tagName !== 'INPUT' && target.checked !== undefined
+              ? target.checked
+              : target.value,
         };
       }
     }

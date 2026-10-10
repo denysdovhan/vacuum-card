@@ -400,7 +400,9 @@ export class VacuumCard extends LitElement {
       return nothing;
     }
 
-    return html` <div class="vacuum-name">${friendly_name}</div> `;
+    return html`
+      <div class="vacuum-name">${this.config.name || friendly_name}</div>
+    `;
   }
 
   private renderStatus(): Template {
