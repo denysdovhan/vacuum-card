@@ -26,6 +26,8 @@ import * as pt_br from './translations/pt-BR.json';
 import * as ro from './translations/ro.json';
 import * as ru from './translations/ru.json';
 import * as sk from './translations/sk.json';
+import * as sr from './translations/sr.json';
+import * as sr_latn from './translations/sr-Latn.json';
 import * as sv from './translations/sv.json';
 import * as tw from './translations/tw.json';
 import * as uk from './translations/uk.json';
@@ -63,6 +65,8 @@ const languages: Record<string, Translations> = {
   ro,
   ru,
   sk,
+  sr,
+  sr_latn,
   sv,
   tw,
   uk,
