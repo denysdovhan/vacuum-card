@@ -16,6 +16,7 @@ import localize from './localize';
 import styles from './styles.css';
 import buildConfig from './config';
 import {
+  EntityCardSuggestion,
   Template,
   VacuumCardAction,
   VacuumCardConfig,
@@ -103,11 +104,14 @@ export class VacuumCard extends LitElement {
   }
 
   protected updated(changedProps: PropertyValues) {
-    if (
-      changedProps.get('hass') &&
-      changedProps.get('hass').states[this.config.entity].state !==
-        this.hass.states[this.config.entity].state
-    ) {
+    const previousHass = changedProps.get('hass') as HomeAssistant | undefined;
+    if (!previousHass) {
+      return;
+    }
+    // The entity may not exist while the card is being configured.
+    const previousState = previousHass.states[this.config.entity]?.state;
+    const currentState = this.hass.states[this.config.entity]?.state;
+    if (previousState !== currentState) {
       this.requestInProgress = false;
     }
   }
@@ -414,9 +418,11 @@ export class VacuumCard extends LitElement {
 
     return html`
       <div class="status">
-        ${this.requestInProgress
-          ? html`<ha-spinner class="status-spinner" size="tiny"></ha-spinner>`
-          : nothing}
+        ${
+          this.requestInProgress
+            ? html`<ha-spinner class="status-spinner" size="tiny"></ha-spinner>`
+            : nothing
+        }
         <span class="status-text" alt=${localizedStatus}>
           ${localizedStatus}
         </span>
@@ -595,7 +601,17 @@ export class VacuumCard extends LitElement {
 
 declare global {
   interface Window {
-    customCards?: unknown[];
+    customCards?: Array<{
+      type: string;
+      name?: string;
+      description?: string;
+      preview?: boolean;
+      documentationURL?: string;
+      getEntitySuggestion?: (
+        hass: HomeAssistant,
+        entityId: string,
+      ) => EntityCardSuggestion | EntityCardSuggestion[] | null;
+    }>;
   }
 }
 
@@ -605,4 +621,10 @@ window.customCards.push({
   type: 'vacuum-card',
   name: localize('common.name'),
   description: localize('common.description'),
+  documentationURL: 'https://github.com/denysdovhan/vacuum-card',
+  // Offers the card in the picker's "by entity" tab (HA 2026.6+).
+  getEntitySuggestion: (_hass, entityId) =>
+    entityId.startsWith('vacuum.')
+      ? { config: { type: 'custom:vacuum-card', entity: entityId } }
+      : null,
 });
