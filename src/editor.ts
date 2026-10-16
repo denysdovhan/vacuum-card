@@ -8,6 +8,7 @@ import {
 import localize from './localize';
 import { customElement, property, state } from 'lit/decorators.js';
 import { Template, VacuumCardConfig } from './types';
+import { nameSelector } from './entity-name';
 import styles from './editor.css';
 
 type ConfigElement = HTMLInputElement & {
@@ -140,6 +141,17 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
         </div>
 
         <div class="option">
+          <ha-selector
+            .hass=${this.hass}
+            .label=${localize('editor.name')}
+            .selector=${nameSelector(this.hass)}
+            .value=${this.config.name}
+            .context=${{ entity: this.config.entity }}
+            @value-changed=${this.nameChanged}
+          ></ha-selector>
+        </div>
+
+        <div class="option">
           <ha-switch
             aria-label=${localize(
               this.show_name
@@ -211,6 +223,24 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
         };
       }
     }
+    fireEvent(this, 'config-changed', { config: this.config });
+  }
+
+  // ha-selector reports through event.detail rather than target.value, so it
+  // cannot share the configValue-based handler above.
+  private nameChanged(event: CustomEvent): void {
+    event.stopPropagation();
+    if (!this.config) {
+      return;
+    }
+    const value = event.detail?.value;
+    const config = { ...this.config };
+    if (value === undefined || value === null || value === '') {
+      delete config.name;
+    } else {
+      config.name = value;
+    }
+    this.config = config;
     fireEvent(this, 'config-changed', { config: this.config });
   }
 
