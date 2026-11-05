@@ -235,6 +235,8 @@ This card supports translations. Please, help to add more translations and impro
 - Slovensky (Slovak)
 - 简体中文 (Simplified Chinese)
 - 日本語 (Japanese)
+- Srpski (Serbian - Latin)
+- Српски (Serbian - Cyrillic)
 - [_Your language?_][add-translation]
 
 ## Supported models
