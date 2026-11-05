@@ -1,0 +1,81 @@
+{
+  "status": {
+    "cleaning": "Usisavanje",
+    "auto": "Automatsko usisavanje",
+    "spot": "Lokalno usisavanje",
+    "edge": "Usisavanje ivica",
+    "single_room": "Usisavanje jedne prostorije",
+    "paused": "Pauzirano",
+    "idle": "Neaktivan",
+    "stop": "Zaustavljen",
+    "charging": "Punjenje",
+    "returning": "Vraća se na bazu",
+    "returning_home": "Vraća se na bazu",
+    "docked": "Na bazi",
+    "unknown": "Nepoznato",
+    "offline": "Van mreže",
+    "error": "Greška",
+    "charger_disconnected": "Punjač isključen",
+    "remote_control_active": "Daljinsko upravljanje aktivno",
+    "manual_mode": "Ručni režim",
+    "shutting_down": "Gašenje",
+    "updating": "Ažuriranje",
+    "going_to_target": "Ide ka cilju",
+    "zoned_cleaning": "Usisavanje po zonama",
+    "segment_cleaning": "Usisavanje po segmentima"
+  },
+  "source": {
+    "gentle": "Blago",
+    "silent": "Tiho",
+    "standard": "Standardno",
+    "medium": "Srednje",
+    "turbo": "Turbo režim",
+    "normal": "Normalno",
+    "max": "Maksimalno",
+    "max_plus": "Maksimalno+",
+    "high": "Visoko",
+    "strong": "Jako",
+    "quiet": "Tihi režim",
+    "auto": "Automatski",
+    "balanced": "Uravnoteženo",
+    "custom": "Prilagođeno",
+    "off": "Isključeno"
+  },
+  "common": {
+    "name": "Kartica usisivača",
+    "description": "Kartica usisivača omogućava kontrolu vašeg robota.",
+    "start": "Pokreni usisavanje",
+    "continue": "Nastavi",
+    "pause": "Pauza",
+    "stop": "Stop",
+    "return_to_base": "Vrati na bazu",
+    "locate": "Pronađi usisivač",
+    "not_available": "Usisivač nije dostupan"
+  },
+  "error": {
+    "invalid_config": "Neispravna konfiguracija",
+    "missing_entity": "Potrebno je navesti entitet!"
+  },
+  "warning": {
+    "actions_array": "UPOZORENJE: 'actions' je rezervisano za prepisivanje podrazumevanih akcija postojećih dugmadi. Ako je vaša namera bila da dodate dodatne akcije, koristite opciju 'shortcuts'."
+  },
+  "editor": {
+    "entity": "Entitet (obavezno)",
+    "battery_entity": "Entitet baterije (opciono)",
+    "map": "Mapa kamere (opciono)",
+    "image": "Slika (opciono)",
+    "compact_view": "Kompaktan prikaz",
+    "compact_view_aria_label_on": "Uključi kompaktan prikaz",
+    "compact_view_aria_label_off": "Isključi kompaktan prikaz",
+    "show_name": "Prikaži ime",
+    "show_name_aria_label_on": "Uključi prikaz imena",
+    "show_name_aria_label_off": "Isključi prikaz imena",
+    "show_status": "Prikaži status",
+    "show_status_aria_label_on": "Uključi prikaz statusa",
+    "show_status_aria_label_off": "Isključi prikaz statusa",
+    "show_toolbar": "Prikaži traku sa alatkama",
+    "show_toolbar_aria_label_on": "Uključi prikaz trake sa alatkama",
+    "show_toolbar_aria_label_off": "Isključi prikaz trake sa alatkama",
+    "code_only_note": "Napomena: Podešavanje opcija akcija i statistike dostupno je isključivo kroz uređivač koda."
+  }
+}
