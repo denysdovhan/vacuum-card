@@ -15,6 +15,7 @@ import get from 'lodash/get';
 import localize from './localize';
 import styles from './styles.css';
 import buildConfig from './config';
+import computeEntityName, { entityNamesChanged } from './entity-name';
 import {
   Template,
   VacuumCardAction,
@@ -99,7 +100,10 @@ export class VacuumCard extends LitElement {
   }
 
   public shouldUpdate(changedProps: PropertyValues): boolean {
-    return hasConfigOrEntityChanged(this, changedProps, false);
+    if (hasConfigOrEntityChanged(this, changedProps, false)) {
+      return true;
+    }
+    return entityNamesChanged(changedProps.get('hass'), this.hass);
   }
 
   protected updated(changedProps: PropertyValues) {
@@ -394,13 +398,13 @@ export class VacuumCard extends LitElement {
   }
 
   private renderName(): Template {
-    const { friendly_name } = this.getAttributes(this.entity);
-
     if (!this.config.show_name) {
       return nothing;
     }
 
-    return html` <div class="vacuum-name">${friendly_name}</div> `;
+    const name = computeEntityName(this.hass, this.entity, this.config.name);
+
+    return html` <div class="vacuum-name">${name}</div> `;
   }
 
   private renderStatus(): Template {
