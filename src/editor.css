@@ -1,19 +1,29 @@
-.card-config {
+:host {
+  display: block;
+}
+
+ha-expansion-panel {
+  margin-top: 12px;
+}
+
+.panel-content {
+  display: flex;
   flex-direction: column;
+  gap: 12px;
+  padding: 4px 8px 12px;
+}
+
+.panel-content ha-expansion-panel {
+  margin-top: 0;
+}
+
+.stat-row {
+  border: 1px solid var(--divider-color);
+  border-radius: var(--ha-card-border-radius, var(--ha-border-radius-lg, 12px));
+  padding: 12px;
+}
+
+.row-actions {
   display: flex;
-  gap: 10px;
-}
-
-.option {
-  display: flex;
-  align-items: center;
-}
-
-.option ha-switch {
-  margin-right: 10px;
-}
-
-.option ha-select,
-.option paper-input {
-  width: 100%;
+  justify-content: flex-end;
 }
