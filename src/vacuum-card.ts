@@ -27,6 +27,7 @@ import {
   VacuumActionParams,
 } from './types';
 import DEFAULT_IMAGE from './vacuum.svg';
+import { MediaImage, validateMediaUrl } from './media-image';
 
 registerTemplates();
 
@@ -52,6 +53,46 @@ export class VacuumCard extends LitElement {
 
   @state() private config!: VacuumCardConfig;
   @state() private requestInProgress = false;
+  @state() private mediaRevision = 0;
+  private readonly mediaImage = new MediaImage(() => {
+    this.mediaRevision += 1;
+    if (this.mediaImage.hasFailed) {
+      console.warn(
+        'VACUUM-CARD: Protected image could not be loaded. Automatic retries stopped.',
+      );
+    }
+  });
+  private readonly refreshMedia = () => this.mediaImage.refreshIfDue();
+
+  private handleMediaError(event: Event): void {
+    if (!this.config.image.startsWith('media-source://')) return;
+    const image = event.currentTarget as HTMLImageElement;
+    this.mediaImage.imageFailed(image.src);
+  }
+
+  private syncMediaImage(): void {
+    const source = this.config?.image;
+    const useMedia =
+      this.isConnected &&
+      this.hass &&
+      this.config &&
+      !this.config.compact_view &&
+      !this.map &&
+      source?.startsWith('media-source://');
+    const hass = this.hass;
+    this.mediaImage.sync(
+      useMedia ? source : undefined,
+      useMedia ? hass.connection : undefined,
+      async (mediaContentId) => {
+        const result = await hass.callWS<{ url: string; mime_type: string }>({
+          type: 'media_source/resolve_media',
+          media_content_id: mediaContentId,
+        });
+        if (!result.url) throw new Error('Empty media URL');
+        return validateMediaUrl(result.url, window.location.origin);
+      },
+    );
+  }
   @state() private thumbUpdater: ReturnType<typeof setInterval> | null = null;
 
   static get styles(): CSSResultGroup {
@@ -99,7 +140,23 @@ export class VacuumCard extends LitElement {
   }
 
   public shouldUpdate(changedProps: PropertyValues): boolean {
+    if (changedProps.has('mediaRevision') || changedProps.has('config')) return true;
+    if (changedProps.has('hass')) {
+      const oldHass = changedProps.get('hass') as HomeAssistant | undefined;
+      const mapId = this.config?.map;
+      if (
+        !oldHass ||
+        oldHass.connection !== this.hass.connection ||
+        (mapId && Boolean(oldHass.states[mapId]) !== Boolean(this.hass.states[mapId]))
+      ) {
+        return true;
+      }
+    }
     return hasConfigOrEntityChanged(this, changedProps, false);
+  }
+
+  protected willUpdate(): void {
+    this.syncMediaImage();
   }
 
   protected updated(changedProps: PropertyValues) {
@@ -114,6 +171,9 @@ export class VacuumCard extends LitElement {
 
   public connectedCallback() {
     super.connectedCallback();
+    document.addEventListener('visibilitychange', this.refreshMedia);
+    window.addEventListener('focus', this.refreshMedia);
+    this.mediaRevision += 1;
     if (!this.config.compact_view && this.map) {
       this.requestUpdate();
       this.thumbUpdater = setInterval(
@@ -125,6 +185,9 @@ export class VacuumCard extends LitElement {
 
   public disconnectedCallback() {
     super.disconnectedCallback();
+    document.removeEventListener('visibilitychange', this.refreshMedia);
+    window.removeEventListener('focus', this.refreshMedia);
+    this.mediaImage.clear();
     if (this.map && this.thumbUpdater) {
       clearInterval(this.thumbUpdater);
     }
@@ -333,13 +396,19 @@ export class VacuumCard extends LitElement {
         : nothing;
     }
 
+    const configured = this.config.image;
     const src =
-      this.config.image === 'default' ? DEFAULT_IMAGE : this.config.image;
+      configured === 'default'
+        ? DEFAULT_IMAGE
+        : configured.startsWith('media-source://')
+          ? (this.mediaImage.current ?? DEFAULT_IMAGE)
+          : configured;
 
     return html`
       <img
         class="vacuum ${state}"
         src="${src}"
+        @error=${this.handleMediaError}
         @click="${() => this.handleMore()}"
       />
     `;
