@@ -113,7 +113,7 @@ Here is what every option means:
 | `battery_entity` | `string`  | Optional     | An entity_id within the `sensor` domain to display battery state and icon.                                |
 | `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
 | `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
-| `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
+| `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`. Authenticated `media-source://` URLs are also supported. |
 | `show_name`      | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
 | `show_status`    | `boolean` | `true`       | Show status of the vacuum.                                                                                |
 | `show_toolbar`   | `boolean` | `true`       | Show toolbar with actions.                                                                                |
@@ -121,6 +121,29 @@ Here is what every option means:
 | `stats`          | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
 | `actions`        | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
 | `shortcuts`      |  `array`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
+
+### Authenticated media-source images
+
+The `image` option also accepts a Home Assistant `media-source://` URL. The card resolves it through Home Assistant's authenticated media-source API and uses the returned URL for the image. For example:
+
+```yaml
+type: custom:vacuum-card
+entity: vacuum.vacuum_cleaner
+image: media-source://media_source/local/vacuum/T30S.png
+```
+
+The media source remains in Home Assistant's protected media library; do not replace it with a direct `/media/local/` URL.
+
+#### Running the media-image tests
+
+With Node.js 22 or newer and the project dependencies installed using `npm ci`, compile the resolver and run the seven isolated tests from the repository root:
+
+```bash
+TEST_DIR=$(mktemp -d)
+./node_modules/.bin/tsc --strict --noUnusedParameters --noImplicitReturns \
+  --target ES2017 --module commonjs --outDir "$TEST_DIR" src/media-image.ts
+node ./test-media-image.cjs "$TEST_DIR/media-image.js"
+```
 
 ### `stats` object
 
